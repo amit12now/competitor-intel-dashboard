@@ -18,6 +18,10 @@ final business decisions. Every table includes soft, review-oriented language
 ("may be worth reviewing", "could indicate", "possible opportunity") rather than
 directives. Categories with zero confirmed signals are shown honestly as
 "No signals found this period" rather than estimated or invented.
+
+This version is written for a NON-TECHNICAL audience: filters are kept only on
+the Raw Data Explorer (tab 10); every other tab tells a plain-English story with
+"What this means" / "Worth considering" callouts computed live from the data.
 """
 from pathlib import Path
 
@@ -37,6 +41,7 @@ GRAY = "#6B7280"
 GRAY_LIGHT = "#F4F6F8"
 WHITE = "#FFFFFF"
 ACCENT_AMBER = "#E8A33D"
+ACCENT_AMBER_LIGHT = "#FFF6E8"
 ACCENT_RED = "#D8554A"
 ACCENT_GREEN = "#3FA66A"
 
@@ -45,6 +50,7 @@ CATEGORICAL_PALETTE = [
     "#3D8C97", "#C97FB0", "#5B7FA6", "#A3A86C", "#8D6E63", "#4F6D7A",
 ]
 PRIORITY_COLORS = {"High": ACCENT_RED, "Medium": ACCENT_AMBER, "Low": "#9AA5B1"}
+PRIORITY_ICONS = {"High": "\U0001F534", "Medium": "\U0001F7E1", "Low": "\U0001F7E2"}
 CONFIDENCE_COLORS = {"High": ACCENT_GREEN, "Medium": ACCENT_AMBER, "Low": "#9AA5B1"}
 SENTIMENT_COLORS = {"Positive": ACCENT_GREEN, "Neutral": "#9AA5B1", "Mixed": ACCENT_AMBER, "Negative": ACCENT_RED}
 
@@ -104,18 +110,119 @@ div[data-testid="stMetricValue"] {{ color: {NAVY}; }}
     background-color: {WHITE}; border-radius: 6px 6px 0 0; padding: 8px 14px;
 }}
 .stTabs [aria-selected="true"] {{ background-color: {ATLAS_BLUE} !important; color: {WHITE} !important; }}
+.story-banner {{
+    background: linear-gradient(135deg, {ATLAS_BLUE} 0%, {ATLAS_BLUE_DARK} 100%);
+    color: {WHITE};
+    padding: 22px 26px;
+    border-radius: 12px;
+    font-size: 1.08rem;
+    line-height: 1.55;
+    margin-bottom: 6px;
+}}
+.story-banner b {{ color: {WHITE}; }}
+.elaborate-box {{
+    background-color: {WHITE};
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: {NAVY};
+    margin-bottom: 16px;
+}}
+.elaborate-box b {{ color: {ATLAS_BLUE_DARK}; }}
+.insight-box {{
+    background-color: {ACCENT_AMBER_LIGHT};
+    border-left: 5px solid {ACCENT_AMBER};
+    border-radius: 6px;
+    padding: 10px 16px;
+    margin: 4px 0 16px 0;
+    font-size: 0.90rem;
+    color: {NAVY};
+    line-height: 1.5;
+}}
+.insight-box b {{ color: {ATLAS_BLUE_DARK}; }}
+.action-box {{
+    background-color: {ATLAS_BLUE_LIGHT};
+    border-left: 5px solid {ATLAS_BLUE};
+    border-radius: 6px;
+    padding: 10px 16px;
+    margin: 0 0 22px 0;
+    font-size: 0.90rem;
+    color: {NAVY};
+    line-height: 1.5;
+}}
+.action-box b {{ color: {ATLAS_BLUE_DARK}; }}
+.mini-stat {{
+    background-color: {WHITE};
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 14px 16px;
+    height: 100%;
+}}
+.mini-stat .label {{ color: {GRAY}; font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }}
+.mini-stat .value {{ color: {NAVY}; font-size: 1.05rem; font-weight: 700; margin-top: 4px; line-height: 1.4; }}
+.next-step {{
+    background-color: {WHITE};
+    border: 1px solid #E2E8F0;
+    border-left: 5px solid {ATLAS_BLUE};
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin-bottom: 8px;
+    font-size: 0.92rem;
+    color: {NAVY};
+}}
+.team-tag {{
+    display:inline-block; background:{NAVY}; color:{WHITE};
+    border-radius: 10px; padding: 1px 10px; margin-right: 6px; font-size:0.74rem; font-weight:700;
+}}
 </style>
 """, unsafe_allow_html=True)
 
 
-def style_layout(fig):
+def style_layout(fig, height=420):
     fig.update_layout(
         plot_bgcolor=WHITE, paper_bgcolor=WHITE,
         font=dict(family="Segoe UI, Calibri, sans-serif", color=NAVY, size=12),
         legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="left", x=0),
-        margin=dict(l=10, r=10, t=40, b=10),
+        margin=dict(l=10, r=10, t=50, b=10),
+        title_font=dict(size=16, color=NAVY),
+        height=height,
     )
     return fig
+
+
+# ---------------------------------------------------------------------------
+# Small text helpers (for plain-English, data-grounded storytelling)
+# ---------------------------------------------------------------------------
+def _join_natural(items):
+    items = [str(i) for i in items if str(i).strip()]
+    if not items:
+        return ""
+    if len(items) == 1:
+        return items[0]
+    if len(items) == 2:
+        return f"{items[0]} and {items[1]}"
+    return ", ".join(items[:-1]) + f", and {items[-1]}"
+
+
+def _pct(n, d):
+    return f"{(n / d * 100):.0f}%" if d else "0%"
+
+
+def insight(text):
+    st.markdown(f"<div class='insight-box'>\U0001F4A1 <b>What this means:</b> {text}</div>", unsafe_allow_html=True)
+
+
+def action(text):
+    st.markdown(f"<div class='action-box'>✅ <b>Worth considering:</b> {text}</div>", unsafe_allow_html=True)
+
+
+def mini_stat(col, label, value):
+    col.markdown(
+        f"<div class='mini-stat'><div class='label'>{label}</div><div class='value'>{value}</div></div>",
+        unsafe_allow_html=True,
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -166,7 +273,7 @@ def priority_badge_table(df, cols=None):
 # ---------------------------------------------------------------------------
 # Sidebar
 # ---------------------------------------------------------------------------
-st.sidebar.markdown("## 🧭 Competitor Intelligence")
+st.sidebar.markdown("## \U0001F9ED Competitor Intelligence")
 st.sidebar.caption("Air Compressor Category | Atlas Copco")
 upload = st.sidebar.file_uploader("Upload a different workbook copy", type=["xlsx"])
 source = upload if upload is not None else (str(DEFAULT_PATH) if DEFAULT_PATH.exists() else None)
@@ -232,55 +339,164 @@ tabs = st.tabs([
 ])
 
 # ===========================================================================
-# TAB 1 - EXECUTIVE SUMMARY
+# TAB 1 - EXECUTIVE SUMMARY  ("the killer one")
 # ===========================================================================
 with tabs[0]:
-    st.subheader("At a glance")
+
+    # ---- The headline story (exact required template sentence) -----------
+    st.markdown(
+        f"<div class='story-banner'>\U0001F4F0 <b>The story this month:</b><br>{exec_metric('Executive summary narrative')}</div>",
+        unsafe_allow_html=True,
+    )
+
+    # ---- Plain-English elaboration, computed live from the data ----------
+    elab_bits = []
+    if not overview.empty:
+        ov = overview.sort_values("Total activity", ascending=False).reset_index(drop=True)
+        leader = ov.iloc[0]
+        if len(ov) > 1 and ov.iloc[1]["Total activity"]:
+            second = ov.iloc[1]
+            gap_pct = (leader["Total activity"] - second["Total activity"]) / second["Total activity"] * 100
+            elab_bits.append(
+                f"<b>{leader['Competitor']}</b> was the single most active competitor, with "
+                f"{int(leader['Total activity'])} tracked signals - roughly {gap_pct:.0f}% more than "
+                f"<b>{second['Competitor']}</b>, the next-busiest brand."
+            )
+    if not channel_df.empty:
+        cd = channel_df.sort_values("Total activity (May+June 2026)", ascending=False).reset_index(drop=True)
+        total_chan = cd["Total activity (May+June 2026)"].sum()
+        top_chan = cd.iloc[0]
+        elab_bits.append(
+            f"<b>{top_chan['Channel']}</b> carried the bulk of the conversation, making up "
+            f"{_pct(top_chan['Total activity (May+June 2026)'], total_chan)} of everything we tracked."
+        )
+    if not conv_sentiment.empty:
+        total_sent = conv_sentiment["Count"].sum()
+        pos = conv_sentiment.loc[conv_sentiment["Sentiment"] == "Positive", "Count"].sum()
+        neg = conv_sentiment.loc[conv_sentiment["Sentiment"] == "Negative", "Count"].sum()
+        elab_bits.append(
+            f"Public conversation about the category skewed positive ({_pct(pos, total_sent)} positive vs. "
+            f"{_pct(neg, total_sent)} negative), so there's no broad reputational alarm bell ringing right now."
+        )
+    if elab_bits:
+        st.markdown(f"<div class='elaborate-box'>{' '.join(elab_bits)}</div>", unsafe_allow_html=True)
+
+    # ---- KPI strip ---------------------------------------------------------
+    st.markdown("#### \U0001F4CA At a glance")
     r1 = st.columns(4)
-    r1[0].metric("Competitor activities tracked", exec_metric("Total competitor activities tracked (May+June 2026)"))
-    r1[1].metric("Competitors tracked", exec_metric("Total competitors tracked"))
-    r1[2].metric("Social posts (LI+IG+YT)", exec_metric("Total social posts (LinkedIn + Instagram + YouTube)"))
-    r1[3].metric("Blog posts", exec_metric("Total blog posts"))
+    r1[0].metric("\U0001F3ED Competitor activities tracked", exec_metric("Total competitor activities tracked (May+June 2026)"))
+    r1[1].metric("\U0001F3E2 Competitors tracked", exec_metric("Total competitors tracked"))
+    r1[2].metric("\U0001F4F1 Social posts (LI+IG+YT)", exec_metric("Total social posts (LinkedIn + Instagram + YouTube)"))
+    r1[3].metric("\U0001F4DD Blog posts", exec_metric("Total blog posts"))
 
     r2 = st.columns(4)
-    r2[0].metric("New product/service pages", exec_metric("Total new product/service pages"))
-    r2[1].metric("Events + webinars", exec_metric("Total events + webinars"))
-    r2[2].metric("PR releases + news mentions", exec_metric("Total PR releases + news mentions"))
-    r2[3].metric("LinkedIn jobs / workforce signals", exec_metric("Total LinkedIn jobs / workforce signals"))
+    r2[0].metric("\U0001F6E0️ New product/service pages", exec_metric("Total new product/service pages"))
+    r2[1].metric("\U0001F3A4 Events + webinars", exec_metric("Total events + webinars"))
+    r2[2].metric("\U0001F4F0 PR releases + news mentions", exec_metric("Total PR releases + news mentions"))
+    r2[3].metric("\U0001F4BC LinkedIn jobs / workforce signals", exec_metric("Total LinkedIn jobs / workforce signals"))
 
-    st.markdown("####  ")
-    c1, c2 = st.columns([1, 1])
-    with c1:
-        st.markdown("**Top 3 competitor themes this period**")
-        themes_html = "".join(
-            f"<span class='theme-pill'>{exec_metric(f'Top theme #{i}')}</span>" for i in (1, 2, 3)
-        )
-        st.markdown(themes_html, unsafe_allow_html=True)
-    with c2:
-        st.markdown("**Top 3 possible opportunities for review**")
-        for i in (1, 2, 3):
-            st.markdown(f"- {exec_metric(f'Possible opportunity #{i}')}")
-
-    st.markdown("#### Summary")
-    st.info(exec_metric("Executive summary narrative"))
-
-    st.markdown("#### Where the activity is concentrated")
+    # ---- The Big Picture: 4 synthesis charts -------------------------------
+    st.markdown("#### \U0001F50D The big picture")
     cc1, cc2 = st.columns(2)
     with cc1:
         if not overview.empty:
             top_act = overview.sort_values("Total activity", ascending=False)
             fig = px.bar(top_act, x="Total activity", y="Competitor", orientation="h",
-                         color="Overall activity level",
+                         color="Overall activity level", text="Total activity",
                          color_discrete_map={"High": ATLAS_BLUE, "Medium": ACCENT_AMBER, "Low": "#C7CDD4"},
-                         title="Total activity by competitor (May+June 2026)")
+                         title="Who's making the most noise? (activity by competitor)")
             fig.update_yaxes(autorange="reversed", title="")
-            st.plotly_chart(style_layout(fig), use_container_width=True)
+            fig.update_traces(textposition="outside")
+            st.plotly_chart(style_layout(fig, 360), width="stretch")
+            st.caption("\U0001F4A1 Bigger bars = more posts, jobs, and content found from that competitor this period.")
     with cc2:
         if not channel_df.empty:
             fig = px.pie(channel_df, names="Channel", values="Total activity (May+June 2026)", hole=0.45,
-                         color_discrete_sequence=CATEGORICAL_PALETTE, title="Activity mix by channel")
-            st.plotly_chart(style_layout(fig), use_container_width=True)
+                         color_discrete_sequence=CATEGORICAL_PALETTE, title="Where is the activity happening?")
+            fig.update_traces(textinfo="percent+label", textfont_size=11)
+            st.plotly_chart(style_layout(fig, 360), width="stretch")
+            st.caption("\U0001F4A1 Shows which channel (LinkedIn, Instagram, etc.) competitors are using most.")
 
+    cc3, cc4 = st.columns(2)
+    with cc3:
+        if not theme_freq.empty:
+            tf = theme_freq[theme_freq["Theme"] != "General brand activity"].sort_values("Frequency", ascending=True).tail(8)
+            fig = px.bar(tf, x="Frequency", y="Theme", orientation="h", text="Frequency",
+                         color_discrete_sequence=[ATLAS_BLUE], title="What are competitors talking about?")
+            fig.update_yaxes(title="")
+            fig.update_traces(textposition="outside")
+            st.plotly_chart(style_layout(fig, 360), width="stretch")
+            st.caption("\U0001F4A1 The most common subjects competitors are posting and writing about.")
+    with cc4:
+        if not conv_sentiment.empty:
+            fig = px.pie(conv_sentiment, names="Sentiment", values="Count", hole=0.45,
+                         color="Sentiment", color_discrete_map=SENTIMENT_COLORS, title="How is the market reacting?")
+            fig.update_traces(textinfo="percent+label", textfont_size=11)
+            st.plotly_chart(style_layout(fig, 360), width="stretch")
+            st.caption("\U0001F4A1 Tone of comments and posts mentioning brands in the category - mostly neutral-to-positive is a healthy sign.")
+
+    # ---- Signals snapshot: smaller data points, compact cards --------------
+    st.markdown("#### \U0001F9E9 Other signals worth knowing about")
+    s1, s2, s3 = st.columns(3)
+    if not brand_mentions.empty:
+        bm = brand_mentions[~brand_mentions["Brand"].isin(["Unspecified / General"])].sort_values("Mentions", ascending=False)
+        if not bm.empty:
+            top_bm = bm.iloc[0]
+            mini_stat(s1, "Most-talked-about brand", f"{top_bm['Brand']} — {int(top_bm['Mentions'])} mentions in social conversation")
+    if not hiring.empty:
+        hc = hiring["Competitor"].value_counts()
+        mini_stat(s2, "Most active hirer", f"{hc.index[0]} — {int(hc.iloc[0])} of {len(hiring)} hiring/expansion signals")
+    zero_channels_exec = []
+    for chan_label in ["Events", "Webinars", "PR releases", "News mentions"]:
+        if channel_df.empty or chan_label not in channel_df["Channel"].values or \
+           channel_df.loc[channel_df["Channel"] == chan_label, "Total activity (May+June 2026)"].sum() == 0:
+            zero_channels_exec.append(chan_label)
+    if zero_channels_exec:
+        mini_stat(s3, "Coverage gap to validate", f"0 confirmed {_join_natural(zero_channels_exec)} this period — worth checking with PR team")
+
+    # ---- Key themes to watch, in plain English -----------------------------
+    st.markdown("#### \U0001F3AF Key themes to watch")
+    theme_lookup = {}
+    if not theme_freq.empty:
+        total_themed = theme_freq.loc[theme_freq["Theme"] != "General brand activity", "Frequency"].sum()
+        theme_lookup = dict(zip(theme_freq["Theme"], theme_freq["Frequency"]))
+    tcols = st.columns(3)
+    for i, col in zip((1, 2, 3), tcols):
+        theme_name = exec_metric(f"Top theme #{i}")
+        freq = theme_lookup.get(theme_name)
+        share = f" ({_pct(freq, total_themed)} of themed content)" if freq and theme_lookup else ""
+        with col:
+            st.markdown(f"<span class='theme-pill'>{theme_name}</span>{share}", unsafe_allow_html=True)
+
+    # ---- Top opportunities, as compact cards --------------------------------
+    st.markdown("#### ⭐ Top opportunities for review")
+    ocols = st.columns(3)
+    for i, col in zip((1, 2, 3), ocols):
+        opp_text = exec_metric(f"Possible opportunity #{i}")
+        with col:
+            st.markdown(
+                f"<div class='next-step'>{PRIORITY_ICONS.get('High','⭐')} {opp_text}</div>",
+                unsafe_allow_html=True,
+            )
+
+    # ---- What to do next: concrete, team-tagged action items ---------------
+    st.markdown("#### ✅ What to do next")
+    if not opportunities.empty:
+        prio_rank = {"High": 0, "Medium": 1, "Low": 2}
+        top_opps = opportunities.copy()
+        top_opps["_r"] = top_opps["Priority"].map(prio_rank).fillna(3)
+        top_opps = top_opps.sort_values("_r").head(5)
+        for _, row in top_opps.iterrows():
+            teams = [t.strip() for t in str(row["Suggested team to review"]).split(";")]
+            tags = "".join(f"<span class='team-tag'>{t}</span>" for t in teams)
+            st.markdown(
+                f"<div class='next-step'>{tags} {row['Opportunity/Signal']} "
+                f"<span style='color:{GRAY};'>&mdash; {row['Why it may matter']}</span></div>",
+                unsafe_allow_html=True,
+            )
+    st.caption("See tab 9 (‘Opportunities for Review’) for the full list with evidence behind each item.")
+
+    st.markdown("---")
     st.caption(DISCLAIMER)
 
 # ===========================================================================
@@ -290,15 +506,25 @@ with tabs[1]:
     st.subheader("Competitor Activity Overview")
     st.caption("Activity counts per competitor across all tracked channels, May-June 2026.")
     if not info_if_empty(overview, "competitor activity"):
-        level_pick = st.multiselect("Filter by activity level", sorted(overview["Overall activity level"].unique()),
-                                     default=sorted(overview["Overall activity level"].unique()), key="act_level")
-        view = overview[overview["Overall activity level"].isin(level_pick)] if level_pick else overview
+        view = overview.sort_values("Total activity", ascending=False)
 
-        fig = px.bar(view.sort_values("Total activity", ascending=False),
-                     x="Competitor", y="Total activity", color="Overall activity level",
+        fig = px.bar(view, x="Competitor", y="Total activity", color="Overall activity level", text="Total activity",
                      color_discrete_map={"High": ATLAS_BLUE, "Medium": ACCENT_AMBER, "Low": "#C7CDD4"},
                      title="Total activity by competitor")
-        st.plotly_chart(style_layout(fig), use_container_width=True)
+        fig.update_traces(textposition="outside")
+        st.plotly_chart(style_layout(fig), width="stretch")
+
+        leader = view.iloc[0]
+        n_high = (view["Overall activity level"] == "High").sum()
+        insight(
+            f"<b>{leader['Competitor']}</b> is the most active competitor this period with "
+            f"{int(leader['Total activity'])} tracked signals. {n_high} of {len(view)} tracked competitors "
+            f"are currently in the “High” activity tier, meaning the competitive set overall is fairly vocal right now."
+        )
+        action(
+            "Marketing and social teams may want to keep a closer watch on the highest-activity competitors above, "
+            "since they're setting the pace for visibility in this category right now."
+        )
 
         def _level_style(s):
             colors = {"High": ACCENT_RED, "Medium": ACCENT_AMBER, "Low": "#9AA5B1"}
@@ -306,7 +532,7 @@ with tabs[1]:
 
         st.dataframe(
             view.style.apply(_level_style, subset=["Overall activity level"]),
-            use_container_width=True, hide_index=True,
+            width="stretch", hide_index=True,
         )
 
 # ===========================================================================
@@ -317,16 +543,33 @@ with tabs[2]:
     c1, c2 = st.columns(2)
     with c1:
         if not info_if_empty(channel_df, "channel activity"):
-            fig = px.bar(channel_df.sort_values("Total activity (May+June 2026)", ascending=True),
-                         x="Total activity (May+June 2026)", y="Channel", orientation="h",
+            cd_sorted = channel_df.sort_values("Total activity (May+June 2026)", ascending=True)
+            fig = px.bar(cd_sorted, x="Total activity (May+June 2026)", y="Channel", orientation="h",
+                         text="Total activity (May+June 2026)",
                          color_discrete_sequence=[ATLAS_BLUE], title="Activity by channel")
-            st.plotly_chart(style_layout(fig), use_container_width=True)
+            fig.update_traces(textposition="outside")
+            st.plotly_chart(style_layout(fig), width="stretch")
     with c2:
         if not info_if_empty(overview, "competitor activity"):
-            fig = px.bar(overview.sort_values("Total activity", ascending=True),
-                         x="Total activity", y="Competitor", orientation="h",
+            ov_sorted = overview.sort_values("Total activity", ascending=True)
+            fig = px.bar(ov_sorted, x="Total activity", y="Competitor", orientation="h", text="Total activity",
                          color_discrete_sequence=[ATLAS_BLUE_DARK], title="Activity by competitor")
-            st.plotly_chart(style_layout(fig), use_container_width=True)
+            fig.update_traces(textposition="outside")
+            st.plotly_chart(style_layout(fig), width="stretch")
+
+    if not channel_df.empty:
+        cd_sorted = channel_df.sort_values("Total activity (May+June 2026)", ascending=False).reset_index(drop=True)
+        total_chan = cd_sorted["Total activity (May+June 2026)"].sum()
+        top2 = cd_sorted.head(2)
+        insight(
+            f"<b>{top2.iloc[0]['Channel']}</b> and <b>{top2.iloc[1]['Channel']}</b> together account for "
+            f"{_pct(top2['Total activity (May+June 2026)'].sum(), total_chan)} of all tracked competitor activity. "
+            "Most of the competitive noise in this category is happening on social media, not owned channels like blogs or press releases."
+        )
+        action(
+            f"Since {top2.iloc[0]['Channel'].lower()} is where competitors show up most, it's worth prioritizing "
+            "monitoring and response cadence there over lower-traffic channels."
+        )
 
     st.markdown("#### Competitor vs. channel (stacked)")
     if not info_if_empty(comp_x_chan, "competitor x channel matrix"):
@@ -335,9 +578,9 @@ with tabs[2]:
         long = long[long["Count"] > 0]
         fig = px.bar(long, x="Competitor", y="Count", color="Channel", barmode="stack",
                      color_discrete_sequence=CATEGORICAL_PALETTE, title="Channel mix per competitor")
-        st.plotly_chart(style_layout(fig), use_container_width=True)
+        st.plotly_chart(style_layout(fig), width="stretch")
         with st.expander("View full competitor x channel table"):
-            st.dataframe(comp_x_chan, use_container_width=True, hide_index=True)
+            st.dataframe(comp_x_chan, width="stretch", hide_index=True)
 
     st.markdown("#### May vs. June trend (where data is available)")
     if not info_if_empty(trend_df, "May vs June channel trend"):
@@ -350,7 +593,7 @@ with tabs[2]:
             fig = px.bar(long, x="Channel", y="Count", color="Month", barmode="group",
                          color_discrete_map={"May 2026": "#9AA5B1", "June 2026": ATLAS_BLUE},
                          title="Channel activity: May 2026 vs June 2026")
-            st.plotly_chart(style_layout(fig), use_container_width=True)
+            st.plotly_chart(style_layout(fig), width="stretch")
         st.caption("May 2026 data is limited to items with a verified publish date; many competitor channels had little "
                     "to no reliably-dated May content in the source data, so May counts may understate true May activity.")
 
@@ -363,9 +606,28 @@ with tabs[3]:
                "\"General brand activity\" covers items that didn't map clearly to a specific theme below.")
 
     if not info_if_empty(theme_freq, "themes"):
-        fig = px.bar(theme_freq.sort_values("Frequency", ascending=True), x="Frequency", y="Theme",
+        tf_named = theme_freq[theme_freq["Theme"] != "General brand activity"]
+        fig = px.bar(tf_named.sort_values("Frequency", ascending=True), x="Frequency", y="Theme", text="Frequency",
                      orientation="h", color_discrete_sequence=[ATLAS_BLUE], title="Top themes by frequency")
-        st.plotly_chart(style_layout(fig), use_container_width=True)
+        fig.update_traces(textposition="outside")
+        st.plotly_chart(style_layout(fig), width="stretch")
+
+        if not tf_named.empty:
+            total_named = tf_named["Frequency"].sum()
+            top_theme = tf_named.sort_values("Frequency", ascending=False).iloc[0]
+            n_themes_multi_brand = None
+            if not theme_by_comp.empty and top_theme["Theme"] in theme_by_comp.columns:
+                n_themes_multi_brand = (theme_by_comp[top_theme["Theme"]] > 0).sum()
+            spread = f" and shows up across {n_themes_multi_brand} of the tracked competitors" if n_themes_multi_brand else ""
+            insight(
+                f"<b>{top_theme['Theme']}</b> is the single biggest talking point, making up "
+                f"{_pct(top_theme['Frequency'], total_named)} of all themed content{spread}. "
+                "When a theme is this widespread across the category, it usually signals a shift in what customers are asking about."
+            )
+            action(
+                f"Content, SEO, and product marketing teams may want to check whether our own messaging on "
+                f"“{top_theme['Theme']}” is current and visible, since the rest of the category is leaning into it."
+            )
 
     c1, c2 = st.columns(2)
     with c1:
@@ -374,18 +636,18 @@ with tabs[3]:
             theme_cols = [c for c in theme_by_comp.columns if c != "Competitor"]
             heat = theme_by_comp.set_index("Competitor")[theme_cols]
             fig = px.imshow(heat, color_continuous_scale=[WHITE, ATLAS_BLUE], aspect="auto",
-                             labels=dict(color="Count"))
+                             labels=dict(color="Count"), text_auto=True)
             fig.update_layout(margin=dict(l=10, r=10, t=10, b=10))
-            st.plotly_chart(style_layout(fig), use_container_width=True)
+            st.plotly_chart(style_layout(fig), width="stretch")
     with c2:
         st.markdown("**Themes by channel**")
         if not info_if_empty(theme_by_chan, "themes by channel"):
             theme_cols = [c for c in theme_by_chan.columns if c != "Channel"]
             heat = theme_by_chan.set_index("Channel")[theme_cols]
             fig = px.imshow(heat, color_continuous_scale=[WHITE, ATLAS_BLUE_DARK], aspect="auto",
-                             labels=dict(color="Count"))
+                             labels=dict(color="Count"), text_auto=True)
             fig.update_layout(margin=dict(l=10, r=10, t=10, b=10))
-            st.plotly_chart(style_layout(fig), use_container_width=True)
+            st.plotly_chart(style_layout(fig), width="stretch")
 
     st.markdown("**Theme trend: May vs June 2026**")
     if not info_if_empty(theme_trend, "theme trend"):
@@ -395,11 +657,11 @@ with tabs[3]:
         fig = px.bar(long, x="Theme", y="Count", color="Month", barmode="group",
                      color_discrete_map={"May 2026": "#9AA5B1", "June 2026": ATLAS_BLUE})
         fig.update_xaxes(tickangle=35)
-        st.plotly_chart(style_layout(fig), use_container_width=True)
+        st.plotly_chart(style_layout(fig), width="stretch")
 
     with st.expander("View theme-by-competitor and theme-by-channel tables"):
-        st.dataframe(theme_by_comp, use_container_width=True, hide_index=True)
-        st.dataframe(theme_by_chan, use_container_width=True, hide_index=True)
+        st.dataframe(theme_by_comp, width="stretch", hide_index=True)
+        st.dataframe(theme_by_chan, width="stretch", hide_index=True)
 
 # ===========================================================================
 # TAB 5 - PRODUCT & SERVICE SIGNALS
@@ -409,27 +671,35 @@ with tabs[4]:
     st.caption("New product/service pages, product-related posts, and similar items, with a possible-meaning "
                "read and a suggested team for review.")
     if not info_if_empty(product_signals, "product & service signals"):
-        cats = sorted(product_signals["Product/service category"].dropna().unique())
-        comps = sorted(product_signals["Competitor"].dropna().unique())
-        f1, f2 = st.columns(2)
-        cat_pick = f1.multiselect("Filter by category", cats, default=[], key="prod_cat")
-        comp_pick = f2.multiselect("Filter by competitor", comps, default=[], key="prod_comp")
         view = product_signals.copy()
-        if cat_pick:
-            view = view[view["Product/service category"].isin(cat_pick)]
-        if comp_pick:
-            view = view[view["Competitor"].isin(comp_pick)]
 
         cat_counts = view.groupby("Product/service category").size().reset_index(name="Count")
         fig = px.bar(cat_counts.sort_values("Count"), x="Count", y="Product/service category", orientation="h",
-                     color_discrete_sequence=[ATLAS_BLUE], title="Signals by product/service category")
+                     text="Count", color_discrete_sequence=[ATLAS_BLUE], title="Signals by product/service category")
         fig.update_yaxes(title="")
-        st.plotly_chart(style_layout(fig), use_container_width=True)
+        fig.update_traces(textposition="outside")
+        st.plotly_chart(style_layout(fig), width="stretch")
+
+        top_cat = cat_counts.sort_values("Count", ascending=False).iloc[0]
+        no_dedicated_pages = channel_df.empty or "New product/service pages" not in channel_df["Channel"].values or \
+            channel_df.loc[channel_df["Channel"] == "New product/service pages", "Total activity (May+June 2026)"].sum() == 0
+        page_note = (
+            " Notably, none of this showed up as a dedicated new product/service web page - it's all coming through "
+            "social posts and articles instead."
+        ) if no_dedicated_pages else ""
+        insight(
+            f"<b>{top_cat['Product/service category']}</b> is the most common product/service topic competitors are "
+            f"posting about, with {int(top_cat['Count'])} signals found.{page_note}"
+        )
+        action(
+            "SEO and product marketing teams may want to check if competitors are under-investing in dedicated product "
+            "pages right now — that could be a content gap worth owning, if we move first."
+        )
 
         st.dataframe(
             view[["Competitor", "Product/service category", "Page/post title", "URL", "Date found/published",
                   "Month", "Possible meaning", "Team to review"]],
-            use_container_width=True, hide_index=True,
+            width="stretch", hide_index=True,
             column_config={"URL": st.column_config.LinkColumn("URL")},
         )
 
@@ -445,41 +715,50 @@ with tabs[5]:
     with c1:
         st.markdown("**Top conversation themes**")
         if not info_if_empty(conv_top_themes, "conversation themes"):
-            fig = px.bar(conv_top_themes.sort_values("Count"), x="Count", y="Theme", orientation="h",
+            fig = px.bar(conv_top_themes.sort_values("Count"), x="Count", y="Theme", orientation="h", text="Count",
                          color_discrete_sequence=[ATLAS_BLUE])
             fig.update_yaxes(title="")
-            st.plotly_chart(style_layout(fig), use_container_width=True)
+            fig.update_traces(textposition="outside")
+            st.plotly_chart(style_layout(fig, 360), width="stretch")
     with c2:
         st.markdown("**Sentiment split**")
         if not info_if_empty(conv_sentiment, "sentiment split"):
             fig = px.pie(conv_sentiment, names="Sentiment", values="Count", hole=0.45,
                          color="Sentiment", color_discrete_map=SENTIMENT_COLORS)
-            st.plotly_chart(style_layout(fig), use_container_width=True)
+            fig.update_traces(textinfo="percent+label", textfont_size=11)
+            st.plotly_chart(style_layout(fig, 360), width="stretch")
     with c3:
         st.markdown("**Most-mentioned brands**")
         if not info_if_empty(brand_mentions, "brand mentions"):
             fig = px.bar(brand_mentions.sort_values("Mentions").tail(10), x="Mentions", y="Brand", orientation="h",
-                         color_discrete_sequence=[ATLAS_BLUE_DARK])
+                         text="Mentions", color_discrete_sequence=[ATLAS_BLUE_DARK])
             fig.update_yaxes(title="")
-            st.plotly_chart(style_layout(fig), use_container_width=True)
+            fig.update_traces(textposition="outside")
+            st.plotly_chart(style_layout(fig, 360), width="stretch")
+
+    if not conv_sentiment.empty:
+        total_sent = conv_sentiment["Count"].sum()
+        pos = conv_sentiment.loc[conv_sentiment["Sentiment"] == "Positive", "Count"].sum()
+        neg = conv_sentiment.loc[conv_sentiment["Sentiment"] == "Negative", "Count"].sum()
+        our_brand_name = str(settings.get("Our_Brand", "Atlas Copco"))
+        our_mentions = 0
+        if not brand_mentions.empty and our_brand_name in brand_mentions["Brand"].values:
+            our_mentions = int(brand_mentions.loc[brand_mentions["Brand"] == our_brand_name, "Mentions"].iloc[0])
+        insight(
+            f"Conversation in the category is {_pct(pos, total_sent)} positive and {_pct(neg, total_sent)} negative, "
+            f"so the overall mood is calm. Our own brand was mentioned {our_mentions} times in this conversation set."
+        )
+        action(
+            "Social and PR teams may want to scan the negative-sentiment posts directly (filterable in tab 10) to "
+            "confirm none of them relate to our brand specifically."
+        )
 
     st.markdown("#### Conversation detail")
     if not info_if_empty(social_conv, "social & market conversation"):
-        f1, f2, f3 = st.columns(3)
-        mt_pick = f1.multiselect("Mention type", sorted(social_conv["Mention type"].dropna().unique()), key="conv_mt")
-        sent_pick = f2.multiselect("Sentiment", sorted(social_conv["Sentiment"].dropna().unique()), key="conv_sent")
-        brand_pick = f3.multiselect("Related brand", sorted(social_conv["Related brand"].dropna().unique()), key="conv_brand")
-        view = social_conv.copy()
-        if mt_pick:
-            view = view[view["Mention type"].isin(mt_pick)]
-        if sent_pick:
-            view = view[view["Sentiment"].isin(sent_pick)]
-        if brand_pick:
-            view = view[view["Related brand"].isin(brand_pick)]
         st.dataframe(
-            priority_badge_table(view[["Author/company", "Related brand", "Mention type", "Sentiment", "Theme",
-                                        "Engagement", "URL", "Short summary", "Possible implication", "Team to review"]]),
-            use_container_width=True, hide_index=True,
+            priority_badge_table(social_conv[["Author/company", "Related brand", "Mention type", "Sentiment", "Theme",
+                                               "Engagement", "URL", "Short summary", "Possible implication", "Team to review"]]),
+            width="stretch", hide_index=True, height=420,
         )
 
     st.caption("Common pain points / buying themes surface from the \"Top conversation themes\" chart above "
@@ -501,32 +780,24 @@ with tabs[6]:
             zero_channels.append(chan_label)
     if zero_channels:
         st.warning(
-            "No signals found this period for: " + ", ".join(zero_channels) + ". "
-            "This may reflect limited competitor activity in these channels in May-June 2026, or a gap in "
-            "monitoring coverage for these specific channels - it's worth validating directly with the PR/Comms "
-            "team before concluding no activity occurred. (See Opportunities for Review and Settings/methodology "
-            "notes for more detail.)"
+            f"\U0001F50E We found zero confirmed {_join_natural(zero_channels)} from any tracked competitor this period. "
+            "That could mean the whole category had a quiet month on these channels, or it could mean our monitoring "
+            "isn't catching everything there — either way, it's worth a quick double-check with the PR/Comms team "
+            "before assuming nothing happened."
         )
 
     if not info_if_empty(pr_news, "PR, News, Events & Webinars"):
-        f1, f2 = st.columns(2)
-        type_pick = f1.multiselect("Filter by type", sorted(pr_news["Type"].dropna().unique()), key="pr_type")
-        comp_pick = f2.multiselect("Filter by competitor", sorted(pr_news["Competitor"].dropna().unique()), key="pr_comp")
         view = pr_news.copy()
-        if type_pick:
-            view = view[view["Type"].isin(type_pick)]
-        if comp_pick:
-            view = view[view["Competitor"].isin(comp_pick)]
 
         fig = px.bar(view.groupby(["Competitor", "Source channel"]).size().reset_index(name="Count"),
                      x="Competitor", y="Count", color="Source channel", barmode="stack",
                      color_discrete_sequence=CATEGORICAL_PALETTE, title="Confirmed items by competitor and channel")
-        st.plotly_chart(style_layout(fig), use_container_width=True)
+        st.plotly_chart(style_layout(fig), width="stretch")
 
         st.dataframe(
             view[["Competitor", "Source channel", "Type", "Title", "Date", "Month", "URL", "Theme",
                   "Possible meaning", "Team to review"]],
-            use_container_width=True, hide_index=True,
+            width="stretch", hide_index=True,
             column_config={"URL": st.column_config.LinkColumn("URL")},
         )
 
@@ -546,21 +817,31 @@ with tabs[7]:
             fig = px.bar(hiring.groupby(["Competitor", "Signal type"]).size().reset_index(name="Count"),
                          x="Competitor", y="Count", color="Signal type",
                          color_discrete_sequence=[ATLAS_BLUE, ACCENT_AMBER], barmode="stack")
-            st.plotly_chart(style_layout(fig), use_container_width=True)
+            st.plotly_chart(style_layout(fig), width="stretch")
         with c2:
             st.markdown("**Where signals point geographically**")
             loc_counts = hiring["Location (HQ)"].replace("", "Not specified").value_counts().reset_index()
             loc_counts.columns = ["Location", "Count"]
-            fig = px.bar(loc_counts.sort_values("Count"), x="Count", y="Location", orientation="h",
+            fig = px.bar(loc_counts.sort_values("Count"), x="Count", y="Location", orientation="h", text="Count",
                          color_discrete_sequence=[ATLAS_BLUE_DARK])
-            st.plotly_chart(style_layout(fig), use_container_width=True)
+            fig.update_traces(textposition="outside")
+            st.plotly_chart(style_layout(fig), width="stretch")
 
-        comp_pick = st.multiselect("Filter by competitor", sorted(hiring["Competitor"].dropna().unique()), key="hiring_comp")
-        view = hiring[hiring["Competitor"].isin(comp_pick)] if comp_pick else hiring
+        hc = hiring["Competitor"].value_counts()
+        insight(
+            f"<b>{hc.index[0]}</b> shows the most hiring & expansion activity, with {int(hc.iloc[0])} of "
+            f"{len(hiring)} tracked signals. Rising hiring activity at a competitor can be an early signal of "
+            "investment in a specific region, role, or capability."
+        )
+        action(
+            "Talent/HR and regional sales teams may want to take a quick look at which roles and locations are "
+            "showing up most below, in case it points to where a competitor is about to ramp up."
+        )
+
         st.dataframe(
-            view[["Competitor", "Signal type", "Location (HQ)", "Top open-role function (latest snapshot)",
-                  "Date", "URL", "Signal detail", "Possible meaning", "Team to review"]],
-            use_container_width=True, hide_index=True,
+            hiring[["Competitor", "Signal type", "Location (HQ)", "Top open-role function (latest snapshot)",
+                    "Date", "URL", "Signal detail", "Possible meaning", "Team to review"]],
+            width="stretch", hide_index=True,
             column_config={"URL": st.column_config.LinkColumn("URL")},
         )
 
@@ -573,30 +854,39 @@ with tabs[8]:
                "of the underlying evidence, not a recommendation to act.")
 
     if not info_if_empty(opportunities, "opportunities for review"):
-        f1, f2 = st.columns(2)
-        prio_pick = f1.multiselect("Filter by priority", ["High", "Medium", "Low"], default=[], key="opp_prio")
-        team_pick = f2.multiselect("Filter by suggested team", sorted(opportunities["Suggested team to review"].dropna().unique()), key="opp_team")
         view = opportunities.copy()
-        if prio_pick:
-            view = view[view["Priority"].isin(prio_pick)]
-        if team_pick:
-            view = view[view["Suggested team to review"].isin(team_pick)]
 
         cc1, cc2 = st.columns(2)
         with cc1:
             prio_counts = view.groupby("Priority").size().reindex(["High", "Medium", "Low"]).dropna().reset_index(name="Count")
-            fig = px.bar(prio_counts, x="Priority", y="Count", color="Priority", color_discrete_map=PRIORITY_COLORS)
-            st.plotly_chart(style_layout(fig), use_container_width=True)
+            fig = px.bar(prio_counts, x="Priority", y="Count", text="Count", color="Priority", color_discrete_map=PRIORITY_COLORS,
+                         title="How many opportunities, by priority?")
+            fig.update_traces(textposition="outside")
+            st.plotly_chart(style_layout(fig, 320), width="stretch")
         with cc2:
-            fig2 = px.bar(view.groupby("Confidence").size().reindex(["High", "Medium", "Low"]).dropna().reset_index(name="Count"),
-                          x="Confidence", y="Count", color="Confidence", color_discrete_map=CONFIDENCE_COLORS)
-            st.plotly_chart(style_layout(fig2), use_container_width=True)
+            conf_counts = view.groupby("Confidence").size().reindex(["High", "Medium", "Low"]).dropna().reset_index(name="Count")
+            fig2 = px.bar(conf_counts, x="Confidence", y="Count", text="Count", color="Confidence", color_discrete_map=CONFIDENCE_COLORS,
+                          title="How confident are we in the evidence?")
+            fig2.update_traces(textposition="outside")
+            st.plotly_chart(style_layout(fig2, 320), width="stretch")
+
+        n_high = (view["Priority"] == "High").sum()
+        insight(
+            f"Of the {len(view)} opportunities surfaced this period, {n_high} are flagged High priority — "
+            "meaning the underlying evidence is both strong and clearly tied to a specific competitor action, "
+            "not just background noise."
+        )
+
+        prio_rank = {"High": 0, "Medium": 1, "Low": 2}
+        view["_r"] = view["Priority"].map(prio_rank).fillna(3)
+        view = view.sort_values("_r")
 
         for _, row in view.iterrows():
             p_color = PRIORITY_COLORS.get(row["Priority"], GRAY)
             c_color = CONFIDENCE_COLORS.get(row["Confidence"], GRAY)
+            icon = PRIORITY_ICONS.get(row["Priority"], "⚪")
             with st.container(border=True):
-                st.markdown(f"**{row['Opportunity/Signal']}**")
+                st.markdown(f"**{icon} {row['Opportunity/Signal']}**")
                 st.markdown(
                     f"<span style='background:{p_color};color:white;border-radius:10px;padding:2px 10px;font-size:0.78rem;font-weight:600;'>Priority: {row['Priority']}</span> "
                     f"<span style='background:{c_color};color:white;border-radius:10px;padding:2px 10px;font-size:0.78rem;font-weight:600;'>Confidence: {row['Confidence']}</span> "
@@ -664,7 +954,7 @@ with tabs[9]:
         st.caption(f"Showing {len(view):,} of {len(raw_data):,} records")
         st.dataframe(
             priority_badge_table(view),
-            use_container_width=True, hide_index=True, height=520,
+            width="stretch", hide_index=True, height=520,
             column_config={"URL": st.column_config.LinkColumn("URL")},
         )
         st.download_button(
