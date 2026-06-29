@@ -22,6 +22,9 @@ directives. Categories with zero confirmed signals are shown honestly as
 This version is written for a NON-TECHNICAL audience: filters are kept only on
 the Raw Data Explorer (tab 10); every other tab tells a plain-English story with
 "What this means" / "Worth considering" callouts computed live from the data.
+Chart styling favors a single highlighted "leader" bar over busy multi-color
+legends, hides redundant value axes (the number is already printed on the bar),
+and keeps legends out of the way of titles - so nothing overlaps or looks scattered.
 """
 from pathlib import Path
 
@@ -44,6 +47,7 @@ ACCENT_AMBER = "#E8A33D"
 ACCENT_AMBER_LIGHT = "#FFF6E8"
 ACCENT_RED = "#D8554A"
 ACCENT_GREEN = "#3FA66A"
+NEUTRAL_BAR = "#C7CDD4"
 
 CATEGORICAL_PALETTE = [
     ATLAS_BLUE, ACCENT_AMBER, ACCENT_GREEN, ACCENT_RED, "#7C5CBF",
@@ -105,11 +109,43 @@ div[data-testid="stMetricValue"] {{ color: {NAVY}; }}
     display:inline-block; background:{ATLAS_BLUE_LIGHT}; color:{ATLAS_BLUE_DARK};
     border-radius: 14px; padding: 3px 12px; margin: 2px; font-size:0.82rem; font-weight:600;
 }}
-.stTabs [data-baseweb="tab-list"] {{ gap: 4px; }}
+.stTabs [data-baseweb="tab-list"] {{ gap: 22px; border-bottom: 2px solid #E2E8F0; }}
 .stTabs [data-baseweb="tab"] {{
-    background-color: {WHITE}; border-radius: 6px 6px 0 0; padding: 8px 14px;
+    background-color: transparent; border-radius: 0; padding: 10px 2px;
+    color: {GRAY}; font-weight: 600;
 }}
-.stTabs [aria-selected="true"] {{ background-color: {ATLAS_BLUE} !important; color: {WHITE} !important; }}
+.stTabs [data-baseweb="tab"]:hover {{ color: {ATLAS_BLUE_DARK}; background-color: transparent; }}
+.stTabs [aria-selected="true"] {{
+    background-color: transparent !important; color: {ATLAS_BLUE_DARK} !important;
+    border-bottom: 3px solid {ATLAS_BLUE} !important; font-weight: 700;
+}}
+.main-header {{
+    display: flex; align-items: center; gap: 16px;
+    background: linear-gradient(135deg, {ATLAS_BLUE} 0%, {ATLAS_BLUE_DARK} 100%);
+    color: {WHITE};
+    padding: 22px 28px;
+    border-radius: 14px;
+    margin-bottom: 14px;
+}}
+.main-header-icon {{ font-size: 2.1rem; line-height: 1; }}
+.main-header-title {{ font-size: 1.55rem; font-weight: 800; color: {WHITE}; line-height: 1.25; }}
+.main-header-sub {{ font-size: 0.92rem; color: rgba(255,255,255,0.88); margin-top: 3px; }}
+.kpi-card {{
+    background-color: {WHITE};
+    border: 1px solid #E2E8F0;
+    border-left: 4px solid {ATLAS_BLUE};
+    border-radius: 10px;
+    padding: 14px 16px 12px 16px;
+    height: 100%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}}
+.kpi-icon {{ font-size: 1.25rem; margin-bottom: 6px; }}
+.kpi-label {{
+    color: {GRAY}; font-size: 0.72rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.04em;
+}}
+.kpi-value {{ color: {NAVY}; font-size: 1.55rem; font-weight: 800; margin-top: 2px; line-height: 1.2; }}
+.kpi-sub {{ font-size: 0.76rem; margin-top: 4px; font-weight: 600; color: {GRAY}; }}
 .story-banner {{
     background: linear-gradient(135deg, {ATLAS_BLUE} 0%, {ATLAS_BLUE_DARK} 100%);
     color: {WHITE};
@@ -180,16 +216,63 @@ div[data-testid="stMetricValue"] {{ color: {NAVY}; }}
 """, unsafe_allow_html=True)
 
 
-def style_layout(fig, height=420):
+def style_layout(fig, height=420, legend="bottom"):
+    """Apply consistent brand styling to every chart.
+
+    legend: "bottom"  -> compact horizontal legend below the plot (default; never
+                          competes with the title for space at the top)
+            "right"   -> vertical legend to the right (used for donuts, where the
+                          reference style is a clean side legend, not labels jammed
+                          onto the slices)
+            "none"    -> no legend at all (used when color is purely a "leader vs.
+                          the rest" highlight, or when the legend would just repeat
+                          text already on the axis)
+    """
+    if legend == "right":
+        legend_cfg = dict(orientation="v", yanchor="top", y=1, xanchor="left", x=1.02, font=dict(size=10))
+        margin = dict(l=10, r=150, t=48, b=10)
+    elif legend == "none":
+        legend_cfg = dict()
+        margin = dict(l=10, r=28, t=48, b=10)
+    else:
+        legend_cfg = dict(orientation="h", yanchor="top", y=-0.24, xanchor="left", x=0, font=dict(size=11))
+        margin = dict(l=10, r=24, t=48, b=64)
     fig.update_layout(
         plot_bgcolor=WHITE, paper_bgcolor=WHITE,
         font=dict(family="Segoe UI, Calibri, sans-serif", color=NAVY, size=12),
-        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="left", x=0),
-        margin=dict(l=10, r=10, t=50, b=10),
-        title_font=dict(size=16, color=NAVY),
+        legend=legend_cfg,
+        showlegend=(legend != "none"),
+        margin=margin,
+        title_font=dict(size=15, color=NAVY),
         height=height,
+        uniformtext=dict(mode="hide", minsize=9),
+        bargap=0.30,
     )
     return fig
+
+
+def clean_value_axis(fig, orientation="h"):
+    """Hide the numeric value axis when bars already carry an outside text label
+    (so the number only appears once, not on the bar AND the axis), and strip
+    gridlines everywhere for a flatter, calmer look."""
+    if orientation == "h":
+        fig.update_xaxes(visible=False, showgrid=False, zeroline=False)
+        fig.update_yaxes(showgrid=False, zeroline=False, showline=False, ticks="")
+    else:
+        fig.update_yaxes(visible=False, showgrid=False, zeroline=False)
+        fig.update_xaxes(showgrid=False, zeroline=False, showline=False, ticks="")
+    return fig
+
+
+def highlight_leader(df, value_col, flag_col="_Highlight"):
+    """Mark the top row of a single-series bar chart as 'Leading' so it can be
+    colored differently from the rest - the same "one bar stands out, the rest
+    are neutral gray" treatment used throughout, instead of a same-color bar
+    chart with a legend nobody needs."""
+    d = df.copy()
+    top = d[value_col].max()
+    d[flag_col] = [("Leading" if v == top else "Other") for v in d[value_col]]
+    return d
 
 
 # ---------------------------------------------------------------------------
@@ -221,6 +304,19 @@ def action(text):
 def mini_stat(col, label, value):
     col.markdown(
         f"<div class='mini-stat'><div class='label'>{label}</div><div class='value'>{value}</div></div>",
+        unsafe_allow_html=True,
+    )
+
+
+def kpi_card(col, icon, label, value, sublabel=None):
+    sub_html = f"<div class='kpi-sub'>{sublabel}</div>" if sublabel else ""
+    col.markdown(
+        f"""<div class='kpi-card'>
+            <div class='kpi-icon'>{icon}</div>
+            <div class='kpi-label'>{label}</div>
+            <div class='kpi-value'>{value}</div>
+            {sub_html}
+        </div>""",
         unsafe_allow_html=True,
     )
 
@@ -327,8 +423,16 @@ def exec_metric(label):
 # ---------------------------------------------------------------------------
 # Header + disclaimer
 # ---------------------------------------------------------------------------
-st.title("Competitor Intelligence Dashboard")
-st.caption(f"Air Compressor Category · {settings.get('Baseline_Month','May 2026')} vs {settings.get('Report_Month','June 2026')}")
+st.markdown(
+    f"""<div class='main-header'>
+        <div class='main-header-icon'>\U0001F9ED</div>
+        <div>
+            <div class='main-header-title'>Competitor Intelligence Dashboard</div>
+            <div class='main-header-sub'>Air Compressor Category &middot; {settings.get('Baseline_Month','May 2026')} vs {settings.get('Report_Month','June 2026')}</div>
+        </div>
+    </div>""",
+    unsafe_allow_html=True,
+)
 st.markdown(f"<div class='disclaimer-banner'>⚠️ {DISCLAIMER}</div>", unsafe_allow_html=True)
 
 tabs = st.tabs([
@@ -384,16 +488,16 @@ with tabs[0]:
     # ---- KPI strip ---------------------------------------------------------
     st.markdown("#### \U0001F4CA At a glance")
     r1 = st.columns(4)
-    r1[0].metric("\U0001F3ED Competitor activities tracked", exec_metric("Total competitor activities tracked (May+June 2026)"))
-    r1[1].metric("\U0001F3E2 Competitors tracked", exec_metric("Total competitors tracked"))
-    r1[2].metric("\U0001F4F1 Social posts (LI+IG+YT)", exec_metric("Total social posts (LinkedIn + Instagram + YouTube)"))
-    r1[3].metric("\U0001F4DD Blog posts", exec_metric("Total blog posts"))
+    kpi_card(r1[0], "\U0001F3ED", "Competitor activities tracked", exec_metric("Total competitor activities tracked (May+June 2026)"))
+    kpi_card(r1[1], "\U0001F3E2", "Competitors tracked", exec_metric("Total competitors tracked"))
+    kpi_card(r1[2], "\U0001F4F1", "Social posts (LI+IG+YT)", exec_metric("Total social posts (LinkedIn + Instagram + YouTube)"))
+    kpi_card(r1[3], "\U0001F4DD", "Blog posts", exec_metric("Total blog posts"))
 
     r2 = st.columns(4)
-    r2[0].metric("\U0001F6E0️ New product/service pages", exec_metric("Total new product/service pages"))
-    r2[1].metric("\U0001F3A4 Events + webinars", exec_metric("Total events + webinars"))
-    r2[2].metric("\U0001F4F0 PR releases + news mentions", exec_metric("Total PR releases + news mentions"))
-    r2[3].metric("\U0001F4BC LinkedIn jobs / workforce signals", exec_metric("Total LinkedIn jobs / workforce signals"))
+    kpi_card(r2[0], "\U0001F6E0️", "New product/service pages", exec_metric("Total new product/service pages"))
+    kpi_card(r2[1], "\U0001F3A4", "Events + webinars", exec_metric("Total events + webinars"))
+    kpi_card(r2[2], "\U0001F4F0", "PR releases + news mentions", exec_metric("Total PR releases + news mentions"))
+    kpi_card(r2[3], "\U0001F4BC", "LinkedIn jobs / workforce signals", exec_metric("Total LinkedIn jobs / workforce signals"))
 
     # ---- The Big Picture: 4 synthesis charts -------------------------------
     st.markdown("#### \U0001F50D The big picture")
@@ -403,36 +507,40 @@ with tabs[0]:
             top_act = overview.sort_values("Total activity", ascending=False)
             fig = px.bar(top_act, x="Total activity", y="Competitor", orientation="h",
                          color="Overall activity level", text="Total activity",
-                         color_discrete_map={"High": ATLAS_BLUE, "Medium": ACCENT_AMBER, "Low": "#C7CDD4"},
+                         color_discrete_map={"High": ATLAS_BLUE, "Medium": ACCENT_AMBER, "Low": NEUTRAL_BAR},
                          title="Who's making the most noise? (activity by competitor)")
             fig.update_yaxes(autorange="reversed", title="")
-            fig.update_traces(textposition="outside")
-            st.plotly_chart(style_layout(fig, 360), width="stretch")
+            fig.update_traces(textposition="outside", cliponaxis=False, textfont=dict(size=11))
+            clean_value_axis(fig, "h")
+            st.plotly_chart(style_layout(fig, 400, legend="bottom"), width="stretch")
             st.caption("\U0001F4A1 Bigger bars = more posts, jobs, and content found from that competitor this period.")
     with cc2:
         if not channel_df.empty:
-            fig = px.pie(channel_df, names="Channel", values="Total activity (May+June 2026)", hole=0.45,
+            fig = px.pie(channel_df, names="Channel", values="Total activity (May+June 2026)", hole=0.5,
                          color_discrete_sequence=CATEGORICAL_PALETTE, title="Where is the activity happening?")
-            fig.update_traces(textinfo="percent+label", textfont_size=11)
-            st.plotly_chart(style_layout(fig, 360), width="stretch")
+            fig.update_traces(textinfo="percent", textfont_size=11)
+            st.plotly_chart(style_layout(fig, 400, legend="right"), width="stretch")
             st.caption("\U0001F4A1 Shows which channel (LinkedIn, Instagram, etc.) competitors are using most.")
 
     cc3, cc4 = st.columns(2)
     with cc3:
         if not theme_freq.empty:
             tf = theme_freq[theme_freq["Theme"] != "General brand activity"].sort_values("Frequency", ascending=True).tail(8)
-            fig = px.bar(tf, x="Frequency", y="Theme", orientation="h", text="Frequency",
-                         color_discrete_sequence=[ATLAS_BLUE], title="What are competitors talking about?")
+            tf = highlight_leader(tf, "Frequency")
+            fig = px.bar(tf, x="Frequency", y="Theme", orientation="h", text="Frequency", color="_Highlight",
+                         color_discrete_map={"Leading": ATLAS_BLUE, "Other": NEUTRAL_BAR},
+                         title="What are competitors talking about?")
             fig.update_yaxes(title="")
-            fig.update_traces(textposition="outside")
-            st.plotly_chart(style_layout(fig, 360), width="stretch")
+            fig.update_traces(textposition="outside", cliponaxis=False, textfont=dict(size=11))
+            clean_value_axis(fig, "h")
+            st.plotly_chart(style_layout(fig, 400, legend="none"), width="stretch")
             st.caption("\U0001F4A1 The most common subjects competitors are posting and writing about.")
     with cc4:
         if not conv_sentiment.empty:
-            fig = px.pie(conv_sentiment, names="Sentiment", values="Count", hole=0.45,
+            fig = px.pie(conv_sentiment, names="Sentiment", values="Count", hole=0.5,
                          color="Sentiment", color_discrete_map=SENTIMENT_COLORS, title="How is the market reacting?")
-            fig.update_traces(textinfo="percent+label", textfont_size=11)
-            st.plotly_chart(style_layout(fig, 360), width="stretch")
+            fig.update_traces(textinfo="percent", textfont_size=11)
+            st.plotly_chart(style_layout(fig, 400, legend="right"), width="stretch")
             st.caption("\U0001F4A1 Tone of comments and posts mentioning brands in the category - mostly neutral-to-positive is a healthy sign.")
 
     # ---- Signals snapshot: smaller data points, compact cards --------------
@@ -509,10 +617,11 @@ with tabs[1]:
         view = overview.sort_values("Total activity", ascending=False)
 
         fig = px.bar(view, x="Competitor", y="Total activity", color="Overall activity level", text="Total activity",
-                     color_discrete_map={"High": ATLAS_BLUE, "Medium": ACCENT_AMBER, "Low": "#C7CDD4"},
+                     color_discrete_map={"High": ATLAS_BLUE, "Medium": ACCENT_AMBER, "Low": NEUTRAL_BAR},
                      title="Total activity by competitor")
-        fig.update_traces(textposition="outside")
-        st.plotly_chart(style_layout(fig), width="stretch")
+        fig.update_traces(textposition="outside", cliponaxis=False, textfont=dict(size=11))
+        clean_value_axis(fig, "v")
+        st.plotly_chart(style_layout(fig, legend="bottom"), width="stretch")
 
         leader = view.iloc[0]
         n_high = (view["Overall activity level"] == "High").sum()
@@ -544,18 +653,25 @@ with tabs[2]:
     with c1:
         if not info_if_empty(channel_df, "channel activity"):
             cd_sorted = channel_df.sort_values("Total activity (May+June 2026)", ascending=True)
+            cd_sorted = highlight_leader(cd_sorted, "Total activity (May+June 2026)")
             fig = px.bar(cd_sorted, x="Total activity (May+June 2026)", y="Channel", orientation="h",
-                         text="Total activity (May+June 2026)",
-                         color_discrete_sequence=[ATLAS_BLUE], title="Activity by channel")
-            fig.update_traces(textposition="outside")
-            st.plotly_chart(style_layout(fig), width="stretch")
+                         text="Total activity (May+June 2026)", color="_Highlight",
+                         color_discrete_map={"Leading": ATLAS_BLUE, "Other": NEUTRAL_BAR}, title="Activity by channel")
+            fig.update_yaxes(title="")
+            fig.update_traces(textposition="outside", cliponaxis=False, textfont=dict(size=11))
+            clean_value_axis(fig, "h")
+            st.plotly_chart(style_layout(fig, legend="none"), width="stretch")
     with c2:
         if not info_if_empty(overview, "competitor activity"):
             ov_sorted = overview.sort_values("Total activity", ascending=True)
+            ov_sorted = highlight_leader(ov_sorted, "Total activity")
             fig = px.bar(ov_sorted, x="Total activity", y="Competitor", orientation="h", text="Total activity",
-                         color_discrete_sequence=[ATLAS_BLUE_DARK], title="Activity by competitor")
-            fig.update_traces(textposition="outside")
-            st.plotly_chart(style_layout(fig), width="stretch")
+                         color="_Highlight", color_discrete_map={"Leading": ATLAS_BLUE_DARK, "Other": NEUTRAL_BAR},
+                         title="Activity by competitor")
+            fig.update_yaxes(title="")
+            fig.update_traces(textposition="outside", cliponaxis=False, textfont=dict(size=11))
+            clean_value_axis(fig, "h")
+            st.plotly_chart(style_layout(fig, legend="none"), width="stretch")
 
     if not channel_df.empty:
         cd_sorted = channel_df.sort_values("Total activity (May+June 2026)", ascending=False).reset_index(drop=True)
@@ -578,7 +694,7 @@ with tabs[2]:
         long = long[long["Count"] > 0]
         fig = px.bar(long, x="Competitor", y="Count", color="Channel", barmode="stack",
                      color_discrete_sequence=CATEGORICAL_PALETTE, title="Channel mix per competitor")
-        st.plotly_chart(style_layout(fig), width="stretch")
+        st.plotly_chart(style_layout(fig, legend="bottom"), width="stretch")
         with st.expander("View full competitor x channel table"):
             st.dataframe(comp_x_chan, width="stretch", hide_index=True)
 
@@ -593,7 +709,7 @@ with tabs[2]:
             fig = px.bar(long, x="Channel", y="Count", color="Month", barmode="group",
                          color_discrete_map={"May 2026": "#9AA5B1", "June 2026": ATLAS_BLUE},
                          title="Channel activity: May 2026 vs June 2026")
-            st.plotly_chart(style_layout(fig), width="stretch")
+            st.plotly_chart(style_layout(fig, legend="bottom"), width="stretch")
         st.caption("May 2026 data is limited to items with a verified publish date; many competitor channels had little "
                     "to no reliably-dated May content in the source data, so May counts may understate true May activity.")
 
@@ -607,10 +723,12 @@ with tabs[3]:
 
     if not info_if_empty(theme_freq, "themes"):
         tf_named = theme_freq[theme_freq["Theme"] != "General brand activity"]
-        fig = px.bar(tf_named.sort_values("Frequency", ascending=True), x="Frequency", y="Theme", text="Frequency",
-                     orientation="h", color_discrete_sequence=[ATLAS_BLUE], title="Top themes by frequency")
-        fig.update_traces(textposition="outside")
-        st.plotly_chart(style_layout(fig), width="stretch")
+        tf_sorted = highlight_leader(tf_named.sort_values("Frequency", ascending=True), "Frequency")
+        fig = px.bar(tf_sorted, x="Frequency", y="Theme", text="Frequency", orientation="h", color="_Highlight",
+                     color_discrete_map={"Leading": ATLAS_BLUE, "Other": NEUTRAL_BAR}, title="Top themes by frequency")
+        fig.update_traces(textposition="outside", cliponaxis=False, textfont=dict(size=11))
+        clean_value_axis(fig, "h")
+        st.plotly_chart(style_layout(fig, legend="none"), width="stretch")
 
         if not tf_named.empty:
             total_named = tf_named["Frequency"].sum()
@@ -638,7 +756,7 @@ with tabs[3]:
             fig = px.imshow(heat, color_continuous_scale=[WHITE, ATLAS_BLUE], aspect="auto",
                              labels=dict(color="Count"), text_auto=True)
             fig.update_layout(margin=dict(l=10, r=10, t=10, b=10))
-            st.plotly_chart(style_layout(fig), width="stretch")
+            st.plotly_chart(style_layout(fig, legend="none"), width="stretch")
     with c2:
         st.markdown("**Themes by channel**")
         if not info_if_empty(theme_by_chan, "themes by channel"):
@@ -647,7 +765,7 @@ with tabs[3]:
             fig = px.imshow(heat, color_continuous_scale=[WHITE, ATLAS_BLUE_DARK], aspect="auto",
                              labels=dict(color="Count"), text_auto=True)
             fig.update_layout(margin=dict(l=10, r=10, t=10, b=10))
-            st.plotly_chart(style_layout(fig), width="stretch")
+            st.plotly_chart(style_layout(fig, legend="none"), width="stretch")
 
     st.markdown("**Theme trend: May vs June 2026**")
     if not info_if_empty(theme_trend, "theme trend"):
@@ -657,7 +775,7 @@ with tabs[3]:
         fig = px.bar(long, x="Theme", y="Count", color="Month", barmode="group",
                      color_discrete_map={"May 2026": "#9AA5B1", "June 2026": ATLAS_BLUE})
         fig.update_xaxes(tickangle=35)
-        st.plotly_chart(style_layout(fig), width="stretch")
+        st.plotly_chart(style_layout(fig, legend="bottom"), width="stretch")
 
     with st.expander("View theme-by-competitor and theme-by-channel tables"):
         st.dataframe(theme_by_comp, width="stretch", hide_index=True)
@@ -674,11 +792,14 @@ with tabs[4]:
         view = product_signals.copy()
 
         cat_counts = view.groupby("Product/service category").size().reset_index(name="Count")
-        fig = px.bar(cat_counts.sort_values("Count"), x="Count", y="Product/service category", orientation="h",
-                     text="Count", color_discrete_sequence=[ATLAS_BLUE], title="Signals by product/service category")
+        cat_counts = highlight_leader(cat_counts.sort_values("Count"), "Count")
+        fig = px.bar(cat_counts, x="Count", y="Product/service category", orientation="h",
+                     text="Count", color="_Highlight", color_discrete_map={"Leading": ATLAS_BLUE, "Other": NEUTRAL_BAR},
+                     title="Signals by product/service category")
         fig.update_yaxes(title="")
-        fig.update_traces(textposition="outside")
-        st.plotly_chart(style_layout(fig), width="stretch")
+        fig.update_traces(textposition="outside", cliponaxis=False, textfont=dict(size=11))
+        clean_value_axis(fig, "h")
+        st.plotly_chart(style_layout(fig, legend="none"), width="stretch")
 
         top_cat = cat_counts.sort_values("Count", ascending=False).iloc[0]
         no_dedicated_pages = channel_df.empty or "New product/service pages" not in channel_df["Channel"].values or \
@@ -715,26 +836,30 @@ with tabs[5]:
     with c1:
         st.markdown("**Top conversation themes**")
         if not info_if_empty(conv_top_themes, "conversation themes"):
-            fig = px.bar(conv_top_themes.sort_values("Count"), x="Count", y="Theme", orientation="h", text="Count",
-                         color_discrete_sequence=[ATLAS_BLUE])
+            ctt = highlight_leader(conv_top_themes.sort_values("Count"), "Count")
+            fig = px.bar(ctt, x="Count", y="Theme", orientation="h", text="Count", color="_Highlight",
+                         color_discrete_map={"Leading": ATLAS_BLUE, "Other": NEUTRAL_BAR})
             fig.update_yaxes(title="")
-            fig.update_traces(textposition="outside")
-            st.plotly_chart(style_layout(fig, 360), width="stretch")
+            fig.update_traces(textposition="outside", cliponaxis=False, textfont=dict(size=11))
+            clean_value_axis(fig, "h")
+            st.plotly_chart(style_layout(fig, 360, legend="none"), width="stretch")
     with c2:
         st.markdown("**Sentiment split**")
         if not info_if_empty(conv_sentiment, "sentiment split"):
-            fig = px.pie(conv_sentiment, names="Sentiment", values="Count", hole=0.45,
+            fig = px.pie(conv_sentiment, names="Sentiment", values="Count", hole=0.5,
                          color="Sentiment", color_discrete_map=SENTIMENT_COLORS)
-            fig.update_traces(textinfo="percent+label", textfont_size=11)
-            st.plotly_chart(style_layout(fig, 360), width="stretch")
+            fig.update_traces(textinfo="percent", textfont_size=11)
+            st.plotly_chart(style_layout(fig, 360, legend="right"), width="stretch")
     with c3:
         st.markdown("**Most-mentioned brands**")
         if not info_if_empty(brand_mentions, "brand mentions"):
-            fig = px.bar(brand_mentions.sort_values("Mentions").tail(10), x="Mentions", y="Brand", orientation="h",
-                         text="Mentions", color_discrete_sequence=[ATLAS_BLUE_DARK])
+            bm10 = highlight_leader(brand_mentions.sort_values("Mentions").tail(10), "Mentions")
+            fig = px.bar(bm10, x="Mentions", y="Brand", orientation="h", text="Mentions", color="_Highlight",
+                         color_discrete_map={"Leading": ATLAS_BLUE_DARK, "Other": NEUTRAL_BAR})
             fig.update_yaxes(title="")
-            fig.update_traces(textposition="outside")
-            st.plotly_chart(style_layout(fig, 360), width="stretch")
+            fig.update_traces(textposition="outside", cliponaxis=False, textfont=dict(size=11))
+            clean_value_axis(fig, "h")
+            st.plotly_chart(style_layout(fig, 360, legend="none"), width="stretch")
 
     if not conv_sentiment.empty:
         total_sent = conv_sentiment["Count"].sum()
@@ -792,7 +917,7 @@ with tabs[6]:
         fig = px.bar(view.groupby(["Competitor", "Source channel"]).size().reset_index(name="Count"),
                      x="Competitor", y="Count", color="Source channel", barmode="stack",
                      color_discrete_sequence=CATEGORICAL_PALETTE, title="Confirmed items by competitor and channel")
-        st.plotly_chart(style_layout(fig), width="stretch")
+        st.plotly_chart(style_layout(fig, legend="bottom"), width="stretch")
 
         st.dataframe(
             view[["Competitor", "Source channel", "Type", "Title", "Date", "Month", "URL", "Theme",
@@ -817,15 +942,17 @@ with tabs[7]:
             fig = px.bar(hiring.groupby(["Competitor", "Signal type"]).size().reset_index(name="Count"),
                          x="Competitor", y="Count", color="Signal type",
                          color_discrete_sequence=[ATLAS_BLUE, ACCENT_AMBER], barmode="stack")
-            st.plotly_chart(style_layout(fig), width="stretch")
+            st.plotly_chart(style_layout(fig, legend="bottom"), width="stretch")
         with c2:
             st.markdown("**Where signals point geographically**")
             loc_counts = hiring["Location (HQ)"].replace("", "Not specified").value_counts().reset_index()
             loc_counts.columns = ["Location", "Count"]
-            fig = px.bar(loc_counts.sort_values("Count"), x="Count", y="Location", orientation="h", text="Count",
-                         color_discrete_sequence=[ATLAS_BLUE_DARK])
-            fig.update_traces(textposition="outside")
-            st.plotly_chart(style_layout(fig), width="stretch")
+            loc_counts = highlight_leader(loc_counts.sort_values("Count"), "Count")
+            fig = px.bar(loc_counts, x="Count", y="Location", orientation="h", text="Count", color="_Highlight",
+                         color_discrete_map={"Leading": ATLAS_BLUE_DARK, "Other": NEUTRAL_BAR})
+            fig.update_traces(textposition="outside", cliponaxis=False, textfont=dict(size=11))
+            clean_value_axis(fig, "h")
+            st.plotly_chart(style_layout(fig, legend="none"), width="stretch")
 
         hc = hiring["Competitor"].value_counts()
         insight(
@@ -861,14 +988,16 @@ with tabs[8]:
             prio_counts = view.groupby("Priority").size().reindex(["High", "Medium", "Low"]).dropna().reset_index(name="Count")
             fig = px.bar(prio_counts, x="Priority", y="Count", text="Count", color="Priority", color_discrete_map=PRIORITY_COLORS,
                          title="How many opportunities, by priority?")
-            fig.update_traces(textposition="outside")
-            st.plotly_chart(style_layout(fig, 320), width="stretch")
+            fig.update_traces(textposition="outside", cliponaxis=False, textfont=dict(size=11))
+            clean_value_axis(fig, "v")
+            st.plotly_chart(style_layout(fig, 320, legend="none"), width="stretch")
         with cc2:
             conf_counts = view.groupby("Confidence").size().reindex(["High", "Medium", "Low"]).dropna().reset_index(name="Count")
             fig2 = px.bar(conf_counts, x="Confidence", y="Count", text="Count", color="Confidence", color_discrete_map=CONFIDENCE_COLORS,
                           title="How confident are we in the evidence?")
-            fig2.update_traces(textposition="outside")
-            st.plotly_chart(style_layout(fig2, 320), width="stretch")
+            fig2.update_traces(textposition="outside", cliponaxis=False, textfont=dict(size=11))
+            clean_value_axis(fig2, "v")
+            st.plotly_chart(style_layout(fig2, 320, legend="none"), width="stretch")
 
         n_high = (view["Priority"] == "High").sum()
         insight(
