@@ -237,8 +237,58 @@ div[data-testid="stMetricValue"] {{ color: {NAVY}; }}
 .takeaway-item:last-child {{ border-bottom: none; }}
 .takeaway-ic {{ flex: 0 0 auto; font-size: 1rem; line-height: 1.4; }}
 .takeaway-item b {{ color: {ATLAS_BLUE_DARK}; }}
-.kpi-card, .mini-stat, .next-step {{ transition: box-shadow 0.15s ease; }}
-.kpi-card:hover, .mini-stat:hover {{ box-shadow: 0 4px 12px rgba(0,0,0,0.08); }}
+.kpi-card, .mini-stat, .next-step, .theme-rank-card, .opp-card {{ transition: box-shadow 0.15s ease; }}
+.kpi-card:hover, .mini-stat:hover, .theme-rank-card:hover, .opp-card:hover {{ box-shadow: 0 4px 12px rgba(0,0,0,0.08); }}
+.theme-rank-card {{
+    background-color: {WHITE};
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 14px 16px;
+    height: 100%;
+}}
+.theme-rank-top {{ display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }}
+.theme-rank-badge {{
+    width: 24px; height: 24px; border-radius: 50%;
+    background: {ATLAS_BLUE}; color: {WHITE};
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.74rem; font-weight: 800; flex: 0 0 auto;
+}}
+.theme-rank-name {{ color: {NAVY}; font-size: 0.88rem; font-weight: 700; }}
+.theme-rank-pct {{ color: {ATLAS_BLUE_DARK}; font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; }}
+.theme-rank-track {{ background: {GRAY_LIGHT}; border-radius: 6px; height: 8px; overflow: hidden; }}
+.theme-rank-fill {{ background: linear-gradient(90deg, {ATLAS_BLUE} 0%, {ATLAS_BLUE_DARK} 100%); height: 100%; border-radius: 6px; }}
+.opp-card {{
+    background-color: {WHITE};
+    border: 1px solid #E2E8F0;
+    border-top: 4px solid {ATLAS_BLUE};
+    border-radius: 10px;
+    padding: 14px 16px;
+    height: 100%;
+    font-size: 0.88rem;
+    color: {NAVY};
+    line-height: 1.4;
+}}
+.opp-card-title {{ font-weight: 700; }}
+.action-card {{
+    display: flex; gap: 14px; align-items: flex-start;
+    background-color: {WHITE};
+    border: 1px solid #E2E8F0;
+    border-left: 4px solid {ATLAS_BLUE};
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 10px;
+    transition: box-shadow 0.15s ease;
+}}
+.action-card:hover {{ box-shadow: 0 4px 12px rgba(0,0,0,0.08); }}
+.action-num {{
+    flex: 0 0 auto;
+    width: 28px; height: 28px; border-radius: 50%;
+    background: {NAVY}; color: {WHITE};
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 0.88rem; margin-top: 1px;
+}}
+.action-title {{ color: {NAVY}; font-size: 0.92rem; font-weight: 700; margin-bottom: 4px; line-height: 1.4; }}
+.action-why {{ color: {GRAY}; font-size: 0.84rem; line-height: 1.5; margin-bottom: 6px; }}
 </style>
 """, unsafe_allow_html=True)
 
@@ -595,7 +645,7 @@ MENTION_TYPE_BUCKETS = [
     ("Posts mentioning their name", {"LinkedIn posts mentioning competitor names"}, "\U0001F5E3️"),
     ("Market-reaction comments", {"LinkedIn comments (market reaction)"}, "\U0001F4AC"),
     ("Posts mentioning our brand", {"LinkedIn posts mentioning our brand"}, "\U0001F3F7️"),
-    ("Posts mentioning ‘air compressor’", {"LinkedIn posts mentioning 'air compressor'"}, "\U0001F527"),
+    ("Posts mentioning 'air compressor'", {"LinkedIn posts mentioning 'air compressor'"}, "\U0001F527"),
 ]
 MENTION_SOURCE_TYPES = {t for _, types, _ in MENTION_TYPE_BUCKETS for t in types}
 
@@ -1091,32 +1141,63 @@ with tabs[0]:
         our_mentions = int(brand_mentions.loc[brand_mentions["Brand"] == our_brand_name, "Mentions"].iloc[0])
         mini_stat(s4, "Our brand in the conversation", f"{our_brand_name} mentioned {our_mentions} times this period")
 
-    # ---- Key themes to watch, in plain English -----------------------------
+    # ---- Key themes to watch, as ranked share-of-voice cards ---------------
     st.markdown("#### \U0001F3AF Key themes to watch")
     theme_lookup = {}
+    total_themed = 0
     if not theme_freq.empty:
         total_themed = theme_freq.loc[theme_freq["Theme"] != "General brand activity", "Frequency"].sum()
         theme_lookup = dict(zip(theme_freq["Theme"], theme_freq["Frequency"]))
-    tcols = st.columns(3)
-    for i, col in zip((1, 2, 3), tcols):
+    theme_rows = []
+    for i in (1, 2, 3):
         theme_name = exec_metric(f"Top theme #{i}")
-        freq = theme_lookup.get(theme_name)
-        share = f" ({_pct(freq, total_themed)} of themed content)" if freq and theme_lookup else ""
+        theme_rows.append((i, theme_name, theme_lookup.get(theme_name)))
+    top_freq = max((f for _, _, f in theme_rows if f), default=None)
+    tcols = st.columns(3)
+    for (i, theme_name, freq), col in zip(theme_rows, tcols):
+        share = _pct(freq, total_themed) if freq and total_themed else "—"
+        bar_pct = f"{(freq / top_freq * 100):.0f}%" if freq and top_freq else "0%"
         with col:
-            st.markdown(f"<span class='theme-pill'>{theme_name}</span>{share}", unsafe_allow_html=True)
+            st.markdown(
+                f"<div class='theme-rank-card'>"
+                f"<div class='theme-rank-top'><span class='theme-rank-badge'>{i}</span>"
+                f"<span class='theme-rank-name'>{theme_name}</span></div>"
+                f"<div class='theme-rank-pct'>{share}</div>"
+                f"<div class='theme-rank-track'><div class='theme-rank-fill' style='width:{bar_pct};'></div></div>"
+                f"<div class='kpi-sub' style='margin-top:6px;'>of themed content this period</div>"
+                f"</div>",
+                unsafe_allow_html=True,
+            )
 
-    # ---- Top opportunities, as compact cards --------------------------------
+    # ---- Top opportunities, as priority-accented cards ----------------------
+    # Matched back to the full Opportunities sheet (by exact signal text) so the
+    # priority/confidence badges shown here are real classifications already
+    # behind "What to do next" below, not a fabricated rating for this summary.
     st.markdown("#### ⭐ Top opportunities for review")
     ocols = st.columns(3)
     for i, col in zip((1, 2, 3), ocols):
         opp_text = exec_metric(f"Possible opportunity #{i}")
+        match = pd.DataFrame()
+        if not opportunities.empty and opp_text and opp_text != "n/a":
+            match = opportunities[opportunities["Opportunity/Signal"] == opp_text]
+        if not match.empty:
+            r = match.iloc[0]
+            accent = PRIORITY_COLORS.get(r["Priority"], ATLAS_BLUE)
+            p_icon = PRIORITY_ICONS.get(r["Priority"], "⭐")
+            badges = (chip(f"Priority: {r['Priority']}", accent) +
+                      chip(f"Confidence: {r['Confidence']}", CONFIDENCE_COLORS.get(r["Confidence"], GRAY)))
+        else:
+            accent, p_icon, badges = ATLAS_BLUE, "⭐", ""
         with col:
             st.markdown(
-                f"<div class='next-step'>{PRIORITY_ICONS.get('High','⭐')} {opp_text}</div>",
+                f"<div class='opp-card' style='border-top-color:{accent};'>"
+                f"<div class='opp-card-title'>{p_icon} {opp_text}</div>"
+                f"<div style='margin-top:10px;'>{badges}</div>"
+                f"</div>",
                 unsafe_allow_html=True,
             )
 
-    # ---- What to do next: numbered action cards -----------------------------
+    # ---- What to do next: numbered, priority-accented action cards ---------
     st.markdown("#### ✅ What to do next")
     if not opportunities.empty:
         prio_rank = {"High": 0, "Medium": 1, "Low": 2}
@@ -1126,16 +1207,17 @@ with tabs[0]:
         for i, row in top_opps.iterrows():
             teams = [t.strip() for t in str(row["Suggested team to review"]).split(";") if t.strip()]
             team_chips = "".join(chip(t, NAVY) for t in teams)
+            team_html = f"<div style='margin-top:6px;'>{team_chips}</div>" if team_chips else ""
             p_icon = PRIORITY_ICONS.get(row["Priority"], "⭐")
-            with st.container(border=True):
-                ncol1, ncol2 = st.columns([1, 14])
-                with ncol1:
-                    st.markdown(f"##### {i + 1}.")
-                with ncol2:
-                    st.markdown(f"**{p_icon} {row['Opportunity/Signal']}**")
-                    st.caption(row["Why it may matter"])
-                    if team_chips:
-                        st.markdown(team_chips, unsafe_allow_html=True)
+            p_color = PRIORITY_COLORS.get(row["Priority"], ATLAS_BLUE)
+            st.markdown(
+                f"<div class='action-card' style='border-left-color:{p_color};'>"
+                f"<div class='action-num'>{i + 1}</div>"
+                f"<div><div class='action-title'>{p_icon} {row['Opportunity/Signal']}</div>"
+                f"<div class='action-why'>{row['Why it may matter']}</div>"
+                f"{team_html}</div></div>",
+                unsafe_allow_html=True,
+            )
     st.caption("Each top competitor's own tab has the full opportunity detail and evidence behind items related to them.")
 
     st.markdown("---")
