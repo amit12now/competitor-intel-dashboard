@@ -289,6 +289,16 @@ div[data-testid="stMetricValue"] {{ color: {NAVY}; }}
 }}
 .action-title {{ color: {NAVY}; font-size: 0.92rem; font-weight: 700; margin-bottom: 4px; line-height: 1.4; }}
 .action-why {{ color: {GRAY}; font-size: 0.84rem; line-height: 1.5; margin-bottom: 6px; }}
+.card-meta {{
+    display: flex; align-items: center; flex-wrap: wrap; gap: 6px;
+    color: {GRAY}; font-size: 0.78rem; font-weight: 600; margin-top: 8px;
+}}
+.meta-dot {{ width: 7px; height: 7px; border-radius: 50%; display: inline-block; flex: 0 0 auto; }}
+.team-tag {{
+    display: inline-block; font-size: 0.72rem; font-weight: 600;
+    padding: 2px 9px; border-radius: 6px;
+    background: {GRAY_LIGHT}; color: {NAVY}; border: 1px solid #E2E8F0;
+}}
 </style>
 """, unsafe_allow_html=True)
 
@@ -990,13 +1000,12 @@ def render_competitor_profile(name):
     else:
         for _, r in matches.iterrows():
             p_color = PRIORITY_COLORS.get(r["Priority"], GRAY)
-            c_color = CONFIDENCE_COLORS.get(r["Confidence"], GRAY)
-            icon = PRIORITY_ICONS.get(r["Priority"], "⚪")
             with st.container(border=True):
-                st.markdown(f"**{icon} {r['Opportunity/Signal']}**")
+                st.markdown(f"**{r['Opportunity/Signal']}**")
                 st.markdown(
-                    chip(f"Priority: {r['Priority']}", p_color) + chip(f"Confidence: {r['Confidence']}", c_color) +
-                    f"<span style='color:{GRAY};font-size:0.82rem;'> Suggested team: {r['Suggested team to review']}</span>",
+                    f"<div class='card-meta'><span class='meta-dot' style='background:{p_color};'></span>"
+                    f"{r['Priority']} priority &middot; {r['Confidence']} confidence &middot; "
+                    f"Suggested team: {r['Suggested team to review']}</div>",
                     unsafe_allow_html=True,
                 )
                 st.markdown(f"*Why it may matter:* {r['Why it may matter']}")
@@ -1291,16 +1300,15 @@ with tabs[0]:
         if not match.empty:
             r = match.iloc[0]
             accent = PRIORITY_COLORS.get(r["Priority"], ATLAS_BLUE)
-            p_icon = PRIORITY_ICONS.get(r["Priority"], "⭐")
-            badges = (chip(f"Priority: {r['Priority']}", accent) +
-                      chip(f"Confidence: {r['Confidence']}", CONFIDENCE_COLORS.get(r["Confidence"], GRAY)))
+            meta = (f"<div class='card-meta'><span class='meta-dot' style='background:{accent};'></span>"
+                    f"{r['Priority']} priority &middot; {r['Confidence']} confidence</div>")
         else:
-            accent, p_icon, badges = ATLAS_BLUE, "⭐", ""
+            accent, meta = ATLAS_BLUE, ""
         with col:
             st.markdown(
                 f"<div class='opp-card' style='border-top-color:{accent};'>"
-                f"<div class='opp-card-title'>{p_icon} {opp_text}</div>"
-                f"<div style='margin-top:10px;'>{badges}</div>"
+                f"<div class='opp-card-title'>{opp_text}</div>"
+                f"{meta}"
                 f"</div>",
                 unsafe_allow_html=True,
             )
@@ -1314,16 +1322,17 @@ with tabs[0]:
         top_opps = top_opps.sort_values("_r").head(5).reset_index(drop=True)
         for i, row in top_opps.iterrows():
             teams = [t.strip() for t in str(row["Suggested team to review"]).split(";") if t.strip()]
-            team_chips = "".join(chip(t, NAVY) for t in teams)
-            team_html = f"<div style='margin-top:6px;'>{team_chips}</div>" if team_chips else ""
-            p_icon = PRIORITY_ICONS.get(row["Priority"], "⭐")
+            team_html = "".join(f"<span class='team-tag'>{t}</span>" for t in teams)
             p_color = PRIORITY_COLORS.get(row["Priority"], ATLAS_BLUE)
+            meta_html = (f"<span class='meta-dot' style='background:{p_color};'></span>"
+                         f"<span>{row['Priority']} priority</span>{team_html}")
             st.markdown(
                 f"<div class='action-card' style='border-left-color:{p_color};'>"
                 f"<div class='action-num'>{i + 1}</div>"
-                f"<div><div class='action-title'>{p_icon} {row['Opportunity/Signal']}</div>"
+                f"<div><div class='action-title'>{row['Opportunity/Signal']}</div>"
                 f"<div class='action-why'>{row['Why it may matter']}</div>"
-                f"{team_html}</div></div>",
+                f"<div class='card-meta'>{meta_html}</div>"
+                f"</div></div>",
                 unsafe_allow_html=True,
             )
     st.caption("Each top competitor's own tab has the full opportunity detail and evidence behind items related to them.")
@@ -1338,26 +1347,44 @@ with tabs[0]:
         _news_ac = _news_all[_news_all["Competitor"] == "Atlas Copco"]
         _news_comp = _news_all[~_news_all["Competitor"].isin(["Unspecified / General", "Atlas Copco"])]
         _comp_counts = _news_comp["Competitor"].value_counts()
-        _type_counts = _news_all["Type"].value_counts()
-        _top_type = _type_counts.index[0] if not _type_counts.empty else "n/a"
         _no_cov = [c for c in (TOP_COMPETITORS + OTHER_COMPETITORS) if c not in _comp_counts.index]
+        SUBSTANTIVE_TYPES = {"Market expansion", "Product promotion"}
 
-        bits = [
-            f"<b>{len(_news_all)} Google News articles</b> matched the air-compressor category this period "
-            f"({settings.get('Baseline_Month', 'May 2026')}\u2013{settings.get('Report_Month', 'June 2026')}). "
-            f"<b>{len(_news_general)}</b> were general industry/market coverage with no single tracked brand named, "
-            f"<b>{len(_news_ac)}</b> mentioned Atlas Copco, and <b>{len(_news_comp)}</b> named a tracked competitor."
-        ]
+        bits = []
         if not _comp_counts.empty:
-            comp_phrase = "; ".join(f"{c} ({n})" for c, n in _comp_counts.items())
-            bits.append(f"Competitor-specific coverage this period: {comp_phrase}.")
+            _volume_leader = _comp_counts.index[0]
+            _vl_df = _news_comp[_news_comp["Competitor"] == _volume_leader]
+            _vl_n = len(_vl_df)
+            _vl_share = (_vl_df["Type"].isin(SUBSTANTIVE_TYPES).sum() / _vl_n * 100) if _vl_n else 0
+            _ac_n = len(_news_ac)
+            _ac_share = (_news_ac["Type"].isin(SUBSTANTIVE_TYPES).sum() / _ac_n * 100) if _ac_n else None
+            if _ac_share is not None and _vl_share < _ac_share:
+                bits.append(
+                    f"<b>{_volume_leader}</b> generated the most competitor-specific News volume this period "
+                    f"({_vl_n} articles), but only <b>{_vl_share:.0f}%</b> of it was a genuine product launch or "
+                    f"business move — the rest reads as routine market or stock-analyst commentary. Atlas "
+                    f"Copco's own News coverage was smaller in volume ({_ac_n} articles) but <b>{_ac_share:.0f}%</b> "
+                    f"substantive (acquisitions, a product launch), so raw article counts alone overstate how much "
+                    f"{_volume_leader} actually moved this period."
+                )
+            else:
+                _share_txt = (f", {_vl_share:.0f}% of it a genuine launch or business move"
+                              if _vl_n else "")
+                bits.append(
+                    f"<b>{_volume_leader}</b> led competitor-specific News volume this period with {_vl_n} "
+                    f"articles{_share_txt}."
+                )
+        else:
+            bits.append(
+                f"All {len(_news_all)} Google News articles this period were general industry/market coverage or "
+                f"about Atlas Copco — none named another tracked competitor."
+            )
         if _no_cov:
-            bits.append(f"No confirmed news coverage found for: {', '.join(_no_cov)}.")
-        bits.append(
-            f"Most articles read as routine brand-visibility coverage "
-            f"({_pct(_type_counts.get(_top_type, 0), len(_news_all))} of all articles), rather than major "
-            f"product or market announcements."
-        )
+            bits.append(
+                f"No Google News coverage at all surfaced this period for: {', '.join(_no_cov)} — worth a "
+                f"sanity check with the PR team, since this could be a real visibility gap or just outside what a "
+                f"keyword-based news scrape catches."
+            )
         insight(" ".join(bits))
 
         with st.expander(f"See all {len(_news_all)} Google News articles tracked this period"):
@@ -1366,6 +1393,10 @@ with tabs[0]:
                 width="stretch", hide_index=True,
                 column_config={"URL": st.column_config.LinkColumn("URL")},
             )
+        _recap = f"{len(_news_all)} articles total this period — {len(_news_general)} general industry/market coverage, {len(_news_ac)} mentioned Atlas Copco, {len(_news_comp)} named a tracked competitor"
+        if not _comp_counts.empty:
+            _recap += " (" + "; ".join(f"{c} {n}" for c, n in _comp_counts.items()) + ")"
+        st.caption(_recap + ".")
         st.caption("Some keyword-bucket matches (e.g. homonym/local-interest results for \"Gardner Denver\" and "
                    "\"Quincy Compressor\" search terms) were manually reviewed and excluded as false positives. "
                    "See the Settings sheet for full methodology notes.")
