@@ -221,6 +221,24 @@ div[data-testid="stMetricValue"] {{ color: {NAVY}; }}
     font-size: 0.74rem; font-weight: 700;
 }}
 .post-meaning {{ color: {GRAY}; font-size: 0.82rem; }}
+.section-hint {{ color: {GRAY}; font-size: 0.78rem; font-weight: 400; margin-left: 4px; }}
+.takeaway-box {{
+    background-color: {WHITE};
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 4px 18px;
+    margin-bottom: 18px;
+}}
+.takeaway-item {{
+    display: flex; gap: 10px; align-items: flex-start;
+    padding: 11px 0; border-bottom: 1px solid {GRAY_LIGHT};
+    font-size: 0.88rem; color: {NAVY}; line-height: 1.5;
+}}
+.takeaway-item:last-child {{ border-bottom: none; }}
+.takeaway-ic {{ flex: 0 0 auto; font-size: 1rem; line-height: 1.4; }}
+.takeaway-item b {{ color: {ATLAS_BLUE_DARK}; }}
+.kpi-card, .mini-stat, .next-step {{ transition: box-shadow 0.15s ease; }}
+.kpi-card:hover, .mini-stat:hover {{ box-shadow: 0 4px 12px rgba(0,0,0,0.08); }}
 </style>
 """, unsafe_allow_html=True)
 
@@ -599,6 +617,121 @@ def render_post_section(posts_df, limit=4, cols=2):
                 render_post_card(p)
 
 
+def _theme_color_map(theme_series):
+    """Stable theme -> brand-palette color mapping, ordered by how often each
+    theme appears (most-frequent theme gets the first palette color), so the
+    same theme keeps the same color across the engagement-over-time, by-theme,
+    and posting-mix charts below - a visual thread tying the three together."""
+    order = theme_series.value_counts().index.tolist()
+    return {t: CATEGORICAL_PALETTE[i % len(CATEGORICAL_PALETTE)] for i, t in enumerate(order)}
+
+
+def render_engagement_section(name, owned_posts):
+    """Premium 'content performance' block for a competitor's OWN posts only
+    (not third-party mentions) - engagement over time, engagement by theme,
+    posting mix by theme, and a sentiment mix. Built entirely from the real
+    Engagement/Theme/Sentiment/Date columns already in Clean_Raw_Data. We do
+    NOT fabricate a reaction-type breakdown (Like/Praise/Empathy counts) since
+    the scraped data doesn't contain one - sentiment classification is the
+    closest real signal we have, so that's what powers the fourth chart."""
+    if owned_posts.empty:
+        return
+    d = owned_posts.copy()
+    d["Engagement"] = pd.to_numeric(d["Engagement"], errors="coerce")
+    d["_dt"] = pd.to_datetime(d["Date"], errors="coerce")
+    d = d.dropna(subset=["Engagement", "_dt"]).sort_values("_dt")
+    if d.empty:
+        return
+
+    theme_colors = _theme_color_map(d["Theme"])
+
+    st.markdown(
+        "##### \U0001F4C8 Engagement & content performance"
+        f"<span class='section-hint'>· {name}'s own posts only, not third-party mentions</span>",
+        unsafe_allow_html=True,
+    )
+
+    total_posts = len(d)
+    avg_eng = d["Engagement"].mean()
+    days_span = max((d["_dt"].max() - d["_dt"].min()).days, 1)
+    cadence = total_posts / (days_span / 7)
+    best = d.loc[d["Engagement"].idxmax()]
+
+    e1, e2, e3, e4 = st.columns(4)
+    kpi_card(e1, "\U0001F4C5", "Posts in window", total_posts, f"{cadence:.1f} posts / week")
+    kpi_card(e2, "\U0001F525", "Avg engagement / post", f"{avg_eng:,.0f}")
+    kpi_card(e3, "\U0001F3C6", "Top post engagement", f"{int(best['Engagement']):,}",
+             best["_dt"].strftime("%b %d, %Y"))
+    kpi_card(e4, "\U0001F4AC", "Total engagement", f"{int(d['Engagement'].sum()):,}")
+    st.write("")
+
+    g1, g2 = st.columns(2)
+    with g1:
+        fig = go.Figure(go.Scatter(
+            x=d["_dt"], y=d["Engagement"], mode="lines+markers",
+            line=dict(color=ATLAS_BLUE, width=2), fill="tozeroy", fillcolor="rgba(0,153,204,0.12)",
+            marker=dict(size=9, color=[theme_colors.get(t, GRAY) for t in d["Theme"]],
+                        line=dict(width=1, color=WHITE)),
+            customdata=d["Theme"].values,
+            hovertemplate="%{x|%b %d, %Y}<br>Engagement: %{y}<br>Theme: %{customdata}<extra></extra>",
+        ))
+        fig.update_layout(title="Engagement over time")
+        fig.update_xaxes(showgrid=False)
+        fig.update_yaxes(showgrid=True, gridcolor="#EEF1F4", zeroline=False, rangemode="tozero")
+        st.plotly_chart(style_layout(fig, 340, legend="none"), width="stretch")
+        st.caption("\U0001F4A1 Dot color = content theme; hover a point for that post's date and theme.")
+    with g2:
+        theme_avg = d.groupby("Theme")["Engagement"].mean().sort_values(ascending=True)
+        tdf = pd.DataFrame({"Theme": theme_avg.index, "Avg engagement": theme_avg.values})
+        fig = px.bar(tdf, x="Avg engagement", y="Theme", orientation="h", text="Avg engagement",
+                     color="Theme", color_discrete_map=theme_colors, title="Engagement by content theme")
+        fig.update_yaxes(title="")
+        fig.update_traces(textposition="outside", cliponaxis=False, texttemplate="%{text:.0f}")
+        clean_value_axis(fig, "h")
+        st.plotly_chart(style_layout(fig, 340, legend="none"), width="stretch")
+        st.caption("\U0001F4A1 Average engagement per post, by theme - what resonates, not just what's posted most.")
+
+    g3, g4 = st.columns(2)
+    with g3:
+        mix = d["Theme"].value_counts()
+        fig = px.pie(names=mix.index, values=mix.values, hole=0.5,
+                     color=mix.index, color_discrete_map=theme_colors, title="Posting mix by theme")
+        fig.update_traces(textinfo="percent", textfont_size=11)
+        st.plotly_chart(style_layout(fig, 340, legend="right"), width="stretch")
+        st.caption("\U0001F4A1 Share of their own posts by theme - what they choose to post about.")
+    with g4:
+        sent_counts = d["Sentiment"].value_counts()
+        sent_order = [s for s in ["Positive", "Neutral", "Mixed", "Negative"] if s in sent_counts.index]
+        sdf = pd.DataFrame({"Sentiment": sent_order, "Posts": [sent_counts[s] for s in sent_order]})
+        fig = px.bar(sdf, x="Sentiment", y="Posts", text="Posts", color="Sentiment",
+                     color_discrete_map=SENTIMENT_COLORS, title="Sentiment mix")
+        fig.update_traces(textposition="outside", cliponaxis=False)
+        fig.update_xaxes(title="")
+        clean_value_axis(fig, "v")
+        st.plotly_chart(style_layout(fig, 340, legend="none"), width="stretch")
+        st.caption("\U0001F4A1 Sentiment we classified on their own posts (LinkedIn doesn't expose a public "
+                   "reaction-type breakdown, so we use our sentiment read instead of guessing one).")
+
+    most_posted_theme = d["Theme"].value_counts().idxmax()
+    best_avg_theme = d.groupby("Theme")["Engagement"].mean().idxmax()
+    pos_share = _pct((d["Sentiment"] == "Positive").sum(), len(d))
+    same_theme = best_avg_theme == most_posted_theme
+    takeaways = [
+        ("\U0001F3C6", f"Their single best-performing post ({int(best['Engagement']):,} engagement, "
+                        f"{best['_dt'].strftime('%b %d, %Y')}) was a <b>{_safe(best['Theme'])}</b> post."),
+        ("\U0001F4CA", f"<b>{best_avg_theme}</b> drives the most engagement per post on average" +
+                        (", and it's also their most-posted theme." if same_theme else
+                         f", even though <b>{most_posted_theme}</b> is what they post about most.")),
+        ("\U0001F642", f"{pos_share} of their own posts this period read as positive in tone."),
+        ("\U0001F4C5", f"Posting cadence is steady at ~{cadence:.1f} posts/week over the window covered."),
+    ]
+    st.markdown("<div class='takeaway-box'>" + "".join(
+        f"<div class='takeaway-item'><span class='takeaway-ic'>{ic}</span><span>{txt}</span></div>"
+        for ic, txt in takeaways
+    ) + "</div>", unsafe_allow_html=True)
+    st.write("")
+
+
 def render_competitor_profile(name):
     row = _competitor_row(name)
     if row is None:
@@ -662,6 +795,13 @@ def render_competitor_profile(name):
                 pills = "".join(f"<span class='theme-pill'>{t} · {int(c)}</span>" for t, c in tvals.items())
                 st.markdown(pills, unsafe_allow_html=True)
 
+    st.write("")
+    owned_for_chart = pd.DataFrame()
+    if not raw_data.empty:
+        _comp_posts = raw_data[(raw_data["Competitor"] == name) & (raw_data["Channel"] != "Jobs")]
+        owned_for_chart = _comp_posts[_comp_posts["Source type"].isin(OWNED_SOURCE_TYPES)]
+    render_engagement_section(name, owned_for_chart)
+
     st.markdown("##### Hiring & expansion signals")
     h = hiring[hiring["Competitor"] == name] if not hiring.empty else pd.DataFrame()
     if info_if_empty(h, f"hiring & expansion at {name}"):
@@ -719,7 +859,11 @@ def render_competitor_profile(name):
                 with st.expander("Evidence"):
                     st.write(r["Evidence"])
 
-    st.markdown("##### Recent posts & signals")
+    st.markdown(
+        "##### Recent posts & signals"
+        "<span class='section-hint'>· their own channels, plus third-party mentions</span>",
+        unsafe_allow_html=True,
+    )
     all_posts = raw_data[raw_data["Competitor"] == name].copy() if not raw_data.empty else pd.DataFrame()
     all_posts = all_posts[all_posts["Channel"] != "Jobs"] if not all_posts.empty else all_posts
     if all_posts.empty:
