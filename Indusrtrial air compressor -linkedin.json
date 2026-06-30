@@ -1,0 +1,3080 @@
+[{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAEBIrO4BHYeUk8oM_PfYpEmH2bgmVg2dXWM,urn:li:activity:7477383773144125440,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAAEBIrO4BHYeUk8oM_PfYpEmH2bgmVg2dXWM",
+    "name": "Muhammad Ubaid Ali",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAAEBIrO4BHYeUk8oM_PfYpEmH2bgmVg2dXWM",
+    "position": "Health Safety Environment Officer @ Deemah Stone | NEBOSH",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/D4D35AQEPWMh3hEJezA/profile-framedphoto-shrink_800_800/B4DZscSk.qLsAg-/0/1765706190978?e=1783353600&v=beta&t=fJwPNITPtHYVX8siCM6X5IwMCtR5DxfTDqV2eUo02gw",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/D4D35AQEPWMh3hEJezA/profile-framedphoto-shrink_800_800/B4DZscSk.qLsAg-/0/1765706190978?e=1783353600&v=beta&t=fJwPNITPtHYVX8siCM6X5IwMCtR5DxfTDqV2eUo02gw",
+      "width": 600,
+      "height": 600
+    }
+  },
+  "postId": "7477383773144125440",
+  "query": {
+    "post": "https://www.linkedin.com/posts/muhammad-khubaib-3225a4171_pressureunits-psi-bar-activity-7477383773144125440-lcj_"
+  }
+},
+{
+  "type": "post",
+  "id": "7477383773144125440",
+  "linkedinUrl": "https://www.linkedin.com/posts/muhammad-khubaib-3225a4171_pressureunits-psi-bar-activity-7477383773144125440-lcj_",
+  "content": "​🔧 PSI vs BAR – Do You Know the Difference?\n​Pressure gauges, air compressors, cylinders, and many industrial systems use pressure units such as PSI and BAR. Understanding the difference is important for every technician, operator, and safety professional.\n​✅ 1 BAR = 14.5 PSI\n✅ 1 PSI = 0.06895 BAR\n​📌 Quick Rule:\n• Divide PSI by 14.5 to get BAR\n• Multiply BAR by 14.5 to get PSI\n​Save this handy guide for future reference and share it with your colleagues who work with compressed air and pressure systems.\n#pressureunits #PSi #BAR #OIlandGas #Chemical",
+  "contentAttributes": [],
+  "author": {
+    "id": "ACoAACjYEsoB3GBT_S-O7ZLi6PcIeNsvj9TeJno",
+    "universalName": null,
+    "publicIdentifier": "muhammad-khubaib-3225a4171",
+    "type": "profile",
+    "name": "Muhammad khubaib",
+    "linkedinUrl": "https://www.linkedin.com/in/muhammad-khubaib-3225a4171?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAACjYEsoB3GBT_S-O7ZLi6PcIeNsvj9TeJno",
+    "info": "Al Khair inochem organic chemical ltd",
+    "website": null,
+    "websiteLabel": null,
+    "avatar": {
+      "url": "https://media.licdn.com/dms/image/v2/D4D35AQEqnTsOgnsDJA/profile-framedphoto-shrink_800_800/B4DZUUswZKHYAo-/0/1739809032202?e=1783353600&v=beta&t=a3MAsAp9JuafTw358wi0MArYuMlSFlnOA3g2saQKYx4",
+      "width": 592,
+      "height": 592
+    },
+    "urn": "685249226"
+  },
+  "postedAt": {
+    "timestamp": 1782747214590,
+    "date": "2026-06-29T15:33:34.590Z",
+    "postedAgoShort": "24m",
+    "postedAgoText": "24 minutes ago • Visible to anyone on or off LinkedIn"
+  },
+  "postImages": [
+    {
+      "url": "https://media.licdn.com/dms/image/v2/D4D22AQGD3hfWmBZf7g/feedshare-image-high-res/B4DZ8UA633IEAY-/0/1782747213769?e=1784160000&v=beta&t=dEGHkVblbWKr2YV-UWSH3SfvXrqsODyaGvXtvEzX6A0",
+      "width": 805,
+      "height": 1024
+    }
+  ],
+  "socialContent": {
+    "hideCommentsCount": false,
+    "hideReactionsCount": false,
+    "hideSocialActivityCounts": false,
+    "hideShareAction": true,
+    "hideSendAction": true,
+    "hideRepostsCount": false,
+    "hideViewsCount": false,
+    "trustInterventionBanner": null,
+    "hideReactAction": false,
+    "hideCommentAction": false,
+    "shareUrl": "https://www.linkedin.com/posts/muhammad-khubaib-3225a4171_pressureunits-psi-bar-activity-7477383773144125440-lcj_?",
+    "showContributionExperience": false,
+    "showSocialDetail": true
+  },
+  "header": {
+    "text": null
+  },
+  "entityId": "7477383773144125440",
+  "shareUrn": "urn:li:share:7477383772007501826",
+  "shareLinkedinUrl": "https://www.linkedin.com/feed/update/urn:li:share:7477383772007501826",
+  "engagement": {
+    "id": "7477383773144125440",
+    "likes": 1,
+    "comments": 0,
+    "shares": 0,
+    "reactions": [
+      {
+        "type": "LIKE",
+        "count": 1
+      }
+    ]
+  },
+  "reactions": [
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAEBIrO4BHYeUk8oM_PfYpEmH2bgmVg2dXWM,urn:li:activity:7477383773144125440,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAAEBIrO4BHYeUk8oM_PfYpEmH2bgmVg2dXWM",
+        "name": "Muhammad Ubaid Ali",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAAEBIrO4BHYeUk8oM_PfYpEmH2bgmVg2dXWM",
+        "position": "Health Safety Environment Officer @ Deemah Stone | NEBOSH",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/D4D35AQEPWMh3hEJezA/profile-framedphoto-shrink_800_800/B4DZscSk.qLsAg-/0/1765706190978?e=1783353600&v=beta&t=fJwPNITPtHYVX8siCM6X5IwMCtR5DxfTDqV2eUo02gw",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/D4D35AQEPWMh3hEJezA/profile-framedphoto-shrink_800_800/B4DZscSk.qLsAg-/0/1765706190978?e=1783353600&v=beta&t=fJwPNITPtHYVX8siCM6X5IwMCtR5DxfTDqV2eUo02gw",
+          "width": 600,
+          "height": 600
+        }
+      },
+      "postId": "7477383773144125440"
+    }
+  ],
+  "reactionIds": [
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAEBIrO4BHYeUk8oM_PfYpEmH2bgmVg2dXWM,urn:li:activity:7477383773144125440,0)"
+  ],
+  "commentIds": [],
+  "query": {
+    "sortBy": "date",
+    "page": 1,
+    "search": "Industrial air compressor",
+    "postedLimit": "month"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAB4eq7UBJYV-U1jlfdes3QLYxCU8B5cStFA,urn:li:ugcPost:7477382887634415618,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAAB4eq7UBJYV-U1jlfdes3QLYxCU8B5cStFA",
+    "name": "Thomas Sessum, MBA",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAAB4eq7UBJYV-U1jlfdes3QLYxCU8B5cStFA",
+    "position": "Automation Business Development and Sales | Adjunct Professor | Boilermaker and Tiger | Dad of 2 | Automotive Enthusiast | Tarantula Keeper",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/C5603AQGl7De1s9huug/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1653754322154?e=1784160000&v=beta&t=PBXu8DS4D9QGnlJiML_dJmWq33vr8amOnL6kghoS8Lk",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/C5603AQGl7De1s9huug/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1653754322154?e=1784160000&v=beta&t=PBXu8DS4D9QGnlJiML_dJmWq33vr8amOnL6kghoS8Lk",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "postId": "7477382888703852544",
+  "query": {
+    "post": "https://www.linkedin.com/posts/industrialcontrols_icd50years-industrialcontrols-partnership-activity-7477382888703852544-maLr"
+  }
+},
+{
+  "type": "post",
+  "id": "7477382888703852544",
+  "linkedinUrl": "https://www.linkedin.com/posts/industrialcontrols_icd50years-industrialcontrols-partnership-activity-7477382888703852544-maLr",
+  "content": "For half a century, Industrial Controls Distributors (ICD) has been at the forefront of automation and control solutions. From 1976 to today, we’ve grown into a trusted partner for industries that demand services and solutions tailored to industry‑specific challenges. This milestone reflects not only our longevity but also the partnerships we’ve built and the expertise we continue to deliver.\n\nContact our expert team for help with:\n\n1. Industrial Automation\n2. Combustion Solutions\n3. Instrumentation\n4. Industrial Valves and Actuation\n5. Filtration and Disinfection Solutions\n6. Heat Exchangers and Air Compressors\n7. Engineered Solutions and Services\n\nAs we celebrate 50 years, we look ahead with the same commitment that has defined us since day one which is to advance performance, safety, and long‑term success.\n\n#icd50years #industrialcontrols #partnership #trust #milestone",
+  "contentAttributes": [],
+  "author": {
+    "id": "811882",
+    "universalName": "industrialcontrols",
+    "publicIdentifier": null,
+    "type": "company",
+    "name": "Industrial Controls Distributors",
+    "linkedinUrl": "https://www.linkedin.com/company/industrialcontrols/posts",
+    "info": "3,473 followers",
+    "website": null,
+    "websiteLabel": null,
+    "avatar": {
+      "url": "https://media.licdn.com/dms/image/v2/D4E0BAQFEycRa3uyolA/company-logo_400_400/B4EZ5QA1f0H0AY-/0/1779458857233/industrialcontrols_logo?e=1784160000&v=beta&t=dOXG3mkyVkiYFEO0YY0VnhTp6Agy03V2KrEZ9iWx8II",
+      "width": 400,
+      "height": 400
+    },
+    "urn": "811882"
+  },
+  "postedAt": {
+    "timestamp": 1782747003723,
+    "date": "2026-06-29T15:30:03.723Z",
+    "postedAgoShort": "27m",
+    "postedAgoText": "27 minutes ago • Visible to anyone on or off LinkedIn"
+  },
+  "postImages": [],
+  "postVideo": {
+    "thumbnailUrl": "https://media.licdn.com/dms/image/v2/D4E10AQFGzafFrU7O-g/videocover-low/B4EZ8T_CEMHkAk-/0/1782746721188?e=1783353600&v=beta&t=yDNkOTutFKRj2LDPYtFhRCfJL_-mrupvIQcGxFycu4Y",
+    "videoUrl": "https://dms.licdn.com/playlist/vid/v2/D4E10AQFGzafFrU7O-g/mp4-720p-30fp-crf28/B4EZ8T_CEMHkBk-/0/1782746722260?e=1783353600&v=beta&t=45xQV6R7ZmL8e2tvDG2rdPj6IrdjE1h7vNL28870dS8"
+  },
+  "socialContent": {
+    "hideCommentsCount": false,
+    "hideReactionsCount": false,
+    "hideSocialActivityCounts": false,
+    "hideShareAction": true,
+    "hideSendAction": true,
+    "hideRepostsCount": false,
+    "hideViewsCount": false,
+    "trustInterventionBanner": null,
+    "hideReactAction": false,
+    "hideCommentAction": false,
+    "shareUrl": "https://www.linkedin.com/posts/industrialcontrols_icd50years-industrialcontrols-partnership-activity-7477382888703852544-maLr?",
+    "showContributionExperience": false,
+    "showSocialDetail": true
+  },
+  "header": {
+    "text": null
+  },
+  "entityId": "7477382888703852544",
+  "shareUrn": "urn:li:ugcPost:7477382887634415618",
+  "shareLinkedinUrl": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7477382887634415618",
+  "engagement": {
+    "id": "7477382887634415618",
+    "likes": 1,
+    "comments": 0,
+    "shares": 0,
+    "reactions": [
+      {
+        "type": "LIKE",
+        "count": 1
+      }
+    ]
+  },
+  "reactions": [
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAB4eq7UBJYV-U1jlfdes3QLYxCU8B5cStFA,urn:li:ugcPost:7477382887634415618,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAAB4eq7UBJYV-U1jlfdes3QLYxCU8B5cStFA",
+        "name": "Thomas Sessum, MBA",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAAB4eq7UBJYV-U1jlfdes3QLYxCU8B5cStFA",
+        "position": "Automation Business Development and Sales | Adjunct Professor | Boilermaker and Tiger | Dad of 2 | Automotive Enthusiast | Tarantula Keeper",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/C5603AQGl7De1s9huug/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1653754322154?e=1784160000&v=beta&t=PBXu8DS4D9QGnlJiML_dJmWq33vr8amOnL6kghoS8Lk",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/C5603AQGl7De1s9huug/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1653754322154?e=1784160000&v=beta&t=PBXu8DS4D9QGnlJiML_dJmWq33vr8amOnL6kghoS8Lk",
+          "width": 800,
+          "height": 800
+        }
+      },
+      "postId": "7477382888703852544"
+    }
+  ],
+  "reactionIds": [
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAB4eq7UBJYV-U1jlfdes3QLYxCU8B5cStFA,urn:li:ugcPost:7477382887634415618,0)"
+  ],
+  "commentIds": [],
+  "query": {
+    "sortBy": "date",
+    "page": 1,
+    "search": "Industrial air compressor",
+    "postedLimit": "month"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAGk2hEIBVuAfALQ4-_lH4WaEICsM68IGSD4,urn:li:activity:7477380141002686465,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAAGk2hEIBVuAfALQ4-_lH4WaEICsM68IGSD4",
+    "name": "Eshan Chanaka Herath",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAAGk2hEIBVuAfALQ4-_lH4WaEICsM68IGSD4",
+    "position": "Mechanical Engineering Student at HNDE Galle | AutoCAD & SolidWorks | Seeking Industrial Training Opportunities",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/D5603AQETQVQwnqnA_g/profile-displayphoto-shrink_800_800/B56Z7vnKvOIgAY-/0/1782136483606?e=1784160000&v=beta&t=iQ4QQqB5Kos9dK_Y7jLpNB04NbU_a7qMhYPwpEDGj7k",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/D5603AQETQVQwnqnA_g/profile-displayphoto-shrink_800_800/B56Z7vnKvOIgAY-/0/1782136483606?e=1784160000&v=beta&t=iQ4QQqB5Kos9dK_Y7jLpNB04NbU_a7qMhYPwpEDGj7k",
+      "width": 560,
+      "height": 560
+    }
+  },
+  "postId": "7477380141002686465",
+  "query": {
+    "post": "https://www.linkedin.com/posts/eshan-chanaka-herath-5961a4413_mechanicalengineering-hvac-vrf-activity-7477380141002686465-wA7N"
+  }
+},
+{
+  "type": "post",
+  "id": "7477380141002686465",
+  "linkedinUrl": "https://www.linkedin.com/posts/eshan-chanaka-herath-5961a4413_mechanicalengineering-hvac-vrf-activity-7477380141002686465-wA7N",
+  "content": "Understanding VRF Technology in Modern HVAC Systems! 🏢❄️\n\n​As a Mechanical Engineering student focusing on Refrigeration and Air Conditioning (RAC), I find Variable Refrigerant Flow (VRF) technology fascinating. It is completely transforming how we cool large commercial buildings today.\n​Unlike traditional split systems that need one outdoor unit for every indoor unit, VRF systems are much smarter:\n​⚙️ One-to-Many Connection: A single, powerful outdoor unit can connect to multiple indoor units through a smart piping network.\n📉 Variable Flow Control: Using advanced inverter compressors, the system adjusts the exact flow of refrigerant based on the real-time cooling load of each room. No energy is wasted!\n💡 High Efficiency: This precise control helps buildings reduce energy consumption by up to 30% to 40% compared to conventional AC systems.\n​Learning about VRF and modern HVAC design gets me incredibly excited for my upcoming Industrial Training phase. Ready to work with sustainable engineering solutions! 🙌🔧\n​#MechanicalEngineering #HVAC #VRF #AirConditioning #Refrigeration #EnergyEfficiency #EngineeringStudents #IndustrialTraining #Sustainability",
+  "contentAttributes": [],
+  "author": {
+    "id": "ACoAAGk2hEIBVuAfALQ4-_lH4WaEICsM68IGSD4",
+    "universalName": null,
+    "publicIdentifier": "eshan-chanaka-herath-5961a4413",
+    "type": "profile",
+    "name": "Eshan Chanaka Herath",
+    "linkedinUrl": "https://www.linkedin.com/in/eshan-chanaka-herath-5961a4413?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAGk2hEIBVuAfALQ4-_lH4WaEICsM68IGSD4",
+    "info": "Mechanical Engineering Student at HNDE Galle | AutoCAD & SolidWorks | Seeking Industrial Training Opportunities",
+    "website": null,
+    "websiteLabel": null,
+    "avatar": {
+      "url": "https://media.licdn.com/dms/image/v2/D5603AQETQVQwnqnA_g/profile-displayphoto-shrink_800_800/B56Z7vnKvOIgAY-/0/1782136483606?e=1784160000&v=beta&t=iQ4QQqB5Kos9dK_Y7jLpNB04NbU_a7qMhYPwpEDGj7k",
+      "width": 560,
+      "height": 560
+    },
+    "urn": "1765180482"
+  },
+  "postedAt": {
+    "timestamp": 1782746348620,
+    "date": "2026-06-29T15:19:08.620Z",
+    "postedAgoShort": "38m",
+    "postedAgoText": "38 minutes ago • Visible to anyone on or off LinkedIn"
+  },
+  "postImages": [
+    {
+      "url": "https://media.licdn.com/dms/image/v2/D5622AQGmO2D4rDmrgA/feedshare-image-high-res/B56Z8T9nTBG0AU-/0/1782746347038?e=1784160000&v=beta&t=qCptRieuMHyhxGv_QJ8lOj76i_yfoGCX72QuS2YHhGY",
+      "width": 1536,
+      "height": 1536
+    }
+  ],
+  "socialContent": {
+    "hideCommentsCount": false,
+    "hideReactionsCount": false,
+    "hideSocialActivityCounts": false,
+    "hideShareAction": true,
+    "hideSendAction": true,
+    "hideRepostsCount": false,
+    "hideViewsCount": false,
+    "trustInterventionBanner": null,
+    "hideReactAction": false,
+    "hideCommentAction": false,
+    "shareUrl": "https://www.linkedin.com/posts/eshan-chanaka-herath-5961a4413_mechanicalengineering-hvac-vrf-activity-7477380141002686465-wA7N?",
+    "showContributionExperience": false,
+    "showSocialDetail": true
+  },
+  "header": {
+    "text": null
+  },
+  "entityId": "7477380141002686465",
+  "shareUrn": "urn:li:share:7477380138012209152",
+  "shareLinkedinUrl": "https://www.linkedin.com/feed/update/urn:li:share:7477380138012209152",
+  "engagement": {
+    "id": "7477380141002686465",
+    "likes": 1,
+    "comments": 0,
+    "shares": 0,
+    "reactions": [
+      {
+        "type": "LIKE",
+        "count": 1
+      }
+    ]
+  },
+  "reactions": [
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAGk2hEIBVuAfALQ4-_lH4WaEICsM68IGSD4,urn:li:activity:7477380141002686465,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAAGk2hEIBVuAfALQ4-_lH4WaEICsM68IGSD4",
+        "name": "Eshan Chanaka Herath",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAAGk2hEIBVuAfALQ4-_lH4WaEICsM68IGSD4",
+        "position": "Mechanical Engineering Student at HNDE Galle | AutoCAD & SolidWorks | Seeking Industrial Training Opportunities",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/D5603AQETQVQwnqnA_g/profile-displayphoto-shrink_800_800/B56Z7vnKvOIgAY-/0/1782136483606?e=1784160000&v=beta&t=iQ4QQqB5Kos9dK_Y7jLpNB04NbU_a7qMhYPwpEDGj7k",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/D5603AQETQVQwnqnA_g/profile-displayphoto-shrink_800_800/B56Z7vnKvOIgAY-/0/1782136483606?e=1784160000&v=beta&t=iQ4QQqB5Kos9dK_Y7jLpNB04NbU_a7qMhYPwpEDGj7k",
+          "width": 560,
+          "height": 560
+        }
+      },
+      "postId": "7477380141002686465"
+    }
+  ],
+  "reactionIds": [
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAGk2hEIBVuAfALQ4-_lH4WaEICsM68IGSD4,urn:li:activity:7477380141002686465,0)"
+  ],
+  "commentIds": [],
+  "query": {
+    "sortBy": "date",
+    "page": 1,
+    "search": "Industrial air compressor",
+    "postedLimit": "month"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAFPNWAsBpQEzCIsTqhNAuPjphcoIPsCzPFw,urn:li:ugcPost:7477379595340734465,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAAFPNWAsBpQEzCIsTqhNAuPjphcoIPsCzPFw",
+    "name": "Zahra Adnan",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAAFPNWAsBpQEzCIsTqhNAuPjphcoIPsCzPFw",
+    "position": "Marketing Officer"
+  },
+  "postId": "7477379596397629440",
+  "query": {
+    "post": "https://www.linkedin.com/posts/sidal-company_aircompressor-industerialsolutios-iraq-activity-7477379596397629440-wDLP"
+  }
+},
+{
+  "type": "post",
+  "id": "7477379596397629440",
+  "linkedinUrl": "https://www.linkedin.com/posts/sidal-company_aircompressor-industerialsolutios-iraq-activity-7477379596397629440-wDLP",
+  "content": "توفر سيدال سلسلة IMPETUS أداءً عالياً وكفاءة في استهلاك الطاقة، مع نظام تبريد متطور يضمن تشغيلًا مستقراً واعتمادية عالية في مختلف التطبيقات الصناعية.\n\nالمميزات\n• كفاءة تبريد عالية لضمان أفضل أداء شغيل موثوق حتى 45°م\n•مراوح منخفضة الضوضاء لبيئة عمل أكثر هدوءاً\n\n• تصميم موفر للطاقة بفضل نظام التبريد المحسن\n\nالتطبيقات\n• المصانع وخطوط الإنتاج\n• الصناعات الغذائية والمشروبات\n• صناعة السيارات\n• صناعات البلاستيك والتغليف\n• المنشآت الصناعية العامه\n\nIMPETUS Series—a high-performance oil-injected screw air compressor designed for maximum efficiency, reliable operation, and reduced energy consumption in demanding\nindustrial environments.\n\nAdvantages\n\n•High cooling efficiency for stable performance\n\n•Operates reliably in ambient temperatures up to \n45°C\n\n• Low-noise cooling fans for quieter operation\n\n•Energy-efficient design with optimized cooling \nsystem\n\nApplications\n\n• Manufacturing plants\n\n• Food & Beverage Industry\n\n• Automotive Production\n\n• Plastic & Packaging Industries\n\n• Textile & General Industrial Facilities\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n#aircompressor #industerialsolutios #iraq\nضواغط_هواء_كومبريسرات #عراق#",
+  "contentAttributes": [],
+  "author": {
+    "id": "75634471",
+    "universalName": "sidal-company",
+    "publicIdentifier": null,
+    "type": "company",
+    "name": "Sidal Company",
+    "linkedinUrl": "https://www.linkedin.com/company/sidal-company/posts",
+    "info": "219 followers",
+    "website": null,
+    "websiteLabel": null,
+    "avatar": {
+      "url": "https://media.licdn.com/dms/image/v2/C560BAQE2Jf1Kif9BdQ/company-logo_400_400/company-logo_400_400/0/1631526511504?e=1784160000&v=beta&t=UE6zvHMwLHwe8DGFoA8WV1msJ4jIqT2c_vAeru4MxZI",
+      "width": 400,
+      "height": 400
+    },
+    "urn": "75634471"
+  },
+  "postedAt": {
+    "timestamp": 1782746218776,
+    "date": "2026-06-29T15:16:58.776Z",
+    "postedAgoShort": "40m",
+    "postedAgoText": "40 minutes ago • Visible to anyone on or off LinkedIn"
+  },
+  "postImages": [
+    {
+      "url": "https://media.licdn.com/dms/image/v2/D4D22AQE90CDzINdJHQ/feedshare-image-high-res/B4DZ8T9Hc8J8AU-/0/1782746216501?e=1784160000&v=beta&t=f4JOhWP6wNAhQQuT1JjQe0FK4_QhZXY5aDtc_sJOm1A",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "url": "https://media.licdn.com/dms/image/v2/D4D22AQFtnGW5ciaNPA/feedshare-shrink_1280/B4DZ8T9HbMI8AQ-/0/1782746216391?e=1784160000&v=beta&t=vFe-SghruQSbfwFB2aWWis6MSeQlGi9Gkr9iZOnv-BI",
+      "width": 1254,
+      "height": 1254
+    }
+  ],
+  "socialContent": {
+    "hideCommentsCount": false,
+    "hideReactionsCount": false,
+    "hideSocialActivityCounts": false,
+    "hideShareAction": true,
+    "hideSendAction": true,
+    "hideRepostsCount": false,
+    "hideViewsCount": false,
+    "trustInterventionBanner": null,
+    "hideReactAction": false,
+    "hideCommentAction": false,
+    "shareUrl": "https://www.linkedin.com/posts/sidal-company_aircompressor-industerialsolutios-iraq-activity-7477379596397629440-wDLP?",
+    "showContributionExperience": false,
+    "showSocialDetail": true
+  },
+  "header": {
+    "text": null
+  },
+  "entityId": "7477379596397629440",
+  "shareUrn": "urn:li:ugcPost:7477379595340734465",
+  "shareLinkedinUrl": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7477379595340734465",
+  "engagement": {
+    "id": "7477379595340734465",
+    "likes": 1,
+    "comments": 0,
+    "shares": 1,
+    "reactions": [
+      {
+        "type": "LIKE",
+        "count": 1
+      }
+    ]
+  },
+  "reactions": [
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAFPNWAsBpQEzCIsTqhNAuPjphcoIPsCzPFw,urn:li:ugcPost:7477379595340734465,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAAFPNWAsBpQEzCIsTqhNAuPjphcoIPsCzPFw",
+        "name": "Zahra Adnan",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAAFPNWAsBpQEzCIsTqhNAuPjphcoIPsCzPFw",
+        "position": "Marketing Officer"
+      },
+      "postId": "7477379596397629440"
+    }
+  ],
+  "reactionIds": [
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAFPNWAsBpQEzCIsTqhNAuPjphcoIPsCzPFw,urn:li:ugcPost:7477379595340734465,0)"
+  ],
+  "commentIds": [],
+  "query": {
+    "sortBy": "date",
+    "page": 1,
+    "search": "Industrial air compressor",
+    "postedLimit": "month"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAFa1yAwBfHoN8IJRq3LCy35HiLEfWK1WI8s,urn:li:activity:7477376639841230848,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAAFa1yAwBfHoN8IJRq3LCy35HiLEfWK1WI8s",
+    "name": "Ahmed Jimoh",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAAFa1yAwBfHoN8IJRq3LCy35HiLEfWK1WI8s",
+    "position": "Automation Technician|| Industrial Control Systems|| Packaging Operations|| SAP|| SCADA|| Troubleshooting|| Corrective Maintenance ||",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/D4E03AQG8_RPWnhxZ5Q/profile-displayphoto-crop_800_800/B4EZyPAxLkGYAI-/0/1771925872344?e=1784160000&v=beta&t=xyKvOKi3_XukTgmWtCEmv2Y4emD6UOM05RFJv_TLxEs",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/D4E03AQG8_RPWnhxZ5Q/profile-displayphoto-crop_800_800/B4EZyPAxLkGYAI-/0/1771925872344?e=1784160000&v=beta&t=xyKvOKi3_XukTgmWtCEmv2Y4emD6UOM05RFJv_TLxEs",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "postId": "7477376639841230848",
+  "query": {
+    "post": "https://www.linkedin.com/posts/tosin-adeniyi-jubril-4a0a472b1_this-is-a-festo-mfh-3-18-32-way-normally-activity-7477376639841230848-MJKN"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAFNO3ekB0Z9YZYBpWY0u2AKiZzizbChID8k,urn:li:activity:7477376639841230848,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAAFNO3ekB0Z9YZYBpWY0u2AKiZzizbChID8k",
+    "name": "Martin Wirtschafter",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAAFNO3ekB0Z9YZYBpWY0u2AKiZzizbChID8k",
+    "position": "When Everything Runs Through You, I Show You How to Step Back | 4× Exit Founder • PE Insider • Investor",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/D4E03AQHtCEeA8_STkg/profile-displayphoto-crop_800_800/B4EZoMLTk.KkAI-/0/1761140882039?e=1784160000&v=beta&t=Syyn4t1ed3F_X1NAZf2zCh_Jq-zsXFiRujoG_uAAHys",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/D4E03AQHtCEeA8_STkg/profile-displayphoto-crop_800_800/B4EZoMLTk.KkAI-/0/1761140882039?e=1784160000&v=beta&t=Syyn4t1ed3F_X1NAZf2zCh_Jq-zsXFiRujoG_uAAHys",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "postId": "7477376639841230848",
+  "query": {
+    "post": "https://www.linkedin.com/posts/tosin-adeniyi-jubril-4a0a472b1_this-is-a-festo-mfh-3-18-32-way-normally-activity-7477376639841230848-MJKN"
+  }
+},
+{
+  "type": "post",
+  "id": "7477376639841230848",
+  "linkedinUrl": "https://www.linkedin.com/posts/tosin-adeniyi-jubril-4a0a472b1_this-is-a-festo-mfh-3-18-32-way-normally-activity-7477376639841230848-MJKN",
+  "content": "This is a Festo MFH-3-1/8 3/2-way, normally closed (NC), single-solenoid, spring-return pneumatic directional control valve. It is commonly used to control single-acting cylinders, pilot larger pneumatic valves, or switch compressed air on and off in industrial automation.\n\n1. Technical Specifications\n\nManufacturer: Festo\nModel: MFH-3-1/8\nValve Type: 3/2-way directional control valve\nActuation: Electromagnetic solenoid\nReturn: Mechanical spring\nPort Size: G1/8\" (1/8 BSPP)\nMedium: Filtered compressed air\nOperating Pressure: Up to 8 bar \nElectrical Supply: Depends on the installed coil (e.g., 24 VDC, 24 VAC, 110 VAC, 230 VAC). The exact voltage is printed on the coil. \n\n2. Port Numbers and Functions\n\nThe valve follows the ISO port numbering standard.\n1 P (Pressure) : Compressed air supply from the FRL or compressor.\n2 A (Working Port): Outlet to the pneumatic actuator or pilot device.\n3 R (Exhaust): Exhausts air from the actuator to atmosphere.\n\n3. Working Principle\n\nThe valve has two operating positions controlled by one solenoid coil and one return spring.\n\nPosition 1: Normal Condition (Coil De-energized)\nThis is the valve's default position because the spring holds the spool in place.\nInternal connections:\nPort 1 (Pressure) is blocked.\nPort 2 (Working Port) is connected to Port 3 (Exhaust).\n\n • Result\n* No compressed air reaches the actuator.\n* Air already inside the actuator is released through the exhaust.\n* A single-acting cylinder retracts under its spring force.\n\nPosition 2:  Energized Condition\nWhen the PLC or relay energizes the solenoid:\nElectrical current flows through the coil.\n* The coil produces a magnetic field.\n* The magnetic field pulls the armature.\n* The armature shifts the valve spool.\n\n  • Result\n* Compressed air flows from the supply to the actuator, causing the cylinder or pilot device to operate.\n* The valve opens. \n\n4. When Power is Removed\n\n  The 24V on the solenoid coil is no longer present:\n* The magnetic field disappears.\n* The spring pushes the spool back.\n*. Port 2 reconnects to Port 3.\n\nThe actuator exhausts and returns to its normal position. This makes the valve fail-safe, as loss of power automatically vents the actuator.\nThe fail-safe is Fail-Close. \n\nAutomation is not all about writing codes, you must also understand how these field devices work and the control philosophy, this will enhance your automation skills and fault diagnosis.",
+  "contentAttributes": [],
+  "author": {
+    "id": "ACoAAEsVPfgBU_I3ZuQ8VDsNH5QatvdOHgwk_Fo",
+    "universalName": null,
+    "publicIdentifier": "tosin-adeniyi-jubril-4a0a472b1",
+    "type": "profile",
+    "name": "Tosin Adeniyi Jubril",
+    "linkedinUrl": "https://www.linkedin.com/in/tosin-adeniyi-jubril-4a0a472b1?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAEsVPfgBU_I3ZuQ8VDsNH5QatvdOHgwk_Fo",
+    "info": "Automation || Instrumentation || Control || Electrical || Mechatronics || Maintenance || Process Control || Calibration || PLC programming",
+    "website": null,
+    "websiteLabel": null,
+    "avatar": {
+      "url": "https://media.licdn.com/dms/image/v2/D4E35AQEJjxsXw1oeEQ/profile-framedphoto-shrink_800_800/B4EZ5OeLEiKcAg-/0/1779432993417?e=1783353600&v=beta&t=97liB7dHl5A3vgqYXwO9e2K_RewRhStaPWE4ElQ4H8U",
+      "width": 800,
+      "height": 800
+    },
+    "urn": "1259683320"
+  },
+  "postedAt": {
+    "timestamp": 1782745513878,
+    "date": "2026-06-29T15:05:13.878Z",
+    "postedAgoShort": "52m",
+    "postedAgoText": "52 minutes ago • Visible to anyone on or off LinkedIn"
+  },
+  "postImages": [
+    {
+      "url": "https://media.licdn.com/dms/image/v2/D4D22AQHASkQ0r3wAyQ/feedshare-shrink_1280/B4DZ8T6bfzJ8AQ-/0/1782745512461?e=1784160000&v=beta&t=R-w_KlJD4qwurGFRlwFreZiXhZRGGJCaao7oAt2GXn8",
+      "width": 1280,
+      "height": 1706
+    }
+  ],
+  "socialContent": {
+    "hideCommentsCount": false,
+    "hideReactionsCount": false,
+    "hideSocialActivityCounts": false,
+    "hideShareAction": true,
+    "hideSendAction": true,
+    "hideRepostsCount": false,
+    "hideViewsCount": false,
+    "trustInterventionBanner": null,
+    "hideReactAction": false,
+    "hideCommentAction": false,
+    "shareUrl": "https://www.linkedin.com/posts/tosin-adeniyi-jubril-4a0a472b1_this-is-a-festo-mfh-3-18-32-way-normally-activity-7477376639841230848-MJKN?",
+    "showContributionExperience": false,
+    "showSocialDetail": true
+  },
+  "header": {
+    "text": null
+  },
+  "entityId": "7477376639841230848",
+  "shareUrn": "urn:li:share:7477376636779286528",
+  "shareLinkedinUrl": "https://www.linkedin.com/feed/update/urn:li:share:7477376636779286528",
+  "engagement": {
+    "id": "7477376639841230848",
+    "likes": 2,
+    "comments": 0,
+    "shares": 0,
+    "reactions": [
+      {
+        "type": "LIKE",
+        "count": 2
+      }
+    ]
+  },
+  "reactions": [
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAFa1yAwBfHoN8IJRq3LCy35HiLEfWK1WI8s,urn:li:activity:7477376639841230848,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAAFa1yAwBfHoN8IJRq3LCy35HiLEfWK1WI8s",
+        "name": "Ahmed Jimoh",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAAFa1yAwBfHoN8IJRq3LCy35HiLEfWK1WI8s",
+        "position": "Automation Technician|| Industrial Control Systems|| Packaging Operations|| SAP|| SCADA|| Troubleshooting|| Corrective Maintenance ||",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/D4E03AQG8_RPWnhxZ5Q/profile-displayphoto-crop_800_800/B4EZyPAxLkGYAI-/0/1771925872344?e=1784160000&v=beta&t=xyKvOKi3_XukTgmWtCEmv2Y4emD6UOM05RFJv_TLxEs",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/D4E03AQG8_RPWnhxZ5Q/profile-displayphoto-crop_800_800/B4EZyPAxLkGYAI-/0/1771925872344?e=1784160000&v=beta&t=xyKvOKi3_XukTgmWtCEmv2Y4emD6UOM05RFJv_TLxEs",
+          "width": 800,
+          "height": 800
+        }
+      },
+      "postId": "7477376639841230848"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAFNO3ekB0Z9YZYBpWY0u2AKiZzizbChID8k,urn:li:activity:7477376639841230848,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAAFNO3ekB0Z9YZYBpWY0u2AKiZzizbChID8k",
+        "name": "Martin Wirtschafter",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAAFNO3ekB0Z9YZYBpWY0u2AKiZzizbChID8k",
+        "position": "When Everything Runs Through You, I Show You How to Step Back | 4× Exit Founder • PE Insider • Investor",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/D4E03AQHtCEeA8_STkg/profile-displayphoto-crop_800_800/B4EZoMLTk.KkAI-/0/1761140882039?e=1784160000&v=beta&t=Syyn4t1ed3F_X1NAZf2zCh_Jq-zsXFiRujoG_uAAHys",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/D4E03AQHtCEeA8_STkg/profile-displayphoto-crop_800_800/B4EZoMLTk.KkAI-/0/1761140882039?e=1784160000&v=beta&t=Syyn4t1ed3F_X1NAZf2zCh_Jq-zsXFiRujoG_uAAHys",
+          "width": 800,
+          "height": 800
+        }
+      },
+      "postId": "7477376639841230848"
+    }
+  ],
+  "reactionIds": [
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAFa1yAwBfHoN8IJRq3LCy35HiLEfWK1WI8s,urn:li:activity:7477376639841230848,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAFNO3ekB0Z9YZYBpWY0u2AKiZzizbChID8k,urn:li:activity:7477376639841230848,0)"
+  ],
+  "commentIds": [],
+  "query": {
+    "sortBy": "date",
+    "page": 1,
+    "search": "Industrial air compressor",
+    "postedLimit": "month"
+  }
+},
+{
+  "type": "post",
+  "id": "7477367788353933312",
+  "linkedinUrl": "https://www.linkedin.com/posts/sarvjagat_sarvjagat-vacuumpump-aircompressor-activity-7477367788353933312-ScIe",
+  "content": "🏭 DUAL PERFORMANCE. ONE INNOVATIVE INDUSTRIAL SOLUTION.\n\nDesigned by Sarv Jagat, this unique system combines a Vacuum Pump and an Air Compressor into one integrated unit, delivering efficient vacuum generation and compressed air supply for demanding industrial applications.\n\n⚙️ System Configuration:\n\n✅ SJ Combined Vacuum & Air Compressor System\n✅ 10 HP Vacuum Pump\n✅ 15 HP Air Compressor\n✅ 2 Bar Working Pressure\n✅ 15 HP CG Power Motor\n✅ Heavy-Duty Industrial Construction\n✅ Factory Tested for Reliable Performance\n\nApplications:\n\n💊 Pharmaceutical Industries\n🧪 Chemical Processing Plants\n🛢️ Plastic & Chemical Tank Fabrication\n⚙️ Industrial Processing Equipment\n🏭 Specialized Manufacturing Applications\n\nKey Benefits:\n\n✔ Dual Vacuum & Compressed Air Functionality\n✔ Space-Saving Integrated Design\n✔ Reliable Industrial Performance\n✔ Energy Efficient Operation\n✔ Low Maintenance Requirements\n✔ Engineered & Manufactured by Sarv Jagat\n\nThis innovative SJ system is designed to simplify industrial processes by combining vacuum generation and compressed air delivery into one reliable, high-performance solution.\n\n📍 Ahmedabad, Gujarat, India\n\n📧 connect@sarvjagat.com\n🌐 www.sarvjagat.com\n📞 +91 91574 87233\n📞 +91 91577 70753\n\nSarv Jagat Corporation\n❤️ Heart of Your Industries.\n\n#SarvJagat #VacuumPump #AirCompressor #IndustrialInnovation #PharmaIndustry #ChemicalIndustry #PlasticIndustry #CGPower #CompressedAir #VacuumSystem #MadeInIndia",
+  "contentAttributes": [],
+  "author": {
+    "id": "ACoAAFHzWEcBDwNmFRQt_5omhMLcqDxULZlrzSc",
+    "universalName": null,
+    "publicIdentifier": "sarvjagat",
+    "type": "profile",
+    "name": "Sarv Jagat",
+    "linkedinUrl": "https://www.linkedin.com/in/sarvjagat?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAFHzWEcBDwNmFRQt_5omhMLcqDxULZlrzSc",
+    "info": "Sarv Jagat (SJ) | Manufacturer of Industrial Air Compressors & High-Pressure Systems | Screw, Booster, Piston & Compressed Air Solutions | Built for Reliability, Efficiency & Global Industry",
+    "website": null,
+    "websiteLabel": null,
+    "avatar": null,
+    "urn": "1374902343"
+  },
+  "postedAt": {
+    "timestamp": 1782743403519,
+    "date": "2026-06-29T14:30:03.519Z",
+    "postedAgoShort": "1h",
+    "postedAgoText": "1 hour ago • Visible to anyone on or off LinkedIn"
+  },
+  "postImages": [],
+  "postVideo": {
+    "thumbnailUrl": "https://media.licdn.com/dms/image/v2/D4D05AQE2dlHG7unD2A/videocover-low/B4DZ8TO1snIEBM-/0/1782734091101?e=1783353600&v=beta&t=lLWuR7PqFuHe3K0ljJvsaOTeNL5n-PGW2Rw3fsgbuvw",
+    "videoUrl": "https://dms.licdn.com/playlist/vid/v2/D4D05AQE2dlHG7unD2A/mp4-720p-30fp-crf28/B4DZ8TO1snIECA-/0/1782734099354?e=1783353600&v=beta&t=km6ovGGrKwkVYoaGrBWg0Rkt5ZyRQZg_tE1NG8ahtJw"
+  },
+  "socialContent": {
+    "hideCommentsCount": false,
+    "hideReactionsCount": false,
+    "hideSocialActivityCounts": false,
+    "hideShareAction": true,
+    "hideSendAction": true,
+    "hideRepostsCount": false,
+    "hideViewsCount": false,
+    "trustInterventionBanner": null,
+    "hideReactAction": false,
+    "hideCommentAction": false,
+    "shareUrl": "https://www.linkedin.com/posts/sarvjagat_sarvjagat-vacuumpump-aircompressor-activity-7477367788353933312-ScIe?",
+    "showContributionExperience": false,
+    "showSocialDetail": true
+  },
+  "header": {
+    "text": null
+  },
+  "entityId": "7477367788353933312",
+  "shareUrn": "urn:li:ugcPost:7477328705338556416",
+  "shareLinkedinUrl": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7477328705338556416",
+  "engagement": {
+    "id": "7477328705338556416",
+    "likes": 0,
+    "comments": 0,
+    "shares": 0,
+    "reactions": []
+  },
+  "reactions": [],
+  "reactionIds": [],
+  "commentIds": [],
+  "query": {
+    "sortBy": "date",
+    "page": 1,
+    "search": "Industrial air compressor",
+    "postedLimit": "month"
+  }
+},
+{
+  "type": "post",
+  "id": "7477364012687519744",
+  "linkedinUrl": "https://www.linkedin.com/posts/empyrean-energy-llp_empyreanenergy-cnisolar-maharashtramanufacturing-activity-7477364012687519744-yy4j",
+  "content": "Rs 9.8 lakh a month. Straight to MSEDCL. Every month.\nThat's what a textile unit in Aurangabad was paying — before one structural change.\nThey didn't cut shifts. Didn't reduce machines. Didn't renegotiate with the grid.\nThey installed 350 kWp of rooftop solar.\n12 months in, here's the actual outcome:\n→ Monthly savings: Rs 5.2 lakh\n → Payback period: 4.2 years\n → 25-year savings from solar: Rs 13.8 crore\nThe plant generates ~36,500 units/month from the rooftop — offsetting daytime load exactly when a textile unit runs heaviest. Looms. Compressors. Air handling. All on solar during peak generation hours.\nThis isn't a projection. It's generation data matched against MSEDCL billing — energy charge offset plus demand charge reduction on an HT industrial connection.\nThe investment was capital expenditure. The return is locked in for 25 years.\nThe factory didn't change. The energy bill did.\nIf your unit is paying Rs 5 lakh or more per month to MSEDCL — this math almost certainly applies to you.\nDM \"AUDIT\" and I'll tell you within 24 hours whether the numbers work for your plant.\n#EmpyreanEnergy #CnISolar #MaharashtraManufacturing",
+  "contentAttributes": [],
+  "author": {
+    "id": "117174755",
+    "universalName": "empyrean-energy-llp",
+    "publicIdentifier": null,
+    "type": "company",
+    "name": "Empyrean Energy LLP",
+    "linkedinUrl": "https://www.linkedin.com/company/empyrean-energy-llp/posts",
+    "info": "9 followers",
+    "website": null,
+    "websiteLabel": null,
+    "avatar": {
+      "url": "https://media.licdn.com/dms/image/v2/D560BAQFnBJVV9h4LSg/company-logo_400_400/B56Z4Xr5SbJ0AY-/0/1778513844350?e=1784160000&v=beta&t=n-K1_yc_8URN8_H8TutdZZlD_chbzgFzd5dUdDfs_y4",
+      "width": 400,
+      "height": 400
+    },
+    "urn": "117174755"
+  },
+  "postedAt": {
+    "timestamp": 1782742503330,
+    "date": "2026-06-29T14:15:03.330Z",
+    "postedAgoShort": "1h",
+    "postedAgoText": "1 hour ago • Visible to anyone on or off LinkedIn"
+  },
+  "postImages": [
+    {
+      "url": "https://media.licdn.com/dms/image/v2/D5622AQFzKrMo8-bQFQ/feedshare-shrink_1280/B56Z8SnW.4KUAM-/0/1782723735784?e=1784160000&v=beta&t=Da688q9AhIjE3QgUYxNstotD7SfV352gILkZthHjPEw",
+      "width": 1080,
+      "height": 1080
+    }
+  ],
+  "socialContent": {
+    "hideCommentsCount": false,
+    "hideReactionsCount": false,
+    "hideSocialActivityCounts": false,
+    "hideShareAction": true,
+    "hideSendAction": true,
+    "hideRepostsCount": false,
+    "hideViewsCount": false,
+    "trustInterventionBanner": null,
+    "hideReactAction": false,
+    "hideCommentAction": false,
+    "shareUrl": "https://www.linkedin.com/posts/empyrean-energy-llp_empyreanenergy-cnisolar-maharashtramanufacturing-activity-7477364012687519744-yy4j?",
+    "showContributionExperience": false,
+    "showSocialDetail": true
+  },
+  "header": {
+    "text": null
+  },
+  "entityId": "7477364012687519744",
+  "shareUrn": "urn:li:share:7477285301061566464",
+  "shareLinkedinUrl": "https://www.linkedin.com/feed/update/urn:li:share:7477285301061566464",
+  "engagement": {
+    "id": "7477364012687519744",
+    "likes": 0,
+    "comments": 0,
+    "shares": 0,
+    "reactions": []
+  },
+  "reactions": [],
+  "reactionIds": [],
+  "commentIds": [],
+  "query": {
+    "sortBy": "date",
+    "page": 1,
+    "search": "Industrial air compressor",
+    "postedLimit": "month"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAASP8uQBMZ0ePzsMnUKJGVNmoaWiHY1N-hU,urn:li:activity:7477362237750325249,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAAASP8uQBMZ0ePzsMnUKJGVNmoaWiHY1N-hU",
+    "name": "Sandeep Gulati🎯",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAAASP8uQBMZ0ePzsMnUKJGVNmoaWiHY1N-hU",
+    "position": "AI Marketing Leader | Architect of Growth-Focused, Results-Driven GTM Strategies | Driving High-Impact Media, Performance Marketing & Scalable Campaigns for World-Class Brands",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/D4E03AQHN6d5oG9YUcg/profile-displayphoto-shrink_800_800/B4EZbtFMwUGUAk-/0/1747734286920?e=1784160000&v=beta&t=ZXJ_WnvCWJbYOca7rV5rmjO5PPfWTYY6490m4KmBrmQ",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/D4E03AQHN6d5oG9YUcg/profile-displayphoto-shrink_800_800/B4EZbtFMwUGUAk-/0/1747734286920?e=1784160000&v=beta&t=ZXJ_WnvCWJbYOca7rV5rmjO5PPfWTYY6490m4KmBrmQ",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "postId": "7477362237750325249",
+  "query": {
+    "post": "https://www.linkedin.com/posts/kadir-hussen-4b8336262_chemicalengineering-mechanicalengineering-activity-7477362237750325249-07Kx"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAEB6IkwB4ivMJBpMrv4OtH_O1nMfa2P1cP4,urn:li:activity:7477362237750325249,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAAEB6IkwB4ivMJBpMrv4OtH_O1nMfa2P1cP4",
+    "name": "Kadir hussen",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAAEB6IkwB4ivMJBpMrv4OtH_O1nMfa2P1cP4",
+    "position": "Chemical Engineer | Production Supervisor | Calcium Carbonate (CaCO₃) Processing Specialist | VRM & Ball Mill Operations | Coating Technology | Process Optimization",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/D4E03AQF-n46d6VSpuQ/profile-displayphoto-crop_800_800/B4EZ8JP3pzIcAI-/0/1782566585621?e=1784160000&v=beta&t=IruzCYlbHLgwJGpZamkVtCU4Bf0PuFm6-Oz9iao3hF8",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/D4E03AQF-n46d6VSpuQ/profile-displayphoto-crop_800_800/B4EZ8JP3pzIcAI-/0/1782566585621?e=1784160000&v=beta&t=IruzCYlbHLgwJGpZamkVtCU4Bf0PuFm6-Oz9iao3hF8",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "postId": "7477362237750325249",
+  "query": {
+    "post": "https://www.linkedin.com/posts/kadir-hussen-4b8336262_chemicalengineering-mechanicalengineering-activity-7477362237750325249-07Kx"
+  }
+},
+{
+  "type": "post",
+  "id": "7477362237750325249",
+  "linkedinUrl": "https://www.linkedin.com/posts/kadir-hussen-4b8336262_chemicalengineering-mechanicalengineering-activity-7477362237750325249-07Kx",
+  "content": "Every machine tells a story if we take the time to understand it.\nRecently, I spent time learning more about an industrial refrigeration air dryer after encountering a startup issue where the compressor produced a repeated \"tar tar\" sound, overheated, and failed to cool the compressed air.\nThis experience reminded me that troubleshooting is about understanding the entire system—not just replacing parts.\nSome key lessons:\n✔️ The air receiver tank removes only part of the moisture; it cannot replace a refrigeration dryer.\n✔️ The air-to-air heat exchanger improves energy efficiency by pre-cooling incoming compressed air.\n✔️ The refrigerant evaporator is where the actual cooling and moisture removal take place.\n✔️ A faulty capacitor, contactor, low supply voltage, or a locked compressor can prevent the refrigeration cycle from operating.\n✔️ Running a plant without a functioning dryer may allow production to continue temporarily, but wet compressed air can gradually affect equipment reliability, pneumatic components, filters, and product quality.\nEvery troubleshooting challenge is an opportunity to deepen technical knowledge and become a better engineer.\nContinuous learning and curiosity are some of the most valuable tools we can bring to the workplace.\n#ChemicalEngineering #MechanicalEngineering #CompressedAir #RefrigerationDryer #IndustrialMaintenance #Troubleshooting #FactoryOperations #ProcessEngineering #ContinuousLearning #CalciumCarbonate",
+  "contentAttributes": [],
+  "author": {
+    "id": "ACoAAEB6IkwB4ivMJBpMrv4OtH_O1nMfa2P1cP4",
+    "universalName": null,
+    "publicIdentifier": "kadir-hussen-4b8336262",
+    "type": "profile",
+    "name": "Kadir hussen",
+    "linkedinUrl": "https://www.linkedin.com/in/kadir-hussen-4b8336262?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAEB6IkwB4ivMJBpMrv4OtH_O1nMfa2P1cP4",
+    "info": "Chemical Engineer | Production Supervisor | Calcium Carbonate (CaCO₃) Processing Specialist | VRM & Ball Mill Operations | Coating Technology | Process Optimization",
+    "website": null,
+    "websiteLabel": null,
+    "avatar": {
+      "url": "https://media.licdn.com/dms/image/v2/D4E03AQF-n46d6VSpuQ/profile-displayphoto-crop_800_800/B4EZ8JP3pzIcAI-/0/1782566585621?e=1784160000&v=beta&t=IruzCYlbHLgwJGpZamkVtCU4Bf0PuFm6-Oz9iao3hF8",
+      "width": 800,
+      "height": 800
+    },
+    "urn": "1081745996"
+  },
+  "postedAt": {
+    "timestamp": 1782742080152,
+    "date": "2026-06-29T14:08:00.152Z",
+    "postedAgoShort": "1h",
+    "postedAgoText": "1 hour ago • Visible to anyone on or off LinkedIn"
+  },
+  "postImages": [
+    {
+      "url": "https://media.licdn.com/dms/image/v2/D4E22AQHq3TUl7eng0w/feedshare-shrink_1280/B4EZ8TtVRUIsAM-/0/1782742078893?e=1784160000&v=beta&t=uwGuchfB-3gklgU7UJ5YNqhn-L10QuIcTTvvX3maqIo",
+      "width": 1054,
+      "height": 1492
+    }
+  ],
+  "socialContent": {
+    "hideCommentsCount": false,
+    "hideReactionsCount": false,
+    "hideSocialActivityCounts": false,
+    "hideShareAction": true,
+    "hideSendAction": true,
+    "hideRepostsCount": false,
+    "hideViewsCount": false,
+    "trustInterventionBanner": null,
+    "hideReactAction": false,
+    "hideCommentAction": false,
+    "shareUrl": "https://www.linkedin.com/posts/kadir-hussen-4b8336262_chemicalengineering-mechanicalengineering-activity-7477362237750325249-07Kx?",
+    "showContributionExperience": false,
+    "showSocialDetail": true
+  },
+  "header": {
+    "text": null
+  },
+  "entityId": "7477362237750325249",
+  "shareUrn": "urn:li:share:7477362236156571648",
+  "shareLinkedinUrl": "https://www.linkedin.com/feed/update/urn:li:share:7477362236156571648",
+  "engagement": {
+    "id": "7477362237750325249",
+    "likes": 2,
+    "comments": 0,
+    "shares": 0,
+    "reactions": [
+      {
+        "type": "LIKE",
+        "count": 2
+      }
+    ]
+  },
+  "reactions": [
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAEB6IkwB4ivMJBpMrv4OtH_O1nMfa2P1cP4,urn:li:activity:7477362237750325249,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAAEB6IkwB4ivMJBpMrv4OtH_O1nMfa2P1cP4",
+        "name": "Kadir hussen",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAAEB6IkwB4ivMJBpMrv4OtH_O1nMfa2P1cP4",
+        "position": "Chemical Engineer | Production Supervisor | Calcium Carbonate (CaCO₃) Processing Specialist | VRM & Ball Mill Operations | Coating Technology | Process Optimization",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/D4E03AQF-n46d6VSpuQ/profile-displayphoto-crop_800_800/B4EZ8JP3pzIcAI-/0/1782566585621?e=1784160000&v=beta&t=IruzCYlbHLgwJGpZamkVtCU4Bf0PuFm6-Oz9iao3hF8",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/D4E03AQF-n46d6VSpuQ/profile-displayphoto-crop_800_800/B4EZ8JP3pzIcAI-/0/1782566585621?e=1784160000&v=beta&t=IruzCYlbHLgwJGpZamkVtCU4Bf0PuFm6-Oz9iao3hF8",
+          "width": 800,
+          "height": 800
+        }
+      },
+      "postId": "7477362237750325249"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAASP8uQBMZ0ePzsMnUKJGVNmoaWiHY1N-hU,urn:li:activity:7477362237750325249,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAAASP8uQBMZ0ePzsMnUKJGVNmoaWiHY1N-hU",
+        "name": "Sandeep Gulati🎯",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAAASP8uQBMZ0ePzsMnUKJGVNmoaWiHY1N-hU",
+        "position": "AI Marketing Leader | Architect of Growth-Focused, Results-Driven GTM Strategies | Driving High-Impact Media, Performance Marketing & Scalable Campaigns for World-Class Brands",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/D4E03AQHN6d5oG9YUcg/profile-displayphoto-shrink_800_800/B4EZbtFMwUGUAk-/0/1747734286920?e=1784160000&v=beta&t=ZXJ_WnvCWJbYOca7rV5rmjO5PPfWTYY6490m4KmBrmQ",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/D4E03AQHN6d5oG9YUcg/profile-displayphoto-shrink_800_800/B4EZbtFMwUGUAk-/0/1747734286920?e=1784160000&v=beta&t=ZXJ_WnvCWJbYOca7rV5rmjO5PPfWTYY6490m4KmBrmQ",
+          "width": 800,
+          "height": 800
+        }
+      },
+      "postId": "7477362237750325249"
+    }
+  ],
+  "reactionIds": [
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAEB6IkwB4ivMJBpMrv4OtH_O1nMfa2P1cP4,urn:li:activity:7477362237750325249,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAASP8uQBMZ0ePzsMnUKJGVNmoaWiHY1N-hU,urn:li:activity:7477362237750325249,0)"
+  ],
+  "commentIds": [],
+  "query": {
+    "sortBy": "date",
+    "page": 1,
+    "search": "Industrial air compressor",
+    "postedLimit": "month"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAACgRBHUBGyoU8nmSc4qyEfnnci37iSEmcJA,urn:li:activity:7477361649767731200,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAACgRBHUBGyoU8nmSc4qyEfnnci37iSEmcJA",
+    "name": "Jay Jethwa",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAACgRBHUBGyoU8nmSc4qyEfnnci37iSEmcJA",
+    "position": "Grateful 🙏",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/D4D35AQEQm3P1Fk_HMA/profile-framedphoto-shrink_800_800/B4DZ3hOGnrI4Ag-/0/1777600064281?e=1783353600&v=beta&t=vsR4Otz1-l3aD0TzJ7SoxROtYGIuY0XhckSIb1YTcPU",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/D4D35AQEQm3P1Fk_HMA/profile-framedphoto-shrink_800_800/B4DZ3hOGnrI4Ag-/0/1777600064281?e=1783353600&v=beta&t=vsR4Otz1-l3aD0TzJ7SoxROtYGIuY0XhckSIb1YTcPU",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "postId": "7477361649767731200",
+  "query": {
+    "post": "https://www.linkedin.com/posts/miken-kansara-ba15b634_hiring-electricalengineer-electricaldesign-activity-7477361649767731200-QvZ2"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAADapbyYB2FyeRSH_UNgWF18Vosctojk2-nY,urn:li:activity:7477361649767731200,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAADapbyYB2FyeRSH_UNgWF18Vosctojk2-nY",
+    "name": "Patel Vijay",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAADapbyYB2FyeRSH_UNgWF18Vosctojk2-nY",
+    "position": "Maintenance Engineer at La Gajjar Machineries Private Limited",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/C4D03AQEWF6jPs_yN-w/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1626004742679?e=1784160000&v=beta&t=OShxAtjTxqA711232klxNFz_AD5qgZ86c6of-9FXcX0",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/C4D03AQEWF6jPs_yN-w/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1626004742679?e=1784160000&v=beta&t=OShxAtjTxqA711232klxNFz_AD5qgZ86c6of-9FXcX0",
+      "width": 96,
+      "height": 96
+    }
+  },
+  "postId": "7477361649767731200",
+  "query": {
+    "post": "https://www.linkedin.com/posts/miken-kansara-ba15b634_hiring-electricalengineer-electricaldesign-activity-7477361649767731200-QvZ2"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAACb-v-8BYyNdZ6EPn_vwoOvk2qQg7XZ-mQQ,urn:li:activity:7477361649767731200,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAACb-v-8BYyNdZ6EPn_vwoOvk2qQg7XZ-mQQ",
+    "name": "Kazuma Takeda",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAACb-v-8BYyNdZ6EPn_vwoOvk2qQg7XZ-mQQ",
+    "position": "Department Manager, Head of Administration (F&A, HR&GA, IT)/CPA(Guam)/CIA(Certified Internal Auditor)/J-SEMC(METI Registered Management Consultant)",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/C5603AQE5qvjn29uWrA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1606658649573?e=1784160000&v=beta&t=5HC8gI55IDF3YCoJSaFeCX9P7pq7cUusyb7ktSGxNY4",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/C5603AQE5qvjn29uWrA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1606658649573?e=1784160000&v=beta&t=5HC8gI55IDF3YCoJSaFeCX9P7pq7cUusyb7ktSGxNY4",
+      "width": 643,
+      "height": 643
+    }
+  },
+  "postId": "7477361649767731200",
+  "query": {
+    "post": "https://www.linkedin.com/posts/miken-kansara-ba15b634_hiring-electricalengineer-electricaldesign-activity-7477361649767731200-QvZ2"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAEh5q8oBIhu_EiAIcki_RGCm1x77MePO1j0,urn:li:activity:7477361649767731200,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAAEh5q8oBIhu_EiAIcki_RGCm1x77MePO1j0",
+    "name": "Rittik Saha",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAAEh5q8oBIhu_EiAIcki_RGCm1x77MePO1j0",
+    "position": "Diploma Engineer Trainee-2 specializing in Quality Control at Daikin Air Conditioning lndia private limited.Ex-Tata Cummins.",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/D4D35AQHOyvnfeWK2oQ/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1699965514530?e=1783353600&v=beta&t=OTX83P_0lb94isRI7i52d1VpWaHxglU4dY10OJpzKZ0",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/D4D35AQHOyvnfeWK2oQ/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1699965514530?e=1783353600&v=beta&t=OTX83P_0lb94isRI7i52d1VpWaHxglU4dY10OJpzKZ0",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "postId": "7477361649767731200",
+  "query": {
+    "post": "https://www.linkedin.com/posts/miken-kansara-ba15b634_hiring-electricalengineer-electricaldesign-activity-7477361649767731200-QvZ2"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAB4ZAscBHALqesevt2HWXhih7HmEYa-E7yY,urn:li:activity:7477361649767731200,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAAB4ZAscBHALqesevt2HWXhih7HmEYa-E7yY",
+    "name": "Vimal Patel",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAAB4ZAscBHALqesevt2HWXhih7HmEYa-E7yY",
+    "position": "Maintenance Engineer at Reliance New Energy (PV Solar Cell) l EX : TDS Lithium Ion Battery Gujarat Pvt. Ltd.",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/D5635AQFu3lDmcadjow/profile-framedphoto-shrink_800_800/B56Z3R.18EGoAg-/0/1777344405593?e=1783353600&v=beta&t=LBMccYqjZau950aT4loObRgnOWiboKn-sH7HN-ehz9s",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/D5635AQFu3lDmcadjow/profile-framedphoto-shrink_800_800/B56Z3R.18EGoAg-/0/1777344405593?e=1783353600&v=beta&t=LBMccYqjZau950aT4loObRgnOWiboKn-sH7HN-ehz9s",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "postId": "7477361649767731200",
+  "query": {
+    "post": "https://www.linkedin.com/posts/miken-kansara-ba15b634_hiring-electricalengineer-electricaldesign-activity-7477361649767731200-QvZ2"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAEPkmEIB7ziu3Vk-YpNjfYgyOLmIE8ifLgs,urn:li:activity:7477361649767731200,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAAEPkmEIB7ziu3Vk-YpNjfYgyOLmIE8ifLgs",
+    "name": "Mehul Patel",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAAEPkmEIB7ziu3Vk-YpNjfYgyOLmIE8ifLgs",
+    "position": "Engineer at Filmtec Pvt Ltd|Ex-Maintenance Officer at Greatwhite Electricals|Ex-Maintenance Engineer at Hilti.",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/D5635AQEWOlTDyvKw-Q/profile-framedphoto-shrink_800_800/B56Z6N.D0TH0AY-/0/1780498320172?e=1783353600&v=beta&t=YRSLbfGDolXgeD7HbY3IyUP7kjMwRO7wagd5MTiRqHA",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/D5635AQEWOlTDyvKw-Q/profile-framedphoto-shrink_800_800/B56Z6N.D0TH0AY-/0/1780498320172?e=1783353600&v=beta&t=YRSLbfGDolXgeD7HbY3IyUP7kjMwRO7wagd5MTiRqHA",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "postId": "7477361649767731200",
+  "query": {
+    "post": "https://www.linkedin.com/posts/miken-kansara-ba15b634_hiring-electricalengineer-electricaldesign-activity-7477361649767731200-QvZ2"
+  }
+},
+{
+  "type": "post",
+  "id": "7477361649767731200",
+  "linkedinUrl": "https://www.linkedin.com/posts/miken-kansara-ba15b634_hiring-electricalengineer-electricaldesign-activity-7477361649767731200-QvZ2",
+  "content": "🚨 We’re Urgent Hiring \n🏭 Company: Hitachi Industrial Equipment systems ltd (Greenfield Project)\n📌 Department: Design Engineering\n📌 Designation: Electrical Engineer\n📍 Location: Gandhinagar\n🧑‍💼 Experience: 3–5 Years (Under Third Party Payroll for 1 year)\n🎓 Qualification: Diploma /B.E / B.Tech in Electrical Engineering.\n💰 Compensation: Best in Industry / As per Candidate Experience and Industrial Standard.\n \nWe are looking for a skilled and detail-oriented Electrical Design Engineer with 3–5 years of experience in the Air Compressor or Industrial Equipment industry. The candidate will be responsible for designing, developing, and maintaining electrical systems, control panels, and automation solutions for industrial air compressors and related equipment. The role requires strong technical expertise in electrical design, troubleshooting, and compliance with industry standards.\n \n🔧 Key Responsibilities:\n• Design and develop electrical circuits, control panels, and wiring diagrams for air compressor systems\n• Prepare electrical drawings, BOMs, GA drawings, and technical documentation\n• Work on PLC-based control systems, HMI interfaces, VFDs, and automation integration\n• Coordinate with mechanical design, production, procurement, and service teams for project execution\n• Ensure compliance with electrical safety standards and customer specifications\n• Support testing, commissioning, and troubleshooting activities for compressor systems\n• Review customer technical requirements and provide suitable electrical solutions\n• Participate in product improvement, cost optimization, and standardization activities\n• Assist service teams in resolving technical issues related to electrical systems\n• Maintain project documentation and engineering records as per company standards\n \n✅ Required Skills:\n• Strong knowledge of industrial electrical systems and automation\n• Experience with PLC programming and troubleshooting\n• Knowledge of VFDs, sensors, relays, MCC panels, and control systems\n• Proficiency in AutoCAD Electrical / EPLAN\n• Good analytical and problem-solving abilities\n \n🏢 Preferred Industry Experience:\n• Industrial Air Compressors\n• Industrial Automation\n• HVAC Equipment\n• Manufacturing Machinery\n \n💻 Software Knowledge:\n• AutoCAD Electrical\n• EPLAN (Preferred)\n• PLC Programming Software\n• MS Office\n \nIf you are passionate about electrical design and industrial automation, we would love to connect with you.\n\n📩 Interested candidates can share their updated resume at miken.kansara@hitachi-ies.com\n\n#Hiring #ElectricalEngineer #ElectricalDesign #PLC #Automation #AirCompressor #IndustrialAutomation #EngineeringJobs #DesignEngineer #IndustrialEquipment #Careers #gandhinagarjobs #AirCompressorIndustry",
+  "contentAttributes": [],
+  "author": {
+    "id": "ACoAAAc1JikBgEdeFBtYyle-yqDR_A0cxp3hcDI",
+    "universalName": null,
+    "publicIdentifier": "miken-kansara-ba15b634",
+    "type": "profile",
+    "name": "Miken Kansara",
+    "linkedinUrl": "https://www.linkedin.com/in/miken-kansara-ba15b634?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAAc1JikBgEdeFBtYyle-yqDR_A0cxp3hcDI",
+    "info": "Assistant Manager Human Resources @ HIES-IN| POSCO | Hexagon Midco | Vardhman Acrylics",
+    "website": null,
+    "websiteLabel": null,
+    "avatar": {
+      "url": "https://media.licdn.com/dms/image/v2/D4D35AQG4QCEWLNmPGQ/profile-framedphoto-shrink_800_800/B4DZ8TrYUTJsAc-/0/1782741567514?e=1783353600&v=beta&t=iSBnIZI7d3X1CuYmOQOjPGYUCfCaDypHPVdZSh3ENxc",
+      "width": 800,
+      "height": 800
+    },
+    "urn": "120923689"
+  },
+  "postedAt": {
+    "timestamp": 1782741939966,
+    "date": "2026-06-29T14:05:39.966Z",
+    "postedAgoShort": "1h",
+    "postedAgoText": "1 hour ago • Visible to anyone on or off LinkedIn"
+  },
+  "postImages": [],
+  "socialContent": {
+    "hideCommentsCount": false,
+    "hideReactionsCount": false,
+    "hideSocialActivityCounts": false,
+    "hideShareAction": true,
+    "hideSendAction": true,
+    "hideRepostsCount": false,
+    "hideViewsCount": false,
+    "trustInterventionBanner": null,
+    "hideReactAction": false,
+    "hideCommentAction": false,
+    "shareUrl": "https://www.linkedin.com/posts/miken-kansara-ba15b634_hiring-electricalengineer-electricaldesign-activity-7477361649767731200-QvZ2?",
+    "showContributionExperience": false,
+    "showSocialDetail": true
+  },
+  "header": {
+    "text": null
+  },
+  "entityId": "7477361649767731200",
+  "shareUrn": "urn:li:share:7477361648626745345",
+  "shareLinkedinUrl": "https://www.linkedin.com/feed/update/urn:li:share:7477361648626745345",
+  "engagement": {
+    "id": "7477361649767731200",
+    "likes": 6,
+    "comments": 0,
+    "shares": 0,
+    "reactions": [
+      {
+        "type": "LIKE",
+        "count": 6
+      }
+    ]
+  },
+  "reactions": [
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAB4ZAscBHALqesevt2HWXhih7HmEYa-E7yY,urn:li:activity:7477361649767731200,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAAB4ZAscBHALqesevt2HWXhih7HmEYa-E7yY",
+        "name": "Vimal Patel",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAAB4ZAscBHALqesevt2HWXhih7HmEYa-E7yY",
+        "position": "Maintenance Engineer at Reliance New Energy (PV Solar Cell) l EX : TDS Lithium Ion Battery Gujarat Pvt. Ltd.",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/D5635AQFu3lDmcadjow/profile-framedphoto-shrink_800_800/B56Z3R.18EGoAg-/0/1777344405593?e=1783353600&v=beta&t=LBMccYqjZau950aT4loObRgnOWiboKn-sH7HN-ehz9s",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/D5635AQFu3lDmcadjow/profile-framedphoto-shrink_800_800/B56Z3R.18EGoAg-/0/1777344405593?e=1783353600&v=beta&t=LBMccYqjZau950aT4loObRgnOWiboKn-sH7HN-ehz9s",
+          "width": 800,
+          "height": 800
+        }
+      },
+      "postId": "7477361649767731200"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAADapbyYB2FyeRSH_UNgWF18Vosctojk2-nY,urn:li:activity:7477361649767731200,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAADapbyYB2FyeRSH_UNgWF18Vosctojk2-nY",
+        "name": "Patel Vijay",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAADapbyYB2FyeRSH_UNgWF18Vosctojk2-nY",
+        "position": "Maintenance Engineer at La Gajjar Machineries Private Limited",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/C4D03AQEWF6jPs_yN-w/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1626004742679?e=1784160000&v=beta&t=OShxAtjTxqA711232klxNFz_AD5qgZ86c6of-9FXcX0",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/C4D03AQEWF6jPs_yN-w/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1626004742679?e=1784160000&v=beta&t=OShxAtjTxqA711232klxNFz_AD5qgZ86c6of-9FXcX0",
+          "width": 96,
+          "height": 96
+        }
+      },
+      "postId": "7477361649767731200"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAEh5q8oBIhu_EiAIcki_RGCm1x77MePO1j0,urn:li:activity:7477361649767731200,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAAEh5q8oBIhu_EiAIcki_RGCm1x77MePO1j0",
+        "name": "Rittik Saha",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAAEh5q8oBIhu_EiAIcki_RGCm1x77MePO1j0",
+        "position": "Diploma Engineer Trainee-2 specializing in Quality Control at Daikin Air Conditioning lndia private limited.Ex-Tata Cummins.",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/D4D35AQHOyvnfeWK2oQ/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1699965514530?e=1783353600&v=beta&t=OTX83P_0lb94isRI7i52d1VpWaHxglU4dY10OJpzKZ0",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/D4D35AQHOyvnfeWK2oQ/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1699965514530?e=1783353600&v=beta&t=OTX83P_0lb94isRI7i52d1VpWaHxglU4dY10OJpzKZ0",
+          "width": 800,
+          "height": 800
+        }
+      },
+      "postId": "7477361649767731200"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAACgRBHUBGyoU8nmSc4qyEfnnci37iSEmcJA,urn:li:activity:7477361649767731200,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAACgRBHUBGyoU8nmSc4qyEfnnci37iSEmcJA",
+        "name": "Jay Jethwa",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAACgRBHUBGyoU8nmSc4qyEfnnci37iSEmcJA",
+        "position": "Grateful 🙏",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/D4D35AQEQm3P1Fk_HMA/profile-framedphoto-shrink_800_800/B4DZ3hOGnrI4Ag-/0/1777600064281?e=1783353600&v=beta&t=vsR4Otz1-l3aD0TzJ7SoxROtYGIuY0XhckSIb1YTcPU",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/D4D35AQEQm3P1Fk_HMA/profile-framedphoto-shrink_800_800/B4DZ3hOGnrI4Ag-/0/1777600064281?e=1783353600&v=beta&t=vsR4Otz1-l3aD0TzJ7SoxROtYGIuY0XhckSIb1YTcPU",
+          "width": 800,
+          "height": 800
+        }
+      },
+      "postId": "7477361649767731200"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAACb-v-8BYyNdZ6EPn_vwoOvk2qQg7XZ-mQQ,urn:li:activity:7477361649767731200,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAACb-v-8BYyNdZ6EPn_vwoOvk2qQg7XZ-mQQ",
+        "name": "Kazuma Takeda",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAACb-v-8BYyNdZ6EPn_vwoOvk2qQg7XZ-mQQ",
+        "position": "Department Manager, Head of Administration (F&A, HR&GA, IT)/CPA(Guam)/CIA(Certified Internal Auditor)/J-SEMC(METI Registered Management Consultant)",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/C5603AQE5qvjn29uWrA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1606658649573?e=1784160000&v=beta&t=5HC8gI55IDF3YCoJSaFeCX9P7pq7cUusyb7ktSGxNY4",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/C5603AQE5qvjn29uWrA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1606658649573?e=1784160000&v=beta&t=5HC8gI55IDF3YCoJSaFeCX9P7pq7cUusyb7ktSGxNY4",
+          "width": 643,
+          "height": 643
+        }
+      },
+      "postId": "7477361649767731200"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAEPkmEIB7ziu3Vk-YpNjfYgyOLmIE8ifLgs,urn:li:activity:7477361649767731200,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAAEPkmEIB7ziu3Vk-YpNjfYgyOLmIE8ifLgs",
+        "name": "Mehul Patel",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAAEPkmEIB7ziu3Vk-YpNjfYgyOLmIE8ifLgs",
+        "position": "Engineer at Filmtec Pvt Ltd|Ex-Maintenance Officer at Greatwhite Electricals|Ex-Maintenance Engineer at Hilti.",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/D5635AQEWOlTDyvKw-Q/profile-framedphoto-shrink_800_800/B56Z6N.D0TH0AY-/0/1780498320172?e=1783353600&v=beta&t=YRSLbfGDolXgeD7HbY3IyUP7kjMwRO7wagd5MTiRqHA",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/D5635AQEWOlTDyvKw-Q/profile-framedphoto-shrink_800_800/B56Z6N.D0TH0AY-/0/1780498320172?e=1783353600&v=beta&t=YRSLbfGDolXgeD7HbY3IyUP7kjMwRO7wagd5MTiRqHA",
+          "width": 800,
+          "height": 800
+        }
+      },
+      "postId": "7477361649767731200"
+    }
+  ],
+  "reactionIds": [
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAB4ZAscBHALqesevt2HWXhih7HmEYa-E7yY,urn:li:activity:7477361649767731200,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAADapbyYB2FyeRSH_UNgWF18Vosctojk2-nY,urn:li:activity:7477361649767731200,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAEh5q8oBIhu_EiAIcki_RGCm1x77MePO1j0,urn:li:activity:7477361649767731200,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAACgRBHUBGyoU8nmSc4qyEfnnci37iSEmcJA,urn:li:activity:7477361649767731200,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAACb-v-8BYyNdZ6EPn_vwoOvk2qQg7XZ-mQQ,urn:li:activity:7477361649767731200,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAEPkmEIB7ziu3Vk-YpNjfYgyOLmIE8ifLgs,urn:li:activity:7477361649767731200,0)"
+  ],
+  "commentIds": [],
+  "query": {
+    "sortBy": "date",
+    "page": 1,
+    "search": "Industrial air compressor",
+    "postedLimit": "month"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAADdvyTkBTlGH4lGRYcb-I1UjOpd7BBpS9OE,urn:li:activity:7477360257770459136,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAADdvyTkBTlGH4lGRYcb-I1UjOpd7BBpS9OE",
+    "name": "A.metalex industrial corporation Kamlesh Patel mumbai -4",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAADdvyTkBTlGH4lGRYcb-I1UjOpd7BBpS9OE",
+    "position": "Business Management at A. Metalex Industrial Corporation",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/C4E03AQFkLNfNILyq7A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1633942862812?e=1784160000&v=beta&t=Vdw07aJRn5GuCFejx1f9gyVgTpqGrCvzw_4kjTklA7U",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/C4E03AQFkLNfNILyq7A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1633942862812?e=1784160000&v=beta&t=Vdw07aJRn5GuCFejx1f9gyVgTpqGrCvzw_4kjTklA7U",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "postId": "7477360257770459136",
+  "query": {
+    "post": "https://www.linkedin.com/posts/sarvjagat_sarvjagat-5hpcompressor-reciprocatingcompressor-activity-7477360257770459136-kLc2"
+  }
+},
+{
+  "type": "post",
+  "id": "7477360257770459136",
+  "linkedinUrl": "https://www.linkedin.com/posts/sarvjagat_sarvjagat-5hpcompressor-reciprocatingcompressor-activity-7477360257770459136-kLc2",
+  "content": "🏭 SUPPORTING COOLING MACHINERY WITH DEPENDABLE COMPRESSED AIR.\n\nCompressed air plays an important role in many cooling and refrigeration applications, where reliability and consistent performance are essential for smooth operation.\n\nThis SJ 5 HP Reciprocating Compressor has been supplied for an ammonia cooling machinery application, delivering the dependable air support required for industrial processes.\n\n⚙️ System Highlights:\n\n✅ 5 HP Reciprocating Compressor\n✅ Heavy-Duty Industrial Design\n✅ Reliable Air Delivery\n✅ Low Maintenance Operation\n✅ Built for Continuous Working Conditions\n\nDesigned to provide long-lasting performance, this compressor is suitable for various industrial machinery and process applications where dependable compressed air is a necessity.\n\nThank you to our customer for choosing Sarv Jagat.\n\n📍 Installed in Bavla, Gujarat\n\n📧 connect@sarvjagat.com\n🌐 www.sarvjagat.com\n📞 +91 91574 87233\n📞 +91 91577 70753\n\nSarv Jagat Corporation\n❤️ Heart of Your Industries.\n\n#SarvJagat #5HPCompressor #ReciprocatingCompressor #CoolingMachinery #AmmoniaCooling #IndustrialCompressor #Bavla #Gujarat #MadeInIndia",
+  "contentAttributes": [],
+  "author": {
+    "id": "106081492",
+    "universalName": "sarvjagat",
+    "publicIdentifier": null,
+    "type": "company",
+    "name": "Sarv Jagat Corporation",
+    "linkedinUrl": "https://www.linkedin.com/company/sarvjagat/posts",
+    "info": "1,250 followers",
+    "website": null,
+    "websiteLabel": null,
+    "avatar": {
+      "url": "https://media.licdn.com/dms/image/v2/D4D0BAQFBfQ3XQbmbtg/img-crop_100/img-crop_100/0/1738604460711?e=1784160000&v=beta&t=xMLAkQSOjSFL4Rh0Ks-_7HW-OZEkpGP2IQhtfUpKWUo",
+      "width": 100,
+      "height": 100
+    },
+    "urn": "106081492"
+  },
+  "postedAt": {
+    "timestamp": 1782741608088,
+    "date": "2026-06-29T14:00:08.088Z",
+    "postedAgoShort": "1h",
+    "postedAgoText": "1 hour ago • Visible to anyone on or off LinkedIn"
+  },
+  "postImages": [
+    {
+      "url": "https://media.licdn.com/dms/image/v2/D4D22AQFesOq2SlaEwQ/feedshare-shrink_1280/B4DZ7_bEY2HEAM-/0/1782401746829?e=1784160000&v=beta&t=LCu33LcCLMGuENKfAgAfef6RDMS2lqrId6ZWGrZrSEE",
+      "width": 1080,
+      "height": 1080
+    }
+  ],
+  "socialContent": {
+    "hideCommentsCount": false,
+    "hideReactionsCount": false,
+    "hideSocialActivityCounts": false,
+    "hideShareAction": true,
+    "hideSendAction": true,
+    "hideRepostsCount": false,
+    "hideViewsCount": false,
+    "trustInterventionBanner": null,
+    "hideReactAction": false,
+    "hideCommentAction": false,
+    "shareUrl": "https://www.linkedin.com/posts/sarvjagat_sarvjagat-5hpcompressor-reciprocatingcompressor-activity-7477360257770459136-kLc2?",
+    "showContributionExperience": false,
+    "showSocialDetail": true
+  },
+  "header": {
+    "text": null
+  },
+  "entityId": "7477360257770459136",
+  "shareUrn": "urn:li:share:7475934781004886016",
+  "shareLinkedinUrl": "https://www.linkedin.com/feed/update/urn:li:share:7475934781004886016",
+  "engagement": {
+    "id": "7477360257770459136",
+    "likes": 1,
+    "comments": 0,
+    "shares": 1,
+    "reactions": [
+      {
+        "type": "LIKE",
+        "count": 1
+      }
+    ]
+  },
+  "reactions": [
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAADdvyTkBTlGH4lGRYcb-I1UjOpd7BBpS9OE,urn:li:activity:7477360257770459136,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAADdvyTkBTlGH4lGRYcb-I1UjOpd7BBpS9OE",
+        "name": "A.metalex industrial corporation Kamlesh Patel mumbai -4",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAADdvyTkBTlGH4lGRYcb-I1UjOpd7BBpS9OE",
+        "position": "Business Management at A. Metalex Industrial Corporation",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/C4E03AQFkLNfNILyq7A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1633942862812?e=1784160000&v=beta&t=Vdw07aJRn5GuCFejx1f9gyVgTpqGrCvzw_4kjTklA7U",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/C4E03AQFkLNfNILyq7A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1633942862812?e=1784160000&v=beta&t=Vdw07aJRn5GuCFejx1f9gyVgTpqGrCvzw_4kjTklA7U",
+          "width": 800,
+          "height": 800
+        }
+      },
+      "postId": "7477360257770459136"
+    }
+  ],
+  "reactionIds": [
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAADdvyTkBTlGH4lGRYcb-I1UjOpd7BBpS9OE,urn:li:activity:7477360257770459136,0)"
+  ],
+  "commentIds": [],
+  "query": {
+    "sortBy": "date",
+    "page": 1,
+    "search": "Industrial air compressor",
+    "postedLimit": "month"
+  }
+},
+{
+  "type": "post",
+  "id": "7477360297494843393",
+  "linkedinUrl": "https://www.linkedin.com/posts/zorn-compressor-%26-equipment-inc_zorncompressor-blowers-highefficiency-activity-7477360297494843393-S4U-",
+  "content": "𝗣𝗼𝘄𝗲𝗿𝗳𝘂𝗹, 𝗿𝗲𝗹𝗶𝗮𝗯𝗹𝗲, 𝗮𝗻𝗱 𝗯𝘂𝗶𝗹𝘁 𝘁𝗼 𝘀𝗮𝘁𝗶𝘀𝗳𝘆 𝘆𝗼𝘂𝗿 𝗳𝗮𝗰𝗶𝗹𝗶𝘁𝘆’𝘀 𝘂𝗻𝗶𝗾𝘂𝗲 𝗱𝗲𝗺𝗮𝗻𝗱𝘀, 𝗼𝘂𝗿 𝗶𝗻𝗱𝘂𝘀𝘁𝗿𝗶𝗮𝗹 𝗯𝗹𝗼𝘄𝗲𝗿𝘀 𝗮𝗿𝗲 𝗷𝘂𝘀𝘁 𝘁𝗵𝗲 𝘀𝗼𝗹𝘂𝘁𝗶𝗼𝗻 𝘆𝗼𝘂𝗿 𝗼𝗽𝗲𝗿𝗮𝘁𝗶𝗼𝗻 𝗻𝗲𝗲𝗱𝘀!💨\n\nWant to learn more about our industrial blower options? Visit our website or contact us today!\n\n𝘄𝘄𝘄.𝘇𝗼𝗿𝗻𝗮𝗶𝗿.𝗰𝗼𝗺\n\n𝟭-𝟴𝟬𝟬-𝟰𝟳𝟲-𝟰𝟲𝟯𝟳\n\n#ZornCompressor #Blowers #HighEfficiency #Solutions #MoreThanCompressors #GreatTeam",
+  "contentAttributes": [],
+  "author": {
+    "id": "903040",
+    "universalName": "zorn-compressor-&-equipment-inc",
+    "publicIdentifier": null,
+    "type": "company",
+    "name": "Zorn Compressor & Equipment (Industrial Compressed Air Solutions)",
+    "linkedinUrl": "https://www.linkedin.com/company/zorn-compressor-&-equipment-inc/posts",
+    "info": "2,306 followers",
+    "website": null,
+    "websiteLabel": null,
+    "avatar": {
+      "url": "https://media.licdn.com/dms/image/v2/C510BAQGc2Emw3GpWCw/company-logo_400_400/company-logo_400_400/0/1631381937362?e=1784160000&v=beta&t=czOpfkxIKfQM8EHo3nuszZNro_qSjyGiOlXfhDOhxIM",
+      "width": 400,
+      "height": 400
+    },
+    "urn": "903040"
+  },
+  "postedAt": {
+    "timestamp": 1782741617559,
+    "date": "2026-06-29T14:00:17.559Z",
+    "postedAgoShort": "1h",
+    "postedAgoText": "1 hour ago • Visible to anyone on or off LinkedIn"
+  },
+  "postImages": [
+    {
+      "url": "https://media.licdn.com/dms/image/v2/D5622AQHVmbXqzRXpPA/feedshare-shrink_1280/B56Z5uu_JoHYAM-/0/1779974271926?e=1784160000&v=beta&t=yQLQJEWFcXHESDRfVK13rYvnF6GangCbKZD5PL4udac",
+      "width": 940,
+      "height": 788
+    }
+  ],
+  "socialContent": {
+    "hideCommentsCount": false,
+    "hideReactionsCount": false,
+    "hideSocialActivityCounts": false,
+    "hideShareAction": true,
+    "hideSendAction": true,
+    "hideRepostsCount": false,
+    "hideViewsCount": false,
+    "trustInterventionBanner": null,
+    "hideReactAction": false,
+    "hideCommentAction": false,
+    "shareUrl": "https://www.linkedin.com/posts/zorn-compressor-%26-equipment-inc_zorncompressor-blowers-highefficiency-activity-7477360297494843393-S4U-?",
+    "showContributionExperience": false,
+    "showSocialDetail": true
+  },
+  "header": {
+    "text": null
+  },
+  "entityId": "7477360297494843393",
+  "shareUrn": "urn:li:share:7465753212986331136",
+  "shareLinkedinUrl": "https://www.linkedin.com/feed/update/urn:li:share:7465753212986331136",
+  "engagement": {
+    "id": "7477360297494843393",
+    "likes": 0,
+    "comments": 0,
+    "shares": 0,
+    "reactions": []
+  },
+  "reactions": [],
+  "reactionIds": [],
+  "commentIds": [],
+  "query": {
+    "sortBy": "date",
+    "page": 1,
+    "search": "Industrial air compressor",
+    "postedLimit": "month"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAEMwSc4B9BvejFVJUQjAQXTl7eg2KA3IWkY,urn:li:activity:7477357251419160576,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAAEMwSc4B9BvejFVJUQjAQXTl7eg2KA3IWkY",
+    "name": "Wesley Guimarães",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAAEMwSc4B9BvejFVJUQjAQXTl7eg2KA3IWkY",
+    "position": "Diretor de Expansão | Energia e Grupos Geradores Rotarco",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/D4E03AQGJlbIvU7dV4Q/profile-displayphoto-crop_800_800/B4EZ5m7UpAHUAI-/0/1779843287934?e=1784160000&v=beta&t=GRtpTs5bjC1EMAfJPqedSrx_MwVXnBjBCVE6cBfQ2KI",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/D4E03AQGJlbIvU7dV4Q/profile-displayphoto-crop_800_800/B4EZ5m7UpAHUAI-/0/1779843287934?e=1784160000&v=beta&t=GRtpTs5bjC1EMAfJPqedSrx_MwVXnBjBCVE6cBfQ2KI",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "postId": "7477357251419160576",
+  "query": {
+    "post": "https://www.linkedin.com/posts/jamieloveridgehertz_hertzkompressoren-impetus-compressedair-activity-7477357251419160576-zRO5"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAABHFdSYB-tV2EnZZHn6StErpEv0DVHx139o,urn:li:activity:7477357251419160576,0)",
+  "reactionType": "PRAISE",
+  "actor": {
+    "id": "ACoAABHFdSYB-tV2EnZZHn6StErpEv0DVHx139o",
+    "name": "Paul Broadway",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAABHFdSYB-tV2EnZZHn6StErpEv0DVHx139o",
+    "position": "Driving Sustainable Growth Through Energy-Efficient Compressor Solutions & Strategic Distribution Leadership"
+  },
+  "postId": "7477357251419160576",
+  "query": {
+    "post": "https://www.linkedin.com/posts/jamieloveridgehertz_hertzkompressoren-impetus-compressedair-activity-7477357251419160576-zRO5"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAEgPbskBRYLdld5SzKBxQmX8uMFrMaVEygA,urn:li:activity:7477357251419160576,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAAEgPbskBRYLdld5SzKBxQmX8uMFrMaVEygA",
+    "name": "Phillip Lee",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAAEgPbskBRYLdld5SzKBxQmX8uMFrMaVEygA",
+    "position": "Director at Alfa Executive Solutions"
+  },
+  "postId": "7477357251419160576",
+  "query": {
+    "post": "https://www.linkedin.com/posts/jamieloveridgehertz_hertzkompressoren-impetus-compressedair-activity-7477357251419160576-zRO5"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAACiq2fcBapXjXuBLEqlxrBEzHlR5bczlA9I,urn:li:activity:7477357251419160576,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAACiq2fcBapXjXuBLEqlxrBEzHlR5bczlA9I",
+    "name": "Buğrahan Bahadır",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAACiq2fcBapXjXuBLEqlxrBEzHlR5bczlA9I",
+    "position": "President",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/C4D03AQGoAmp--7za3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1599588096158?e=1784160000&v=beta&t=UrNwRI9RkP7TEqgUxsu8RlWw7uOe5KWn_8MJR8AFvUU",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/C4D03AQGoAmp--7za3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1599588096158?e=1784160000&v=beta&t=UrNwRI9RkP7TEqgUxsu8RlWw7uOe5KWn_8MJR8AFvUU",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "postId": "7477357251419160576",
+  "query": {
+    "post": "https://www.linkedin.com/posts/jamieloveridgehertz_hertzkompressoren-impetus-compressedair-activity-7477357251419160576-zRO5"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAACbRWaAB1ndQ6K-3I0uGKGMIM-FpCRRywQ8,urn:li:activity:7477357251419160576,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAACbRWaAB1ndQ6K-3I0uGKGMIM-FpCRRywQ8",
+    "name": "Matthew Bosworth",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAACbRWaAB1ndQ6K-3I0uGKGMIM-FpCRRywQ8",
+    "position": "Technical Support Manager at Hertz Compressors UK",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/D4E03AQGPwbz1PSAKvg/profile-displayphoto-crop_800_800/B4EZuNyLxUIQAI-/0/1767610303025?e=1784160000&v=beta&t=5dTqtLHOpsbD8Y5aDZVdoKlapMrg9soLNzufiiwhOlc",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/D4E03AQGPwbz1PSAKvg/profile-displayphoto-crop_800_800/B4EZuNyLxUIQAI-/0/1767610303025?e=1784160000&v=beta&t=5dTqtLHOpsbD8Y5aDZVdoKlapMrg9soLNzufiiwhOlc",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "postId": "7477357251419160576",
+  "query": {
+    "post": "https://www.linkedin.com/posts/jamieloveridgehertz_hertzkompressoren-impetus-compressedair-activity-7477357251419160576-zRO5"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAAqLGVUBrbtRvJh5hIIZUbzxC9kw1GYofRw,urn:li:activity:7477357251419160576,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAAAqLGVUBrbtRvJh5hIIZUbzxC9kw1GYofRw",
+    "name": "Mustafa Canbaz",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAAAqLGVUBrbtRvJh5hIIZUbzxC9kw1GYofRw",
+    "position": "President of Business Divisions",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/C5603AQGtGBtzgYbUSA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517562740098?e=1784160000&v=beta&t=Y-JCBcvUsuxYYKKRf1QEzgNjp6nVQW3v2BLAbMzYQg0",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/C5603AQGtGBtzgYbUSA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517562740098?e=1784160000&v=beta&t=Y-JCBcvUsuxYYKKRf1QEzgNjp6nVQW3v2BLAbMzYQg0",
+      "width": 450,
+      "height": 450
+    }
+  },
+  "postId": "7477357251419160576",
+  "query": {
+    "post": "https://www.linkedin.com/posts/jamieloveridgehertz_hertzkompressoren-impetus-compressedair-activity-7477357251419160576-zRO5"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAABbM5KUBucE7Z_IvP1a8yHAlO0EhgzpMVBo,urn:li:activity:7477357251419160576,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAABbM5KUBucE7Z_IvP1a8yHAlO0EhgzpMVBo",
+    "name": "ONUR DOGRU",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAABbM5KUBucE7Z_IvP1a8yHAlO0EhgzpMVBo",
+    "position": "After Sales Services Manager",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/C4D03AQHZVOKTSsKHjQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1571663082827?e=1784160000&v=beta&t=2MP509j0YixFb1zVybY-jYhz3inumdbCHDQDgsJnZas",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/C4D03AQHZVOKTSsKHjQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1571663082827?e=1784160000&v=beta&t=2MP509j0YixFb1zVybY-jYhz3inumdbCHDQDgsJnZas",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "postId": "7477357251419160576",
+  "query": {
+    "post": "https://www.linkedin.com/posts/jamieloveridgehertz_hertzkompressoren-impetus-compressedair-activity-7477357251419160576-zRO5"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAA6tEOkBo_49THUzqyRzYoDPfj5UjdfLwkk,urn:li:activity:7477357251419160576,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAAA6tEOkBo_49THUzqyRzYoDPfj5UjdfLwkk",
+    "name": "Stephen Adeyemi",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAAA6tEOkBo_49THUzqyRzYoDPfj5UjdfLwkk",
+    "position": "Christian | Inventor | Entrepreneur",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/C4D03AQFCzi8MG6GbXA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1612532992193?e=1784160000&v=beta&t=lO99oTvORzeVfT2Rf-zFq6VuachmuUpQoeGzzLblcNM",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/C4D03AQFCzi8MG6GbXA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1612532992193?e=1784160000&v=beta&t=lO99oTvORzeVfT2Rf-zFq6VuachmuUpQoeGzzLblcNM",
+      "width": 729,
+      "height": 729
+    }
+  },
+  "postId": "7477357251419160576",
+  "query": {
+    "post": "https://www.linkedin.com/posts/jamieloveridgehertz_hertzkompressoren-impetus-compressedair-activity-7477357251419160576-zRO5"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAD8uopEBfdjGkb_PshZD4yhy_yq_j1CiH2M,urn:li:activity:7477357251419160576,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAAD8uopEBfdjGkb_PshZD4yhy_yq_j1CiH2M",
+    "name": "Aslıhan Yardımcı",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAAD8uopEBfdjGkb_PshZD4yhy_yq_j1CiH2M",
+    "position": "Senior Export Sales Support Specialist at Dalgakıran Kompresör",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/D4D03AQGc7lq5qHeGEw/profile-displayphoto-crop_800_800/B4DZ5pfg5CJ4AI-/0/1779886330082?e=1784160000&v=beta&t=R-HwSH5xHU8nAM_gx6GEmmFINjRuum7Arj-frbLfYok",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/D4D03AQGc7lq5qHeGEw/profile-displayphoto-crop_800_800/B4DZ5pfg5CJ4AI-/0/1779886330082?e=1784160000&v=beta&t=R-HwSH5xHU8nAM_gx6GEmmFINjRuum7Arj-frbLfYok",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "postId": "7477357251419160576",
+  "query": {
+    "post": "https://www.linkedin.com/posts/jamieloveridgehertz_hertzkompressoren-impetus-compressedair-activity-7477357251419160576-zRO5"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAAq_iywB6eNB4_sBNAl8r6a9hMgnW4n7L0M,urn:li:activity:7477357251419160576,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAAAq_iywB6eNB4_sBNAl8r6a9hMgnW4n7L0M",
+    "name": "Cengiz Kement",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAAAq_iywB6eNB4_sBNAl8r6a9hMgnW4n7L0M",
+    "position": "DALGAKIRAN KOMPRESÖR şirketinde Production Director",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/C4D03AQFBC_xOukHc4A/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1613848050450?e=1784160000&v=beta&t=RMtlf6OeVBaki6Mn7DNpXMe9coq-Xvdeb8o_gQ5DcMo",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/C4D03AQFBC_xOukHc4A/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1613848050450?e=1784160000&v=beta&t=RMtlf6OeVBaki6Mn7DNpXMe9coq-Xvdeb8o_gQ5DcMo",
+      "width": 335,
+      "height": 335
+    }
+  },
+  "postId": "7477357251419160576",
+  "query": {
+    "post": "https://www.linkedin.com/posts/jamieloveridgehertz_hertzkompressoren-impetus-compressedair-activity-7477357251419160576-zRO5"
+  }
+},
+{
+  "type": "post",
+  "id": "7477357251419160576",
+  "linkedinUrl": "https://www.linkedin.com/posts/jamieloveridgehertz_hertzkompressoren-impetus-compressedair-activity-7477357251419160576-zRO5",
+  "content": "Another successful installation completed! \n\nA new Hertz Kompressoren Impetus 55kW two-stage variable-speed compressor is now up and running, providing a customer with a significantly more energy-efficient and reliable compressed-air solution.\n\nDelivering an impressive maximum flow of 11.60 m³/min at 7.5 bar while maintaining an outstanding specific power of just 5.55 kW/(m³/min) at maximum speed and an isentropic efficiency of 83.7%, all from a remarkably compact footprint of just 1,450 × 1,400 mm, the Impetus range has been engineered to minimise energy consumption without compromising performance.\n\nAnd if you believe the weight of a compressor says something about the engineering beneath the panels, this 1,620 kg machine certainly makes a statement. Built for demanding industrial applications, the Impetus combines robust engineering with exceptional energy efficiency.\n\nKey benefits include:\n·      Two-stage compression for exceptional efficiency\n·      Intelligent variable speed control to match air demand\n·      IE5 permanent magnet motor technology\n·      Reduced energy consumption and lower operating costs\n·      Quiet, reliable operation with outstanding performance\n·      Backed by our SMART+ 10-year whole machine warranty\n\nWhen compressed air accounts for a significant proportion of a site's electricity consumption, choosing the right compressor can have a major impact on operating costs for years to come.\n\nCongratulations and thank you to everyone involved in another professional installation.\n\nIf you're a compressed air distributor looking for a premium manufacturer-backed alternative to complement your existing portfolio, why not arrange a confidential conversation? You may be surprised by what Hertz Kompressoren can offer, from exceptional efficiency and performance to UK stock, attractive margins, comprehensive technical support, and the confidence of a manufacturer-backed warranty.\n\n📞 01536 808622\n 📧 infouk@hertz-kompressoren.com\n 🌐 https://lnkd.in/eAyb7rxZ\n\n#HertzKompressoren #Impetus #CompressedAir #EnergyEfficiency #Distributor #CompressedAirSystems",
+  "contentAttributes": [],
+  "author": {
+    "id": "ACoAABWAMCwB4zyyTEVgfTmtWTI6lH0gVymudfU",
+    "universalName": null,
+    "publicIdentifier": "jamieloveridgehertz",
+    "type": "profile",
+    "name": "Jamie Loveridge",
+    "linkedinUrl": "https://www.linkedin.com/in/jamieloveridgehertz?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAABWAMCwB4zyyTEVgfTmtWTI6lH0gVymudfU",
+    "info": "Bringing world-class compressor technology to UK markets",
+    "website": "http://www.hertz-kompressoren.com/uk",
+    "websiteLabel": "Visit my website",
+    "avatar": {
+      "url": "https://media.licdn.com/dms/image/v2/D4D03AQECryTVzvC1Dg/profile-displayphoto-shrink_800_800/B4DZaA3J_vG0Ag-/0/1745918665217?e=1784160000&v=beta&t=n9jsuDM0Ukx8Q5Rd8oZHcvo_n5NOX06rvE363Mkbo2w",
+      "width": 768,
+      "height": 768
+    },
+    "urn": "360722476"
+  },
+  "postedAt": {
+    "timestamp": 1782740891318,
+    "date": "2026-06-29T13:48:11.318Z",
+    "postedAgoShort": "2h",
+    "postedAgoText": "2 hours ago • Visible to anyone on or off LinkedIn"
+  },
+  "postImages": [
+    {
+      "url": "https://media.licdn.com/dms/image/v2/D4E22AQEvFKOMU3NW6w/feedshare-shrink_1280/B4EZ8TozFrIcAM-/0/1782740890225?e=1784160000&v=beta&t=rTFUmPvP24dM9i-TXuO-eW7jDpC5wLyym1q1pwTqaoY",
+      "width": 900,
+      "height": 1088
+    }
+  ],
+  "socialContent": {
+    "hideCommentsCount": false,
+    "hideReactionsCount": false,
+    "hideSocialActivityCounts": false,
+    "hideShareAction": true,
+    "hideSendAction": true,
+    "hideRepostsCount": false,
+    "hideViewsCount": false,
+    "trustInterventionBanner": null,
+    "hideReactAction": false,
+    "hideCommentAction": false,
+    "shareUrl": "https://www.linkedin.com/posts/jamieloveridgehertz_hertzkompressoren-impetus-compressedair-activity-7477357251419160576-zRO5?",
+    "showContributionExperience": false,
+    "showSocialDetail": true
+  },
+  "header": {
+    "text": null
+  },
+  "entityId": "7477357251419160576",
+  "shareUrn": "urn:li:share:7477357248227409920",
+  "shareLinkedinUrl": "https://www.linkedin.com/feed/update/urn:li:share:7477357248227409920",
+  "engagement": {
+    "id": "7477357251419160576",
+    "likes": 19,
+    "comments": 0,
+    "shares": 3,
+    "reactions": [
+      {
+        "type": "LIKE",
+        "count": 16
+      },
+      {
+        "type": "PRAISE",
+        "count": 2
+      },
+      {
+        "type": "EMPATHY",
+        "count": 1
+      }
+    ]
+  },
+  "reactions": [
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAAqLGVUBrbtRvJh5hIIZUbzxC9kw1GYofRw,urn:li:activity:7477357251419160576,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAAAqLGVUBrbtRvJh5hIIZUbzxC9kw1GYofRw",
+        "name": "Mustafa Canbaz",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAAAqLGVUBrbtRvJh5hIIZUbzxC9kw1GYofRw",
+        "position": "President of Business Divisions",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/C5603AQGtGBtzgYbUSA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517562740098?e=1784160000&v=beta&t=Y-JCBcvUsuxYYKKRf1QEzgNjp6nVQW3v2BLAbMzYQg0",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/C5603AQGtGBtzgYbUSA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517562740098?e=1784160000&v=beta&t=Y-JCBcvUsuxYYKKRf1QEzgNjp6nVQW3v2BLAbMzYQg0",
+          "width": 450,
+          "height": 450
+        }
+      },
+      "postId": "7477357251419160576"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAABbM5KUBucE7Z_IvP1a8yHAlO0EhgzpMVBo,urn:li:activity:7477357251419160576,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAABbM5KUBucE7Z_IvP1a8yHAlO0EhgzpMVBo",
+        "name": "ONUR DOGRU",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAABbM5KUBucE7Z_IvP1a8yHAlO0EhgzpMVBo",
+        "position": "After Sales Services Manager",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/C4D03AQHZVOKTSsKHjQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1571663082827?e=1784160000&v=beta&t=2MP509j0YixFb1zVybY-jYhz3inumdbCHDQDgsJnZas",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/C4D03AQHZVOKTSsKHjQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1571663082827?e=1784160000&v=beta&t=2MP509j0YixFb1zVybY-jYhz3inumdbCHDQDgsJnZas",
+          "width": 800,
+          "height": 800
+        }
+      },
+      "postId": "7477357251419160576"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAEMwSc4B9BvejFVJUQjAQXTl7eg2KA3IWkY,urn:li:activity:7477357251419160576,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAAEMwSc4B9BvejFVJUQjAQXTl7eg2KA3IWkY",
+        "name": "Wesley Guimarães",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAAEMwSc4B9BvejFVJUQjAQXTl7eg2KA3IWkY",
+        "position": "Diretor de Expansão | Energia e Grupos Geradores Rotarco",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/D4E03AQGJlbIvU7dV4Q/profile-displayphoto-crop_800_800/B4EZ5m7UpAHUAI-/0/1779843287934?e=1784160000&v=beta&t=GRtpTs5bjC1EMAfJPqedSrx_MwVXnBjBCVE6cBfQ2KI",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/D4E03AQGJlbIvU7dV4Q/profile-displayphoto-crop_800_800/B4EZ5m7UpAHUAI-/0/1779843287934?e=1784160000&v=beta&t=GRtpTs5bjC1EMAfJPqedSrx_MwVXnBjBCVE6cBfQ2KI",
+          "width": 800,
+          "height": 800
+        }
+      },
+      "postId": "7477357251419160576"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAD8uopEBfdjGkb_PshZD4yhy_yq_j1CiH2M,urn:li:activity:7477357251419160576,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAAD8uopEBfdjGkb_PshZD4yhy_yq_j1CiH2M",
+        "name": "Aslıhan Yardımcı",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAAD8uopEBfdjGkb_PshZD4yhy_yq_j1CiH2M",
+        "position": "Senior Export Sales Support Specialist at Dalgakıran Kompresör",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/D4D03AQGc7lq5qHeGEw/profile-displayphoto-crop_800_800/B4DZ5pfg5CJ4AI-/0/1779886330082?e=1784160000&v=beta&t=R-HwSH5xHU8nAM_gx6GEmmFINjRuum7Arj-frbLfYok",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/D4D03AQGc7lq5qHeGEw/profile-displayphoto-crop_800_800/B4DZ5pfg5CJ4AI-/0/1779886330082?e=1784160000&v=beta&t=R-HwSH5xHU8nAM_gx6GEmmFINjRuum7Arj-frbLfYok",
+          "width": 800,
+          "height": 800
+        }
+      },
+      "postId": "7477357251419160576"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAEgPbskBRYLdld5SzKBxQmX8uMFrMaVEygA,urn:li:activity:7477357251419160576,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAAEgPbskBRYLdld5SzKBxQmX8uMFrMaVEygA",
+        "name": "Phillip Lee",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAAEgPbskBRYLdld5SzKBxQmX8uMFrMaVEygA",
+        "position": "Director at Alfa Executive Solutions"
+      },
+      "postId": "7477357251419160576"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAABHFdSYB-tV2EnZZHn6StErpEv0DVHx139o,urn:li:activity:7477357251419160576,0)",
+      "reactionType": "PRAISE",
+      "actor": {
+        "id": "ACoAABHFdSYB-tV2EnZZHn6StErpEv0DVHx139o",
+        "name": "Paul Broadway",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAABHFdSYB-tV2EnZZHn6StErpEv0DVHx139o",
+        "position": "Driving Sustainable Growth Through Energy-Efficient Compressor Solutions & Strategic Distribution Leadership"
+      },
+      "postId": "7477357251419160576"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAACbRWaAB1ndQ6K-3I0uGKGMIM-FpCRRywQ8,urn:li:activity:7477357251419160576,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAACbRWaAB1ndQ6K-3I0uGKGMIM-FpCRRywQ8",
+        "name": "Matthew Bosworth",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAACbRWaAB1ndQ6K-3I0uGKGMIM-FpCRRywQ8",
+        "position": "Technical Support Manager at Hertz Compressors UK",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/D4E03AQGPwbz1PSAKvg/profile-displayphoto-crop_800_800/B4EZuNyLxUIQAI-/0/1767610303025?e=1784160000&v=beta&t=5dTqtLHOpsbD8Y5aDZVdoKlapMrg9soLNzufiiwhOlc",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/D4E03AQGPwbz1PSAKvg/profile-displayphoto-crop_800_800/B4EZuNyLxUIQAI-/0/1767610303025?e=1784160000&v=beta&t=5dTqtLHOpsbD8Y5aDZVdoKlapMrg9soLNzufiiwhOlc",
+          "width": 800,
+          "height": 800
+        }
+      },
+      "postId": "7477357251419160576"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAACiq2fcBapXjXuBLEqlxrBEzHlR5bczlA9I,urn:li:activity:7477357251419160576,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAACiq2fcBapXjXuBLEqlxrBEzHlR5bczlA9I",
+        "name": "Buğrahan Bahadır",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAACiq2fcBapXjXuBLEqlxrBEzHlR5bczlA9I",
+        "position": "President",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/C4D03AQGoAmp--7za3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1599588096158?e=1784160000&v=beta&t=UrNwRI9RkP7TEqgUxsu8RlWw7uOe5KWn_8MJR8AFvUU",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/C4D03AQGoAmp--7za3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1599588096158?e=1784160000&v=beta&t=UrNwRI9RkP7TEqgUxsu8RlWw7uOe5KWn_8MJR8AFvUU",
+          "width": 800,
+          "height": 800
+        }
+      },
+      "postId": "7477357251419160576"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAA6tEOkBo_49THUzqyRzYoDPfj5UjdfLwkk,urn:li:activity:7477357251419160576,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAAA6tEOkBo_49THUzqyRzYoDPfj5UjdfLwkk",
+        "name": "Stephen Adeyemi",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAAA6tEOkBo_49THUzqyRzYoDPfj5UjdfLwkk",
+        "position": "Christian | Inventor | Entrepreneur",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/C4D03AQFCzi8MG6GbXA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1612532992193?e=1784160000&v=beta&t=lO99oTvORzeVfT2Rf-zFq6VuachmuUpQoeGzzLblcNM",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/C4D03AQFCzi8MG6GbXA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1612532992193?e=1784160000&v=beta&t=lO99oTvORzeVfT2Rf-zFq6VuachmuUpQoeGzzLblcNM",
+          "width": 729,
+          "height": 729
+        }
+      },
+      "postId": "7477357251419160576"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAAq_iywB6eNB4_sBNAl8r6a9hMgnW4n7L0M,urn:li:activity:7477357251419160576,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAAAq_iywB6eNB4_sBNAl8r6a9hMgnW4n7L0M",
+        "name": "Cengiz Kement",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAAAq_iywB6eNB4_sBNAl8r6a9hMgnW4n7L0M",
+        "position": "DALGAKIRAN KOMPRESÖR şirketinde Production Director",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/C4D03AQFBC_xOukHc4A/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1613848050450?e=1784160000&v=beta&t=RMtlf6OeVBaki6Mn7DNpXMe9coq-Xvdeb8o_gQ5DcMo",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/C4D03AQFBC_xOukHc4A/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1613848050450?e=1784160000&v=beta&t=RMtlf6OeVBaki6Mn7DNpXMe9coq-Xvdeb8o_gQ5DcMo",
+          "width": 335,
+          "height": 335
+        }
+      },
+      "postId": "7477357251419160576"
+    }
+  ],
+  "reactionIds": [
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAAqLGVUBrbtRvJh5hIIZUbzxC9kw1GYofRw,urn:li:activity:7477357251419160576,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAABbM5KUBucE7Z_IvP1a8yHAlO0EhgzpMVBo,urn:li:activity:7477357251419160576,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAEMwSc4B9BvejFVJUQjAQXTl7eg2KA3IWkY,urn:li:activity:7477357251419160576,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAD8uopEBfdjGkb_PshZD4yhy_yq_j1CiH2M,urn:li:activity:7477357251419160576,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAEgPbskBRYLdld5SzKBxQmX8uMFrMaVEygA,urn:li:activity:7477357251419160576,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAABHFdSYB-tV2EnZZHn6StErpEv0DVHx139o,urn:li:activity:7477357251419160576,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAACbRWaAB1ndQ6K-3I0uGKGMIM-FpCRRywQ8,urn:li:activity:7477357251419160576,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAACiq2fcBapXjXuBLEqlxrBEzHlR5bczlA9I,urn:li:activity:7477357251419160576,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAA6tEOkBo_49THUzqyRzYoDPfj5UjdfLwkk,urn:li:activity:7477357251419160576,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAAq_iywB6eNB4_sBNAl8r6a9hMgnW4n7L0M,urn:li:activity:7477357251419160576,0)"
+  ],
+  "commentIds": [],
+  "query": {
+    "sortBy": "date",
+    "page": 1,
+    "search": "Industrial air compressor",
+    "postedLimit": "month"
+  }
+},
+{
+  "type": "post",
+  "id": "7477357333308862464",
+  "linkedinUrl": "https://www.linkedin.com/posts/zakir-hossain-alzara_scrapbuyer-dammam-alkhobar-activity-7477357333308862464-jw_F",
+  "content": "♻️ Turn Your Scrap Into Instant Cash with Al-Zara International Trading Company!\n\nDo you have unwanted scrap materials taking up valuable space?\nWe buy all types of industrial, commercial, and residential scrap at the best market prices across Dammam, Al Khobar, Jubail, Dhahran, Qatif, and the entire Eastern Province of Saudi Arabia.\n\n✅ Iron & Steel Scrap\n✅ Copper & Aluminum Scrap\n✅ Stainless Steel Scrap\n✅ Industrial Machinery Scrap\n✅ Factory & Warehouse Scrap\n✅ Air Conditioners & Compressors\n✅ Electrical Cables & Equipment\n✅ Batteries, Motors & Generators\n✅ Complete Plant & Factory Dismantling\n\nWhy Choose Al-Zara International Trading Company?\n✔️ Best Scrap Prices Guaranteed\n✔️ Fast Pickup Service\n✔️ Instant Payment\n✔️ Professional Team\n✔️ Trusted Industrial Scrap Buyer\n✔️ Serving Businesses & Individuals Across Eastern Province\n\nWhether you're clearing a factory, workshop, warehouse, construction site, or simply selling old machinery, our experienced team ensures a smooth, transparent, and hassle-free process.\n\n📞 Contact Al-Zara International Trading Company today for a free quotation and quick scrap collection.\n\n♻️ Sell Your Scrap. Save Space. Earn More with Al-Zara!\n\n\n#ScrapBuyer #Dammam #AlKhobar #Jubail #SaudiArabia #IndustrialScrap #MetalScrap #ScrapYard #FactoryScrap #MachineryScrap #SteelScrap #CopperScrap #AlZara #Recycling #EasternProvince",
+  "contentAttributes": [],
+  "author": {
+    "id": "ACoAAGnuaw0BiMoUOte6-_iO7CHuDZPvflRyIwc",
+    "universalName": null,
+    "publicIdentifier": "zakir-hossain-alzara",
+    "type": "profile",
+    "name": "Md Zakir Hossain",
+    "linkedinUrl": "https://www.linkedin.com/in/zakir-hossain-alzara?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAGnuaw0BiMoUOte6-_iO7CHuDZPvflRyIwc",
+    "info": "Industrial Scrap Buyer | Metal Recycling & Asset Recovery | Best Scrap Buyer in Dammam |",
+    "website": null,
+    "websiteLabel": null,
+    "avatar": {
+      "url": "https://media.licdn.com/dms/image/v2/D5603AQGbQjZ_xXXCkQ/profile-displayphoto-crop_800_800/B56Z7PFRFcHYAI-/0/1781590726876?e=1784160000&v=beta&t=dmTR55sSVKDEzZF0FuOBsFNx71MZcpHB2ymYKKm3Cf4",
+      "width": 800,
+      "height": 800
+    },
+    "urn": "1777232653"
+  },
+  "postedAt": {
+    "timestamp": 1782740910842,
+    "date": "2026-06-29T13:48:30.842Z",
+    "postedAgoShort": "2h",
+    "postedAgoText": "2 hours ago • Visible to anyone on or off LinkedIn"
+  },
+  "postImages": [
+    {
+      "url": "https://media.licdn.com/dms/image/v2/D4D22AQGKL94oK1Rzig/feedshare-image-high-res/B4DZ8To31sI0AU-/0/1782740909884?e=1784160000&v=beta&t=YFqCu8SgUzBBFxDyDxe-gDSeXzI4n6a9dOk_a08eYX8",
+      "width": 1672,
+      "height": 941
+    }
+  ],
+  "socialContent": {
+    "hideCommentsCount": false,
+    "hideReactionsCount": false,
+    "hideSocialActivityCounts": false,
+    "hideShareAction": true,
+    "hideSendAction": true,
+    "hideRepostsCount": false,
+    "hideViewsCount": false,
+    "trustInterventionBanner": null,
+    "hideReactAction": false,
+    "hideCommentAction": false,
+    "shareUrl": "https://www.linkedin.com/posts/zakir-hossain-alzara_scrapbuyer-dammam-alkhobar-activity-7477357333308862464-jw_F?",
+    "showContributionExperience": false,
+    "showSocialDetail": true
+  },
+  "header": {
+    "text": null
+  },
+  "entityId": "7477357333308862464",
+  "shareUrn": "urn:li:share:7477357332071563265",
+  "shareLinkedinUrl": "https://www.linkedin.com/feed/update/urn:li:share:7477357332071563265",
+  "engagement": {
+    "id": "7477357333308862464",
+    "likes": 0,
+    "comments": 0,
+    "shares": 0,
+    "reactions": []
+  },
+  "reactions": [],
+  "reactionIds": [],
+  "commentIds": [],
+  "query": {
+    "sortBy": "date",
+    "page": 1,
+    "search": "Industrial air compressor",
+    "postedLimit": "month"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAADbA8tIB8uMn0MbnyMshnvvzqDSTVvZmneQ,urn:li:activity:7477359867368898561,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAADbA8tIB8uMn0MbnyMshnvvzqDSTVvZmneQ",
+    "name": "Parth Patel",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAADbA8tIB8uMn0MbnyMshnvvzqDSTVvZmneQ",
+    "position": "_",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/D5635AQFBuCcC8hjGaA/profile-framedphoto-shrink_800_800/B56Z3i79_gGsAg-/0/1777628864710?e=1783353600&v=beta&t=frpHkNbqpMQXBxk8C04aW3hDp8pz8x92yvkkmxVVKoc",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/D5635AQFBuCcC8hjGaA/profile-framedphoto-shrink_800_800/B56Z3i79_gGsAg-/0/1777628864710?e=1783353600&v=beta&t=frpHkNbqpMQXBxk8C04aW3hDp8pz8x92yvkkmxVVKoc",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "postId": "7477359867368898561",
+  "query": {
+    "post": "https://www.linkedin.com/posts/miken-kansara-ba15b634_home-evans-sutherland-a-cosm-company-activity-7477359867368898561-9Beq"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAACb-v-8BYyNdZ6EPn_vwoOvk2qQg7XZ-mQQ,urn:li:activity:7477359867368898561,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAACb-v-8BYyNdZ6EPn_vwoOvk2qQg7XZ-mQQ",
+    "name": "Kazuma Takeda",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAACb-v-8BYyNdZ6EPn_vwoOvk2qQg7XZ-mQQ",
+    "position": "Department Manager, Head of Administration (F&A, HR&GA, IT)/CPA(Guam)/CIA(Certified Internal Auditor)/J-SEMC(METI Registered Management Consultant)",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/C5603AQE5qvjn29uWrA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1606658649573?e=1784160000&v=beta&t=5HC8gI55IDF3YCoJSaFeCX9P7pq7cUusyb7ktSGxNY4",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/C5603AQE5qvjn29uWrA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1606658649573?e=1784160000&v=beta&t=5HC8gI55IDF3YCoJSaFeCX9P7pq7cUusyb7ktSGxNY4",
+      "width": 643,
+      "height": 643
+    }
+  },
+  "postId": "7477359867368898561",
+  "query": {
+    "post": "https://www.linkedin.com/posts/miken-kansara-ba15b634_home-evans-sutherland-a-cosm-company-activity-7477359867368898561-9Beq"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAABwfq3AB2I9aRsjQHZ2koWmG7Dp1SyRMJ1c,urn:li:activity:7477359867368898561,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAABwfq3AB2I9aRsjQHZ2koWmG7Dp1SyRMJ1c",
+    "name": "HARSHAL BHARAMBE",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAABwfq3AB2I9aRsjQHZ2koWmG7Dp1SyRMJ1c",
+    "position": "Assistant Manager Purchase",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/D4D03AQEtGGZjHnRxcw/profile-displayphoto-crop_800_800/B4DZnM3unaJcAM-/0/1760078788167?e=1784160000&v=beta&t=nSCSCelOqL8UstPsottfb-0mLk0VNJ0hlnqyadjbZgs",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/D4D03AQEtGGZjHnRxcw/profile-displayphoto-crop_800_800/B4DZnM3unaJcAM-/0/1760078788167?e=1784160000&v=beta&t=nSCSCelOqL8UstPsottfb-0mLk0VNJ0hlnqyadjbZgs",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "postId": "7477359867368898561",
+  "query": {
+    "post": "https://www.linkedin.com/posts/miken-kansara-ba15b634_home-evans-sutherland-a-cosm-company-activity-7477359867368898561-9Beq"
+  }
+},
+{
+  "type": "post",
+  "id": "7477359867368898561",
+  "linkedinUrl": "https://www.linkedin.com/posts/miken-kansara-ba15b634_home-evans-sutherland-a-cosm-company-activity-7477359867368898561-9Beq",
+  "content": "🚨 We’re Hiring\n🏭 Company: Hitachi Industrial Equipment systems ltd\n📌 Department: Design Engineering\n📌 Designation: Mechanical CAD Engineer\n📍 Work Location: Gandhinagar\n🧑‍💼 Experience: 2–3 Years (Male / Female) - Local Gujarat\n🎓 Qualification: B.E./B.Tech in Mechanical Engineering.\n\nJoin Hitachi Industrial Equipment Systems India Pvt. Ltd., a part of the globally recognized Hitachi Group, and be a part of a team driving innovation in industrial equipment and air compressor technology. We are looking for a passionate and detail-oriented Mechanical Design Engineer with hands-on experience in product design and development for industrial/OEM components.\n\nKey Responsibilities:\n✔ Design and develop OEM components using metals, plastics, rubber, and sheet metal\n✔ Create 3D models, assemblies, and 2D drawings in Siemens NX\n✔ Work on casting, machining, fabrication, and assembly design activities\n✔ Apply GD&T, weld symbols, ISO & ASTM standards\n✔ Collaborate with Engineering, Procurement, Production, Quality, and Sales teams\n✔ Prepare BOMs, manage ECN processes, and engineering documentation\n✔ Support DFM/DFA initiatives and product improvement activities.\n\nQualifications:\n✔ Bachelor’s degree in mechanical engineering\n✔ 2–3 years of experience in Mechanical Product Design & Development\n✔ Experience in industrial equipment, compressors, pumps, or OEM products preferred\n\nRequired Skills:\n✔ Proficiency in Siemens NX (3D Modeling & Drafting)\n✔ Knowledge of machining, welding, molding, casting & sheet-metal fabrication\n✔ Understanding of SAP, PLM, BOM creation & ECN process\n✔ Knowledge of fittings, bearings, valves & OEM component selection\n✔ Strong communication and cross-functional collaboration skills\n\nIf you are passionate about engineering innovation and product development, we would love to hear from you!\n\n📩 Apply now or share your profile at \n\nmiken.kansara@hitachi-ies.com\n\nPlease mention Subject: Application CAD Engineer\" while you share your resume.\n\n#Hiring #MechanicalDesign #DesignEngineer #MechanicalEngineering #SiemensNX #ProductDesign #OEMDesign #EngineeringJobs #GandhinagarJobs #Hitachi #IndustrialEngineering #CareerOpportunity",
+  "contentAttributes": [],
+  "author": {
+    "id": "ACoAAAc1JikBgEdeFBtYyle-yqDR_A0cxp3hcDI",
+    "universalName": null,
+    "publicIdentifier": "miken-kansara-ba15b634",
+    "type": "profile",
+    "name": "Miken Kansara",
+    "linkedinUrl": "https://www.linkedin.com/in/miken-kansara-ba15b634?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAAc1JikBgEdeFBtYyle-yqDR_A0cxp3hcDI",
+    "info": "Assistant Manager Human Resources @ HIES-IN| POSCO | Hexagon Midco | Vardhman Acrylics",
+    "website": null,
+    "websiteLabel": null,
+    "avatar": {
+      "url": "https://media.licdn.com/dms/image/v2/D4D35AQG4QCEWLNmPGQ/profile-framedphoto-shrink_800_800/B4DZ8TrYUTJsAc-/0/1782741567514?e=1783353600&v=beta&t=iSBnIZI7d3X1CuYmOQOjPGYUCfCaDypHPVdZSh3ENxc",
+      "width": 800,
+      "height": 800
+    },
+    "urn": "120923689"
+  },
+  "postedAt": {
+    "timestamp": 1782741515009,
+    "date": "2026-06-29T13:58:35.009Z",
+    "postedAgoShort": "1h",
+    "postedAgoText": "1 hour ago • Visible to anyone on or off LinkedIn"
+  },
+  "postImages": [],
+  "article": {
+    "title": "Home - Evans & Sutherland - A Cosm Company",
+    "subtitle": "es.com",
+    "link": "http://es.com",
+    "linkLabel": "Open article: Home - Evans & Sutherland - A Cosm Company by es.com",
+    "description": null,
+    "image": null
+  },
+  "socialContent": {
+    "hideCommentsCount": false,
+    "hideReactionsCount": false,
+    "hideSocialActivityCounts": false,
+    "hideShareAction": true,
+    "hideSendAction": true,
+    "hideRepostsCount": false,
+    "hideViewsCount": false,
+    "trustInterventionBanner": null,
+    "hideReactAction": false,
+    "hideCommentAction": false,
+    "shareUrl": "https://www.linkedin.com/posts/miken-kansara-ba15b634_home-evans-sutherland-a-cosm-company-activity-7477359867368898561-9Beq?",
+    "showContributionExperience": false,
+    "showSocialDetail": true
+  },
+  "header": {
+    "text": null
+  },
+  "entityId": "7477359867368898561",
+  "shareUrn": "urn:li:share:7477359866471145472",
+  "shareLinkedinUrl": "https://www.linkedin.com/feed/update/urn:li:share:7477359866471145472",
+  "engagement": {
+    "id": "7477359867368898561",
+    "likes": 3,
+    "comments": 0,
+    "shares": 0,
+    "reactions": [
+      {
+        "type": "LIKE",
+        "count": 3
+      }
+    ]
+  },
+  "reactions": [
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAADbA8tIB8uMn0MbnyMshnvvzqDSTVvZmneQ,urn:li:activity:7477359867368898561,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAADbA8tIB8uMn0MbnyMshnvvzqDSTVvZmneQ",
+        "name": "Parth Patel",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAADbA8tIB8uMn0MbnyMshnvvzqDSTVvZmneQ",
+        "position": "_",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/D5635AQFBuCcC8hjGaA/profile-framedphoto-shrink_800_800/B56Z3i79_gGsAg-/0/1777628864710?e=1783353600&v=beta&t=frpHkNbqpMQXBxk8C04aW3hDp8pz8x92yvkkmxVVKoc",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/D5635AQFBuCcC8hjGaA/profile-framedphoto-shrink_800_800/B56Z3i79_gGsAg-/0/1777628864710?e=1783353600&v=beta&t=frpHkNbqpMQXBxk8C04aW3hDp8pz8x92yvkkmxVVKoc",
+          "width": 800,
+          "height": 800
+        }
+      },
+      "postId": "7477359867368898561"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAACb-v-8BYyNdZ6EPn_vwoOvk2qQg7XZ-mQQ,urn:li:activity:7477359867368898561,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAACb-v-8BYyNdZ6EPn_vwoOvk2qQg7XZ-mQQ",
+        "name": "Kazuma Takeda",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAACb-v-8BYyNdZ6EPn_vwoOvk2qQg7XZ-mQQ",
+        "position": "Department Manager, Head of Administration (F&A, HR&GA, IT)/CPA(Guam)/CIA(Certified Internal Auditor)/J-SEMC(METI Registered Management Consultant)",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/C5603AQE5qvjn29uWrA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1606658649573?e=1784160000&v=beta&t=5HC8gI55IDF3YCoJSaFeCX9P7pq7cUusyb7ktSGxNY4",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/C5603AQE5qvjn29uWrA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1606658649573?e=1784160000&v=beta&t=5HC8gI55IDF3YCoJSaFeCX9P7pq7cUusyb7ktSGxNY4",
+          "width": 643,
+          "height": 643
+        }
+      },
+      "postId": "7477359867368898561"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAABwfq3AB2I9aRsjQHZ2koWmG7Dp1SyRMJ1c,urn:li:activity:7477359867368898561,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAABwfq3AB2I9aRsjQHZ2koWmG7Dp1SyRMJ1c",
+        "name": "HARSHAL BHARAMBE",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAABwfq3AB2I9aRsjQHZ2koWmG7Dp1SyRMJ1c",
+        "position": "Assistant Manager Purchase",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/D4D03AQEtGGZjHnRxcw/profile-displayphoto-crop_800_800/B4DZnM3unaJcAM-/0/1760078788167?e=1784160000&v=beta&t=nSCSCelOqL8UstPsottfb-0mLk0VNJ0hlnqyadjbZgs",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/D4D03AQEtGGZjHnRxcw/profile-displayphoto-crop_800_800/B4DZnM3unaJcAM-/0/1760078788167?e=1784160000&v=beta&t=nSCSCelOqL8UstPsottfb-0mLk0VNJ0hlnqyadjbZgs",
+          "width": 800,
+          "height": 800
+        }
+      },
+      "postId": "7477359867368898561"
+    }
+  ],
+  "reactionIds": [
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAADbA8tIB8uMn0MbnyMshnvvzqDSTVvZmneQ,urn:li:activity:7477359867368898561,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAACb-v-8BYyNdZ6EPn_vwoOvk2qQg7XZ-mQQ,urn:li:activity:7477359867368898561,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAABwfq3AB2I9aRsjQHZ2koWmG7Dp1SyRMJ1c,urn:li:activity:7477359867368898561,0)"
+  ],
+  "commentIds": [],
+  "query": {
+    "sortBy": "date",
+    "page": 1,
+    "search": "Industrial air compressor",
+    "postedLimit": "month"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAACUlDRIB7XI-KL-aaT9unWAT9YXGTr3FEzc,urn:li:activity:7477356812032360449,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAACUlDRIB7XI-KL-aaT9unWAT9YXGTr3FEzc",
+    "name": "Samer Bou Nakhle",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAACUlDRIB7XI-KL-aaT9unWAT9YXGTr3FEzc",
+    "position": "Regional Sales & Marketing Manager - Portable Compressors • Dryers • Boosters & Nitrogen Systems."
+  },
+  "postId": "7477356812032360449",
+  "query": {
+    "post": "https://www.linkedin.com/posts/alrawahydubai_alrawahyest-chicagopneumatic-aircompressor-activity-7477356812032360449-oPFr"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAAMx1YYBIjLLYRYsyE-dOfdQVFqVWpKirt0,urn:li:activity:7477356812032360449,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAAAMx1YYBIjLLYRYsyE-dOfdQVFqVWpKirt0",
+    "name": "Haytham Youseef",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAAAMx1YYBIjLLYRYsyE-dOfdQVFqVWpKirt0",
+    "position": "Regional Sales & Marketing Manager - PTS",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/D4E03AQEOPZrqsSOxSw/profile-displayphoto-crop_800_800/B4EZ4bVA3RKkAI-/0/1778574954723?e=1784160000&v=beta&t=s90LKVOY3o71FdUqtGWNynJuYT1CH72vkA1W3ZZGHac",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/D4E03AQEOPZrqsSOxSw/profile-displayphoto-crop_800_800/B4EZ4bVA3RKkAI-/0/1778574954723?e=1784160000&v=beta&t=s90LKVOY3o71FdUqtGWNynJuYT1CH72vkA1W3ZZGHac",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "postId": "7477356812032360449",
+  "query": {
+    "post": "https://www.linkedin.com/posts/alrawahydubai_alrawahyest-chicagopneumatic-aircompressor-activity-7477356812032360449-oPFr"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAABJi6E4B5wmZgNSaB-ywhTW7h7aTvpkOaZA,urn:li:activity:7477356812032360449,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAABJi6E4B5wmZgNSaB-ywhTW7h7aTvpkOaZA",
+    "name": "Manash Mishra",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAABJi6E4B5wmZgNSaB-ywhTW7h7aTvpkOaZA",
+    "position": "--"
+  },
+  "postId": "7477356812032360449",
+  "query": {
+    "post": "https://www.linkedin.com/posts/alrawahydubai_alrawahyest-chicagopneumatic-aircompressor-activity-7477356812032360449-oPFr"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAFGtbCoBsqilm3Ivv2I1uJlxeEz0ys5Je8s,urn:li:activity:7477356812032360449,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAAFGtbCoBsqilm3Ivv2I1uJlxeEz0ys5Je8s",
+    "name": "Roomie Haxhmi",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAAFGtbCoBsqilm3Ivv2I1uJlxeEz0ys5Je8s",
+    "position": "Founder @Xperts Group | Your Digital Partner for Growth",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/D4D03AQHdS_JrI0Xp8A/profile-displayphoto-shrink_800_800/B4DZXmllTZG8Ak-/0/1743330368076?e=1784160000&v=beta&t=-DDMUVEOozK1MSshOxnqzSqxjRsMSJKxJWIjzgZANo8",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/D4D03AQHdS_JrI0Xp8A/profile-displayphoto-shrink_800_800/B4DZXmllTZG8Ak-/0/1743330368076?e=1784160000&v=beta&t=-DDMUVEOozK1MSshOxnqzSqxjRsMSJKxJWIjzgZANo8",
+      "width": 600,
+      "height": 600
+    }
+  },
+  "postId": "7477356812032360449",
+  "query": {
+    "post": "https://www.linkedin.com/posts/alrawahydubai_alrawahyest-chicagopneumatic-aircompressor-activity-7477356812032360449-oPFr"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAANfuHMBj9Eqj1-tIrLxWqOjfKkz-lnknEk,urn:li:activity:7477356812032360449,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAAANfuHMBj9Eqj1-tIrLxWqOjfKkz-lnknEk",
+    "name": "Dr. Jerald Ozee Fernandes PhD",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAAANfuHMBj9Eqj1-tIrLxWqOjfKkz-lnknEk",
+    "position": "General Manager, Researcher",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/C4E03AQFFYgpq_b1wwA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1647757716277?e=1784160000&v=beta&t=wk6WxC08NDoXoJOxVDh0hSGFdMlnRoMBPN28VEQWYTY",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/C4E03AQFFYgpq_b1wwA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1647757716277?e=1784160000&v=beta&t=wk6WxC08NDoXoJOxVDh0hSGFdMlnRoMBPN28VEQWYTY",
+      "width": 334,
+      "height": 334
+    }
+  },
+  "postId": "7477356812032360449",
+  "query": {
+    "post": "https://www.linkedin.com/posts/alrawahydubai_alrawahyest-chicagopneumatic-aircompressor-activity-7477356812032360449-oPFr"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAABHZiH8B605CT_w1JO4X7w-X4SLR20jrNuM,urn:li:activity:7477356812032360449,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAABHZiH8B605CT_w1JO4X7w-X4SLR20jrNuM",
+    "name": "Mohamad Akileh",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAABHZiH8B605CT_w1JO4X7w-X4SLR20jrNuM",
+    "position": "Regional Sales & Marketing Manager - Atlas Copco Power and Light",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/D4D03AQGln76uvZoIAA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1708028345767?e=1784160000&v=beta&t=KOBe1xNIiWFoCwYoog6IEKEaQ7H5SrgkPA28aBLgk6U",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/D4D03AQGln76uvZoIAA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1708028345767?e=1784160000&v=beta&t=KOBe1xNIiWFoCwYoog6IEKEaQ7H5SrgkPA28aBLgk6U",
+      "width": 433,
+      "height": 433
+    }
+  },
+  "postId": "7477356812032360449",
+  "query": {
+    "post": "https://www.linkedin.com/posts/alrawahydubai_alrawahyest-chicagopneumatic-aircompressor-activity-7477356812032360449-oPFr"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAACfenDkBWdQtCIn54EXxe15xyEFMcpfrxUM,urn:li:activity:7477356812032360449,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAACfenDkBWdQtCIn54EXxe15xyEFMcpfrxUM",
+    "name": "Shashidhara K",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAACfenDkBWdQtCIn54EXxe15xyEFMcpfrxUM",
+    "position": "Welding Application Engineer",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/D4D03AQHO_p17mRjZqw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1673780123051?e=1784160000&v=beta&t=065Tl-owkG7xuYntzIL4xZpP52yeyC5gZOgL5fLa3Gg",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/D4D03AQHO_p17mRjZqw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1673780123051?e=1784160000&v=beta&t=065Tl-owkG7xuYntzIL4xZpP52yeyC5gZOgL5fLa3Gg",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "postId": "7477356812032360449",
+  "query": {
+    "post": "https://www.linkedin.com/posts/alrawahydubai_alrawahyest-chicagopneumatic-aircompressor-activity-7477356812032360449-oPFr"
+  }
+},
+{
+  "type": "post",
+  "id": "7477356812032360449",
+  "linkedinUrl": "https://www.linkedin.com/posts/alrawahydubai_alrawahyest-chicagopneumatic-aircompressor-activity-7477356812032360449-oPFr",
+  "content": "Power Meets Performance – Chicago Pneumatic CPS 900-175 Air Compressor at Al-Rawahy Est. (Dubai), we are committed to delivering reliable industrial solutions that maximize productivity and minimize downtime.\n\nThe Chicago Pneumatic CPS 900-175 Air Compressor is built to perform in demanding environments, offering:\n\n✔️ High-performance and durable design\n ✔️ 900 CFM air flow for continuous operation\n ✔️ 175 PSI working pressure for demanding applications\n ✔️ Ideal for construction, oil & gas, mining, infrastructure, and industrial projects\n\nWhether you need dependable compressed air for heavy-duty applications or a solution that delivers consistent performance, the CPS 900-175 is engineered to meet your requirements.\n\nFrom supplying high-performance industrial equipment to providing expert technical support, we are committed to delivering solutions that keep your operations running efficiently.\n\nThat’s the promise we deliver to our customers every day.\n\n 📩 Contact us for enquiries & technical details: \n📧 enquiries@alrawahydubai.ae \n📞 +971 50 808 2535\n\n#AlRawahyEst #ChicagoPneumatic #AirCompressor #IndustrialEquipment #Construction #OilAndGas #Engineering #CompressedAir #HeavyEquipment #IndustrialSolutions #Dubai #UAE #AlRawahy #Reliability #Performance",
+  "contentAttributes": [],
+  "author": {
+    "id": "18699347",
+    "universalName": "alrawahydubai",
+    "publicIdentifier": null,
+    "type": "company",
+    "name": "Al Rawahy Est. (Dubai)",
+    "linkedinUrl": "https://www.linkedin.com/company/alrawahydubai/posts",
+    "info": "5,941 followers",
+    "website": null,
+    "websiteLabel": null,
+    "avatar": {
+      "url": "https://media.licdn.com/dms/image/v2/C4D0BAQEZbsSD51H0ZA/company-logo_400_400/company-logo_400_400/0/1672744039978/alrawahydubai_logo?e=1784160000&v=beta&t=U1-OC3p6CngL-Ml9JyAuzATOhXkx2V2gfF7dfgxjZ-8",
+      "width": 400,
+      "height": 400
+    },
+    "urn": "18699347"
+  },
+  "postedAt": {
+    "timestamp": 1782740786560,
+    "date": "2026-06-29T13:46:26.560Z",
+    "postedAgoShort": "2h",
+    "postedAgoText": "2 hours ago • Visible to anyone on or off LinkedIn"
+  },
+  "postImages": [
+    {
+      "url": "https://media.licdn.com/dms/image/v2/D4D22AQGx1I6MA5nXEw/feedshare-image-high-res/B4DZ8ToZaeJAAU-/0/1782740785238?e=1784160000&v=beta&t=vdYwMpPkLxS_NIB8qj0YjCbklRZo8er44ZwfhxsuyDI",
+      "width": 1615,
+      "height": 1072
+    }
+  ],
+  "socialContent": {
+    "hideCommentsCount": false,
+    "hideReactionsCount": false,
+    "hideSocialActivityCounts": false,
+    "hideShareAction": true,
+    "hideSendAction": true,
+    "hideRepostsCount": false,
+    "hideViewsCount": false,
+    "trustInterventionBanner": null,
+    "hideReactAction": false,
+    "hideCommentAction": false,
+    "shareUrl": "https://www.linkedin.com/posts/alrawahydubai_alrawahyest-chicagopneumatic-aircompressor-activity-7477356812032360449-oPFr?",
+    "showContributionExperience": false,
+    "showSocialDetail": true
+  },
+  "header": {
+    "text": null
+  },
+  "entityId": "7477356812032360449",
+  "shareUrn": "urn:li:share:7477356811105341441",
+  "shareLinkedinUrl": "https://www.linkedin.com/feed/update/urn:li:share:7477356811105341441",
+  "engagement": {
+    "id": "7477356812032360449",
+    "likes": 7,
+    "comments": 1,
+    "shares": 0,
+    "reactions": [
+      {
+        "type": "LIKE",
+        "count": 7
+      }
+    ]
+  },
+  "reactions": [
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAANfuHMBj9Eqj1-tIrLxWqOjfKkz-lnknEk,urn:li:activity:7477356812032360449,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAAANfuHMBj9Eqj1-tIrLxWqOjfKkz-lnknEk",
+        "name": "Dr. Jerald Ozee Fernandes PhD",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAAANfuHMBj9Eqj1-tIrLxWqOjfKkz-lnknEk",
+        "position": "General Manager, Researcher",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/C4E03AQFFYgpq_b1wwA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1647757716277?e=1784160000&v=beta&t=wk6WxC08NDoXoJOxVDh0hSGFdMlnRoMBPN28VEQWYTY",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/C4E03AQFFYgpq_b1wwA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1647757716277?e=1784160000&v=beta&t=wk6WxC08NDoXoJOxVDh0hSGFdMlnRoMBPN28VEQWYTY",
+          "width": 334,
+          "height": 334
+        }
+      },
+      "postId": "7477356812032360449"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAABJi6E4B5wmZgNSaB-ywhTW7h7aTvpkOaZA,urn:li:activity:7477356812032360449,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAABJi6E4B5wmZgNSaB-ywhTW7h7aTvpkOaZA",
+        "name": "Manash Mishra",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAABJi6E4B5wmZgNSaB-ywhTW7h7aTvpkOaZA",
+        "position": "--"
+      },
+      "postId": "7477356812032360449"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAACfenDkBWdQtCIn54EXxe15xyEFMcpfrxUM,urn:li:activity:7477356812032360449,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAACfenDkBWdQtCIn54EXxe15xyEFMcpfrxUM",
+        "name": "Shashidhara K",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAACfenDkBWdQtCIn54EXxe15xyEFMcpfrxUM",
+        "position": "Welding Application Engineer",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/D4D03AQHO_p17mRjZqw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1673780123051?e=1784160000&v=beta&t=065Tl-owkG7xuYntzIL4xZpP52yeyC5gZOgL5fLa3Gg",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/D4D03AQHO_p17mRjZqw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1673780123051?e=1784160000&v=beta&t=065Tl-owkG7xuYntzIL4xZpP52yeyC5gZOgL5fLa3Gg",
+          "width": 800,
+          "height": 800
+        }
+      },
+      "postId": "7477356812032360449"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAABHZiH8B605CT_w1JO4X7w-X4SLR20jrNuM,urn:li:activity:7477356812032360449,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAABHZiH8B605CT_w1JO4X7w-X4SLR20jrNuM",
+        "name": "Mohamad Akileh",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAABHZiH8B605CT_w1JO4X7w-X4SLR20jrNuM",
+        "position": "Regional Sales & Marketing Manager - Atlas Copco Power and Light",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/D4D03AQGln76uvZoIAA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1708028345767?e=1784160000&v=beta&t=KOBe1xNIiWFoCwYoog6IEKEaQ7H5SrgkPA28aBLgk6U",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/D4D03AQGln76uvZoIAA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1708028345767?e=1784160000&v=beta&t=KOBe1xNIiWFoCwYoog6IEKEaQ7H5SrgkPA28aBLgk6U",
+          "width": 433,
+          "height": 433
+        }
+      },
+      "postId": "7477356812032360449"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAAMx1YYBIjLLYRYsyE-dOfdQVFqVWpKirt0,urn:li:activity:7477356812032360449,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAAAMx1YYBIjLLYRYsyE-dOfdQVFqVWpKirt0",
+        "name": "Haytham Youseef",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAAAMx1YYBIjLLYRYsyE-dOfdQVFqVWpKirt0",
+        "position": "Regional Sales & Marketing Manager - PTS",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/D4E03AQEOPZrqsSOxSw/profile-displayphoto-crop_800_800/B4EZ4bVA3RKkAI-/0/1778574954723?e=1784160000&v=beta&t=s90LKVOY3o71FdUqtGWNynJuYT1CH72vkA1W3ZZGHac",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/D4E03AQEOPZrqsSOxSw/profile-displayphoto-crop_800_800/B4EZ4bVA3RKkAI-/0/1778574954723?e=1784160000&v=beta&t=s90LKVOY3o71FdUqtGWNynJuYT1CH72vkA1W3ZZGHac",
+          "width": 800,
+          "height": 800
+        }
+      },
+      "postId": "7477356812032360449"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAACUlDRIB7XI-KL-aaT9unWAT9YXGTr3FEzc,urn:li:activity:7477356812032360449,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAACUlDRIB7XI-KL-aaT9unWAT9YXGTr3FEzc",
+        "name": "Samer Bou Nakhle",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAACUlDRIB7XI-KL-aaT9unWAT9YXGTr3FEzc",
+        "position": "Regional Sales & Marketing Manager - Portable Compressors • Dryers • Boosters & Nitrogen Systems."
+      },
+      "postId": "7477356812032360449"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAFGtbCoBsqilm3Ivv2I1uJlxeEz0ys5Je8s,urn:li:activity:7477356812032360449,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAAFGtbCoBsqilm3Ivv2I1uJlxeEz0ys5Je8s",
+        "name": "Roomie Haxhmi",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAAFGtbCoBsqilm3Ivv2I1uJlxeEz0ys5Je8s",
+        "position": "Founder @Xperts Group | Your Digital Partner for Growth",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/D4D03AQHdS_JrI0Xp8A/profile-displayphoto-shrink_800_800/B4DZXmllTZG8Ak-/0/1743330368076?e=1784160000&v=beta&t=-DDMUVEOozK1MSshOxnqzSqxjRsMSJKxJWIjzgZANo8",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/D4D03AQHdS_JrI0Xp8A/profile-displayphoto-shrink_800_800/B4DZXmllTZG8Ak-/0/1743330368076?e=1784160000&v=beta&t=-DDMUVEOozK1MSshOxnqzSqxjRsMSJKxJWIjzgZANo8",
+          "width": 600,
+          "height": 600
+        }
+      },
+      "postId": "7477356812032360449"
+    }
+  ],
+  "reactionIds": [
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAANfuHMBj9Eqj1-tIrLxWqOjfKkz-lnknEk,urn:li:activity:7477356812032360449,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAABJi6E4B5wmZgNSaB-ywhTW7h7aTvpkOaZA,urn:li:activity:7477356812032360449,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAACfenDkBWdQtCIn54EXxe15xyEFMcpfrxUM,urn:li:activity:7477356812032360449,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAABHZiH8B605CT_w1JO4X7w-X4SLR20jrNuM,urn:li:activity:7477356812032360449,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAAMx1YYBIjLLYRYsyE-dOfdQVFqVWpKirt0,urn:li:activity:7477356812032360449,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAACUlDRIB7XI-KL-aaT9unWAT9YXGTr3FEzc,urn:li:activity:7477356812032360449,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAFGtbCoBsqilm3Ivv2I1uJlxeEz0ys5Je8s,urn:li:activity:7477356812032360449,0)"
+  ],
+  "commentIds": [],
+  "query": {
+    "sortBy": "date",
+    "page": 1,
+    "search": "Industrial air compressor",
+    "postedLimit": "month"
+  }
+},
+{
+  "type": "post",
+  "id": "7477355151305887744",
+  "linkedinUrl": "https://www.linkedin.com/posts/joelneidig_itamco-gearmanufacturing-groundgears-activity-7477355151305887744-C_12",
+  "content": "Powering the Future of Industrial Compression with Precision Gear Manufacturing\n\nIn the world of industrial compressed air, reliability isn't optional—it's essential. Whether supporting manufacturing, energy, mining, or large-scale processing facilities, compressors operating at 500 HP and above demand drivetrain components that deliver exceptional performance under continuous, high-load conditions.\n\nAt ITAMCO, we understand that the heart of a high-performance compressor is its gearing.\n\nOur precision ground gears are manufactured to deliver the accuracy, durability, and efficiency required for today's most demanding compressed air systems. From custom pinions and bull gears to complete gear sets, we partner with OEMs to provide components engineered for long service life, reduced vibration, quieter operation, and maximum power transmission.\n\nLarge industrial compressors often operate around the clock. That means every micron of gear accuracy matters. Precision ground tooth profiles help improve efficiency, reduce heat generation, minimize wear, and increase gearbox reliability—critical factors for customers who depend on continuous uptime.\n\nBut our focus extends beyond manufacturing exceptional gears.\n\nAt ITAMCO, we believe the strongest products are built on strong partnerships. We work closely with compressed air equipment manufacturers throughout the design, engineering, manufacturing, inspection, and production process to ensure every gear meets the exact performance requirements of the application.\n\nWhether developing a new compressor platform or supporting legacy equipment, our engineering and manufacturing teams collaborate with customers to deliver solutions that perform for decades.\n\nWith more than 70 years of experience producing precision gearing for demanding industries—including mining, energy, heavy equipment, and industrial machinery—we bring proven manufacturing expertise to every project.\n\nAs compressed air systems continue to become larger, more efficient, and more technologically advanced, ITAMCO is ready to help manufacturers meet those challenges with world-class precision gearing.\n\nIf your organization designs or builds 500 HP and larger industrial compressors, we'd welcome the opportunity to discuss how a long-term manufacturing partnership can support your next generation of products.\n\nPrecision. Reliability. Partnership. That's the ITAMCO difference.\n\n#ITAMCO #GearManufacturing #GroundGears #CompressedAir #IndustrialManufacturing #OEM #PrecisionEngineering #PowerTransmission #MadeInUSA #ManufacturingExcellence",
+  "contentAttributes": [],
+  "author": {
+    "id": "ACoAAAX6k4EBHpo2S-WRXZBJbML2wJcSRLXcU7s",
+    "universalName": null,
+    "publicIdentifier": "joelneidig",
+    "type": "profile",
+    "name": "Joel Neidig",
+    "linkedinUrl": "https://www.linkedin.com/in/joelneidig?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAAX6k4EBHpo2S-WRXZBJbML2wJcSRLXcU7s",
+    "info": "Founder, Investor, Serial Entrepreneur, Inventor, Board Member, $30M+ Venture Funding, 3 companies, 1 Exit | TechCrunch Disrupt Top Pick | Patented Technology | Air Force Advanced Manufacturing Competition 🥇 1st Place",
+    "website": null,
+    "websiteLabel": null,
+    "avatar": null,
+    "urn": "100307841"
+  },
+  "postedAt": {
+    "timestamp": 1782740390612,
+    "date": "2026-06-29T13:39:50.612Z",
+    "postedAgoShort": "2h",
+    "postedAgoText": "2 hours ago • Visible to anyone on or off LinkedIn"
+  },
+  "postImages": [
+    {
+      "url": "https://media.licdn.com/dms/image/v2/D5622AQHW8qqB9Hb18A/feedshare-image-high-res/B56Z8Tm2XYGQAY-/0/1782740380943?e=1784160000&v=beta&t=GJ5Sz61mhjWRr_-arFoAhFAbUd4FkdOMssX7inXc6fs",
+      "width": 1689,
+      "height": 1536
+    },
+    {
+      "url": "https://media.licdn.com/dms/image/v2/D5622AQFKltA9wMCjCA/feedshare-shrink_1280/B56Z8Tm3aQKgAM-/0/1782740389321?e=1784160000&v=beta&t=T2Jqqxperkggq96Qa_ESgoc8lpZUfDhyTjshwD2u7m4",
+      "width": 1280,
+      "height": 1707
+    }
+  ],
+  "socialContent": {
+    "hideCommentsCount": false,
+    "hideReactionsCount": false,
+    "hideSocialActivityCounts": false,
+    "hideShareAction": true,
+    "hideSendAction": true,
+    "hideRepostsCount": false,
+    "hideViewsCount": false,
+    "trustInterventionBanner": null,
+    "hideReactAction": false,
+    "hideCommentAction": false,
+    "shareUrl": "https://www.linkedin.com/posts/joelneidig_itamco-gearmanufacturing-groundgears-activity-7477355151305887744-C_12?",
+    "showContributionExperience": false,
+    "showSocialDetail": true
+  },
+  "header": {
+    "text": null
+  },
+  "entityId": "7477355151305887744",
+  "shareUrn": "urn:li:ugcPost:7477355150051934208",
+  "shareLinkedinUrl": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7477355150051934208",
+  "engagement": {
+    "id": "7477355150051934208",
+    "likes": 0,
+    "comments": 0,
+    "shares": 0,
+    "reactions": []
+  },
+  "reactions": [],
+  "reactionIds": [],
+  "commentIds": [],
+  "query": {
+    "sortBy": "date",
+    "page": 1,
+    "search": "Industrial air compressor",
+    "postedLimit": "month"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_company:28131444,urn:li:activity:7477354583787233280,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "28131444",
+    "name": "FS-Compression",
+    "linkedinUrl": "https://www.linkedin.com/company/fs-compression/",
+    "position": "1,228 followers"
+  },
+  "postId": "7477354583787233280",
+  "query": {
+    "post": "https://www.linkedin.com/posts/fs-curtis_aircompressor-compressedair-lubricationmanagement-activity-7477354583787233280-1Fz6"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAAS-Z3YBaDYTwPboG6EHkeXoYTQk_ovdKnc,urn:li:activity:7477354583787233280,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAAAS-Z3YBaDYTwPboG6EHkeXoYTQk_ovdKnc",
+    "name": "Cameron Ballentine",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAAAS-Z3YBaDYTwPboG6EHkeXoYTQk_ovdKnc",
+    "position": "Creative Strategist & Brand Systems Builder | Design Operations · AI-Augmented Workflows · Campaign Design | 15 years across healthcare, fintech, and enterprise brands.",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/D5635AQHUC8A5fpMQlQ/profile-framedphoto-shrink_800_800/B56Z0_UCJAJgAg-/0/1774883709784?e=1783353600&v=beta&t=nWeaBw9XtkySyNVmVMwxB59GMK_jrtqhBBpA-u5BQ_E",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/D5635AQHUC8A5fpMQlQ/profile-framedphoto-shrink_800_800/B56Z0_UCJAJgAg-/0/1774883709784?e=1783353600&v=beta&t=nWeaBw9XtkySyNVmVMwxB59GMK_jrtqhBBpA-u5BQ_E",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "postId": "7477354583787233280",
+  "query": {
+    "post": "https://www.linkedin.com/posts/fs-curtis_aircompressor-compressedair-lubricationmanagement-activity-7477354583787233280-1Fz6"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAACOkZBIBNmls0eYPz8oCVIIHzYERMugSdwA,urn:li:activity:7477354583787233280,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAACOkZBIBNmls0eYPz8oCVIIHzYERMugSdwA",
+    "name": "Abhishek Pandey",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAACOkZBIBNmls0eYPz8oCVIIHzYERMugSdwA",
+    "position": "Industrial Refrigeration Technician at Daikin Saudi Arabia | Ammonia & Freon Systems | Cold Storage & Rack Systems|Maintenance|Service|troubleshooting|Process Chillers|Blast Freezer|Iceplants|Commercial|Cooling||",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/D4D03AQH9ZgWOx-2DjQ/profile-displayphoto-crop_800_800/B4DZgE9MW5GsAQ-/0/1752429808364?e=1784160000&v=beta&t=wjixGBpV2tCH_w_7xumqUNseClI9b0Hhxvbcp0fVm2Q",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/D4D03AQH9ZgWOx-2DjQ/profile-displayphoto-crop_800_800/B4DZgE9MW5GsAQ-/0/1752429808364?e=1784160000&v=beta&t=wjixGBpV2tCH_w_7xumqUNseClI9b0Hhxvbcp0fVm2Q",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "postId": "7477354583787233280",
+  "query": {
+    "post": "https://www.linkedin.com/posts/fs-curtis_aircompressor-compressedair-lubricationmanagement-activity-7477354583787233280-1Fz6"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAABVkJvwBOuudz_QIfd0j0eLQxHrIOjtN-1g,urn:li:activity:7477354583787233280,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAABVkJvwBOuudz_QIfd0j0eLQxHrIOjtN-1g",
+    "name": "Naveen Turkar",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAABVkJvwBOuudz_QIfd0j0eLQxHrIOjtN-1g",
+    "position": "Sr. Area Manager-Sales at FS Compressors India Pvt. Ltd.",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/C5603AQFwA2uK0DU9lQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1613397583251?e=1784160000&v=beta&t=VsGRdLYvQhDAVngJ4IV1DxVASjQ-dDrpCvQbF3xXLmQ",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/C5603AQFwA2uK0DU9lQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1613397583251?e=1784160000&v=beta&t=VsGRdLYvQhDAVngJ4IV1DxVASjQ-dDrpCvQbF3xXLmQ",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "postId": "7477354583787233280",
+  "query": {
+    "post": "https://www.linkedin.com/posts/fs-curtis_aircompressor-compressedair-lubricationmanagement-activity-7477354583787233280-1Fz6"
+  }
+},
+{
+  "type": "post",
+  "id": "7477354583787233280",
+  "linkedinUrl": "https://www.linkedin.com/posts/fs-curtis_aircompressor-compressedair-lubricationmanagement-activity-7477354583787233280-1Fz6",
+  "content": "Your Guide to High‑Performance Air Compressors- broad, helpful, and expert‑positioned. \n\nFS‑Curtis' Training Manager, Greg Gilliland, shares his expert insights on improving the reliability and performance of industrial air compressors in  Machinery Lubrication's recent article, \"Ask the Expert: How Can You Improve the Reliability and Performance of Industrial Air Compressors?\"\n\nFrom smarter lubrication practices to contamination control and proactive monitoring, Greg breaks down the maintenance habits that prevent failures and keep systems running at peak efficiency. A must‑read for reliability, maintenance, and operations teams looking to boost uptime and extend equipment life.\n\nRead Greg’s expert guidance: https://lnkd.in/gEtprt4y \n\n#AirCompressor #CompressedAir #LubricationManagement #ReliabilityMaintenance #RotaryScrewCompressors #IndustrialLubrication #PredictiveMaintenance #ReliabilityBestPractices #TechnicalMaintenance #FSCurtis",
+  "contentAttributes": [
+    {
+      "start": 240,
+      "length": 21,
+      "type": "COMPANY_NAME",
+      "hyperlink": null,
+      "textLink": null,
+      "company": {
+        "id": "105038164",
+        "name": "Machinery Lubrication",
+        "linkedinUrl": "https://www.linkedin.com/showcase/machinery-lubrication/"
+      }
+    }
+  ],
+  "author": {
+    "id": "1319254",
+    "universalName": "fs-curtis",
+    "publicIdentifier": null,
+    "type": "company",
+    "name": "FS-Curtis",
+    "linkedinUrl": "https://www.linkedin.com/company/fs-curtis/posts",
+    "info": "8,246 followers",
+    "website": null,
+    "websiteLabel": null,
+    "avatar": {
+      "url": "https://media.licdn.com/dms/image/v2/D560BAQFLERYN5I0qRg/company-logo_400_400/company-logo_400_400/0/1715194463782/fs_curtis_logo?e=1784160000&v=beta&t=eHnkuUY6xxtyAnPPrFXygeqfNBuvmLoWRHuELuSxlNY",
+      "width": 400,
+      "height": 400
+    },
+    "urn": "1319254"
+  },
+  "postedAt": {
+    "timestamp": 1782740255305,
+    "date": "2026-06-29T13:37:35.305Z",
+    "postedAgoShort": "2h",
+    "postedAgoText": "2 hours ago • Edited • Visible to anyone on or off LinkedIn"
+  },
+  "postImages": [
+    {
+      "url": "https://media.licdn.com/dms/image/v2/D5610AQEPtOvn9rFplA/image-shrink_1280/B56Z8TmUTGIQAc-/0/1782740239910?e=1783353600&v=beta&t=5NquNa6XOZAK3r6f57ZprElUb1VcppyjPFl15XJB7Fw",
+      "width": 1200,
+      "height": 1200
+    }
+  ],
+  "socialContent": {
+    "hideCommentsCount": false,
+    "hideReactionsCount": false,
+    "hideSocialActivityCounts": false,
+    "hideShareAction": true,
+    "hideSendAction": true,
+    "hideRepostsCount": false,
+    "hideViewsCount": false,
+    "trustInterventionBanner": null,
+    "hideReactAction": false,
+    "hideCommentAction": false,
+    "shareUrl": "https://www.linkedin.com/posts/fs-curtis_aircompressor-compressedair-lubricationmanagement-activity-7477354583787233280-1Fz6?",
+    "showContributionExperience": false,
+    "showSocialDetail": true
+  },
+  "header": {
+    "text": null
+  },
+  "entityId": "7477354583787233280",
+  "shareUrn": "urn:li:share:7477354582772228097",
+  "shareLinkedinUrl": "https://www.linkedin.com/feed/update/urn:li:share:7477354582772228097",
+  "engagement": {
+    "id": "7477354583787233280",
+    "likes": 4,
+    "comments": 0,
+    "shares": 0,
+    "reactions": [
+      {
+        "type": "LIKE",
+        "count": 4
+      }
+    ]
+  },
+  "reactions": [
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAAS-Z3YBaDYTwPboG6EHkeXoYTQk_ovdKnc,urn:li:activity:7477354583787233280,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAAAS-Z3YBaDYTwPboG6EHkeXoYTQk_ovdKnc",
+        "name": "Cameron Ballentine",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAAAS-Z3YBaDYTwPboG6EHkeXoYTQk_ovdKnc",
+        "position": "Creative Strategist & Brand Systems Builder | Design Operations · AI-Augmented Workflows · Campaign Design | 15 years across healthcare, fintech, and enterprise brands.",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/D5635AQHUC8A5fpMQlQ/profile-framedphoto-shrink_800_800/B56Z0_UCJAJgAg-/0/1774883709784?e=1783353600&v=beta&t=nWeaBw9XtkySyNVmVMwxB59GMK_jrtqhBBpA-u5BQ_E",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/D5635AQHUC8A5fpMQlQ/profile-framedphoto-shrink_800_800/B56Z0_UCJAJgAg-/0/1774883709784?e=1783353600&v=beta&t=nWeaBw9XtkySyNVmVMwxB59GMK_jrtqhBBpA-u5BQ_E",
+          "width": 800,
+          "height": 800
+        }
+      },
+      "postId": "7477354583787233280"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_company:28131444,urn:li:activity:7477354583787233280,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "28131444",
+        "name": "FS-Compression",
+        "linkedinUrl": "https://www.linkedin.com/company/fs-compression/",
+        "position": "1,228 followers"
+      },
+      "postId": "7477354583787233280"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAACOkZBIBNmls0eYPz8oCVIIHzYERMugSdwA,urn:li:activity:7477354583787233280,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAACOkZBIBNmls0eYPz8oCVIIHzYERMugSdwA",
+        "name": "Abhishek Pandey",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAACOkZBIBNmls0eYPz8oCVIIHzYERMugSdwA",
+        "position": "Industrial Refrigeration Technician at Daikin Saudi Arabia | Ammonia & Freon Systems | Cold Storage & Rack Systems|Maintenance|Service|troubleshooting|Process Chillers|Blast Freezer|Iceplants|Commercial|Cooling||",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/D4D03AQH9ZgWOx-2DjQ/profile-displayphoto-crop_800_800/B4DZgE9MW5GsAQ-/0/1752429808364?e=1784160000&v=beta&t=wjixGBpV2tCH_w_7xumqUNseClI9b0Hhxvbcp0fVm2Q",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/D4D03AQH9ZgWOx-2DjQ/profile-displayphoto-crop_800_800/B4DZgE9MW5GsAQ-/0/1752429808364?e=1784160000&v=beta&t=wjixGBpV2tCH_w_7xumqUNseClI9b0Hhxvbcp0fVm2Q",
+          "width": 800,
+          "height": 800
+        }
+      },
+      "postId": "7477354583787233280"
+    },
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAABVkJvwBOuudz_QIfd0j0eLQxHrIOjtN-1g,urn:li:activity:7477354583787233280,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAABVkJvwBOuudz_QIfd0j0eLQxHrIOjtN-1g",
+        "name": "Naveen Turkar",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAABVkJvwBOuudz_QIfd0j0eLQxHrIOjtN-1g",
+        "position": "Sr. Area Manager-Sales at FS Compressors India Pvt. Ltd.",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/C5603AQFwA2uK0DU9lQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1613397583251?e=1784160000&v=beta&t=VsGRdLYvQhDAVngJ4IV1DxVASjQ-dDrpCvQbF3xXLmQ",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/C5603AQFwA2uK0DU9lQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1613397583251?e=1784160000&v=beta&t=VsGRdLYvQhDAVngJ4IV1DxVASjQ-dDrpCvQbF3xXLmQ",
+          "width": 800,
+          "height": 800
+        }
+      },
+      "postId": "7477354583787233280"
+    }
+  ],
+  "reactionIds": [
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAAAS-Z3YBaDYTwPboG6EHkeXoYTQk_ovdKnc,urn:li:activity:7477354583787233280,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_company:28131444,urn:li:activity:7477354583787233280,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAACOkZBIBNmls0eYPz8oCVIIHzYERMugSdwA,urn:li:activity:7477354583787233280,0)",
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAABVkJvwBOuudz_QIfd0j0eLQxHrIOjtN-1g,urn:li:activity:7477354583787233280,0)"
+  ],
+  "commentIds": [],
+  "query": {
+    "sortBy": "date",
+    "page": 1,
+    "search": "Industrial air compressor",
+    "postedLimit": "month"
+  }
+},
+{
+  "type": "post",
+  "id": "7477352782916714496",
+  "linkedinUrl": "https://www.linkedin.com/posts/ultra-precision-machine-tools_b2bleadgeneration-leadgenerationstrategy-activity-7477352782916714496-cy4W",
+  "content": "𝙏𝙤 𝙂𝙚𝙩 𝙄𝙣-𝙙𝙚𝙥𝙩𝙝 𝘼𝙣𝙖𝙡𝙮𝙨𝙞𝙨 𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙 𝙎𝙖𝙢𝙥𝙡𝙚 𝙍𝙚𝙥𝙤𝙧𝙩 : https://lnkd.in/dXqB-9vG #B2BLeadGeneration #LeadGenerationStrategy #SalesLeadGeneration #LinkedInLeadGen #B2BMarketing #SalesStrategy #BusinessDevelopment #GrowthStrategy #MarketingStrategy #SalesAndMarketing #DigitalTransformation #BusinessGrowth #LinkedInMarketing #LinkedInTips #SocialSelling #LinkedInStrategy #ProfessionalNetworking #LinkedInForBusiness #ConversionOptimization #SalesFunnel #CustomerAcquisition #RevenueGrowth #DemandGeneration #MarketingROI #ThoughtLeadership #InboundMarketing #ContentMarketing #MarketingAutomation #SalesEnablement",
+  "contentAttributes": [],
+  "author": {
+    "id": "117004756",
+    "universalName": "ultra-precision-machine-tools",
+    "publicIdentifier": null,
+    "type": "company",
+    "name": "Ultra Precision Machine Tools",
+    "linkedinUrl": "https://www.linkedin.com/company/ultra-precision-machine-tools/posts",
+    "info": "105 followers",
+    "website": null,
+    "websiteLabel": null,
+    "avatar": {
+      "url": "https://media.licdn.com/dms/image/v2/D4D0BAQFa8OB6HfC0Xg/company-logo_400_400/B4DZ47AyEuJ4AU-/0/1779106521631/ultra_precision_machine_tools_logo?e=1784160000&v=beta&t=_BIUEUZaNV82doP-JYY88EdGLmUyK22-ilwndDImSao",
+      "width": 400,
+      "height": 400
+    },
+    "urn": "117004756"
+  },
+  "postedAt": {
+    "timestamp": 1782739825944,
+    "date": "2026-06-29T13:30:25.944Z",
+    "postedAgoShort": "2h",
+    "postedAgoText": "2 hours ago • Visible to anyone on or off LinkedIn"
+  },
+  "postImages": [],
+  "article": {
+    "title": "Heavy Duty Industrial Air Compressor Market Competitive Analysis and Benchmarking",
+    "subtitle": "Ultra Precision Machine Tools",
+    "link": "https://www.linkedin.com/pulse/heavy-duty-industrial-air-compressor-market-t1tvf?trackingId=KrMF3%2FEdTESniXKK6L5m2Q%3D%3D",
+    "linkLabel": "Open article: Heavy Duty Industrial Air Compressor Market Competitive Analysis and Benchmarking by Ultra Precision Machine Tools • 6 min read",
+    "description": "Market Overview and Growth Trajectory of Heavy Duty Industrial Air Compressor MarketThe Heavy Duty Industrial Air Compressor Market is projected to gr",
+    "image": {
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEu7edhqCXrYQ/article-cover_image-shrink_423_752/B4DZ8SLKyuK0AY-/0/1782716345750?e=1784160000&v=beta&t=71nt7AbVxdifPnMYaQKKvmjskpuk8g28k-pLAfFXeqE",
+      "width": 752,
+      "height": 423
+    }
+  },
+  "socialContent": {
+    "hideCommentsCount": false,
+    "hideReactionsCount": false,
+    "hideSocialActivityCounts": false,
+    "hideShareAction": true,
+    "hideSendAction": true,
+    "hideRepostsCount": false,
+    "hideViewsCount": false,
+    "trustInterventionBanner": null,
+    "hideReactAction": false,
+    "hideCommentAction": false,
+    "shareUrl": "https://www.linkedin.com/posts/ultra-precision-machine-tools_b2bleadgeneration-leadgenerationstrategy-activity-7477352782916714496-cy4W?",
+    "showContributionExperience": false,
+    "showSocialDetail": true
+  },
+  "header": {
+    "text": null
+  },
+  "entityId": "7477352782916714496",
+  "shareUrn": "urn:li:ugcPost:7477254481387302912",
+  "shareLinkedinUrl": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7477254481387302912",
+  "engagement": {
+    "id": "7477254481387302912",
+    "likes": 0,
+    "comments": 0,
+    "shares": 0,
+    "reactions": []
+  },
+  "reactions": [],
+  "reactionIds": [],
+  "commentIds": [],
+  "query": {
+    "sortBy": "date",
+    "page": 1,
+    "search": "Industrial air compressor",
+    "postedLimit": "month"
+  }
+},
+{
+  "type": "reaction",
+  "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAADEUxu0BOPPdXuAfTgfcJdjW5d1qEMN152Y,urn:li:activity:7477348930607849473,0)",
+  "reactionType": "LIKE",
+  "actor": {
+    "id": "ACoAADEUxu0BOPPdXuAfTgfcJdjW5d1qEMN152Y",
+    "name": "Nikhil Naliyadhara",
+    "linkedinUrl": "https://www.linkedin.com/in/ACoAADEUxu0BOPPdXuAfTgfcJdjW5d1qEMN152Y",
+    "position": "Reliance industries limited ! Ex pixon green energy Pvt.ltd ! Ex adani solar..",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/D4D03AQFOgQCmbiG29g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1704514159055?e=1784160000&v=beta&t=gOEJeiF8nFj9MTzFHzaz5ML5BN51BBvvVU3_VJ4g2Js",
+    "picture": {
+      "url": "https://media.licdn.com/dms/image/v2/D4D03AQFOgQCmbiG29g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1704514159055?e=1784160000&v=beta&t=gOEJeiF8nFj9MTzFHzaz5ML5BN51BBvvVU3_VJ4g2Js",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "postId": "7477348930607849473",
+  "query": {
+    "post": "https://www.linkedin.com/posts/piyush-chavhan-819224193_empyreanenergy-cnisolar-maharashtramanufacturing-activity-7477348930607849473-URFE"
+  }
+},
+{
+  "type": "post",
+  "id": "7477348930607849473",
+  "linkedinUrl": "https://www.linkedin.com/posts/piyush-chavhan-819224193_empyreanenergy-cnisolar-maharashtramanufacturing-activity-7477348930607849473-URFE",
+  "content": "Rs 9.8 lakh a month. Straight to MSEDCL. Every month.\nThat's what a textile unit in Aurangabad was paying — before one structural change.\nThey didn't cut shifts. Didn't reduce machines. Didn't renegotiate with the grid.\nThey installed 350 kWp of rooftop solar.\n12 months in, here's the actual outcome:\n→ Monthly savings: Rs 5.2 lakh\n → Payback period: 4.2 years\n → 25-year savings from solar: Rs 13.8 crore\nThe plant generates ~36,500 units/month from the rooftop — offsetting daytime load exactly when a textile unit runs heaviest. Looms. Compressors. Air handling. All on solar during peak generation hours.\nThis isn't a projection. It's generation data matched against MSEDCL billing — energy charge offset plus demand charge reduction on an HT industrial connection.\nThe investment was capital expenditure. The return is locked in for 25 years.\nThe factory didn't change. The energy bill did.\nIf your unit is paying Rs 5 lakh or more per month to MSEDCL — this math almost certainly applies to you.\nDM \"AUDIT\" and I'll tell you within 24 hours whether the numbers work for your plant.\n#EmpyreanEnergy #CnISolar #MaharashtraManufacturing",
+  "contentAttributes": [],
+  "author": {
+    "id": "ACoAAC1qyZUBDiqRkt5LcYya-8k0XBe_vC128YU",
+    "universalName": null,
+    "publicIdentifier": "piyush-chavhan-819224193",
+    "type": "profile",
+    "name": "Piyush Chavhan",
+    "linkedinUrl": "https://www.linkedin.com/in/piyush-chavhan-819224193?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAC1qyZUBDiqRkt5LcYya-8k0XBe_vC128YU",
+    "info": "C&I Solar EPC Co-Founder | Empyrean Energy LLP | Marathwada’s C&I Solar Specialist | Cutting Industrial Electricity Bills by 60% Across Maharashtra.",
+    "website": null,
+    "websiteLabel": null,
+    "avatar": {
+      "url": "https://media.licdn.com/dms/image/v2/D5603AQELsARqMu01vw/profile-displayphoto-crop_800_800/B56Z77GHC.KEAM-/0/1782329146854?e=1784160000&v=beta&t=Php3WBLj43gpGEIhROthGu77Yks5wmCmEtwTQzMBC6k",
+      "width": 800,
+      "height": 800
+    },
+    "urn": "761973141"
+  },
+  "postedAt": {
+    "timestamp": 1782738907482,
+    "date": "2026-06-29T13:15:07.482Z",
+    "postedAgoShort": "2h",
+    "postedAgoText": "2 hours ago • Visible to anyone on or off LinkedIn"
+  },
+  "postImages": [
+    {
+      "url": "https://media.licdn.com/dms/image/v2/D5622AQHRi0VuMdACZA/feedshare-image-high-res/B56Z8SnMSYHcAU-/0/1782723691901?e=1784160000&v=beta&t=E6wJIhs0vL91SZpE6aHlbSRngLvHftamLx-yMRq-kbw",
+      "width": 1080,
+      "height": 1080
+    }
+  ],
+  "socialContent": {
+    "hideCommentsCount": false,
+    "hideReactionsCount": false,
+    "hideSocialActivityCounts": false,
+    "hideShareAction": true,
+    "hideSendAction": true,
+    "hideRepostsCount": false,
+    "hideViewsCount": false,
+    "trustInterventionBanner": null,
+    "hideReactAction": false,
+    "hideCommentAction": false,
+    "shareUrl": "https://www.linkedin.com/posts/piyush-chavhan-819224193_empyreanenergy-cnisolar-maharashtramanufacturing-activity-7477348930607849473-URFE?",
+    "showContributionExperience": false,
+    "showSocialDetail": true
+  },
+  "header": {
+    "text": null
+  },
+  "entityId": "7477348930607849473",
+  "shareUrn": "urn:li:share:7477285113685299200",
+  "shareLinkedinUrl": "https://www.linkedin.com/feed/update/urn:li:share:7477285113685299200",
+  "engagement": {
+    "id": "7477348930607849473",
+    "likes": 1,
+    "comments": 0,
+    "shares": 0,
+    "reactions": [
+      {
+        "type": "LIKE",
+        "count": 1
+      }
+    ]
+  },
+  "reactions": [
+    {
+      "id": "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAADEUxu0BOPPdXuAfTgfcJdjW5d1qEMN152Y,urn:li:activity:7477348930607849473,0)",
+      "reactionType": "LIKE",
+      "actor": {
+        "id": "ACoAADEUxu0BOPPdXuAfTgfcJdjW5d1qEMN152Y",
+        "name": "Nikhil Naliyadhara",
+        "linkedinUrl": "https://www.linkedin.com/in/ACoAADEUxu0BOPPdXuAfTgfcJdjW5d1qEMN152Y",
+        "position": "Reliance industries limited ! Ex pixon green energy Pvt.ltd ! Ex adani solar..",
+        "pictureUrl": "https://media.licdn.com/dms/image/v2/D4D03AQFOgQCmbiG29g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1704514159055?e=1784160000&v=beta&t=gOEJeiF8nFj9MTzFHzaz5ML5BN51BBvvVU3_VJ4g2Js",
+        "picture": {
+          "url": "https://media.licdn.com/dms/image/v2/D4D03AQFOgQCmbiG29g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1704514159055?e=1784160000&v=beta&t=gOEJeiF8nFj9MTzFHzaz5ML5BN51BBvvVU3_VJ4g2Js",
+          "width": 800,
+          "height": 800
+        }
+      },
+      "postId": "7477348930607849473"
+    }
+  ],
+  "reactionIds": [
+    "urn:li:fsd_reaction:(urn:li:fsd_profile:ACoAADEUxu0BOPPdXuAfTgfcJdjW5d1qEMN152Y,urn:li:activity:7477348930607849473,0)"
+  ],
+  "commentIds": [],
+  "query": {
+    "sortBy": "date",
+    "page": 1,
+    "search": "Industrial air compressor",
+    "postedLimit": "month"
+  }
+},
+{
+  "type": "post",
+  "id": "7477347500212006912",
+  "linkedinUrl": "https://www.linkedin.com/posts/umar-maniar-%F0%9F%9A%80-01a376169_24-years-of-engineering-trust-your-one-stop-activity-7477347500212006912-HLpv",
+  "content": "24+ Years of Engineering Trust: Your One-Stop Source for Pneumatic & Hydraulic Solutions in Ahmedabad. 📦\n\nFrom minimizing factory downtime to ensuring seamless fluid and air control, the right components make all the difference.\n\nSince 2001, Maniar Enterprise has been the trusted backbone for industries across Gujarat and India, delivering high-performance Pneumatic and Hydraulic products built for reliability.\n\nWhether you are upgrading your machinery or looking for standard replacement parts, we’ve got you covered with an extensive inventory of standard and specialized engineering products.\n\n🛠️ Our Specialized Product Portfolio Includes:\n\nLubrication Oil Pumps: Ensuring smooth operation and extending your machinery's lifespan.\n\nHigh-Grade Tubing: Premium Silicone Tubes (for flexible, high-temp applications) and Teflon (PTFE) Tubes (for chemical and extreme temperature resistance).\n\nPU Round Belts: Durable, high-elasticity belts for seamless power transmission.\n\nAir Compressor Parts: Genuine spares to keep your air systems running at peak efficiency.\n\nPrecision Brass Pipe Fittings: Leak-proof, heavy-duty fittings for secure industrial connections.\n\nWhy Partner with Maniar Enterprise?\n✅ 25 Years of Domain Expertise: Serving the industrial sector with deep technical know-how since 2001.\n✅ Massive Ready Stock: A robust warehouse inventory to fulfill your immediate and bulk requirements quickly.\n✅ Authorized Distributorships: Partnered with top-tier national and international industrial brands to ensure 100% genuine products.\n✅ Pan-India Digital & Logistics Support: Quick sourcing and hassle-free delivery to keep your production lines moving.\n\nLet us help you optimize your procurement process..\n\nwww.maniarenterprise.in",
+  "contentAttributes": [],
+  "author": {
+    "id": "ACoAACgZU5YB9OnBYUxi3sJVYMi_nwB3Rx4nnYc",
+    "universalName": null,
+    "publicIdentifier": "umar-maniar-🚀-01a376169",
+    "type": "profile",
+    "name": "Umar Maniar 🚀",
+    "linkedinUrl": "https://www.linkedin.com/in/umar-maniar-%F0%9F%9A%80-01a376169?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAACgZU5YB9OnBYUxi3sJVYMi_nwB3Rx4nnYc",
+    "info": "Business Development Manager at Maniar Enterprise | M.eng (E.C) | Pneumatic and Hydraulic products wholesaler | Lubrication oil Pump | Solenoid Valve | Customized Air cylinder | Valve Accessories | Gaza Genocide",
+    "website": null,
+    "websiteLabel": null,
+    "avatar": {
+      "url": "https://media.licdn.com/dms/image/v2/D5603AQEa58Jssmty9Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1707757026432?e=1784160000&v=beta&t=BzgBjSQoZqGs1OrG6XODHhrimbCkJ6EibEUqOsN7cME",
+      "width": 800,
+      "height": 800
+    },
+    "urn": "672748438"
+  },
+  "postedAt": {
+    "timestamp": 1782738566449,
+    "date": "2026-06-29T13:09:26.449Z",
+    "postedAgoShort": "2h",
+    "postedAgoText": "2 hours ago • Visible to anyone on or off LinkedIn"
+  },
+  "postImages": [
+    {
+      "url": "https://media.licdn.com/dms/image/v2/D4D22AQG4HSoIiPDP5Q/feedshare-shrink_1280/B4DZ8Tf7fvJsAM-/0/1782738565405?e=1784160000&v=beta&t=IV9L8R7tGyYRWSEt7BYQAIh55X25Xr1FWTilND6OVKc",
+      "width": 1024,
+      "height": 1536
+    }
+  ],
+  "socialContent": {
+    "hideCommentsCount": false,
+    "hideReactionsCount": false,
+    "hideSocialActivityCounts": false,
+    "hideShareAction": true,
+    "hideSendAction": true,
+    "hideRepostsCount": false,
+    "hideViewsCount": false,
+    "trustInterventionBanner": null,
+    "hideReactAction": false,
+    "hideCommentAction": false,
+    "shareUrl": "https://www.linkedin.com/posts/umar-maniar-%F0%9F%9A%80-01a376169_24-years-of-engineering-trust-your-one-stop-activity-7477347500212006912-HLpv?",
+    "showContributionExperience": false,
+    "showSocialDetail": true
+  },
+  "header": {
+    "text": null
+  },
+  "entityId": "7477347500212006912",
+  "shareUrn": "urn:li:share:7477347498945204224",
+  "shareLinkedinUrl": "https://www.linkedin.com/feed/update/urn:li:share:7477347498945204224",
+  "engagement": {
+    "id": "7477347500212006912",
+    "likes": 0,
+    "comments": 0,
+    "shares": 0,
+    "reactions": []
+  },
+  "reactions": [],
+  "reactionIds": [],
+  "commentIds": [],
+  "query": {
+    "sortBy": "date",
+    "page": 1,
+    "search": "Industrial air compressor",
+    "postedLimit": "month"
+  }
+}]

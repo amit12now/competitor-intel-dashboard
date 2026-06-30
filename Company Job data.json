@@ -1,0 +1,3282 @@
+[{
+  "company_name": "Ingersoll Rand",
+  "company_id": "3175",
+  "tagline": "",
+  "description": "Ingersoll Rand Inc. (NYSE:IR), driven by an entrepreneurial spirit and ownership mindset, is dedicated to Making Life Better for our employees, customers, shareholders, and planet. Customers lean on us for exceptional performance and durability in mission-critical flow creation and industrial solutions. Supported by over 80+ respected brands, our products and services excel in the most complex and harsh conditions. Our employees develop customers for life through their daily commitment to expertise, productivity, and efficiency. For more information, visit www.IRCO.com.",
+  "logo_url": "https://media.licdn.com/dms/image/v2/D560BAQFuLDksICvcxA/company-logo_400_400/company-logo_400_400/0/1693490037280/ingersoll_rand_logo?e=1784160000&v=beta&t=6FdWNMnuL7vt5yYpES_5-SCdI263-BbmhsLhDFKdkCc",
+  "linkedin_url": "https://www.linkedin.com/company/ingersoll-rand/",
+  "website": "http://www.IRCO.com",
+  "hq_full_address": "525 Harbour Place Drive, Suite 600, Davidson, North Carolina 28036, US",
+  "hq_city": "Davidson",
+  "hq_region": "North Carolina",
+  "hq_country": "US",
+  "hq_postalcode": "28036",
+  "locations": [
+    {
+      "city": "Davidson",
+      "country": "US",
+      "full_address": "525 Harbour Place Drive, Suite 600, Davidson, North Carolina 28036, US",
+      "is_headquarter": true,
+      "line1": "525 Harbour Place Drive, Suite 600",
+      "line2": "",
+      "region": "North Carolina",
+      "zipcode": "28036"
+    }
+  ],
+  "phone": "",
+  "email": "",
+  "domain": "irco.com",
+  "industries": [
+    "Industrial Machinery Manufacturing"
+  ],
+  "specialties": "Efficiency, Engineering , Compressed Air, Vacuum Pumps, Flow Control Technology, Energy, Medical, Blowers, Power Tools, Utility Vehicles , Life Sciences, Sustainability",
+  "year_founded": null,
+  "funding_info": {
+    "crunchbase_url": null,
+    "last_funding_round_amount": null,
+    "last_funding_round_currency": null,
+    "last_funding_round_month": null,
+    "last_funding_round_type": null,
+    "last_funding_round_year": null,
+    "num_funding_rounds": null
+  },
+  "employee_count": 15368,
+  "employee_range": "10001+",
+  "follower_count": 394986,
+  "affiliated_companies": [
+    {
+      "company_id": "10050780",
+      "linkedin_url": "https://www.linkedin.com/company/aro-fluid-management/",
+      "name": "ARO® Fluid Management"
+    },
+    {
+      "company_id": "11134457",
+      "linkedin_url": "https://www.linkedin.com/company/lmipumps/",
+      "name": "LMI Pumps, An Ingersoll Rand Business"
+    },
+    {
+      "company_id": "92490",
+      "linkedin_url": "https://www.linkedin.com/company/milton-roy/",
+      "name": "Milton Roy, An Ingersoll Rand Business"
+    },
+    {
+      "company_id": "1840077",
+      "linkedin_url": "https://www.linkedin.com/company/albin-pump/",
+      "name": "Albin Pump"
+    },
+    {
+      "company_id": "2805346",
+      "linkedin_url": "https://www.linkedin.com/company/nashpumps/",
+      "name": "Nash"
+    },
+    {
+      "company_id": "304140",
+      "linkedin_url": "https://www.linkedin.com/company/everest-blowers-and-vacuum-systems/",
+      "name": "Everest Blowers & Vacuum Pumps (Systems)"
+    },
+    {
+      "company_id": "68059793",
+      "linkedin_url": "https://www.linkedin.com/company/oberdorfer-pumps/",
+      "name": "Oberdorfer Pumps"
+    },
+    {
+      "company_id": "1251554",
+      "linkedin_url": "https://www.linkedin.com/company/mp-pumps/",
+      "name": "MP Pumps"
+    }
+  ],
+  "headcount_by_function": {
+    "Accounting": {
+      "count": 600,
+      "percentage": 4
+    },
+    "Administrative": {
+      "count": 308,
+      "percentage": 2
+    },
+    "Business Development": {
+      "count": 479,
+      "percentage": 3
+    },
+    "Engineering": {
+      "count": 2613,
+      "percentage": 17
+    },
+    "Finance": {
+      "count": 411,
+      "percentage": 3
+    },
+    "Human Resources": {
+      "count": 576,
+      "percentage": 4
+    },
+    "Information Technology": {
+      "count": 1309,
+      "percentage": 9
+    },
+    "Marketing": {
+      "count": 327,
+      "percentage": 2
+    },
+    "Operations": {
+      "count": 2779,
+      "percentage": 18
+    },
+    "Program and Project Management": {
+      "count": 417,
+      "percentage": 3
+    },
+    "Purchasing": {
+      "count": 458,
+      "percentage": 3
+    },
+    "Quality Assurance": {
+      "count": 352,
+      "percentage": 2
+    },
+    "Sales": {
+      "count": 2104,
+      "percentage": 14
+    },
+    "Support": {
+      "count": 973,
+      "percentage": 6
+    }
+  },
+  "headcount_by_month": [
+    {
+      "date": "2024-6-1",
+      "employee_count": 14424
+    },
+    {
+      "date": "2024-7-1",
+      "employee_count": 14504
+    },
+    {
+      "date": "2024-8-1",
+      "employee_count": 14534
+    },
+    {
+      "date": "2024-9-1",
+      "employee_count": 14637
+    },
+    {
+      "date": "2024-10-1",
+      "employee_count": 14704
+    },
+    {
+      "date": "2024-11-1",
+      "employee_count": 14731
+    },
+    {
+      "date": "2024-12-1",
+      "employee_count": 14711
+    },
+    {
+      "date": "2025-1-1",
+      "employee_count": 14777
+    },
+    {
+      "date": "2025-2-1",
+      "employee_count": 14828
+    },
+    {
+      "date": "2025-3-1",
+      "employee_count": 14882
+    },
+    {
+      "date": "2025-4-1",
+      "employee_count": 14930
+    },
+    {
+      "date": "2025-5-1",
+      "employee_count": 15000
+    },
+    {
+      "date": "2025-6-1",
+      "employee_count": 15099
+    },
+    {
+      "date": "2025-7-1",
+      "employee_count": 15122
+    },
+    {
+      "date": "2025-8-1",
+      "employee_count": 15095
+    },
+    {
+      "date": "2025-9-1",
+      "employee_count": 15126
+    },
+    {
+      "date": "2025-10-1",
+      "employee_count": 15147
+    },
+    {
+      "date": "2025-11-1",
+      "employee_count": 15167
+    },
+    {
+      "date": "2025-12-1",
+      "employee_count": 15152
+    },
+    {
+      "date": "2026-1-1",
+      "employee_count": 15189
+    },
+    {
+      "date": "2026-2-1",
+      "employee_count": 15199
+    },
+    {
+      "date": "2026-3-1",
+      "employee_count": 15228
+    },
+    {
+      "date": "2026-4-1",
+      "employee_count": 15259
+    },
+    {
+      "date": "2026-5-1",
+      "employee_count": 15327
+    },
+    {
+      "date": "2026-6-1",
+      "employee_count": 15368
+    }
+  ],
+  "headcount_growth": {
+    "1y": "2%",
+    "2y": "7%",
+    "6m": "1%"
+  },
+  "headcount_growth_by_function": {
+    "Accounting": {
+      "1y": "3%",
+      "6m": "0%"
+    },
+    "Administrative": {
+      "1y": "3%",
+      "6m": "-1%"
+    },
+    "Business Development": {
+      "1y": "1%",
+      "6m": "0%"
+    },
+    "Engineering": {
+      "1y": "2%",
+      "6m": "2%"
+    },
+    "Finance": {
+      "1y": "2%",
+      "6m": "0%"
+    },
+    "Human Resources": {
+      "1y": "3%",
+      "6m": "1%"
+    },
+    "Information Technology": {
+      "1y": "4%",
+      "6m": "3%"
+    },
+    "Marketing": {
+      "1y": "4%",
+      "6m": "0%"
+    },
+    "Operations": {
+      "1y": "2%",
+      "6m": "1%"
+    },
+    "Program and Project Management": {
+      "1y": "-1%",
+      "6m": "0%"
+    },
+    "Purchasing": {
+      "1y": "1%",
+      "6m": "0%"
+    },
+    "Quality Assurance": {
+      "1y": "4%",
+      "6m": "1%"
+    },
+    "Sales": {
+      "1y": "1%",
+      "6m": "0%"
+    },
+    "Support": {
+      "1y": "0%",
+      "6m": "0%"
+    }
+  },
+  "total_job_openings": 1033,
+  "job_openings_by_function": [
+    {
+      "count_by_function": {
+        "Accounting": {
+          "count": 33,
+          "percentage": 4
+        },
+        "Engineering": {
+          "count": 238,
+          "percentage": 28
+        },
+        "Finance": {
+          "count": 23,
+          "percentage": 3
+        },
+        "Information Technology": {
+          "count": 35,
+          "percentage": 4
+        },
+        "Operations": {
+          "count": 219,
+          "percentage": 26
+        },
+        "Program and Project Management": {
+          "count": 13,
+          "percentage": 2
+        },
+        "Purchasing": {
+          "count": 22,
+          "percentage": 3
+        },
+        "Quality Assurance": {
+          "count": 22,
+          "percentage": 3
+        },
+        "Sales": {
+          "count": 139,
+          "percentage": 16
+        },
+        "Support": {
+          "count": 37,
+          "percentage": 4
+        }
+      },
+      "date": "2026-3",
+      "total_count": 853
+    },
+    {
+      "count_by_function": {
+        "Accounting": {
+          "count": 18,
+          "percentage": 3
+        },
+        "Engineering": {
+          "count": 182,
+          "percentage": 29
+        },
+        "Finance": {
+          "count": 10,
+          "percentage": 2
+        },
+        "Information Technology": {
+          "count": 34,
+          "percentage": 6
+        },
+        "Operations": {
+          "count": 130,
+          "percentage": 21
+        },
+        "Program and Project Management": {
+          "count": 9,
+          "percentage": 1
+        },
+        "Purchasing": {
+          "count": 13,
+          "percentage": 2
+        },
+        "Quality Assurance": {
+          "count": 16,
+          "percentage": 3
+        },
+        "Sales": {
+          "count": 139,
+          "percentage": 22
+        },
+        "Support": {
+          "count": 23,
+          "percentage": 4
+        }
+      },
+      "date": "2025-12",
+      "total_count": 618
+    },
+    {
+      "count_by_function": {
+        "Accounting": {
+          "count": 21,
+          "percentage": 2
+        },
+        "Engineering": {
+          "count": 271,
+          "percentage": 30
+        },
+        "Finance": {
+          "count": 6,
+          "percentage": 1
+        },
+        "Information Technology": {
+          "count": 32,
+          "percentage": 4
+        },
+        "Operations": {
+          "count": 195,
+          "percentage": 22
+        },
+        "Program and Project Management": {
+          "count": 9,
+          "percentage": 1
+        },
+        "Purchasing": {
+          "count": 16,
+          "percentage": 2
+        },
+        "Quality Assurance": {
+          "count": 12,
+          "percentage": 1
+        },
+        "Sales": {
+          "count": 192,
+          "percentage": 21
+        },
+        "Support": {
+          "count": 54,
+          "percentage": 6
+        }
+      },
+      "date": "2025-9",
+      "total_count": 900
+    }
+  ],
+  "job_openings_growth": {
+    "3m": "38%",
+    "6m": "-5%"
+  },
+  "job_openings_growth_by_function": {
+    "Accounting": {
+      "3m": "83%",
+      "6m": "57%"
+    },
+    "Engineering": {
+      "3m": "31%",
+      "6m": "-12%"
+    },
+    "Finance": {
+      "3m": "130%",
+      "6m": "283%"
+    },
+    "Information Technology": {
+      "3m": "3%",
+      "6m": "9%"
+    },
+    "Operations": {
+      "3m": "68%",
+      "6m": "12%"
+    },
+    "Program and Project Management": {
+      "3m": "44%",
+      "6m": "44%"
+    },
+    "Purchasing": {
+      "3m": "69%",
+      "6m": "38%"
+    },
+    "Quality Assurance": {
+      "3m": "38%",
+      "6m": "83%"
+    },
+    "Sales": {
+      "3m": "0%",
+      "6m": "-28%"
+    },
+    "Support": {
+      "3m": "61%",
+      "6m": "-31%"
+    }
+  },
+  "median_employee_tenure": 9.5,
+  "new_hires": [
+    {
+      "date": "2024-6",
+      "senior_hires": 2,
+      "total_hires": 146
+    },
+    {
+      "date": "2024-7",
+      "senior_hires": 0,
+      "total_hires": 146
+    },
+    {
+      "date": "2024-8",
+      "senior_hires": 0,
+      "total_hires": 129
+    },
+    {
+      "date": "2024-9",
+      "senior_hires": 0,
+      "total_hires": 153
+    },
+    {
+      "date": "2024-10",
+      "senior_hires": 1,
+      "total_hires": 128
+    },
+    {
+      "date": "2024-11",
+      "senior_hires": 0,
+      "total_hires": 66
+    },
+    {
+      "date": "2024-12",
+      "senior_hires": 0,
+      "total_hires": 68
+    },
+    {
+      "date": "2025-1",
+      "senior_hires": 0,
+      "total_hires": 134
+    },
+    {
+      "date": "2025-2",
+      "senior_hires": 0,
+      "total_hires": 104
+    },
+    {
+      "date": "2025-3",
+      "senior_hires": 0,
+      "total_hires": 101
+    },
+    {
+      "date": "2025-4",
+      "senior_hires": 0,
+      "total_hires": 112
+    },
+    {
+      "date": "2025-5",
+      "senior_hires": 1,
+      "total_hires": 146
+    },
+    {
+      "date": "2025-6",
+      "senior_hires": 3,
+      "total_hires": 162
+    },
+    {
+      "date": "2025-7",
+      "senior_hires": 1,
+      "total_hires": 111
+    },
+    {
+      "date": "2025-8",
+      "senior_hires": 0,
+      "total_hires": 86
+    },
+    {
+      "date": "2025-9",
+      "senior_hires": 0,
+      "total_hires": 108
+    },
+    {
+      "date": "2025-10",
+      "senior_hires": 1,
+      "total_hires": 86
+    },
+    {
+      "date": "2025-11",
+      "senior_hires": 0,
+      "total_hires": 76
+    },
+    {
+      "date": "2025-12",
+      "senior_hires": 1,
+      "total_hires": 51
+    },
+    {
+      "date": "2026-1",
+      "senior_hires": 1,
+      "total_hires": 106
+    },
+    {
+      "date": "2026-2",
+      "senior_hires": 1,
+      "total_hires": 70
+    },
+    {
+      "date": "2026-3",
+      "senior_hires": 1,
+      "total_hires": 73
+    },
+    {
+      "date": "2026-4",
+      "senior_hires": 0,
+      "total_hires": 81
+    },
+    {
+      "date": "2026-5",
+      "senior_hires": 1,
+      "total_hires": 112
+    },
+    {
+      "date": "2026-6",
+      "senior_hires": 0,
+      "total_hires": 51
+    }
+  ]
+},
+{
+  "company_name": "Ingersoll Rand Compressor Systems & Services",
+  "company_id": "24982314",
+  "tagline": "Providing a wide range of quality air compressors, parts and services for businesses and consumers globally",
+  "description": "For over 145 years, Ingersoll Rand has provided a wide range of technologically advanced, highly reliable and low maintenance air compressors. We have deep knowledge of the needs of the industry and the demands placed on productivity, making us leaders in the field. We stand behind our products and services and beside our customers during planning, installation, and maintenance.",
+  "logo_url": "https://media.licdn.com/dms/image/v2/C4E0BAQHGagcmyg0qvA/company-logo_400_400/company-logo_400_400/0/1631329715926?e=1784160000&v=beta&t=U_JMByEsHrkrsYqVDfQZnJpgDsqJeJV5pMl51fExpr0",
+  "linkedin_url": "https://www.linkedin.com/company/ingersoll-rand-compressor-systems-&-services/",
+  "website": "https://www.ingersollrand.com/en-us/air-compressor",
+  "hq_full_address": "Davidson, US",
+  "hq_city": "Davidson",
+  "hq_region": "",
+  "hq_country": "US",
+  "hq_postalcode": "",
+  "locations": [
+    {
+      "city": "Davidson",
+      "country": "US",
+      "full_address": "Davidson, US",
+      "is_headquarter": true,
+      "line1": "",
+      "line2": "",
+      "region": "",
+      "zipcode": ""
+    }
+  ],
+  "phone": "",
+  "email": "",
+  "domain": "ingersollrand.com",
+  "industries": [
+    "Machinery Manufacturing"
+  ],
+  "specialties": "Rental, Oil-Free, Centrifugal, Compressed Air Services, Compressed Air Parts, Compressed Air Repairs, Rotary Screw Compressors, Reciprocating Compressors, High Pressure Compressors, Process Gas Compressors, Plant Air Compressors, Air Compressor",
+  "year_founded": 1871,
+  "funding_info": {
+    "crunchbase_url": null,
+    "last_funding_round_amount": null,
+    "last_funding_round_currency": null,
+    "last_funding_round_month": null,
+    "last_funding_round_type": null,
+    "last_funding_round_year": null,
+    "num_funding_rounds": null
+  },
+  "employee_count": 652,
+  "employee_range": "10001+",
+  "follower_count": 71716,
+  "affiliated_companies": [],
+  "headcount_by_function": {
+    "Accounting": {
+      "count": 11,
+      "percentage": 2
+    },
+    "Administrative": {
+      "count": 15,
+      "percentage": 2
+    },
+    "Business Development": {
+      "count": 15,
+      "percentage": 2
+    },
+    "Engineering": {
+      "count": 137,
+      "percentage": 21
+    },
+    "Information Technology": {
+      "count": 78,
+      "percentage": 12
+    },
+    "Operations": {
+      "count": 102,
+      "percentage": 16
+    },
+    "Program and Project Management": {
+      "count": 10,
+      "percentage": 2
+    },
+    "Purchasing": {
+      "count": 12,
+      "percentage": 2
+    },
+    "Sales": {
+      "count": 112,
+      "percentage": 17
+    },
+    "Support": {
+      "count": 82,
+      "percentage": 13
+    }
+  },
+  "headcount_by_month": [
+    {
+      "date": "2024-6-1",
+      "employee_count": 493
+    },
+    {
+      "date": "2024-7-1",
+      "employee_count": 502
+    },
+    {
+      "date": "2024-8-1",
+      "employee_count": 505
+    },
+    {
+      "date": "2024-9-1",
+      "employee_count": 516
+    },
+    {
+      "date": "2024-10-1",
+      "employee_count": 524
+    },
+    {
+      "date": "2024-11-1",
+      "employee_count": 530
+    },
+    {
+      "date": "2024-12-1",
+      "employee_count": 533
+    },
+    {
+      "date": "2025-1-1",
+      "employee_count": 548
+    },
+    {
+      "date": "2025-2-1",
+      "employee_count": 552
+    },
+    {
+      "date": "2025-3-1",
+      "employee_count": 562
+    },
+    {
+      "date": "2025-4-1",
+      "employee_count": 568
+    },
+    {
+      "date": "2025-5-1",
+      "employee_count": 579
+    },
+    {
+      "date": "2025-6-1",
+      "employee_count": 586
+    },
+    {
+      "date": "2025-7-1",
+      "employee_count": 590
+    },
+    {
+      "date": "2025-8-1",
+      "employee_count": 597
+    },
+    {
+      "date": "2025-9-1",
+      "employee_count": 600
+    },
+    {
+      "date": "2025-10-1",
+      "employee_count": 611
+    },
+    {
+      "date": "2025-11-1",
+      "employee_count": 613
+    },
+    {
+      "date": "2025-12-1",
+      "employee_count": 619
+    },
+    {
+      "date": "2026-1-1",
+      "employee_count": 626
+    },
+    {
+      "date": "2026-2-1",
+      "employee_count": 631
+    },
+    {
+      "date": "2026-3-1",
+      "employee_count": 633
+    },
+    {
+      "date": "2026-4-1",
+      "employee_count": 637
+    },
+    {
+      "date": "2026-5-1",
+      "employee_count": 647
+    },
+    {
+      "date": "2026-6-1",
+      "employee_count": 652
+    }
+  ],
+  "headcount_growth": {
+    "1y": "11%",
+    "2y": "32%",
+    "6m": "5%"
+  },
+  "headcount_growth_by_function": {
+    "Accounting": {
+      "1y": "10%",
+      "6m": "0%"
+    },
+    "Administrative": {
+      "1y": "0%",
+      "6m": "0%"
+    },
+    "Business Development": {
+      "1y": "15%",
+      "6m": "0%"
+    },
+    "Engineering": {
+      "1y": "8%",
+      "6m": "6%"
+    },
+    "Information Technology": {
+      "1y": "11%",
+      "6m": "-1%"
+    },
+    "Operations": {
+      "1y": "17%",
+      "6m": "5%"
+    },
+    "Program and Project Management": {
+      "1y": "50%",
+      "6m": "13%"
+    },
+    "Purchasing": {
+      "1y": "0%",
+      "6m": "0%"
+    },
+    "Sales": {
+      "1y": "15%",
+      "6m": "10%"
+    },
+    "Support": {
+      "1y": "6%",
+      "6m": "-2%"
+    }
+  },
+  "total_job_openings": 150,
+  "job_openings_by_function": [
+    {
+      "count_by_function": {
+        "Accounting": {
+          "count": 8,
+          "percentage": 4
+        },
+        "Business Development": {
+          "count": 4,
+          "percentage": 2
+        },
+        "Engineering": {
+          "count": 60,
+          "percentage": 32
+        },
+        "Finance": {
+          "count": 4,
+          "percentage": 2
+        },
+        "Human Resources": {
+          "count": 3,
+          "percentage": 2
+        },
+        "Information Technology": {
+          "count": 5,
+          "percentage": 3
+        },
+        "Marketing": {
+          "count": 7,
+          "percentage": 4
+        },
+        "Operations": {
+          "count": 23,
+          "percentage": 12
+        },
+        "Product Management": {
+          "count": 3,
+          "percentage": 2
+        },
+        "Program and Project Management": {
+          "count": 5,
+          "percentage": 3
+        },
+        "Purchasing": {
+          "count": 7,
+          "percentage": 4
+        },
+        "Quality Assurance": {
+          "count": 10,
+          "percentage": 5
+        },
+        "Sales": {
+          "count": 44,
+          "percentage": 23
+        },
+        "Support": {
+          "count": 3,
+          "percentage": 2
+        }
+      },
+      "date": "2026-3",
+      "total_count": 190
+    },
+    {
+      "count_by_function": {
+        "Accounting": {
+          "count": 9,
+          "percentage": 7
+        },
+        "Business Development": {
+          "count": 5,
+          "percentage": 4
+        },
+        "Engineering": {
+          "count": 42,
+          "percentage": 32
+        },
+        "Finance": {
+          "count": 1,
+          "percentage": 1
+        },
+        "Human Resources": {
+          "count": 1,
+          "percentage": 1
+        },
+        "Information Technology": {
+          "count": 8,
+          "percentage": 6
+        },
+        "Marketing": {
+          "count": 3,
+          "percentage": 2
+        },
+        "Operations": {
+          "count": 16,
+          "percentage": 12
+        },
+        "Product Management": {
+          "count": 2,
+          "percentage": 2
+        },
+        "Program and Project Management": {
+          "count": 4,
+          "percentage": 3
+        },
+        "Purchasing": {
+          "count": 3,
+          "percentage": 2
+        },
+        "Quality Assurance": {
+          "count": 4,
+          "percentage": 3
+        },
+        "Sales": {
+          "count": 27,
+          "percentage": 20
+        },
+        "Support": {
+          "count": 2,
+          "percentage": 2
+        }
+      },
+      "date": "2025-12",
+      "total_count": 132
+    },
+    {
+      "count_by_function": {
+        "Accounting": {
+          "count": 9,
+          "percentage": 7
+        },
+        "Business Development": {
+          "count": 1,
+          "percentage": 1
+        },
+        "Engineering": {
+          "count": 44,
+          "percentage": 34
+        },
+        "Finance": {
+          "count": 4,
+          "percentage": 3
+        },
+        "Human Resources": {
+          "count": 0,
+          "percentage": 0
+        },
+        "Information Technology": {
+          "count": 4,
+          "percentage": 3
+        },
+        "Marketing": {
+          "count": 2,
+          "percentage": 2
+        },
+        "Operations": {
+          "count": 10,
+          "percentage": 8
+        },
+        "Product Management": {
+          "count": 2,
+          "percentage": 2
+        },
+        "Program and Project Management": {
+          "count": 5,
+          "percentage": 4
+        },
+        "Purchasing": {
+          "count": 2,
+          "percentage": 2
+        },
+        "Quality Assurance": {
+          "count": 4,
+          "percentage": 3
+        },
+        "Sales": {
+          "count": 35,
+          "percentage": 27
+        },
+        "Support": {
+          "count": 2,
+          "percentage": 2
+        }
+      },
+      "date": "2025-9",
+      "total_count": 129
+    }
+  ],
+  "job_openings_growth": {
+    "3m": "44%",
+    "6m": "47%"
+  },
+  "job_openings_growth_by_function": {
+    "Accounting": {
+      "3m": "-11%",
+      "6m": "-11%"
+    },
+    "Business Development": {
+      "3m": "-20%",
+      "6m": "300%"
+    },
+    "Engineering": {
+      "3m": "43%",
+      "6m": "36%"
+    },
+    "Finance": {
+      "3m": "300%",
+      "6m": "0%"
+    },
+    "Human Resources": {
+      "3m": "200%",
+      "6m": "300%"
+    },
+    "Information Technology": {
+      "3m": "-37%",
+      "6m": "25%"
+    },
+    "Marketing": {
+      "3m": "133%",
+      "6m": "250%"
+    },
+    "Operations": {
+      "3m": "44%",
+      "6m": "130%"
+    },
+    "Product Management": {
+      "3m": "50%",
+      "6m": "50%"
+    },
+    "Program and Project Management": {
+      "3m": "25%",
+      "6m": "0%"
+    },
+    "Purchasing": {
+      "3m": "133%",
+      "6m": "250%"
+    },
+    "Quality Assurance": {
+      "3m": "150%",
+      "6m": "150%"
+    },
+    "Sales": {
+      "3m": "63%",
+      "6m": "26%"
+    },
+    "Support": {
+      "3m": "50%",
+      "6m": "50%"
+    }
+  },
+  "median_employee_tenure": 2.8,
+  "new_hires": [
+    {
+      "date": "2024-6",
+      "senior_hires": 0,
+      "total_hires": 9
+    },
+    {
+      "date": "2024-7",
+      "senior_hires": 0,
+      "total_hires": 13
+    },
+    {
+      "date": "2024-8",
+      "senior_hires": 0,
+      "total_hires": 13
+    },
+    {
+      "date": "2024-9",
+      "senior_hires": 0,
+      "total_hires": 18
+    },
+    {
+      "date": "2024-10",
+      "senior_hires": 0,
+      "total_hires": 9
+    },
+    {
+      "date": "2024-11",
+      "senior_hires": 0,
+      "total_hires": 8
+    },
+    {
+      "date": "2024-12",
+      "senior_hires": 0,
+      "total_hires": 6
+    },
+    {
+      "date": "2025-1",
+      "senior_hires": 0,
+      "total_hires": 19
+    },
+    {
+      "date": "2025-2",
+      "senior_hires": 0,
+      "total_hires": 7
+    },
+    {
+      "date": "2025-3",
+      "senior_hires": 0,
+      "total_hires": 13
+    },
+    {
+      "date": "2025-4",
+      "senior_hires": 0,
+      "total_hires": 14
+    },
+    {
+      "date": "2025-5",
+      "senior_hires": 0,
+      "total_hires": 14
+    },
+    {
+      "date": "2025-6",
+      "senior_hires": 0,
+      "total_hires": 14
+    },
+    {
+      "date": "2025-7",
+      "senior_hires": 0,
+      "total_hires": 11
+    },
+    {
+      "date": "2025-8",
+      "senior_hires": 0,
+      "total_hires": 13
+    },
+    {
+      "date": "2025-9",
+      "senior_hires": 0,
+      "total_hires": 9
+    },
+    {
+      "date": "2025-10",
+      "senior_hires": 0,
+      "total_hires": 16
+    },
+    {
+      "date": "2025-11",
+      "senior_hires": 0,
+      "total_hires": 10
+    },
+    {
+      "date": "2025-12",
+      "senior_hires": 0,
+      "total_hires": 8
+    },
+    {
+      "date": "2026-1",
+      "senior_hires": 0,
+      "total_hires": 13
+    },
+    {
+      "date": "2026-2",
+      "senior_hires": 0,
+      "total_hires": 6
+    },
+    {
+      "date": "2026-3",
+      "senior_hires": 0,
+      "total_hires": 10
+    },
+    {
+      "date": "2026-4",
+      "senior_hires": 0,
+      "total_hires": 9
+    },
+    {
+      "date": "2026-5",
+      "senior_hires": 0,
+      "total_hires": 13
+    },
+    {
+      "date": "2026-6",
+      "senior_hires": 0,
+      "total_hires": 9
+    }
+  ]
+},
+{
+  "company_name": "Kaeser Compressors USA",
+  "company_id": "103779",
+  "tagline": "Complete line of compressed air system products and accessories.",
+  "description": "Kaeser is one of the largest providers of compressed air systems and compressed air consulting services, with over 7000 employees worldwide. Our goal is to provide exceptional customer service coupled with innovative products and progressive system solutions.\n\nAt Kaeser, we earn our customers'​ trust and satisfaction by manufacturing the highest quality compressed air and blower products available anywhere. All of our products are designed for reliable performance, easy maintenance, and maximum energy efficiency. That's why we say our products are \"Built for a lifetime.\"™\n\nOur engineers continue to refine manufacturing techniques and take full advantage of the latest machining innovations.  Extensive commitment to research and development keeps our products on the leading edge of technology to benefit our customers.\n\nPrompt and dependable customer service, ISO 9001:2008 quality assurance and ISO 14001:2004 environmental systems, training, and engineering support all contribute to the value our customers have come to expect. We're committed to implementing and maintaining the highest quality standards. In short, we aim for excellence in everything we do.",
+  "logo_url": "https://media.licdn.com/dms/image/v2/C560BAQEEHB1E-Mdp5w/company-logo_400_400/company-logo_400_400/0/1660761952174/kaeser_compressors_logo?e=1784160000&v=beta&t=DO8FKPpXwf1IOowKjRcslTGB2uCQ0yJg5GlLPki9lic",
+  "linkedin_url": "https://www.linkedin.com/company/kaeser-compressors/",
+  "website": "https://us.kaeser.com/",
+  "hq_full_address": "511 Sigma Drive, Fredericksburg, VA 22408, US",
+  "hq_city": "Fredericksburg",
+  "hq_region": "VA",
+  "hq_country": "US",
+  "hq_postalcode": "22408",
+  "locations": [
+    {
+      "city": "Fredericksburg",
+      "country": "US",
+      "full_address": "511 Sigma Drive, Fredericksburg, VA 22408, US",
+      "is_headquarter": true,
+      "line1": "511 Sigma Drive",
+      "line2": "",
+      "region": "VA",
+      "zipcode": "22408"
+    }
+  ],
+  "phone": "5408985500",
+  "email": "",
+  "domain": "us.kaeser.com",
+  "industries": [
+    "Machinery Manufacturing"
+  ],
+  "specialties": "Rotary screw air compressors, Air treatment products, including dryers, Rotary lobe blowers, Vacuum pumps and piston compressors, Portable compressors, Compressed air piping, System controllers, Comprehensive air system analysis",
+  "year_founded": 1919,
+  "funding_info": {
+    "crunchbase_url": null,
+    "last_funding_round_amount": null,
+    "last_funding_round_currency": null,
+    "last_funding_round_month": null,
+    "last_funding_round_type": null,
+    "last_funding_round_year": null,
+    "num_funding_rounds": null
+  },
+  "employee_count": 1252,
+  "employee_range": "1001-5000",
+  "follower_count": 37194,
+  "affiliated_companies": [],
+  "headcount_by_function": {
+    "Accounting": {
+      "count": 37,
+      "percentage": 3
+    },
+    "Administrative": {
+      "count": 57,
+      "percentage": 5
+    },
+    "Business Development": {
+      "count": 22,
+      "percentage": 2
+    },
+    "Engineering": {
+      "count": 149,
+      "percentage": 12
+    },
+    "Human Resources": {
+      "count": 25,
+      "percentage": 2
+    },
+    "Information Technology": {
+      "count": 164,
+      "percentage": 13
+    },
+    "Operations": {
+      "count": 94,
+      "percentage": 8
+    },
+    "Sales": {
+      "count": 376,
+      "percentage": 30
+    },
+    "Support": {
+      "count": 162,
+      "percentage": 13
+    }
+  },
+  "headcount_by_month": [
+    {
+      "date": "2024-6-1",
+      "employee_count": 1106
+    },
+    {
+      "date": "2024-7-1",
+      "employee_count": 1107
+    },
+    {
+      "date": "2024-8-1",
+      "employee_count": 1104
+    },
+    {
+      "date": "2024-9-1",
+      "employee_count": 1110
+    },
+    {
+      "date": "2024-10-1",
+      "employee_count": 1121
+    },
+    {
+      "date": "2024-11-1",
+      "employee_count": 1132
+    },
+    {
+      "date": "2024-12-1",
+      "employee_count": 1142
+    },
+    {
+      "date": "2025-1-1",
+      "employee_count": 1145
+    },
+    {
+      "date": "2025-2-1",
+      "employee_count": 1153
+    },
+    {
+      "date": "2025-3-1",
+      "employee_count": 1159
+    },
+    {
+      "date": "2025-4-1",
+      "employee_count": 1166
+    },
+    {
+      "date": "2025-5-1",
+      "employee_count": 1174
+    },
+    {
+      "date": "2025-6-1",
+      "employee_count": 1186
+    },
+    {
+      "date": "2025-7-1",
+      "employee_count": 1188
+    },
+    {
+      "date": "2025-8-1",
+      "employee_count": 1190
+    },
+    {
+      "date": "2025-9-1",
+      "employee_count": 1199
+    },
+    {
+      "date": "2025-10-1",
+      "employee_count": 1201
+    },
+    {
+      "date": "2025-11-1",
+      "employee_count": 1207
+    },
+    {
+      "date": "2025-12-1",
+      "employee_count": 1217
+    },
+    {
+      "date": "2026-1-1",
+      "employee_count": 1221
+    },
+    {
+      "date": "2026-2-1",
+      "employee_count": 1227
+    },
+    {
+      "date": "2026-3-1",
+      "employee_count": 1238
+    },
+    {
+      "date": "2026-4-1",
+      "employee_count": 1240
+    },
+    {
+      "date": "2026-5-1",
+      "employee_count": 1248
+    },
+    {
+      "date": "2026-6-1",
+      "employee_count": 1252
+    }
+  ],
+  "headcount_growth": {
+    "1y": "6%",
+    "2y": "13%",
+    "6m": "3%"
+  },
+  "headcount_growth_by_function": {
+    "Accounting": {
+      "1y": "12%",
+      "6m": "9%"
+    },
+    "Administrative": {
+      "1y": "8%",
+      "6m": "4%"
+    },
+    "Business Development": {
+      "1y": "0%",
+      "6m": "0%"
+    },
+    "Engineering": {
+      "1y": "12%",
+      "6m": "7%"
+    },
+    "Human Resources": {
+      "1y": "0%",
+      "6m": "0%"
+    },
+    "Information Technology": {
+      "1y": "12%",
+      "6m": "8%"
+    },
+    "Operations": {
+      "1y": "3%",
+      "6m": "1%"
+    },
+    "Sales": {
+      "1y": "4%",
+      "6m": "2%"
+    },
+    "Support": {
+      "1y": "7%",
+      "6m": "2%"
+    }
+  },
+  "total_job_openings": 1,
+  "job_openings_by_function": [],
+  "job_openings_growth": {},
+  "job_openings_growth_by_function": {},
+  "median_employee_tenure": 8.8,
+  "new_hires": [
+    {
+      "date": "2024-6",
+      "senior_hires": 0,
+      "total_hires": 10
+    },
+    {
+      "date": "2024-7",
+      "senior_hires": 0,
+      "total_hires": 8
+    },
+    {
+      "date": "2024-8",
+      "senior_hires": 0,
+      "total_hires": 9
+    },
+    {
+      "date": "2024-9",
+      "senior_hires": 0,
+      "total_hires": 11
+    },
+    {
+      "date": "2024-10",
+      "senior_hires": 0,
+      "total_hires": 15
+    },
+    {
+      "date": "2024-11",
+      "senior_hires": 0,
+      "total_hires": 12
+    },
+    {
+      "date": "2024-12",
+      "senior_hires": 0,
+      "total_hires": 15
+    },
+    {
+      "date": "2025-1",
+      "senior_hires": 0,
+      "total_hires": 7
+    },
+    {
+      "date": "2025-2",
+      "senior_hires": 0,
+      "total_hires": 13
+    },
+    {
+      "date": "2025-3",
+      "senior_hires": 0,
+      "total_hires": 12
+    },
+    {
+      "date": "2025-4",
+      "senior_hires": 0,
+      "total_hires": 9
+    },
+    {
+      "date": "2025-5",
+      "senior_hires": 0,
+      "total_hires": 14
+    },
+    {
+      "date": "2025-6",
+      "senior_hires": 0,
+      "total_hires": 15
+    },
+    {
+      "date": "2025-7",
+      "senior_hires": 0,
+      "total_hires": 6
+    },
+    {
+      "date": "2025-8",
+      "senior_hires": 0,
+      "total_hires": 11
+    },
+    {
+      "date": "2025-9",
+      "senior_hires": 0,
+      "total_hires": 13
+    },
+    {
+      "date": "2025-10",
+      "senior_hires": 0,
+      "total_hires": 10
+    },
+    {
+      "date": "2025-11",
+      "senior_hires": 0,
+      "total_hires": 9
+    },
+    {
+      "date": "2025-12",
+      "senior_hires": 0,
+      "total_hires": 16
+    },
+    {
+      "date": "2026-1",
+      "senior_hires": 0,
+      "total_hires": 10
+    },
+    {
+      "date": "2026-2",
+      "senior_hires": 0,
+      "total_hires": 11
+    },
+    {
+      "date": "2026-3",
+      "senior_hires": 0,
+      "total_hires": 16
+    },
+    {
+      "date": "2026-4",
+      "senior_hires": 0,
+      "total_hires": 5
+    },
+    {
+      "date": "2026-5",
+      "senior_hires": 0,
+      "total_hires": 11
+    },
+    {
+      "date": "2026-6",
+      "senior_hires": 0,
+      "total_hires": 7
+    }
+  ]
+},
+{
+  "company_name": "Hitachi Global Air Power",
+  "company_id": "103060138",
+  "tagline": "",
+  "description": "We build the machines that power industry. We are Hitachi Global Air Power, a leading global industrial compressed air manufacturer. Headquartered in Michigan City, Indiana, our compressed air solutions power manufacturing operations all around the globe; from food and beverage, to pharmaceuticals and computer chips. Our portable compressors provide the air power to build roads and bridges, lay pipelines and aid in oil and gas mining and production. \n\nAs part of Hitachi Industrial Equipment Systems Co., Ltd., Hitachi Global Air Power operates ISO 9001 certified factories in Michigan City, Indiana and Suzhou, China, and sales offices strategically located in Europe, Australia, Southeast Asia, and South and Latin America. Through brands Hitachi, Sullair, and Champion (Australia), our machines have provided legendary reliability, durability, and performance for more than 60 years. \n\nOur global network of engineering and quality experts are building next generation, highly efficient and environment-forward compressed air solutions in direct response to customer need.\n",
+  "logo_url": "https://media.licdn.com/dms/image/v2/D560BAQEXc_5R_kYjlA/company-logo_400_400/B56ZX2zKYzHoAg-/0/1743602363082/hitachi_global_air_power_logo?e=1784160000&v=beta&t=uODXiHfa0b3BUsMGhQmzCV54c2KM4hY9QGJPvKEsmao",
+  "linkedin_url": "https://www.linkedin.com/company/hitachi-global-air-power/",
+  "website": "https://www.hitachiglobalairpower.com/",
+  "hq_full_address": "",
+  "hq_city": "",
+  "hq_region": "",
+  "hq_country": "",
+  "hq_postalcode": "",
+  "locations": [],
+  "phone": "",
+  "email": "",
+  "domain": "hitachiglobalairpower.com",
+  "industries": [
+    "Industrial Machinery Manufacturing"
+  ],
+  "specialties": "",
+  "year_founded": null,
+  "funding_info": {
+    "crunchbase_url": null,
+    "last_funding_round_amount": null,
+    "last_funding_round_currency": null,
+    "last_funding_round_month": null,
+    "last_funding_round_type": null,
+    "last_funding_round_year": null,
+    "num_funding_rounds": null
+  },
+  "employee_count": 420,
+  "employee_range": "1001-5000",
+  "follower_count": 12981,
+  "affiliated_companies": [
+    {
+      "company_id": "1495927",
+      "linkedin_url": "https://www.linkedin.com/company/hitachiglobalairpower/",
+      "name": "Hitachi Global Air Power Australia Pty Ltd"
+    }
+  ],
+  "headcount_by_function": {
+    "Accounting": {
+      "count": 10,
+      "percentage": 2
+    },
+    "Arts and Design": {
+      "count": 9,
+      "percentage": 2
+    },
+    "Business Development": {
+      "count": 17,
+      "percentage": 4
+    },
+    "Consulting": {
+      "count": 18,
+      "percentage": 4
+    },
+    "Engineering": {
+      "count": 65,
+      "percentage": 15
+    },
+    "Finance": {
+      "count": 14,
+      "percentage": 3
+    },
+    "Human Resources": {
+      "count": 21,
+      "percentage": 5
+    },
+    "Information Technology": {
+      "count": 38,
+      "percentage": 9
+    },
+    "Marketing": {
+      "count": 7,
+      "percentage": 2
+    },
+    "Operations": {
+      "count": 65,
+      "percentage": 15
+    },
+    "Product Management": {
+      "count": 12,
+      "percentage": 3
+    },
+    "Program and Project Management": {
+      "count": 10,
+      "percentage": 2
+    },
+    "Purchasing": {
+      "count": 11,
+      "percentage": 3
+    },
+    "Quality Assurance": {
+      "count": 8,
+      "percentage": 2
+    },
+    "Sales": {
+      "count": 58,
+      "percentage": 14
+    },
+    "Support": {
+      "count": 38,
+      "percentage": 9
+    }
+  },
+  "headcount_by_month": [
+    {
+      "date": "2024-6-1",
+      "employee_count": 316
+    },
+    {
+      "date": "2024-7-1",
+      "employee_count": 320
+    },
+    {
+      "date": "2024-8-1",
+      "employee_count": 321
+    },
+    {
+      "date": "2024-9-1",
+      "employee_count": 327
+    },
+    {
+      "date": "2024-10-1",
+      "employee_count": 339
+    },
+    {
+      "date": "2024-11-1",
+      "employee_count": 351
+    },
+    {
+      "date": "2024-12-1",
+      "employee_count": 347
+    },
+    {
+      "date": "2025-1-1",
+      "employee_count": 361
+    },
+    {
+      "date": "2025-2-1",
+      "employee_count": 362
+    },
+    {
+      "date": "2025-3-1",
+      "employee_count": 363
+    },
+    {
+      "date": "2025-4-1",
+      "employee_count": 373
+    },
+    {
+      "date": "2025-5-1",
+      "employee_count": 384
+    },
+    {
+      "date": "2025-6-1",
+      "employee_count": 384
+    },
+    {
+      "date": "2025-7-1",
+      "employee_count": 392
+    },
+    {
+      "date": "2025-8-1",
+      "employee_count": 390
+    },
+    {
+      "date": "2025-9-1",
+      "employee_count": 394
+    },
+    {
+      "date": "2025-10-1",
+      "employee_count": 403
+    },
+    {
+      "date": "2025-11-1",
+      "employee_count": 410
+    },
+    {
+      "date": "2025-12-1",
+      "employee_count": 412
+    },
+    {
+      "date": "2026-1-1",
+      "employee_count": 410
+    },
+    {
+      "date": "2026-2-1",
+      "employee_count": 409
+    },
+    {
+      "date": "2026-3-1",
+      "employee_count": 413
+    },
+    {
+      "date": "2026-4-1",
+      "employee_count": 413
+    },
+    {
+      "date": "2026-5-1",
+      "employee_count": 419
+    },
+    {
+      "date": "2026-6-1",
+      "employee_count": 420
+    }
+  ],
+  "headcount_growth": {
+    "1y": "9%",
+    "2y": "33%",
+    "6m": "2%"
+  },
+  "headcount_growth_by_function": {
+    "Accounting": {
+      "1y": "-9%",
+      "6m": "11%"
+    },
+    "Arts and Design": {
+      "1y": "50%",
+      "6m": "13%"
+    },
+    "Business Development": {
+      "1y": "21%",
+      "6m": "0%"
+    },
+    "Consulting": {
+      "1y": "64%",
+      "6m": "29%"
+    },
+    "Engineering": {
+      "1y": "7%",
+      "6m": "2%"
+    },
+    "Finance": {
+      "1y": "0%",
+      "6m": "8%"
+    },
+    "Human Resources": {
+      "1y": "11%",
+      "6m": "5%"
+    },
+    "Information Technology": {
+      "1y": "23%",
+      "6m": "9%"
+    },
+    "Marketing": {
+      "1y": "-12%",
+      "6m": "-12%"
+    },
+    "Operations": {
+      "1y": "7%",
+      "6m": "0%"
+    },
+    "Product Management": {
+      "1y": "0%",
+      "6m": "9%"
+    },
+    "Program and Project Management": {
+      "1y": "25%",
+      "6m": "11%"
+    },
+    "Purchasing": {
+      "1y": "-31%",
+      "6m": "-15%"
+    },
+    "Quality Assurance": {
+      "1y": "0%",
+      "6m": "0%"
+    },
+    "Sales": {
+      "1y": "2%",
+      "6m": "-9%"
+    },
+    "Support": {
+      "1y": "9%",
+      "6m": "6%"
+    }
+  },
+  "total_job_openings": 15,
+  "job_openings_by_function": [
+    {
+      "count_by_function": {
+        "Administrative": {
+          "count": 1,
+          "percentage": 14
+        },
+        "Engineering": {
+          "count": 1,
+          "percentage": 14
+        },
+        "Purchasing": {
+          "count": 1,
+          "percentage": 14
+        },
+        "Sales": {
+          "count": 1,
+          "percentage": 14
+        },
+        "Support": {
+          "count": 3,
+          "percentage": 43
+        }
+      },
+      "date": "2026-3",
+      "total_count": 7
+    },
+    {
+      "count_by_function": {
+        "Administrative": {
+          "count": 0,
+          "percentage": 0
+        },
+        "Engineering": {
+          "count": 0,
+          "percentage": 0
+        },
+        "Purchasing": {
+          "count": 0,
+          "percentage": 0
+        },
+        "Sales": {
+          "count": 2,
+          "percentage": 25
+        },
+        "Support": {
+          "count": 1,
+          "percentage": 13
+        }
+      },
+      "date": "2025-12",
+      "total_count": 8
+    },
+    {
+      "count_by_function": {
+        "Administrative": {
+          "count": 1,
+          "percentage": 8
+        },
+        "Engineering": {
+          "count": 1,
+          "percentage": 8
+        },
+        "Purchasing": {
+          "count": 1,
+          "percentage": 8
+        },
+        "Sales": {
+          "count": 2,
+          "percentage": 15
+        },
+        "Support": {
+          "count": 2,
+          "percentage": 15
+        }
+      },
+      "date": "2025-9",
+      "total_count": 13
+    }
+  ],
+  "job_openings_growth": {
+    "3m": "-12%",
+    "6m": "-46%"
+  },
+  "job_openings_growth_by_function": {
+    "Administrative": {
+      "3m": "100%",
+      "6m": "0%"
+    },
+    "Engineering": {
+      "3m": "100%",
+      "6m": "0%"
+    },
+    "Purchasing": {
+      "3m": "100%",
+      "6m": "0%"
+    },
+    "Sales": {
+      "3m": "-50%",
+      "6m": "-50%"
+    },
+    "Support": {
+      "3m": "200%",
+      "6m": "50%"
+    }
+  },
+  "median_employee_tenure": 2,
+  "new_hires": [
+    {
+      "date": "2024-6",
+      "senior_hires": 0,
+      "total_hires": 19
+    },
+    {
+      "date": "2024-7",
+      "senior_hires": 0,
+      "total_hires": 11
+    },
+    {
+      "date": "2024-8",
+      "senior_hires": 0,
+      "total_hires": 13
+    },
+    {
+      "date": "2024-9",
+      "senior_hires": 0,
+      "total_hires": 8
+    },
+    {
+      "date": "2024-10",
+      "senior_hires": 0,
+      "total_hires": 14
+    },
+    {
+      "date": "2024-11",
+      "senior_hires": 0,
+      "total_hires": 12
+    },
+    {
+      "date": "2024-12",
+      "senior_hires": 0,
+      "total_hires": 2
+    },
+    {
+      "date": "2025-1",
+      "senior_hires": 0,
+      "total_hires": 15
+    },
+    {
+      "date": "2025-2",
+      "senior_hires": 0,
+      "total_hires": 5
+    },
+    {
+      "date": "2025-3",
+      "senior_hires": 0,
+      "total_hires": 6
+    },
+    {
+      "date": "2025-4",
+      "senior_hires": 1,
+      "total_hires": 12
+    },
+    {
+      "date": "2025-5",
+      "senior_hires": 0,
+      "total_hires": 15
+    },
+    {
+      "date": "2025-6",
+      "senior_hires": 0,
+      "total_hires": 5
+    },
+    {
+      "date": "2025-7",
+      "senior_hires": 0,
+      "total_hires": 6
+    },
+    {
+      "date": "2025-8",
+      "senior_hires": 0,
+      "total_hires": 9
+    },
+    {
+      "date": "2025-9",
+      "senior_hires": 0,
+      "total_hires": 6
+    },
+    {
+      "date": "2025-10",
+      "senior_hires": 0,
+      "total_hires": 9
+    },
+    {
+      "date": "2025-11",
+      "senior_hires": 0,
+      "total_hires": 8
+    },
+    {
+      "date": "2025-12",
+      "senior_hires": 0,
+      "total_hires": 6
+    },
+    {
+      "date": "2026-1",
+      "senior_hires": 0,
+      "total_hires": 3
+    },
+    {
+      "date": "2026-2",
+      "senior_hires": 0,
+      "total_hires": 3
+    },
+    {
+      "date": "2026-3",
+      "senior_hires": 0,
+      "total_hires": 8
+    },
+    {
+      "date": "2026-4",
+      "senior_hires": 0,
+      "total_hires": 5
+    },
+    {
+      "date": "2026-5",
+      "senior_hires": 0,
+      "total_hires": 8
+    },
+    {
+      "date": "2026-6",
+      "senior_hires": 0,
+      "total_hires": 2
+    }
+  ]
+},
+{
+  "company_name": "Sullair",
+  "company_id": "47867",
+  "tagline": "",
+  "description": "We build the machines that power industry. We are Hitachi Global Air Power, a leading global industrial compressed air manufacturer. Headquartered in Michigan City, Indiana, our compressed air solutions power manufacturing operations all around the globe; from food and beverage, to pharmaceuticals and computer chips. Our portable compressors provide the air power to build roads and bridges, lay pipelines and aid in oil and gas mining and production. \n\nAs part of Hitachi Industrial Equipment Systems Co., Ltd., Hitachi Global Air Power operates ISO 9001 certified factories in Michigan City, Indiana and Suzhou, China, and sales offices strategically located in Europe, Australia, Southeast Asia, and South and Latin America. Through brands Hitachi, Sullair, and Champion (Australia), our machines have provided legendary reliability, durability, and performance for more than 60 years. \n\nOur global network of engineering and quality experts are building next generation, highly efficient and environment-forward compressed air solutions in direct response to customer need.\n",
+  "logo_url": "https://media.licdn.com/dms/image/v2/D560BAQFHkcN-FRNiCQ/company-logo_400_400/company-logo_400_400/0/1684946252965/sullair_llc_logo?e=1784160000&v=beta&t=zSqf5OR79i3Z7CzmjCapTZiCZmpamy3l7D6zihrBxvQ",
+  "linkedin_url": "https://www.linkedin.com/company/sullair-llc/",
+  "website": "http://www.sullair.com",
+  "hq_full_address": "3700 E Michigan Blvd, Michigan City, Indiana 46360, US",
+  "hq_city": "Michigan City",
+  "hq_region": "Indiana",
+  "hq_country": "US",
+  "hq_postalcode": "46360",
+  "locations": [
+    {
+      "city": "Michigan City",
+      "country": "US",
+      "full_address": "3700 E Michigan Blvd, Michigan City, Indiana 46360, US",
+      "is_headquarter": true,
+      "line1": "3700 E Michigan Blvd",
+      "line2": "",
+      "region": "Indiana",
+      "zipcode": "46360"
+    },
+    {
+      "city": "Chicago",
+      "country": "US",
+      "full_address": "8700 W Bryn Mawr Ave, Suite 400S, Chicago, Illinois 60631, US",
+      "is_headquarter": false,
+      "line1": "8700 W Bryn Mawr Ave",
+      "line2": "Suite 400S",
+      "region": "Illinois",
+      "zipcode": "60631"
+    }
+  ],
+  "phone": "",
+  "email": "",
+  "domain": "sullair.com",
+  "industries": [
+    "Machinery Manufacturing"
+  ],
+  "specialties": "",
+  "year_founded": null,
+  "funding_info": {
+    "crunchbase_url": null,
+    "last_funding_round_amount": null,
+    "last_funding_round_currency": null,
+    "last_funding_round_month": null,
+    "last_funding_round_type": null,
+    "last_funding_round_year": null,
+    "num_funding_rounds": null
+  },
+  "employee_count": 430,
+  "employee_range": "501-1000",
+  "follower_count": 28703,
+  "affiliated_companies": [],
+  "headcount_by_function": {
+    "Administrative": {
+      "count": 10,
+      "percentage": 2
+    },
+    "Arts and Design": {
+      "count": 12,
+      "percentage": 3
+    },
+    "Business Development": {
+      "count": 8,
+      "percentage": 2
+    },
+    "Engineering": {
+      "count": 60,
+      "percentage": 14
+    },
+    "Finance": {
+      "count": 12,
+      "percentage": 3
+    },
+    "Human Resources": {
+      "count": 16,
+      "percentage": 4
+    },
+    "Information Technology": {
+      "count": 30,
+      "percentage": 7
+    },
+    "Marketing": {
+      "count": 7,
+      "percentage": 2
+    },
+    "Operations": {
+      "count": 116,
+      "percentage": 27
+    },
+    "Product Management": {
+      "count": 11,
+      "percentage": 3
+    },
+    "Purchasing": {
+      "count": 15,
+      "percentage": 3
+    },
+    "Quality Assurance": {
+      "count": 15,
+      "percentage": 3
+    },
+    "Sales": {
+      "count": 60,
+      "percentage": 14
+    },
+    "Support": {
+      "count": 23,
+      "percentage": 5
+    }
+  },
+  "headcount_by_month": [
+    {
+      "date": "2024-6-1",
+      "employee_count": 427
+    },
+    {
+      "date": "2024-7-1",
+      "employee_count": 427
+    },
+    {
+      "date": "2024-8-1",
+      "employee_count": 425
+    },
+    {
+      "date": "2024-9-1",
+      "employee_count": 428
+    },
+    {
+      "date": "2024-10-1",
+      "employee_count": 424
+    },
+    {
+      "date": "2024-11-1",
+      "employee_count": 426
+    },
+    {
+      "date": "2024-12-1",
+      "employee_count": 428
+    },
+    {
+      "date": "2025-1-1",
+      "employee_count": 429
+    },
+    {
+      "date": "2025-2-1",
+      "employee_count": 429
+    },
+    {
+      "date": "2025-3-1",
+      "employee_count": 429
+    },
+    {
+      "date": "2025-4-1",
+      "employee_count": 430
+    },
+    {
+      "date": "2025-5-1",
+      "employee_count": 431
+    },
+    {
+      "date": "2025-6-1",
+      "employee_count": 429
+    },
+    {
+      "date": "2025-7-1",
+      "employee_count": 429
+    },
+    {
+      "date": "2025-8-1",
+      "employee_count": 429
+    },
+    {
+      "date": "2025-9-1",
+      "employee_count": 430
+    },
+    {
+      "date": "2025-10-1",
+      "employee_count": 429
+    },
+    {
+      "date": "2025-11-1",
+      "employee_count": 430
+    },
+    {
+      "date": "2025-12-1",
+      "employee_count": 431
+    },
+    {
+      "date": "2026-1-1",
+      "employee_count": 429
+    },
+    {
+      "date": "2026-2-1",
+      "employee_count": 430
+    },
+    {
+      "date": "2026-3-1",
+      "employee_count": 430
+    },
+    {
+      "date": "2026-4-1",
+      "employee_count": 431
+    },
+    {
+      "date": "2026-5-1",
+      "employee_count": 430
+    },
+    {
+      "date": "2026-6-1",
+      "employee_count": 430
+    }
+  ],
+  "headcount_growth": {
+    "1y": "0%",
+    "2y": "1%",
+    "6m": "0%"
+  },
+  "headcount_growth_by_function": {
+    "Administrative": {
+      "1y": "11%",
+      "6m": "0%"
+    },
+    "Arts and Design": {
+      "1y": "0%",
+      "6m": "0%"
+    },
+    "Business Development": {
+      "1y": "0%",
+      "6m": "-11%"
+    },
+    "Engineering": {
+      "1y": "-3%",
+      "6m": "0%"
+    },
+    "Finance": {
+      "1y": "0%",
+      "6m": "0%"
+    },
+    "Human Resources": {
+      "1y": "7%",
+      "6m": "7%"
+    },
+    "Information Technology": {
+      "1y": "0%",
+      "6m": "0%"
+    },
+    "Marketing": {
+      "1y": "0%",
+      "6m": "0%"
+    },
+    "Operations": {
+      "1y": "0%",
+      "6m": "0%"
+    },
+    "Product Management": {
+      "1y": "0%",
+      "6m": "0%"
+    },
+    "Purchasing": {
+      "1y": "0%",
+      "6m": "0%"
+    },
+    "Quality Assurance": {
+      "1y": "0%",
+      "6m": "0%"
+    },
+    "Sales": {
+      "1y": "-2%",
+      "6m": "-2%"
+    },
+    "Support": {
+      "1y": "0%",
+      "6m": "0%"
+    }
+  },
+  "total_job_openings": 0,
+  "job_openings_by_function": [],
+  "job_openings_growth": {},
+  "job_openings_growth_by_function": {},
+  "median_employee_tenure": 10.9,
+  "new_hires": [
+    {
+      "date": "2024-6",
+      "senior_hires": 0,
+      "total_hires": 2
+    },
+    {
+      "date": "2024-8",
+      "senior_hires": 0,
+      "total_hires": 2
+    },
+    {
+      "date": "2024-9",
+      "senior_hires": 0,
+      "total_hires": 6
+    },
+    {
+      "date": "2024-10",
+      "senior_hires": 0,
+      "total_hires": 1
+    },
+    {
+      "date": "2024-11",
+      "senior_hires": 0,
+      "total_hires": 7
+    },
+    {
+      "date": "2024-12",
+      "senior_hires": 0,
+      "total_hires": 2
+    },
+    {
+      "date": "2025-1",
+      "senior_hires": 0,
+      "total_hires": 4
+    },
+    {
+      "date": "2025-2",
+      "senior_hires": 0,
+      "total_hires": 2
+    },
+    {
+      "date": "2025-3",
+      "senior_hires": 0,
+      "total_hires": 4
+    },
+    {
+      "date": "2025-4",
+      "senior_hires": 0,
+      "total_hires": 2
+    },
+    {
+      "date": "2025-5",
+      "senior_hires": 0,
+      "total_hires": 1
+    },
+    {
+      "date": "2025-6",
+      "senior_hires": 0,
+      "total_hires": 1
+    },
+    {
+      "date": "2025-9",
+      "senior_hires": 0,
+      "total_hires": 2
+    },
+    {
+      "date": "2025-11",
+      "senior_hires": 0,
+      "total_hires": 1
+    },
+    {
+      "date": "2025-12",
+      "senior_hires": 0,
+      "total_hires": 2
+    },
+    {
+      "date": "2026-2",
+      "senior_hires": 0,
+      "total_hires": 2
+    },
+    {
+      "date": "2026-4",
+      "senior_hires": 0,
+      "total_hires": 1
+    }
+  ]
+},
+{
+  "company_name": "ELGi North America",
+  "company_id": "20406946",
+  "tagline": "",
+  "description": "ELGi is a leading air compressor manufacturer with a full range of technologically superior compressed air systems. At ELGi, every system, every process is part of an unwavering commitment to be 'Always Better'​. A testament to this is the company's portfolio of over 2 million compressors running across 200 countries. ELGi supports applications across industries, whether it is the paint on your wall, the car you drive, the medicines you take, or the leather bag you carry.\nWe believe in forging long-running partnerships with our stakeholders worldwide guided by reliability, technology, capability, and values fuelled by innovation and a vision is to \"Always be the choice everywhere.\"\nOur offerings:\n• ELGi offers a complete range of compressed air solutions from oil-lubricated and oil-free rotary screw compressors, oil-lubricated compressors, compressed air dryers, filters, and downstream accessories. \n• ELGi recently introduced the World's Smallest Oil-Free Screw Air Compressor, the AB Series. With a disruption in oil-free compressed air technology, this range offers customers a solution at approximately 8 - 10 percent reduced life cycle cost compared with the prevailing oil-free technology. With significantly lower maintenance and ease of use, customers can be assured of reliable, high air purity for sensitive applications. \n\nTo know more about us, please visit https://www.elgi.us. \n\nFor more information, reach out to us at elgiconnects@elgi.com or request a quote at usa.sales@elgi.com.\n",
+  "logo_url": "https://media.licdn.com/dms/image/v2/C510BAQGY8xAnD5Lg2w/company-logo_400_400/company-logo_400_400/0/1630572440933?e=1784160000&v=beta&t=S0xqgcr4NqP0RsHbE5nPX2VGS9eELMKl2J9j7HwO3lA",
+  "linkedin_url": "https://www.linkedin.com/company/elginorthamerica/",
+  "website": "https://www.elgi.us",
+  "hq_full_address": "4610 Entrance Drive, Suite A, Charlotte, North Carolina 28273, US",
+  "hq_city": "Charlotte",
+  "hq_region": "North Carolina",
+  "hq_country": "US",
+  "hq_postalcode": "28273",
+  "locations": [
+    {
+      "city": "Charlotte",
+      "country": "US",
+      "full_address": "4610 Entrance Drive, Suite A, Charlotte, North Carolina 28273, US",
+      "is_headquarter": true,
+      "line1": "4610 Entrance Drive",
+      "line2": "Suite A",
+      "region": "North Carolina",
+      "zipcode": "28273"
+    }
+  ],
+  "phone": "",
+  "email": "",
+  "domain": "elgi.us",
+  "industries": [
+    "Industrial Machinery Manufacturing"
+  ],
+  "specialties": "compressed air solutions, Air compressor manufacturer, Global air compressor manufacturer, Energy efficient, compressed air, air compressors, technology, manufacturing, Oil-free screw air compressors, Air solutions",
+  "year_founded": null,
+  "funding_info": {
+    "crunchbase_url": null,
+    "last_funding_round_amount": null,
+    "last_funding_round_currency": null,
+    "last_funding_round_month": null,
+    "last_funding_round_type": null,
+    "last_funding_round_year": null,
+    "num_funding_rounds": null
+  },
+  "employee_count": 291,
+  "employee_range": "1001-5000",
+  "follower_count": 11305,
+  "affiliated_companies": [
+    {
+      "company_id": "9826126",
+      "linkedin_url": "https://www.linkedin.com/company/pattons-inc/",
+      "name": "Pattons"
+    },
+    {
+      "company_id": "1251443",
+      "linkedin_url": "https://www.linkedin.com/company/michigan-air-solutions-llc/",
+      "name": "Michigan Air Solutions"
+    }
+  ],
+  "headcount_by_function": {
+    "Administrative": {
+      "count": 6,
+      "percentage": 2
+    },
+    "Arts and Design": {
+      "count": 8,
+      "percentage": 3
+    },
+    "Business Development": {
+      "count": 41,
+      "percentage": 14
+    },
+    "Engineering": {
+      "count": 20,
+      "percentage": 7
+    },
+    "Entrepreneurship": {
+      "count": 5,
+      "percentage": 2
+    },
+    "Healthcare Services": {
+      "count": 5,
+      "percentage": 2
+    },
+    "Information Technology": {
+      "count": 29,
+      "percentage": 10
+    },
+    "Operations": {
+      "count": 66,
+      "percentage": 23
+    },
+    "Program and Project Management": {
+      "count": 6,
+      "percentage": 2
+    },
+    "Sales": {
+      "count": 37,
+      "percentage": 13
+    },
+    "Support": {
+      "count": 27,
+      "percentage": 9
+    }
+  },
+  "headcount_by_month": [
+    {
+      "date": "2024-6-1",
+      "employee_count": 287
+    },
+    {
+      "date": "2024-7-1",
+      "employee_count": 288
+    },
+    {
+      "date": "2024-8-1",
+      "employee_count": 292
+    },
+    {
+      "date": "2024-9-1",
+      "employee_count": 294
+    },
+    {
+      "date": "2024-10-1",
+      "employee_count": 294
+    },
+    {
+      "date": "2024-11-1",
+      "employee_count": 295
+    },
+    {
+      "date": "2024-12-1",
+      "employee_count": 299
+    },
+    {
+      "date": "2025-1-1",
+      "employee_count": 297
+    },
+    {
+      "date": "2025-2-1",
+      "employee_count": 297
+    },
+    {
+      "date": "2025-3-1",
+      "employee_count": 295
+    },
+    {
+      "date": "2025-4-1",
+      "employee_count": 296
+    },
+    {
+      "date": "2025-5-1",
+      "employee_count": 297
+    },
+    {
+      "date": "2025-6-1",
+      "employee_count": 298
+    },
+    {
+      "date": "2025-7-1",
+      "employee_count": 297
+    },
+    {
+      "date": "2025-8-1",
+      "employee_count": 296
+    },
+    {
+      "date": "2025-9-1",
+      "employee_count": 295
+    },
+    {
+      "date": "2025-10-1",
+      "employee_count": 293
+    },
+    {
+      "date": "2025-11-1",
+      "employee_count": 290
+    },
+    {
+      "date": "2025-12-1",
+      "employee_count": 288
+    },
+    {
+      "date": "2026-1-1",
+      "employee_count": 288
+    },
+    {
+      "date": "2026-2-1",
+      "employee_count": 288
+    },
+    {
+      "date": "2026-3-1",
+      "employee_count": 287
+    },
+    {
+      "date": "2026-4-1",
+      "employee_count": 286
+    },
+    {
+      "date": "2026-5-1",
+      "employee_count": 288
+    },
+    {
+      "date": "2026-6-1",
+      "employee_count": 291
+    }
+  ],
+  "headcount_growth": {
+    "1y": "-2%",
+    "2y": "1%",
+    "6m": "1%"
+  },
+  "headcount_growth_by_function": {
+    "Administrative": {
+      "1y": "0%",
+      "6m": "0%"
+    },
+    "Arts and Design": {
+      "1y": "14%",
+      "6m": "14%"
+    },
+    "Business Development": {
+      "1y": "3%",
+      "6m": "-2%"
+    },
+    "Engineering": {
+      "1y": "0%",
+      "6m": "0%"
+    },
+    "Entrepreneurship": {
+      "1y": "25%",
+      "6m": "0%"
+    },
+    "Healthcare Services": {
+      "1y": "0%",
+      "6m": "0%"
+    },
+    "Information Technology": {
+      "1y": "0%",
+      "6m": "4%"
+    },
+    "Operations": {
+      "1y": "-6%",
+      "6m": "-2%"
+    },
+    "Program and Project Management": {
+      "1y": "20%",
+      "6m": "20%"
+    },
+    "Sales": {
+      "1y": "-5%",
+      "6m": "-5%"
+    },
+    "Support": {
+      "1y": "-13%",
+      "6m": "4%"
+    }
+  },
+  "total_job_openings": 3,
+  "job_openings_by_function": [
+    {
+      "count_by_function": {
+        "Operations": {
+          "count": 1,
+          "percentage": 50
+        }
+      },
+      "date": "2026-3",
+      "total_count": 2
+    },
+    {
+      "count_by_function": {
+        "Operations": {
+          "count": 1,
+          "percentage": 33
+        }
+      },
+      "date": "2025-12",
+      "total_count": 3
+    },
+    {
+      "count_by_function": {
+        "Operations": {
+          "count": 0,
+          "percentage": 0
+        }
+      },
+      "date": "2025-9",
+      "total_count": 0
+    }
+  ],
+  "job_openings_growth": {
+    "3m": "-33%",
+    "6m": "200%"
+  },
+  "job_openings_growth_by_function": {
+    "Operations": {
+      "3m": "0%",
+      "6m": "100%"
+    }
+  },
+  "median_employee_tenure": 3.2,
+  "new_hires": [
+    {
+      "date": "2024-7",
+      "senior_hires": 0,
+      "total_hires": 1
+    },
+    {
+      "date": "2024-8",
+      "senior_hires": 0,
+      "total_hires": 3
+    },
+    {
+      "date": "2024-10",
+      "senior_hires": 0,
+      "total_hires": 1
+    },
+    {
+      "date": "2024-11",
+      "senior_hires": 0,
+      "total_hires": 1
+    },
+    {
+      "date": "2025-1",
+      "senior_hires": 0,
+      "total_hires": 1
+    },
+    {
+      "date": "2025-3",
+      "senior_hires": 0,
+      "total_hires": 1
+    },
+    {
+      "date": "2025-4",
+      "senior_hires": 0,
+      "total_hires": 1
+    },
+    {
+      "date": "2025-5",
+      "senior_hires": 0,
+      "total_hires": 1
+    },
+    {
+      "date": "2025-6",
+      "senior_hires": 0,
+      "total_hires": 2
+    },
+    {
+      "date": "2025-7",
+      "senior_hires": 0,
+      "total_hires": 3
+    },
+    {
+      "date": "2025-9",
+      "senior_hires": 1,
+      "total_hires": 1
+    },
+    {
+      "date": "2025-10",
+      "senior_hires": 0,
+      "total_hires": 1
+    },
+    {
+      "date": "2026-2",
+      "senior_hires": 0,
+      "total_hires": 1
+    },
+    {
+      "date": "2026-3",
+      "senior_hires": 0,
+      "total_hires": 1
+    },
+    {
+      "date": "2026-4",
+      "senior_hires": 0,
+      "total_hires": 1
+    }
+  ]
+},
+{
+  "company_name": "FS-Curtis",
+  "company_id": "1319254",
+  "tagline": "Manufacturer of compressed air and air treatment solutions for over 170 years. \nProudly produced in St. Louis, Missouri",
+  "description": "The FS-Curtis brand is a symbol of quality and excellence in the design and manufacturing of air compressors. Since 1987, FS-Curtis has proved their recognized value through a wide range of products, from rotary-screw to oil-free. Legendary reliability has earned FS-Curtis the reputation of building the most rugged industrial-duty compressor on the market. After building the first Masterline air compressor, the gold standard for superior engineering and design was set. We have called St. Louis, Missouri home for over 165 years and are proud to be in the heart of America.",
+  "logo_url": "https://media.licdn.com/dms/image/v2/D560BAQFLERYN5I0qRg/company-logo_400_400/company-logo_400_400/0/1715194463782/fs_curtis_logo?e=1784160000&v=beta&t=eHnkuUY6xxtyAnPPrFXygeqfNBuvmLoWRHuELuSxlNY",
+  "linkedin_url": "https://www.linkedin.com/company/fs-curtis/",
+  "website": "https://fscurtis.com/",
+  "hq_full_address": "1905 Kienlen Ave, St. Louis, Missouri 63133, US",
+  "hq_city": "St. Louis",
+  "hq_region": "Missouri",
+  "hq_country": "US",
+  "hq_postalcode": "63133",
+  "locations": [
+    {
+      "city": "St. Louis",
+      "country": "US",
+      "full_address": "1905 Kienlen Ave, St. Louis, Missouri 63133, US",
+      "is_headquarter": true,
+      "line1": "1905 Kienlen Ave",
+      "line2": "",
+      "region": "Missouri",
+      "zipcode": "63133"
+    }
+  ],
+  "phone": "+1 314 383 1300",
+  "email": "",
+  "domain": "fscurtis.com",
+  "industries": [
+    "Machinery Manufacturing"
+  ],
+  "specialties": "air compressor, factory, automotive, Industrial Engineering, Machinery, Energy Efficiency, compressed air, rotary screw compressors, reciprocating compressors, air compressors, compressor manufacturer, compressed air systems, compressed air, rotary compressors, pinion compressors , centrifugal compressors, oil-compressors , oil-free air compressors, Centrifugal air compressors, compressed air dryers, compressed air system audits, compressed air audits, St. Louis",
+  "year_founded": 1854,
+  "funding_info": {
+    "crunchbase_url": null,
+    "last_funding_round_amount": null,
+    "last_funding_round_currency": null,
+    "last_funding_round_month": null,
+    "last_funding_round_type": null,
+    "last_funding_round_year": null,
+    "num_funding_rounds": null
+  },
+  "employee_count": 99,
+  "employee_range": "201-500",
+  "follower_count": 8246,
+  "affiliated_companies": [],
+  "headcount_by_function": {
+    "Accounting": {
+      "count": 2,
+      "percentage": 2
+    },
+    "Business Development": {
+      "count": 7,
+      "percentage": 7
+    },
+    "Engineering": {
+      "count": 13,
+      "percentage": 13
+    },
+    "Finance": {
+      "count": 2,
+      "percentage": 2
+    },
+    "Information Technology": {
+      "count": 5,
+      "percentage": 5
+    },
+    "Marketing": {
+      "count": 5,
+      "percentage": 5
+    },
+    "Operations": {
+      "count": 7,
+      "percentage": 7
+    },
+    "Program and Project Management": {
+      "count": 4,
+      "percentage": 4
+    },
+    "Purchasing": {
+      "count": 2,
+      "percentage": 2
+    },
+    "Quality Assurance": {
+      "count": 4,
+      "percentage": 4
+    },
+    "Sales": {
+      "count": 33,
+      "percentage": 33
+    },
+    "Support": {
+      "count": 5,
+      "percentage": 5
+    }
+  },
+  "headcount_by_month": [
+    {
+      "date": "2024-6-1",
+      "employee_count": 89
+    },
+    {
+      "date": "2024-7-1",
+      "employee_count": 88
+    },
+    {
+      "date": "2024-8-1",
+      "employee_count": 88
+    },
+    {
+      "date": "2024-9-1",
+      "employee_count": 86
+    },
+    {
+      "date": "2024-10-1",
+      "employee_count": 89
+    },
+    {
+      "date": "2024-11-1",
+      "employee_count": 91
+    },
+    {
+      "date": "2024-12-1",
+      "employee_count": 91
+    },
+    {
+      "date": "2025-1-1",
+      "employee_count": 91
+    },
+    {
+      "date": "2025-2-1",
+      "employee_count": 90
+    },
+    {
+      "date": "2025-3-1",
+      "employee_count": 91
+    },
+    {
+      "date": "2025-4-1",
+      "employee_count": 93
+    },
+    {
+      "date": "2025-5-1",
+      "employee_count": 97
+    },
+    {
+      "date": "2025-6-1",
+      "employee_count": 98
+    },
+    {
+      "date": "2025-7-1",
+      "employee_count": 97
+    },
+    {
+      "date": "2025-8-1",
+      "employee_count": 97
+    },
+    {
+      "date": "2025-9-1",
+      "employee_count": 96
+    },
+    {
+      "date": "2025-10-1",
+      "employee_count": 95
+    },
+    {
+      "date": "2025-11-1",
+      "employee_count": 96
+    },
+    {
+      "date": "2025-12-1",
+      "employee_count": 97
+    },
+    {
+      "date": "2026-1-1",
+      "employee_count": 98
+    },
+    {
+      "date": "2026-2-1",
+      "employee_count": 100
+    },
+    {
+      "date": "2026-3-1",
+      "employee_count": 99
+    },
+    {
+      "date": "2026-4-1",
+      "employee_count": 100
+    },
+    {
+      "date": "2026-5-1",
+      "employee_count": 99
+    },
+    {
+      "date": "2026-6-1",
+      "employee_count": 99
+    }
+  ],
+  "headcount_growth": {
+    "1y": "1%",
+    "2y": "11%",
+    "6m": "2%"
+  },
+  "headcount_growth_by_function": {
+    "Accounting": {
+      "1y": "100%",
+      "6m": "100%"
+    },
+    "Business Development": {
+      "1y": "0%",
+      "6m": "17%"
+    },
+    "Engineering": {
+      "1y": "8%",
+      "6m": "0%"
+    },
+    "Finance": {
+      "1y": "0%",
+      "6m": "0%"
+    },
+    "Information Technology": {
+      "1y": "0%",
+      "6m": "0%"
+    },
+    "Marketing": {
+      "1y": "0%",
+      "6m": "-17%"
+    },
+    "Operations": {
+      "1y": "-22%",
+      "6m": "-12%"
+    },
+    "Program and Project Management": {
+      "1y": "33%",
+      "6m": "0%"
+    },
+    "Purchasing": {
+      "1y": "-33%",
+      "6m": "-33%"
+    },
+    "Quality Assurance": {
+      "1y": "-20%",
+      "6m": "33%"
+    },
+    "Sales": {
+      "1y": "6%",
+      "6m": "6%"
+    },
+    "Support": {
+      "1y": "25%",
+      "6m": "0%"
+    }
+  },
+  "total_job_openings": 2,
+  "job_openings_by_function": [
+    {
+      "count_by_function": {
+        "Accounting": {
+          "count": 1,
+          "percentage": 50
+        },
+        "Engineering": {
+          "count": 1,
+          "percentage": 50
+        }
+      },
+      "date": "2026-3",
+      "total_count": 2
+    },
+    {
+      "count_by_function": {
+        "Accounting": {
+          "count": 0,
+          "percentage": 0
+        },
+        "Engineering": {
+          "count": 0,
+          "percentage": 0
+        }
+      },
+      "date": "2025-12",
+      "total_count": 1
+    },
+    {
+      "count_by_function": {
+        "Accounting": {
+          "count": 0,
+          "percentage": 0
+        },
+        "Engineering": {
+          "count": 0,
+          "percentage": 0
+        }
+      },
+      "date": "2025-9",
+      "total_count": 3
+    }
+  ],
+  "job_openings_growth": {
+    "3m": "100%",
+    "6m": "-33%"
+  },
+  "job_openings_growth_by_function": {
+    "Accounting": {
+      "3m": "100%",
+      "6m": "100%"
+    },
+    "Engineering": {
+      "3m": "100%",
+      "6m": "100%"
+    }
+  },
+  "median_employee_tenure": 3.9,
+  "new_hires": [
+    {
+      "date": "2024-6",
+      "senior_hires": 0,
+      "total_hires": 2
+    },
+    {
+      "date": "2024-8",
+      "senior_hires": 0,
+      "total_hires": 1
+    },
+    {
+      "date": "2024-10",
+      "senior_hires": 0,
+      "total_hires": 4
+    },
+    {
+      "date": "2024-11",
+      "senior_hires": 0,
+      "total_hires": 2
+    },
+    {
+      "date": "2024-12",
+      "senior_hires": 0,
+      "total_hires": 2
+    },
+    {
+      "date": "2025-1",
+      "senior_hires": 0,
+      "total_hires": 2
+    },
+    {
+      "date": "2025-3",
+      "senior_hires": 0,
+      "total_hires": 1
+    },
+    {
+      "date": "2025-4",
+      "senior_hires": 0,
+      "total_hires": 2
+    },
+    {
+      "date": "2025-5",
+      "senior_hires": 0,
+      "total_hires": 4
+    },
+    {
+      "date": "2025-6",
+      "senior_hires": 0,
+      "total_hires": 1
+    },
+    {
+      "date": "2025-7",
+      "senior_hires": 0,
+      "total_hires": 1
+    },
+    {
+      "date": "2025-8",
+      "senior_hires": 0,
+      "total_hires": 1
+    },
+    {
+      "date": "2025-9",
+      "senior_hires": 0,
+      "total_hires": 1
+    },
+    {
+      "date": "2025-10",
+      "senior_hires": 0,
+      "total_hires": 2
+    },
+    {
+      "date": "2025-11",
+      "senior_hires": 0,
+      "total_hires": 1
+    },
+    {
+      "date": "2025-12",
+      "senior_hires": 0,
+      "total_hires": 1
+    },
+    {
+      "date": "2026-1",
+      "senior_hires": 0,
+      "total_hires": 1
+    },
+    {
+      "date": "2026-2",
+      "senior_hires": 0,
+      "total_hires": 2
+    },
+    {
+      "date": "2026-4",
+      "senior_hires": 0,
+      "total_hires": 1
+    }
+  ]
+}]
