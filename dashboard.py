@@ -30,6 +30,9 @@ instead rather than inventing one.
 """
 from pathlib import Path
 import json
+import re
+from html import escape
+from urllib.parse import parse_qs, urlparse
 
 import pandas as pd
 import plotly.express as px
@@ -78,6 +81,8 @@ CLEAN_SHEETS = [
     "Clean_Product_Service_Signals", "Clean_Social_Conversation", "Clean_Conversation_Top_Themes",
     "Clean_Conversation_Sentiment", "Clean_Most_Mentioned_Brands", "Clean_PR_News_Events",
     "Clean_Hiring_Expansion", "Clean_Opportunities", "Clean_Raw_Data",
+    "Clean_June_Competitor_Brief", "Clean_June_Content_Mix",
+    "Clean_June_Social_Metrics", "Clean_June_Content_Items",
 ]
 
 CHANNEL_LABELS = {
@@ -99,6 +104,16 @@ st.markdown(f"""
 section[data-testid="stSidebar"] {{ background-color: {NAVY}; }}
 section[data-testid="stSidebar"] * {{ color: {WHITE} !important; }}
 h1, h2, h3 {{ color: {NAVY}; font-family: "Segoe UI", Calibri, sans-serif; }}
+div[data-testid="stMarkdown"] h5 {{
+    background:{WHITE};
+    border:1px solid #DDE5EC;
+    border-left:5px solid {ATLAS_BLUE};
+    border-radius:8px;
+    padding:13px 16px;
+    margin:30px 0 16px 0;
+    color:{NAVY};
+    box-shadow:0 1px 4px rgba(15, 23, 42, 0.035);
+}}
 div[data-testid="stMetric"] {{
     background-color: {WHITE};
     border: 1px solid #E2E8F0;
@@ -299,6 +314,186 @@ div[data-testid="stMetricValue"] {{ color: {NAVY}; }}
     padding: 2px 9px; border-radius: 6px;
     background: {GRAY_LIGHT}; color: {NAVY}; border: 1px solid #E2E8F0;
 }}
+.brief-panel {{
+    background: {WHITE};
+    border: 1px solid #DDE5EC;
+    border-radius: 10px;
+    padding: 18px 20px 20px 20px;
+    margin: 12px 0 18px 0;
+    box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04);
+}}
+.exec-divider {{
+    height: 1px;
+    background: linear-gradient(90deg, rgba(0,153,204,0.42), rgba(221,229,236,0.96), rgba(221,229,236,0));
+    margin: 34px 0 22px 0;
+}}
+.brief-head {{
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 18px;
+    background: {WHITE};
+    border: 1px solid #DDE5EC;
+    border-left: 5px solid {ATLAS_BLUE};
+    border-radius: 8px;
+    padding: 14px 16px 13px 16px;
+    margin: 2px 0 18px 0;
+    box-shadow: 0 1px 4px rgba(15, 23, 42, 0.035);
+}}
+.brief-eyebrow {{
+    color: {ATLAS_BLUE_DARK}; font-size: 0.72rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 5px;
+}}
+.brief-title {{ color: {NAVY}; font-size: 1.18rem; font-weight: 800; line-height: 1.25; }}
+.brief-sub {{ color: {GRAY}; font-size: 0.88rem; line-height: 1.52; margin-top: 5px; max-width: 940px; }}
+.brief-subhead {{
+    background: #F8FAFC;
+    border-left-color: #9AA5B1;
+    box-shadow: none;
+    margin-top: 22px;
+}}
+.brief-subhead .brief-title {{ font-size: 1.02rem; }}
+.brief-subhead .brief-sub {{ font-size: 0.82rem; }}
+.signal-card {{
+    background: {WHITE};
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 14px 15px;
+    height: 100%;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}}
+.signal-top {{ display:flex; justify-content:space-between; gap:10px; align-items:flex-start; }}
+.signal-label {{ color:{GRAY}; font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.04em; }}
+.signal-value {{ color:{NAVY}; font-size:1.25rem; font-weight:800; line-height:1.2; margin-top:5px; }}
+.signal-note {{ color:{GRAY}; font-size:0.80rem; line-height:1.42; margin-top:7px; }}
+.signal-rule {{ width:30px; height:4px; border-radius:4px; background:{ATLAS_BLUE}; margin-top:3px; flex:0 0 auto; }}
+.rank-card {{
+    background:{WHITE};
+    border:1px solid #E2E8F0;
+    border-radius:8px;
+    padding:14px 15px;
+    min-height:150px;
+    box-shadow:0 1px 3px rgba(15,23,42,0.04);
+}}
+.rank-top {{ display:flex; gap:10px; align-items:center; margin-bottom:8px; }}
+.rank-num {{
+    width:26px; height:26px; border-radius:6px;
+    background:{ATLAS_BLUE_LIGHT}; color:{ATLAS_BLUE_DARK};
+    display:flex; align-items:center; justify-content:center;
+    font-weight:800; font-size:0.78rem; flex:0 0 auto;
+}}
+.rank-title {{ color:{NAVY}; font-size:0.92rem; font-weight:800; line-height:1.3; }}
+.rank-metric {{ color:{ATLAS_BLUE_DARK}; font-size:1.35rem; font-weight:800; margin:7px 0 5px; }}
+.rank-copy {{ color:{GRAY}; font-size:0.80rem; line-height:1.45; }}
+.social-card {{
+    background:{WHITE}; border:1px solid #E2E8F0; border-radius:8px;
+    padding:14px 15px; height:100%; box-shadow:0 1px 3px rgba(15,23,42,0.04);
+}}
+.social-card-title {{ color:{NAVY}; font-size:0.90rem; font-weight:800; line-height:1.35; margin-bottom:8px; }}
+.social-card-meta {{ color:{GRAY}; font-size:0.78rem; font-weight:700; margin-bottom:8px; }}
+.social-card-kpis {{ display:flex; flex-wrap:wrap; gap:7px; margin-top:8px; }}
+.social-kpi {{ background:{GRAY_LIGHT}; color:{NAVY}; border:1px solid #E2E8F0; border-radius:6px; padding:3px 8px; font-size:0.72rem; font-weight:700; }}
+.news-card {{
+    background:{WHITE}; border:1px solid #E2E8F0; border-radius:8px;
+    padding:13px 14px; height:100%; box-shadow:0 1px 3px rgba(15,23,42,0.04);
+}}
+.news-title {{ color:{NAVY}; font-size:0.86rem; font-weight:800; line-height:1.35; }}
+.news-meta {{ color:{GRAY}; font-size:0.76rem; margin-top:7px; line-height:1.4; }}
+.source-card {{
+    background:{WHITE};
+    border:1px solid #E2E8F0;
+    border-left:4px solid {ATLAS_BLUE};
+    border-radius:8px;
+    padding:14px 15px;
+    min-height:155px;
+    height:100%;
+    box-shadow:0 1px 3px rgba(15,23,42,0.04);
+}}
+.source-eyebrow {{
+    color:{ATLAS_BLUE_DARK};
+    font-size:0.70rem;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    margin-bottom:7px;
+}}
+.source-title {{
+    color:{NAVY};
+    font-size:0.92rem;
+    font-weight:800;
+    line-height:1.36;
+    margin-bottom:8px;
+}}
+.source-note {{ color:{GRAY}; font-size:0.80rem; line-height:1.48; margin-top:8px; }}
+.source-link {{ color:{ATLAS_BLUE_DARK}; font-size:0.78rem; font-weight:800; margin-top:10px; }}
+.source-link a {{ color:{ATLAS_BLUE_DARK}; text-decoration:none; }}
+.post-card {{
+    background:{WHITE};
+    border:1px solid #E2E8F0;
+    border-radius:8px;
+    overflow:hidden;
+    height:100%;
+    box-shadow:0 1px 3px rgba(15,23,42,0.04);
+}}
+.post-card-body {{ padding:13px 14px 14px 14px; }}
+.post-card-img {{ width:100%; aspect-ratio:16/9; object-fit:cover; display:block; background:{GRAY_LIGHT}; }}
+.post-card-placeholder {{
+    width:100%;
+    aspect-ratio:16/9;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:16px;
+    background:linear-gradient(135deg, {ATLAS_BLUE_LIGHT} 0%, #F8FAFC 58%, #EEF2F6 100%);
+    border-bottom:1px solid #E2E8F0;
+}}
+.post-card-placeholder .platform {{
+    color:{ATLAS_BLUE_DARK};
+    font-size:0.72rem;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+}}
+.post-card-placeholder .bucket {{
+    color:{NAVY};
+    font-size:1.02rem;
+    font-weight:900;
+    line-height:1.2;
+    margin-top:4px;
+}}
+.post-card-placeholder .note {{
+    color:{GRAY};
+    font-size:0.72rem;
+    font-weight:700;
+    margin-top:6px;
+}}
+.post-card-title {{ color:{NAVY}; font-size:0.94rem; font-weight:800; line-height:1.38; margin:8px 0; }}
+.post-card-meta {{ color:{GRAY}; font-size:0.76rem; font-weight:700; line-height:1.4; margin-top:6px; }}
+.post-card-score {{
+    display:inline-flex; align-items:center; gap:5px;
+    background:{ATLAS_BLUE_LIGHT}; color:{ATLAS_BLUE_DARK};
+    border:1px solid #B9E4F2; border-radius:6px;
+    padding:4px 9px; font-size:0.75rem; font-weight:800;
+}}
+.post-card-metrics {{ display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }}
+.platform-filter-label {{
+    color:{GRAY};
+    font-size:0.78rem;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    margin:16px 0 5px;
+}}
+.snapshot-table {{ border:1px solid #DDE5EC; border-radius:8px; overflow:hidden; background:{WHITE}; }}
+.snapshot-row {{
+    display:grid; grid-template-columns: 46px minmax(145px, 1.1fr) minmax(120px, .8fr) minmax(120px, .8fr) minmax(150px, 1fr);
+    gap:12px; align-items:center; padding:11px 13px; border-bottom:1px solid #E8EEF3;
+}}
+.snapshot-row:last-child {{ border-bottom:none; }}
+.snapshot-head {{ background:#F8FAFC; color:{GRAY}; font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.04em; }}
+.snapshot-rank {{ color:{ATLAS_BLUE_DARK}; font-weight:800; }}
+.snapshot-name {{ color:{NAVY}; font-weight:800; font-size:0.88rem; }}
+.snapshot-small {{ color:{GRAY}; font-size:0.76rem; font-weight:700; }}
+.snapshot-bar {{ height:7px; background:{GRAY_LIGHT}; border-radius:8px; overflow:hidden; margin-top:4px; }}
+.snapshot-fill {{ height:100%; background:{ATLAS_BLUE}; border-radius:8px; }}
 </style>
 """, unsafe_allow_html=True)
 
@@ -396,6 +591,11 @@ def _safe(value, default=""):
     return text
 
 
+def _display_date(value):
+    dt = pd.to_datetime(value, errors="coerce")
+    return dt.strftime("%b %d, %Y") if pd.notna(dt) else _safe(value)
+
+
 def insight(text):
     st.markdown(f"<div class='insight-box'>\U0001F4A1 <b>What this means:</b> {text}</div>", unsafe_allow_html=True)
 
@@ -417,6 +617,69 @@ def kpi_card(col, icon, label, value, sublabel=None):
         f"<div class='kpi-card'><div class='kpi-icon'>{icon}</div>"
         f"<div class='kpi-label'>{label}</div><div class='kpi-value'>{value}</div>{sub_html}</div>",
         unsafe_allow_html=True,
+    )
+
+
+def brief_header(title, subtitle="", eyebrow="Executive view", compact=False):
+    sub_html = f"<div class='brief-sub'>{subtitle}</div>" if subtitle else ""
+    class_name = "brief-head brief-subhead" if compact else "brief-head"
+    st.markdown(
+        f"<div class='{class_name}'><div><div class='brief-eyebrow'>{eyebrow}</div>"
+        f"<div class='brief-title'>{title}</div>{sub_html}</div>"
+        f"<div class='signal-rule'></div></div>",
+        unsafe_allow_html=True,
+    )
+
+
+def section_divider():
+    st.markdown("<div class='exec-divider'></div>", unsafe_allow_html=True)
+
+
+def signal_card(col, label, value, note="", accent=ATLAS_BLUE):
+    note_html = f"<div class='signal-note'>{note}</div>" if note else ""
+    col.markdown(
+        f"<div class='signal-card'><div class='signal-top'>"
+        f"<div><div class='signal-label'>{label}</div><div class='signal-value'>{value}</div></div>"
+        f"<div class='signal-rule' style='background:{accent};'></div></div>{note_html}</div>",
+        unsafe_allow_html=True,
+    )
+
+
+def source_card(col, eyebrow, title, meta_bits=None, note="", url="", accent=ATLAS_BLUE, chips_html=""):
+    meta_bits = [escape(_safe(m)) for m in (meta_bits or []) if _safe(m)]
+    meta_html = f"<div class='card-meta'>{' &middot; '.join(meta_bits)}</div>" if meta_bits else ""
+    note_html = f"<div class='source-note'>{escape(_safe(note))}</div>" if _safe(note) else ""
+    link_html = (
+        f"<div class='source-link'><a href='{escape(_safe(url))}' target='_blank'>View source &rarr;</a></div>"
+        if _safe(url) else ""
+    )
+    col.markdown(
+        f"<div class='source-card' style='border-left-color:{accent};'>"
+        f"<div class='source-eyebrow'>{escape(_safe(eyebrow))}</div>"
+        f"<div class='source-title'>{escape(_safe(title, 'Untitled signal'))}</div>"
+        f"{chips_html}{meta_html}{note_html}{link_html}</div>",
+        unsafe_allow_html=True,
+    )
+
+
+def compact_detail_expander(label, df, cols):
+    available = [c for c in cols if c in df.columns]
+    if not available:
+        return
+    with st.expander(label):
+        st.dataframe(
+            df[available].reset_index(drop=True),
+            width="stretch",
+            hide_index=True,
+            column_config={"URL": st.column_config.LinkColumn("URL")} if "URL" in available else None,
+        )
+
+
+def simple_bar(value, max_value, color=ATLAS_BLUE):
+    width = 0 if not max_value else min(max(value / max_value * 100, 0), 100)
+    return (
+        f"<div class='theme-rank-track'><div class='theme-rank-fill' "
+        f"style='width:{width:.0f}%;background:{color};'></div></div>"
     )
 
 
@@ -544,11 +807,34 @@ pr_news = sheets["Clean_PR_News_Events"]
 hiring = sheets["Clean_Hiring_Expansion"]
 opportunities = sheets["Clean_Opportunities"]
 raw_data = sheets["Clean_Raw_Data"]
+june_brief = sheets["Clean_June_Competitor_Brief"]
+june_content_mix = sheets["Clean_June_Content_Mix"]
+june_social_metrics = sheets["Clean_June_Social_Metrics"]
+june_content_items = sheets["Clean_June_Content_Items"]
 
 
 def exec_metric(label):
     row = exec_df[exec_df["Metric"] == label]
     return row["Value"].iloc[0] if not row.empty else "n/a"
+
+
+def _june_brief_row(name):
+    if june_brief.empty or "Competitor" not in june_brief.columns:
+        return None
+    r = june_brief.loc[june_brief["Competitor"] == name]
+    return r.iloc[0] if not r.empty else None
+
+
+def _num(row, col, default=0):
+    if row is None:
+        return default
+    try:
+        value = row.get(col, default)
+        if pd.isna(value):
+            return default
+        return int(value)
+    except Exception:
+        return default
 
 
 # ---------------------------------------------------------------------------
@@ -633,6 +919,9 @@ def render_post_card(p):
         meta_bits = [b for b in [date_str, eng_str] if b]
         if meta_bits:
             st.caption(" · ".join(meta_bits))
+        metric_bits = _engagement_breakdown(p)
+        if metric_bits:
+            st.caption(metric_bits)
         url = _safe(p.get("URL"))
         if url:
             st.markdown(f"[View source ↗]({url})")
@@ -694,11 +983,70 @@ def post_format(url):
     return "Image" if IMAGE_MAP.get(_safe(url)) else "Text"
 
 
+def _youtube_thumbnail(url):
+    url = _safe(url)
+    if not url:
+        return ""
+    try:
+        parsed = urlparse(url)
+        host = parsed.netloc.lower()
+        if "youtu.be" in host:
+            video_id = parsed.path.strip("/").split("/")[0]
+        elif "youtube.com" in host:
+            qs_id = parse_qs(parsed.query).get("v", [""])[0]
+            if qs_id:
+                video_id = qs_id
+            else:
+                match = re.search(r"/(?:shorts|embed|watch)/([^/?#]+)", parsed.path)
+                video_id = match.group(1) if match else ""
+        else:
+            video_id = ""
+    except Exception:
+        video_id = ""
+    return f"https://img.youtube.com/vi/{video_id}/hqdefault.jpg" if video_id else ""
+
+
+def post_media_html(row, bucket="", source_type=""):
+    url = _safe(row.get("URL"))
+    img_urls = IMAGE_MAP.get(url, [])
+    image_url = _safe(img_urls[0]) if img_urls else ""
+    if not image_url:
+        image_url = _youtube_thumbnail(url)
+    if image_url:
+        return f"<img class='post-card-img' src='{escape(image_url)}' />"
+
+    platform = _safe(row.get("Channel")) or _safe(source_type, "Social signal")
+    bucket_label = _safe(bucket) or theme_bucket(_safe(row.get("Theme"))) or "Content signal"
+    return (
+        "<div class='post-card-placeholder'>"
+        f"<div class='platform'>{escape(platform)}</div>"
+        f"<div class='bucket'>{escape(bucket_label)}</div>"
+        "<div class='note'>No source image captured</div>"
+        "</div>"
+    )
+
+
+def _metric_chip(label, value):
+    try:
+        n = int(value or 0)
+    except Exception:
+        n = 0
+    return f"{label} {n:,}" if n else ""
+
+
+def _engagement_breakdown(row):
+    parts = [
+        _metric_chip("Likes", row.get("Likes")),
+        _metric_chip("Comments", row.get("Comments")),
+        _metric_chip("Shares", row.get("Shares")),
+        _metric_chip("Views", row.get("Views")),
+    ]
+    return " · ".join([p for p in parts if p])
+
+
 def render_platform_post_card(p):
     """Card for the LinkedIn / Instagram / YouTube platform tabs - image,
-    content-type bucket, format, date, and real total engagement. No
-    fabricated reaction-type or share/comment breakdown: the scraped data
-    only has one combined Engagement number per post."""
+    content-type bucket, format, date, and real engagement metrics."""
     with st.container(border=True):
         img_urls = IMAGE_MAP.get(_safe(p.get("URL")), [])
         if img_urls:
@@ -708,7 +1056,7 @@ def render_platform_post_card(p):
                 pass
 
         bucket = theme_bucket(_safe(p.get("Theme")))
-        fmt = post_format(p.get("URL"))
+        fmt = _safe(p.get("Content format")) or post_format(p.get("URL"))
         st.markdown(chip(bucket, ATLAS_BLUE) + chip(fmt, "#6B7280"), unsafe_allow_html=True)
 
         title = _safe(p.get("Title")) or _safe(p.get("Summary"))[:80]
@@ -722,9 +1070,55 @@ def render_platform_post_card(p):
         meta_bits = [b for b in [date_str, eng_str] if b]
         if meta_bits:
             st.caption(" · ".join(meta_bits))
+        metric_bits = _engagement_breakdown(p)
+        if metric_bits:
+            st.caption(metric_bits)
         url = _safe(p.get("URL"))
         if url:
             st.markdown(f"[View source ↗]({url})")
+
+
+def _social_metric_chips(row):
+    chips = []
+    for label, col in [("Likes", "Likes"), ("Comments", "Comments"), ("Shares", "Shares"), ("Views", "Views")]:
+        try:
+            value = int(row.get(col) or 0)
+        except Exception:
+            value = 0
+        if value:
+            chips.append(f"<span class='social-kpi'>{label} {value:,}</span>")
+    return "".join(chips)
+
+
+def render_platform_post_card(p):
+    """Premium card for a single owned social item."""
+    bucket = theme_bucket(_safe(p.get("Theme")))
+    img_html = post_media_html(p, bucket=bucket, source_type=_safe(p.get("Source type"), "Social post"))
+    fmt = _safe(p.get("Content format")) or post_format(p.get("URL"))
+    sent = _safe(p.get("Sentiment"))
+    chips_html = chip(bucket, ATLAS_BLUE) + chip(fmt, "#6B7280")
+    if sent:
+        chips_html += chip(sent, SENTIMENT_COLORS.get(sent, GRAY))
+
+    title = _safe(p.get("Title")) or _safe(p.get("Summary"))[:100] or "Untitled post"
+    date_str = _display_date(p.get("Date"))
+    try:
+        eng = int(p.get("Engagement") or 0)
+    except Exception:
+        eng = 0
+    score_html = f"<span class='post-card-score'>{eng:,} engagement</span>" if eng else ""
+    metrics_html = _social_metric_chips(p)
+    metrics_html = f"<div class='post-card-metrics'>{metrics_html}</div>" if metrics_html else ""
+    url = _safe(p.get("URL"))
+    link_html = f"<div class='source-link'><a href='{escape(url)}' target='_blank'>View source &rarr;</a></div>" if url else ""
+
+    st.markdown(
+        f"<div class='post-card'>{img_html}<div class='post-card-body'>"
+        f"{chips_html}<div class='post-card-title'>{escape(title[:150])}</div>"
+        f"{score_html}<div class='post-card-meta'>{escape(date_str)}</div>{metrics_html}{link_html}"
+        f"</div></div>",
+        unsafe_allow_html=True,
+    )
 
 
 def render_platform_section(posts_df, key_prefix):
@@ -736,10 +1130,26 @@ def render_platform_section(posts_df, key_prefix):
         return
     posts_df = posts_df.copy()
     posts_df["_bucket"] = posts_df["Theme"].apply(theme_bucket)
+    posts_df["Engagement"] = pd.to_numeric(posts_df["Engagement"], errors="coerce").fillna(0)
+    top_bucket = posts_df["_bucket"].value_counts().index[0] if not posts_df.empty else "No bucket"
+    best_post = posts_df.sort_values("Engagement", ascending=False).iloc[0] if not posts_df.empty else None
+    s1, s2, s3 = st.columns(3)
+    signal_card(s1, "Posts / videos", f"{len(posts_df):,}", "Items in this platform tab.")
+    signal_card(s2, "Total engagement", f"{int(posts_df['Engagement'].sum()):,}",
+                "Likes, comments, shares, reactions, and views where available.", accent=ATLAS_BLUE_DARK)
+    signal_card(s3, "Largest content bucket", top_bucket,
+                f"{int((posts_df['_bucket'] == top_bucket).sum())} items." if top_bucket != "No bucket" else "", accent=ACCENT_AMBER)
+    if best_post is not None and int(best_post.get("Engagement") or 0):
+        insight(
+            f"The strongest item in this tab is a <b>{theme_bucket(_safe(best_post.get('Theme')))}</b> post "
+            f"with <b>{int(best_post.get('Engagement') or 0):,}</b> tracked engagement. "
+            "Use the content-bucket filter below to compare the type of message, not just the channel."
+        )
     present = [b for b in THEME_BUCKET_ORDER if (posts_df["_bucket"] == b).any()]
     options = ["All"] + present
+    st.markdown("<div class='platform-filter-label'>Content bucket filter</div>", unsafe_allow_html=True)
     choice = st.radio(
-        "Filter by type", options, index=0, horizontal=True,
+        "Content bucket filter", options, index=0, horizontal=True,
         key=f"filter_{key_prefix}", label_visibility="collapsed",
     )
     shown = posts_df if choice == "All" else posts_df[posts_df["_bucket"] == choice]
@@ -751,6 +1161,38 @@ def render_platform_section(posts_df, key_prefix):
         for col, (_, p) in zip(cols, row_slice):
             with col:
                 render_platform_post_card(p)
+
+
+def render_post_card(p):
+    """Premium card for blog posts, third-party mentions, and other signals."""
+    theme = _safe(p.get("Theme"))
+    img_html = post_media_html(p, bucket=theme_bucket(theme), source_type=_safe(p.get("Source type"), "Signal"))
+    sent = _safe(p.get("Sentiment"))
+    source_type = _safe(p.get("Source type"), "Signal")
+    chips_html = ""
+    if theme:
+        chips_html += chip(theme, "#6B7280")
+    if sent:
+        chips_html += chip(sent, SENTIMENT_COLORS.get(sent, GRAY))
+    title = _safe(p.get("Title")) or _safe(p.get("Summary"))[:100] or "Untitled signal"
+    date_str = _display_date(p.get("Date"))
+    try:
+        eng = int(p.get("Engagement") or 0)
+    except Exception:
+        eng = 0
+    score_html = f"<span class='post-card-score'>{eng:,} engagement</span>" if eng else ""
+    metrics_html = _social_metric_chips(p)
+    metrics_html = f"<div class='post-card-metrics'>{metrics_html}</div>" if metrics_html else ""
+    url = _safe(p.get("URL"))
+    link_html = f"<div class='source-link'><a href='{escape(url)}' target='_blank'>View source &rarr;</a></div>" if url else ""
+    st.markdown(
+        f"<div class='post-card'>{img_html}<div class='post-card-body'>"
+        f"<div class='source-eyebrow'>{escape(source_type)}</div>{chips_html}"
+        f"<div class='post-card-title'>{escape(title[:150])}</div>"
+        f"{score_html}<div class='post-card-meta'>{escape(date_str)}</div>{metrics_html}{link_html}"
+        f"</div></div>",
+        unsafe_allow_html=True,
+    )
 
 
 def render_post_section(posts_df, limit=4, cols=2):
@@ -768,6 +1210,142 @@ def render_post_section(posts_df, limit=4, cols=2):
         for col, (_, p) in zip(columns, row_slice):
             with col:
                 render_post_card(p)
+
+
+def render_hiring_signal_section(name, h):
+    if info_if_empty(h, f"hiring & expansion at {name}"):
+        return
+    h = h.copy()
+    h["_dt"] = pd.to_datetime(h.get("Date"), errors="coerce")
+    h = h.sort_values("_dt", ascending=False, na_position="last")
+
+    locations = sorted({_safe(v) for v in h.get("Location (HQ)", pd.Series(dtype=str)) if _safe(v)})
+    functions = h.get("Top open-role function (latest snapshot)", pd.Series(dtype=str)).dropna()
+    lead_function = _safe(functions.mode().iloc[0]) if not functions.empty else "Not specified"
+
+    c1, c2, c3 = st.columns(3)
+    signal_card(c1, "Hiring / expansion signals", f"{len(h):,}",
+                "Rows confirmed in the cleaned source data.")
+    signal_card(c2, "Locations surfaced", f"{len(locations):,}",
+                _join_natural(locations[:3]) if locations else "No location field available.", accent=ACCENT_GREEN)
+    signal_card(c3, "Most common role focus", lead_function,
+                "Based on the latest open-role function field.", accent=ACCENT_AMBER)
+
+    rows = list(h.head(6).iterrows())
+    for i in range(0, len(rows), 3):
+        cols = st.columns(3)
+        for col, (_, r) in zip(cols, rows[i:i + 3]):
+            meta = [
+                _safe(r.get("Location (HQ)")),
+                _display_date(r.get("Date")),
+                _safe(r.get("Team to review")),
+            ]
+            note = _safe(r.get("Possible meaning")) or _safe(r.get("Signal detail"))
+            source_card(
+                col,
+                _safe(r.get("Signal type"), "Hiring signal"),
+                _safe(r.get("Signal detail")) or _safe(r.get("Top open-role function (latest snapshot)"), "Hiring / expansion signal"),
+                meta,
+                note,
+                _safe(r.get("URL")),
+                accent=ACCENT_GREEN,
+            )
+    compact_detail_expander(
+        f"View all {len(h)} hiring / expansion rows",
+        h,
+        ["Signal type", "Location (HQ)", "Top open-role function (latest snapshot)", "Date", "URL",
+         "Signal detail", "Possible meaning", "Team to review"],
+    )
+
+
+def render_pr_signal_section(name, pr):
+    if info_if_empty(pr, f"PR, news, events & webinars for {name}"):
+        return
+    pr = pr.copy()
+    pr["_dt"] = pd.to_datetime(pr.get("Date"), errors="coerce")
+    pr = pr.sort_values("_dt", ascending=False, na_position="last")
+
+    source_counts = pr.get("Source channel", pd.Series(dtype=str)).value_counts()
+    type_counts = pr.get("Type", pd.Series(dtype=str)).value_counts()
+    top_source = _safe(source_counts.index[0]) if not source_counts.empty else "No source"
+    top_type = _safe(type_counts.index[0]) if not type_counts.empty else "No type"
+    latest = _display_date(pr["_dt"].max()) if pr["_dt"].notna().any() else "No date"
+
+    c1, c2, c3, c4 = st.columns(4)
+    signal_card(c1, "Total coverage rows", f"{len(pr):,}", "PR, news, events, and webinar rows.")
+    signal_card(c2, "Top source", top_source, f"{int(source_counts.iloc[0]) if not source_counts.empty else 0} rows.", accent=ATLAS_BLUE_DARK)
+    signal_card(c3, "Top signal type", top_type, f"{int(type_counts.iloc[0]) if not type_counts.empty else 0} rows.", accent=ACCENT_AMBER)
+    signal_card(c4, "Latest dated item", latest, "Most recent dated coverage row.", accent=ACCENT_GREEN)
+
+    rows = list(pr.head(6).iterrows())
+    for i in range(0, len(rows), 3):
+        cols = st.columns(3)
+        for col, (_, r) in zip(cols, rows[i:i + 3]):
+            meta = [
+                _safe(r.get("Source channel")),
+                _safe(r.get("Type")),
+                _display_date(r.get("Date")),
+            ]
+            chips_html = ""
+            theme = _safe(r.get("Theme"))
+            if theme:
+                chips_html = chip(theme, ATLAS_BLUE_LIGHT, ATLAS_BLUE_DARK)
+            source_card(
+                col,
+                _safe(r.get("Source channel"), "Coverage"),
+                _safe(r.get("Title"), "Coverage item"),
+                meta,
+                _safe(r.get("Possible meaning")),
+                _safe(r.get("URL")),
+                accent=ATLAS_BLUE,
+                chips_html=chips_html,
+            )
+    compact_detail_expander(
+        f"View all {len(pr)} PR / news / event / webinar rows",
+        pr,
+        ["Source channel", "Type", "Title", "Date", "URL", "Theme", "Possible meaning", "Team to review"],
+    )
+
+
+def render_product_signal_section(name, ps):
+    if info_if_empty(ps, f"product & service signals for {name}"):
+        return
+    ps = ps.copy()
+    ps["_dt"] = pd.to_datetime(ps.get("Date found/published"), errors="coerce")
+    ps = ps.sort_values("_dt", ascending=False, na_position="last")
+
+    cat_counts = ps.get("Product/service category", pd.Series(dtype=str)).value_counts()
+    top_cat = _safe(cat_counts.index[0]) if not cat_counts.empty else "No category"
+    latest = _display_date(ps["_dt"].max()) if ps["_dt"].notna().any() else "No date"
+
+    c1, c2, c3 = st.columns(3)
+    signal_card(c1, "Product / service rows", f"{len(ps):,}", "Confirmed rows in this month's cleaned data.")
+    signal_card(c2, "Most common category", top_cat,
+                f"{int(cat_counts.iloc[0]) if not cat_counts.empty else 0} rows.", accent=ACCENT_AMBER)
+    signal_card(c3, "Latest dated item", latest, "Most recent product/service row.", accent=ACCENT_GREEN)
+
+    rows = list(ps.head(6).iterrows())
+    for i in range(0, len(rows), 3):
+        cols = st.columns(3)
+        for col, (_, r) in zip(cols, rows[i:i + 3]):
+            category = _safe(r.get("Product/service category"), "Product / service")
+            chips_html = chip(category, ATLAS_BLUE_LIGHT, ATLAS_BLUE_DARK)
+            meta = [_display_date(r.get("Date found/published")), _safe(r.get("Team to review"))]
+            source_card(
+                col,
+                "Product / service signal",
+                _safe(r.get("Page/post title"), category),
+                meta,
+                _safe(r.get("Possible meaning")),
+                _safe(r.get("URL")),
+                accent=ACCENT_AMBER,
+                chips_html=chips_html,
+            )
+    compact_detail_expander(
+        f"View all {len(ps)} product / service rows",
+        ps,
+        ["Product/service category", "Page/post title", "URL", "Date found/published", "Possible meaning", "Team to review"],
+    )
 
 
 def _theme_color_map(theme_series):
@@ -798,7 +1376,14 @@ def render_engagement_section(name, owned_posts):
 
     theme_colors = _theme_color_map(d["Theme"])
 
-    st.markdown(
+    section_divider()
+    brief_header(
+        "Content performance read",
+        f"Four connected views of {name}'s own posts only: engagement trend, engagement by theme, posting mix by theme, and sentiment mix.",
+        "Owned content analysis",
+    )
+    if False:
+        st.markdown(
         "##### \U0001F4C8 Engagement & content performance"
         f"<span class='section-hint'>· {name}'s own posts only, not third-party mentions</span>",
         unsafe_allow_html=True,
@@ -816,6 +1401,11 @@ def render_engagement_section(name, owned_posts):
     kpi_card(e3, "\U0001F3C6", "Top post engagement", f"{int(best['Engagement']):,}",
              best["_dt"].strftime("%b %d, %Y"))
     kpi_card(e4, "\U0001F4AC", "Total engagement", f"{int(d['Engagement'].sum()):,}")
+    insight(
+        "Read the four charts as a sequence: when engagement happened, which themes performed, what they posted most, "
+        "and whether the tone was positive, neutral, mixed, or negative. This keeps the posting mix and sentiment mix tied "
+        "to the performance story instead of floating as standalone charts."
+    )
     st.write("")
 
     g1, g2 = st.columns(2)
@@ -890,9 +1480,14 @@ def render_competitor_profile(name):
     if row is None:
         st.info(f"No signals found this period for {name}.")
         return
+    brief_row = _june_brief_row(name)
 
     level = _safe(row.get("Overall activity level"), "n/a")
     level_color = ACTIVITY_LEVEL_COLORS.get(level, GRAY)
+    total_signals = _num(brief_row, "Total June signals", int(row["Total activity"]))
+    social_posts_n = _num(brief_row, "Social posts")
+    social_eng_n = _num(brief_row, "Social engagement")
+    avg_social_n = brief_row.get("Avg social engagement/post", 0) if brief_row is not None else 0
 
     hcol1, hcol2 = st.columns([1, 7])
     with hcol1:
@@ -901,39 +1496,54 @@ def render_competitor_profile(name):
         st.markdown(f"### {name}")
         st.markdown(chip(level + " activity", level_color), unsafe_allow_html=True)
         st.caption(
-            f"{int(row['Total activity'])} tracked signals this period across LinkedIn, Instagram, and YouTube."
+            f"{total_signals} June signals tracked across owned content, social activity, news, and workforce signals."
         )
 
     st.write("")
     k1, k2, k3, k4 = st.columns(4)
-    kpi_card(k1, "\U0001F4CA", "Total activity", int(row["Total activity"]))
-    kpi_card(k2, "\U0001F4BC", "LinkedIn posts", int(row.get("LinkedIn posts", 0) or 0))
-    kpi_card(k3, "\U0001F4F7", "Instagram posts", int(row.get("Instagram posts", 0) or 0))
-    kpi_card(k4, "▶️", "YouTube videos", int(row.get("YouTube videos", 0) or 0))
+    kpi_card(k1, "\U0001F4CA", "June signals", total_signals)
+    kpi_card(k2, "\U0001F525", "Social engagement", f"{social_eng_n:,}",
+             f"{float(avg_social_n):.1f} avg / post" if social_posts_n else None)
+    kpi_card(k3, "\U0001F4DD", "Blogs + news", _num(brief_row, "Blog posts") + _num(brief_row, "News items"))
+    kpi_card(k4, "\U0001F3A5", "Training/webinar signals", _num(brief_row, "Training/webinar-themed signals"))
 
-    st.markdown("##### Where they're active")
+    p1, p2, p3, p4 = st.columns(4)
+    mini_stat(p1, "LinkedIn", f"{_num(brief_row, 'LinkedIn posts', int(row.get('LinkedIn posts', 0) or 0))} posts")
+    mini_stat(p2, "Instagram", f"{_num(brief_row, 'Instagram posts', int(row.get('Instagram posts', 0) or 0))} posts")
+    mini_stat(p3, "YouTube", f"{_num(brief_row, 'YouTube videos', int(row.get('YouTube videos', 0) or 0))} videos")
+    mini_stat(p4, "High-priority signals", f"{_num(brief_row, 'High-priority signals')} for review")
+    profile_source = june_content_items.copy() if not june_content_items.empty else raw_data.copy()
+    if "Month" in profile_source.columns:
+        profile_source = profile_source[profile_source["Month"] == settings.get("Report_Month", "June 2026")]
+
+    section_divider()
+    brief_header(
+        "Channel footprint and themes",
+        f"Where {name} showed up in June, plus the strongest themes attached to those signals.",
+        "Competitor activity map",
+    )
     cc1, cc2 = st.columns([3, 2])
     with cc1:
-        chan_row = comp_x_chan.loc[comp_x_chan["Competitor"] == name]
-        if chan_row.empty:
+        chans = {
+            "LinkedIn": _num(brief_row, "LinkedIn posts", int(row.get("LinkedIn posts", 0) or 0)),
+            "Instagram": _num(brief_row, "Instagram posts", int(row.get("Instagram posts", 0) or 0)),
+            "YouTube": _num(brief_row, "YouTube videos", int(row.get("YouTube videos", 0) or 0)),
+            "Blog": _num(brief_row, "Blog posts"),
+            "News": _num(brief_row, "News items"),
+        }
+        cdf = pd.DataFrame({"Channel": list(chans.keys()), "Count": list(chans.values())})
+        cdf = cdf[cdf["Count"] > 0]
+        if cdf.empty:
             st.info("No signals found this period for LinkedIn, Instagram, or YouTube activity.")
         else:
-            cr = chan_row.iloc[0]
-            chans = {"LinkedIn": cr.get("LinkedIn posts", 0), "Instagram": cr.get("Instagram posts", 0),
-                      "YouTube": cr.get("YouTube videos", 0)}
-            cdf = pd.DataFrame({"Channel": list(chans.keys()), "Count": [int(v or 0) for v in chans.values()]})
-            cdf = cdf[cdf["Count"] > 0]
-            if cdf.empty:
-                st.info("No signals found this period for LinkedIn, Instagram, or YouTube activity.")
-            else:
-                cdf = highlight_leader(cdf.sort_values("Count"), "Count")
-                fig = px.bar(cdf, x="Count", y="Channel", orientation="h", text="Count", color="_Highlight",
-                             color_discrete_map={"Leading": ATLAS_BLUE, "Other": NEUTRAL_BAR},
-                             title="Channel activity")
-                fig.update_yaxes(title="")
-                fig.update_traces(textposition="outside", cliponaxis=False, textfont=dict(size=11))
-                clean_value_axis(fig, "h")
-                st.plotly_chart(style_layout(fig, 230, legend="none"), width="stretch")
+            cdf = highlight_leader(cdf.sort_values("Count"), "Count")
+            fig = px.bar(cdf, x="Count", y="Channel", orientation="h", text="Count", color="_Highlight",
+                         color_discrete_map={"Leading": ATLAS_BLUE, "Other": NEUTRAL_BAR},
+                         title="June channel activity")
+            fig.update_yaxes(title="")
+            fig.update_traces(textposition="outside", cliponaxis=False, textfont=dict(size=11))
+            clean_value_axis(fig, "h")
+            st.plotly_chart(style_layout(fig, 230, legend="none"), width="stretch")
     with cc2:
         st.markdown("**Top themes**")
         if theme_by_comp.empty or name not in theme_by_comp["Competitor"].values:
@@ -951,46 +1561,48 @@ def render_competitor_profile(name):
 
     st.write("")
     owned_for_chart = pd.DataFrame()
-    if not raw_data.empty:
-        _comp_posts = raw_data[(raw_data["Competitor"] == name) & (raw_data["Channel"] != "Jobs")]
+    if not profile_source.empty:
+        _comp_posts = profile_source[(profile_source["Competitor"] == name) & (profile_source["Channel"] != "Jobs")]
         owned_for_chart = _comp_posts[_comp_posts["Source type"].isin(OWNED_SOURCE_TYPES)]
     render_engagement_section(name, owned_for_chart)
 
-    st.markdown("##### Hiring & expansion signals")
+    section_divider()
+    brief_header(
+        "Hiring and expansion signals",
+        "Workforce and footprint clues that may indicate where the competitor is investing attention.",
+        "Operational signals",
+    )
     h = hiring[hiring["Competitor"] == name] if not hiring.empty else pd.DataFrame()
-    if info_if_empty(h, f"hiring & expansion at {name}"):
-        pass
-    else:
-        st.dataframe(
-            h[["Signal type", "Location (HQ)", "Top open-role function (latest snapshot)", "Date", "URL",
-               "Signal detail", "Possible meaning"]],
-            width="stretch", hide_index=True,
-            column_config={"URL": st.column_config.LinkColumn("URL")},
-        )
+    render_hiring_signal_section(name, h)
 
-    st.markdown("##### PR, news, events & webinars")
+    section_divider()
+    brief_header(
+        "PR, news, events and webinars",
+        "Earned or scheduled visibility for the month, presented as source cards with the full table available on demand.",
+        "Market visibility",
+    )
     pr = pr_news[pr_news["Competitor"] == name] if not pr_news.empty else pd.DataFrame()
-    if info_if_empty(pr, f"PR, news, events & webinars for {name}"):
-        pass
-    else:
-        st.dataframe(
-            pr[["Source channel", "Type", "Title", "Date", "URL", "Theme", "Possible meaning"]],
-            width="stretch", hide_index=True,
-            column_config={"URL": st.column_config.LinkColumn("URL")},
-        )
+    if not pr.empty and "Month" in pr.columns:
+        pr = pr[pr["Month"] == settings.get("Report_Month", "June 2026")]
+    render_pr_signal_section(name, pr)
 
-    st.markdown("##### Product & service signals")
+    section_divider()
+    brief_header(
+        "Product and service signals",
+        "Pages, posts, and content items that point to product, service, aftermarket, or category emphasis.",
+        "Offer signals",
+    )
     ps = product_signals[product_signals["Competitor"] == name] if not product_signals.empty else pd.DataFrame()
-    if info_if_empty(ps, f"product & service signals for {name}"):
-        pass
-    else:
-        st.dataframe(
-            ps[["Product/service category", "Page/post title", "URL", "Date found/published", "Possible meaning"]],
-            width="stretch", hide_index=True,
-            column_config={"URL": st.column_config.LinkColumn("URL")},
-        )
+    if not ps.empty and "Month" in ps.columns:
+        ps = ps[ps["Month"] == settings.get("Report_Month", "June 2026")]
+    render_product_signal_section(name, ps)
 
-    st.markdown("##### Opportunities for review")
+    section_divider()
+    brief_header(
+        "Opportunities for review",
+        "Competitor-specific opportunities are shown here when the cleaned opportunity sheet explicitly names this brand.",
+        "Review focus",
+    )
     matches = pd.DataFrame()
     if not opportunities.empty:
         matches = opportunities[opportunities["Opportunity/Signal"].str.contains(name, case=False, na=False)]
@@ -1017,12 +1629,24 @@ def render_competitor_profile(name):
         "<span class='section-hint'>· their own channels, plus third-party mentions</span>",
         unsafe_allow_html=True,
     )
-    all_posts = raw_data[raw_data["Competitor"] == name].copy() if not raw_data.empty else pd.DataFrame()
+    all_posts = profile_source[profile_source["Competitor"] == name].copy() if not profile_source.empty else pd.DataFrame()
     all_posts = all_posts[all_posts["Channel"] != "Jobs"] if not all_posts.empty else all_posts
     if all_posts.empty:
         st.info("No signals found this period.")
     else:
         all_posts["_dt"] = pd.to_datetime(all_posts["Date"], errors="coerce")
+        all_posts["Engagement"] = pd.to_numeric(all_posts["Engagement"], errors="coerce").fillna(0)
+        owned_total = int(all_posts["Source type"].isin(OWNED_SOURCE_TYPES).sum())
+        mention_total = int(all_posts["Source type"].isin(MENTION_SOURCE_TYPES).sum())
+        source_counts = all_posts["Source type"].value_counts()
+        top_source = _safe(source_counts.index[0]) if not source_counts.empty else "No source"
+        s1, s2, s3, s4 = st.columns(4)
+        signal_card(s1, "Owned posts / videos", f"{owned_total:,}", "Company or employee channel items.")
+        signal_card(s2, "Third-party mentions", f"{mention_total:,}", "Posts and comments mentioning the brand.", accent=ACCENT_AMBER)
+        signal_card(s3, "Tracked engagement", f"{int(all_posts['Engagement'].sum()):,}",
+                    "Engagement fields available in the source rows.", accent=ATLAS_BLUE_DARK)
+        signal_card(s4, "Top source type", top_source,
+                    f"{int(source_counts.iloc[0]) if not source_counts.empty else 0} rows.", accent=ACCENT_GREEN)
 
         # Coverage strip: one glance at what showed up where before opening anything -
         # lit up in blue when there's content, muted gray when there's none.
@@ -1083,24 +1707,27 @@ def render_other_competitors():
         r = _competitor_row(nm)
         if r is None:
             continue
+        br = _june_brief_row(nm)
         rows.append({
             "Logo": LOGO_MAP.get(nm),
             "Competitor": nm,
             "Activity level": _safe(r.get("Overall activity level"), "n/a"),
-            "Total activity": int(r["Total activity"]),
-            "LinkedIn": int(r.get("LinkedIn posts", 0) or 0),
-            "Instagram": int(r.get("Instagram posts", 0) or 0),
-            "YouTube": int(r.get("YouTube videos", 0) or 0),
+            "June signals": _num(br, "Total June signals", int(r["Total activity"])),
+            "LinkedIn": _num(br, "LinkedIn posts", int(r.get("LinkedIn posts", 0) or 0)),
+            "Instagram": _num(br, "Instagram posts", int(r.get("Instagram posts", 0) or 0)),
+            "YouTube": _num(br, "YouTube videos", int(r.get("YouTube videos", 0) or 0)),
+            "News": _num(br, "News items"),
+            "Social engagement": _num(br, "Social engagement"),
             "Top channel": _top_channel_for(r),
-            "Top theme": _top_theme_for(nm),
+            "Top theme": _safe(br.get("Top non-general theme")) if br is not None else _top_theme_for(nm),
         })
-    odf = pd.DataFrame(rows).sort_values("Total activity", ascending=False)
+    odf = pd.DataFrame(rows).sort_values("June signals", ascending=False)
 
     if not odf.empty:
         leader = odf.iloc[0]
         insight(
             f"Among the remaining tracked competitors, <b>{leader['Competitor']}</b> is the most active with "
-            f"{leader['Total activity']} signals this period — still well below the top 4 shown in their own tabs."
+            f"{leader['June signals']} June signals this period — still below the top competitors shown in their own tabs."
         )
 
     st.dataframe(
@@ -1114,6 +1741,8 @@ def render_other_competitors():
 
     st.markdown("##### PR & news mentions")
     pr_other = pr_news[pr_news["Competitor"].isin(OTHER_COMPETITORS)] if not pr_news.empty else pd.DataFrame()
+    if not pr_other.empty and "Month" in pr_other.columns:
+        pr_other = pr_other[pr_other["Month"] == settings.get("Report_Month", "June 2026")]
     if info_if_empty(pr_other, "PR, news, or event mentions for these competitors"):
         pass
     else:
@@ -1191,8 +1820,158 @@ with tabs[0]:
     if elab_bits:
         st.markdown(f"<div class='elaborate-box'>{' '.join(elab_bits)}</div>", unsafe_allow_html=True)
 
+    # ---- June intelligence cockpit: richer sheets built by the ETL --------
+    if not june_brief.empty:
+        section_divider()
+        brief_header(
+            "June competitor snapshot",
+            "A ranked view of signal volume, social traction, content output, news visibility, and priority flags.",
+            "Executive intelligence cockpit",
+        )
+        report_month = settings.get("Report_Month", "June 2026")
+        jb = june_brief.sort_values("Total June signals", ascending=False).reset_index(drop=True)
+        total_june = int(jb["Total June signals"].sum())
+        total_social_eng = int(jb["Social engagement"].sum())
+        leader = jb.iloc[0]
+        social_leader = jb.sort_values("Social engagement", ascending=False).iloc[0]
+
+        c1, c2, c3, c4 = st.columns(4)
+        kpi_card(c1, "\U0001F9ED", f"{report_month} signals", f"{total_june:,}",
+                 f"{len(jb)} tracked competitors")
+        kpi_card(c2, "\U0001F525", "Social engagement", f"{total_social_eng:,}",
+                 f"{social_leader['Competitor']} led engagement")
+        kpi_card(c3, "\U0001F4DD", "Blogs + news",
+                 f"{int(jb['Blog posts'].sum() + jb['News items'].sum()):,}",
+                 "confirmed dated items only")
+        kpi_card(c4, "\U0001F3A5", "Webinar/training signals",
+                 f"{int(jb['Training/webinar-themed signals'].sum()):,}",
+                 f"{int(jb['Confirmed webinar listings'].sum())} confirmed webinar listings")
+
+        insight(
+            f"<b>{leader['Competitor']}</b> had the highest June signal volume ({int(leader['Total June signals'])}), "
+            f"while <b>{social_leader['Competitor']}</b> led total social engagement "
+            f"({int(social_leader['Social engagement']):,}). Confirmed webinar listings and confirmed PR releases "
+            f"are kept separate from broader training/news signals to avoid overstating the evidence."
+        )
+
+        pcol1, pcol2 = st.columns([3, 2])
+        with pcol1:
+            show_cols = [
+                "Competitor", "Total June signals", "Social posts", "Social engagement",
+                "Blog posts", "News items", "Training/webinar-themed signals",
+                "High-priority signals", "Top non-general theme",
+            ]
+            snap = jb[[c for c in show_cols if c in jb.columns]].head(9).copy()
+            max_signals = max(int(snap["Total June signals"].max() or 1), 1)
+            max_engagement = max(int(snap["Social engagement"].max() or 1), 1)
+            row_html = [
+                "<div class='snapshot-table'>"
+                "<div class='snapshot-row snapshot-head'><div>Rank</div><div>Competitor</div>"
+                "<div>June signals</div><div>Social engagement</div><div>Lead theme</div></div>"
+            ]
+            for rank, (_, r) in enumerate(snap.iterrows(), start=1):
+                signals = int(r.get("Total June signals") or 0)
+                engagement = int(r.get("Social engagement") or 0)
+                sig_width = signals / max_signals * 100
+                eng_width = engagement / max_engagement * 100
+                row_html.append(
+                    "<div class='snapshot-row'>"
+                    f"<div class='snapshot-rank'>{rank}</div>"
+                    f"<div><div class='snapshot-name'>{escape(_safe(r.get('Competitor')))}</div>"
+                    f"<div class='snapshot-small'>{int(r.get('Social posts') or 0)} social posts · "
+                    f"{int(r.get('High-priority signals') or 0)} high priority</div></div>"
+                    f"<div><div class='snapshot-small'>{signals:,}</div>{simple_bar(signals, max_signals)}</div>"
+                    f"<div><div class='snapshot-small'>{engagement:,}</div>{simple_bar(engagement, max_engagement, ATLAS_BLUE_DARK)}</div>"
+                    f"<div class='snapshot-small'>{escape(_safe(r.get('Top non-general theme'), 'General brand activity'))}</div>"
+                    "</div>"
+                )
+            row_html.append("</div>")
+            st.markdown("".join(row_html), unsafe_allow_html=True)
+        with pcol2:
+            if not june_content_mix.empty:
+                mix = june_content_mix.copy()
+                mix["Owned content"] = mix[["Social media posts", "Blog posts", "Product/service signals"]].sum(axis=1)
+                fig = px.bar(
+                    mix.sort_values("Owned content", ascending=True),
+                    x="Owned content", y="Competitor", orientation="h", text="Owned content",
+                    color_discrete_sequence=[ATLAS_BLUE],
+                    title="Owned/content signal volume",
+                )
+                fig.update_yaxes(title="")
+                fig.update_traces(textposition="outside", cliponaxis=False)
+                clean_value_axis(fig, "h")
+                st.plotly_chart(style_layout(fig, 360, legend="none"), width="stretch")
+
+    if not june_social_metrics.empty:
+        section_divider()
+        brief_header(
+            "Social performance by platform",
+            "Engagement and posting cadence by competitor-platform combination.",
+            "Channel performance",
+        )
+        sm = june_social_metrics.copy()
+        sm["Engagement"] = pd.to_numeric(sm["Engagement"], errors="coerce").fillna(0)
+        sm["Posts/videos"] = pd.to_numeric(sm["Posts/videos"], errors="coerce").fillna(0)
+        scol1, scol2 = st.columns(2)
+        with scol1:
+            fig = px.bar(
+                sm.sort_values("Engagement", ascending=True).tail(12),
+                x="Engagement", y="Competitor", color="Platform", orientation="h",
+                text="Engagement", color_discrete_sequence=CATEGORICAL_PALETTE,
+                title="Highest social engagement rows",
+            )
+            fig.update_yaxes(title="")
+            fig.update_traces(textposition="outside", cliponaxis=False)
+            clean_value_axis(fig, "h")
+            st.plotly_chart(style_layout(fig, 390, legend="bottom"), width="stretch")
+        with scol2:
+            fig = px.scatter(
+                sm, x="Posts/videos", y="Engagement", size="Avg engagement/post",
+                color="Platform", hover_name="Competitor",
+                color_discrete_sequence=CATEGORICAL_PALETTE,
+                title="Cadence vs engagement",
+            )
+            fig.update_xaxes(title="Posts / videos")
+            fig.update_yaxes(title="Engagement")
+            st.plotly_chart(style_layout(fig, 390, legend="bottom"), width="stretch")
+
+        top_social = sm.sort_values("Engagement", ascending=False).head(6)
+        brief_header(
+            "Top social performance cards",
+            "The highest-engagement competitor-platform rows, with the strongest post or video surfaced for review.",
+            "Social detail",
+            compact=True,
+        )
+        rows = list(top_social.iterrows())
+        for i in range(0, len(rows), 3):
+            cols = st.columns(3)
+            for col, (_, r) in zip(cols, rows[i:i + 3]):
+                title = _safe(r.get("Top post/video"), "No title available")
+                url = _safe(r.get("Top post/video URL"))
+                link_html = f"<div class='news-meta'><a href='{url}' target='_blank'>View source ↗</a></div>" if url else ""
+                metric_html = "".join([
+                    f"<span class='social-kpi'>Posts {int(r.get('Posts/videos') or 0):,}</span>",
+                    f"<span class='social-kpi'>Engagement {int(r.get('Engagement') or 0):,}</span>",
+                    f"<span class='social-kpi'>Likes {int(r.get('Likes') or 0):,}</span>",
+                    f"<span class='social-kpi'>Comments {int(r.get('Comments') or 0):,}</span>",
+                    f"<span class='social-kpi'>Shares {int(r.get('Shares') or 0):,}</span>" if int(r.get("Shares") or 0) else "",
+                    f"<span class='social-kpi'>Views {int(r.get('Views') or 0):,}</span>" if int(r.get("Views") or 0) else "",
+                ])
+                col.markdown(
+                    f"<div class='social-card'>"
+                    f"<div class='social-card-meta'>{r['Competitor']} · {r['Platform']}</div>"
+                    f"<div class='social-card-title'>{title}</div>"
+                    f"<div class='social-card-kpis'>{metric_html}</div>{link_html}</div>",
+                    unsafe_allow_html=True,
+                )
+
     # ---- The Big Picture: 4 synthesis charts -------------------------------
-    st.markdown("#### \U0001F50D The big picture")
+    section_divider()
+    brief_header(
+        "The big picture",
+        "Four board-level views that summarize activity volume, channel mix, messaging themes, and market tone.",
+        "Strategic read",
+    )
     cc1, cc2 = st.columns(2)
     with cc1:
         if not overview.empty:
@@ -1235,31 +2014,53 @@ with tabs[0]:
             st.plotly_chart(style_layout(fig, 400, legend="right"), width="stretch")
             st.caption("\U0001F4A1 Tone of comments and posts mentioning brands in the category - mostly neutral-to-positive is a healthy sign.")
 
-    # ---- Signals snapshot: smaller data points, compact cards --------------
-    st.markdown("#### \U0001F9E9 Other signals worth knowing about")
+    # ---- Signals snapshot: calmer scorecards -------------------------------
+    section_divider()
+    brief_header(
+        "Other signals worth knowing",
+        "Secondary indicators that may be useful for context, but should be validated before action.",
+        "Signal context",
+    )
     s1, s2, s3, s4 = st.columns(4)
     if not brand_mentions.empty:
         bm = brand_mentions[~brand_mentions["Brand"].isin(["Unspecified / General"])].sort_values("Mentions", ascending=False)
         if not bm.empty:
             top_bm = bm.iloc[0]
-            mini_stat(s1, "Most-talked-about brand", f"{top_bm['Brand']} — {int(top_bm['Mentions'])} mentions in social conversation")
+            signal_card(
+                s1, "Most mentioned brand", top_bm["Brand"],
+                f"{int(top_bm['Mentions'])} mentions in social conversation.",
+            )
     if not hiring.empty:
         hc = hiring["Competitor"].value_counts()
-        mini_stat(s2, "Most active hirer", f"{hc.index[0]} — {int(hc.iloc[0])} of {len(hiring)} hiring/expansion signals")
-    zero_channels_exec = []
-    for chan_label in ["Events", "Webinars", "PR releases", "News mentions"]:
-        if channel_df.empty or chan_label not in channel_df["Channel"].values or \
-           channel_df.loc[channel_df["Channel"] == chan_label, "Total activity (May+June 2026)"].sum() == 0:
-            zero_channels_exec.append(chan_label)
-    if zero_channels_exec:
-        mini_stat(s3, "Coverage gap to validate", f"0 confirmed {_join_natural(zero_channels_exec)} this period — worth checking with PR team")
+        signal_card(
+            s2, "Hiring / workforce", hc.index[0],
+            f"{int(hc.iloc[0])} of {len(hiring)} hiring or expansion signals.",
+            accent=ACCENT_GREEN,
+        )
+    confirmed_webinars = int(june_brief["Confirmed webinar listings"].sum()) if not june_brief.empty else 0
+    confirmed_pr = int(june_brief["Confirmed PR releases"].sum()) if not june_brief.empty else 0
+    coverage_note = (
+        "No confirmed webinar listings or PR releases found in the cleaned June data."
+        if confirmed_webinars == 0 and confirmed_pr == 0
+        else f"{confirmed_webinars} confirmed webinar listings and {confirmed_pr} confirmed PR releases."
+    )
+    signal_card(s3, "Coverage to validate", f"{confirmed_webinars + confirmed_pr}", coverage_note, accent=ACCENT_AMBER)
     our_brand_name = str(settings.get("Our_Brand", "Atlas Copco"))
     if not brand_mentions.empty and our_brand_name in brand_mentions["Brand"].values:
         our_mentions = int(brand_mentions.loc[brand_mentions["Brand"] == our_brand_name, "Mentions"].iloc[0])
-        mini_stat(s4, "Our brand in the conversation", f"{our_brand_name} mentioned {our_mentions} times this period")
+        signal_card(
+            s4, "Our brand mentions", f"{our_mentions}",
+            f"{our_brand_name} appeared in the tracked conversation.",
+            accent=ATLAS_BLUE_DARK,
+        )
 
-    # ---- Key themes to watch, as ranked share-of-voice cards ---------------
-    st.markdown("#### \U0001F3AF Key themes to watch")
+    # ---- Key themes to watch, as ranked briefing cards ---------------------
+    section_divider()
+    brief_header(
+        "Key themes to watch",
+        "The strongest non-general themes found in competitor content, ranked by frequency.",
+        "Messaging themes",
+    )
     theme_lookup = {}
     total_themed = 0
     if not theme_freq.empty:
@@ -1273,24 +2074,29 @@ with tabs[0]:
     tcols = st.columns(3)
     for (i, theme_name, freq), col in zip(theme_rows, tcols):
         share = _pct(freq, total_themed) if freq and total_themed else "—"
-        bar_pct = f"{(freq / top_freq * 100):.0f}%" if freq and top_freq else "0%"
+        theme_note = ""
+        if not raw_data.empty and "Theme" in raw_data.columns and "Possible meaning" in raw_data.columns:
+            note_rows = raw_data.loc[raw_data["Theme"] == theme_name, "Possible meaning"].dropna()
+            if not note_rows.empty:
+                theme_note = _safe(note_rows.iloc[0])
         with col:
             st.markdown(
-                f"<div class='theme-rank-card'>"
-                f"<div class='theme-rank-top'><span class='theme-rank-badge'>{i}</span>"
-                f"<span class='theme-rank-name'>{theme_name}</span></div>"
-                f"<div class='theme-rank-pct'>{share}</div>"
-                f"<div class='theme-rank-track'><div class='theme-rank-fill' style='width:{bar_pct};'></div></div>"
-                f"<div class='kpi-sub' style='margin-top:6px;'>of themed content this period</div>"
+                f"<div class='rank-card'>"
+                f"<div class='rank-top'><div class='rank-num'>{i}</div><div class='rank-title'>{theme_name}</div></div>"
+                f"<div class='rank-metric'>{share}</div>"
+                f"{simple_bar(freq or 0, top_freq or 0)}"
+                f"<div class='rank-copy' style='margin-top:8px;'>{int(freq or 0)} signals. {theme_note}</div>"
                 f"</div>",
                 unsafe_allow_html=True,
             )
 
-    # ---- Top opportunities, as priority-accented cards ----------------------
-    # Matched back to the full Opportunities sheet (by exact signal text) so the
-    # priority/confidence badges shown here are real classifications already
-    # behind "What to do next" below, not a fabricated rating for this summary.
-    st.markdown("#### ⭐ Top opportunities for review")
+    # ---- Top opportunities, as ranked review cards -------------------------
+    section_divider()
+    brief_header(
+        "Top opportunities for review",
+        "Data-backed signals that may be worth a cross-functional look.",
+        "Review focus",
+    )
     ocols = st.columns(3)
     for i, col in zip((1, 2, 3), ocols):
         opp_text = exec_metric(f"Possible opportunity #{i}")
@@ -1300,45 +2106,63 @@ with tabs[0]:
         if not match.empty:
             r = match.iloc[0]
             accent = PRIORITY_COLORS.get(r["Priority"], ATLAS_BLUE)
-            meta = (f"<div class='card-meta'><span class='meta-dot' style='background:{accent};'></span>"
-                    f"{r['Priority']} priority &middot; {r['Confidence']} confidence</div>")
+            why = _safe(r.get("Why it may matter"))
+            team = _safe(r.get("Suggested team to review"))
+            meta = (
+                f"<div class='card-meta'><span class='meta-dot' style='background:{accent};'></span>"
+                f"{r['Priority']} priority &middot; {r['Confidence']} confidence</div>"
+                f"<div class='rank-copy'>{why}</div>"
+                f"<div class='card-meta'><span class='team-tag'>{team}</span></div>"
+            )
         else:
             accent, meta = ATLAS_BLUE, ""
         with col:
             st.markdown(
-                f"<div class='opp-card' style='border-top-color:{accent};'>"
-                f"<div class='opp-card-title'>{opp_text}</div>"
+                f"<div class='rank-card' style='border-top:4px solid {accent};'>"
+                f"<div class='rank-top'><div class='rank-num'>{i}</div><div class='rank-title'>{opp_text}</div></div>"
                 f"{meta}"
                 f"</div>",
                 unsafe_allow_html=True,
             )
 
-    # ---- What to do next: numbered, priority-accented action cards ---------
-    st.markdown("#### ✅ What to do next")
+    # ---- What to do next: compact review queue -----------------------------
+    section_divider()
+    brief_header(
+        "What to do next",
+        "A short review queue for the relevant teams. These are signals to validate, not final recommendations.",
+        "Review queue",
+    )
     if not opportunities.empty:
         prio_rank = {"High": 0, "Medium": 1, "Low": 2}
         top_opps = opportunities.copy()
         top_opps["_r"] = top_opps["Priority"].map(prio_rank).fillna(3)
         top_opps = top_opps.sort_values("_r").head(5).reset_index(drop=True)
+        qcols = st.columns(2)
         for i, row in top_opps.iterrows():
             teams = [t.strip() for t in str(row["Suggested team to review"]).split(";") if t.strip()]
             team_html = "".join(f"<span class='team-tag'>{t}</span>" for t in teams)
             p_color = PRIORITY_COLORS.get(row["Priority"], ATLAS_BLUE)
             meta_html = (f"<span class='meta-dot' style='background:{p_color};'></span>"
                          f"<span>{row['Priority']} priority</span>{team_html}")
-            st.markdown(
-                f"<div class='action-card' style='border-left-color:{p_color};'>"
-                f"<div class='action-num'>{i + 1}</div>"
-                f"<div><div class='action-title'>{row['Opportunity/Signal']}</div>"
-                f"<div class='action-why'>{row['Why it may matter']}</div>"
-                f"<div class='card-meta'>{meta_html}</div>"
-                f"</div></div>",
-                unsafe_allow_html=True,
-            )
+            with qcols[i % 2]:
+                st.markdown(
+                    f"<div class='action-card' style='border-left-color:{p_color};'>"
+                    f"<div class='action-num'>{i + 1}</div>"
+                    f"<div><div class='action-title'>{row['Opportunity/Signal']}</div>"
+                    f"<div class='action-why'>{row['Why it may matter']}</div>"
+                    f"<div class='card-meta'>{meta_html}</div>"
+                    f"</div></div>",
+                    unsafe_allow_html=True,
+                )
     st.caption("Each top competitor's own tab has the full opportunity detail and evidence behind items related to them.")
 
     # ---- Industry news pulse (Google News coverage, computed live) ---------
-    st.markdown("#### \U0001F4F0 Industry news pulse")
+    section_divider()
+    brief_header(
+        "Industry news pulse",
+        "Google News coverage separated into general industry, Atlas Copco, and competitor-specific mentions.",
+        "Earned visibility",
+    )
     _news_all = pr_news[pr_news["Source channel"] == "News"] if not pr_news.empty else pd.DataFrame()
     if info_if_empty(_news_all, "Google News coverage of the air-compressor category"):
         pass
@@ -1351,13 +2175,16 @@ with tabs[0]:
         SUBSTANTIVE_TYPES = {"Market expansion", "Product promotion"}
 
         bits = []
+        _volume_leader = "No competitor"
+        _vl_n = 0
+        _vl_share = 0
+        _ac_n = len(_news_ac)
+        _ac_share = (_news_ac["Type"].isin(SUBSTANTIVE_TYPES).sum() / _ac_n * 100) if _ac_n else None
         if not _comp_counts.empty:
             _volume_leader = _comp_counts.index[0]
             _vl_df = _news_comp[_news_comp["Competitor"] == _volume_leader]
             _vl_n = len(_vl_df)
             _vl_share = (_vl_df["Type"].isin(SUBSTANTIVE_TYPES).sum() / _vl_n * 100) if _vl_n else 0
-            _ac_n = len(_news_ac)
-            _ac_share = (_news_ac["Type"].isin(SUBSTANTIVE_TYPES).sum() / _ac_n * 100) if _ac_n else None
             if _ac_share is not None and _vl_share < _ac_share:
                 bits.append(
                     f"<b>{_volume_leader}</b> generated the most competitor-specific News volume this period "
@@ -1386,6 +2213,48 @@ with tabs[0]:
                 f"keyword-based news scrape catches."
             )
         insight(" ".join(bits))
+
+        n1, n2, n3, n4 = st.columns(4)
+        signal_card(n1, "Total articles", f"{len(_news_all)}", f"{len(_news_general)} general industry items.")
+        signal_card(n2, "Competitor leader", _volume_leader, f"{_vl_n} articles; {_vl_share:.0f}% substantive.")
+        signal_card(n3, "Atlas Copco mentions", f"{len(_news_ac)}",
+                    f"{_ac_share:.0f}% substantive." if _ac_share is not None else "No Atlas Copco news rows found.",
+                    accent=ATLAS_BLUE_DARK)
+        signal_card(n4, "No competitor coverage", f"{len(_no_cov)}",
+                    "Tracked competitors with no confirmed Google News item in this period.",
+                    accent=ACCENT_AMBER)
+
+        ncol1, ncol2 = st.columns([2, 3])
+        with ncol1:
+            if not _comp_counts.empty:
+                cdf = _comp_counts.reset_index()
+                cdf.columns = ["Competitor", "Articles"]
+                cdf = highlight_leader(cdf.sort_values("Articles"), "Articles")
+                fig = px.bar(
+                    cdf, x="Articles", y="Competitor", orientation="h", text="Articles",
+                    color="_Highlight", color_discrete_map={"Leading": ATLAS_BLUE, "Other": NEUTRAL_BAR},
+                    title="Competitor-specific news coverage",
+                )
+                fig.update_yaxes(title="")
+                fig.update_traces(textposition="outside", cliponaxis=False)
+                clean_value_axis(fig, "h")
+                st.plotly_chart(style_layout(fig, 310, legend="none"), width="stretch")
+            else:
+                st.info("No competitor-specific news coverage found this period.")
+        with ncol2:
+            featured_news = _news_all.sort_values("Date", ascending=False).head(4)
+            rows = list(featured_news.iterrows())
+            for i in range(0, len(rows), 2):
+                cols = st.columns(2)
+                for col, (_, r) in zip(cols, rows[i:i + 2]):
+                    url = _safe(r.get("URL"))
+                    link_html = f"<div class='news-meta'><a href='{url}' target='_blank'>View source ↗</a></div>" if url else ""
+                    col.markdown(
+                        f"<div class='news-card'><div class='news-title'>{_safe(r.get('Title'))}</div>"
+                        f"<div class='news-meta'>{_safe(r.get('Competitor'))} · {_safe(r.get('Type'))} · {_safe(r.get('Date'))}</div>"
+                        f"{link_html}</div>",
+                        unsafe_allow_html=True,
+                    )
 
         with st.expander(f"See all {len(_news_all)} Google News articles tracked this period"):
             st.dataframe(
