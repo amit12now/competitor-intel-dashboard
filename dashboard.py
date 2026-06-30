@@ -918,7 +918,8 @@ def render_competitor_profile(name):
             else:
                 cdf = highlight_leader(cdf.sort_values("Count"), "Count")
                 fig = px.bar(cdf, x="Count", y="Channel", orientation="h", text="Count", color="_Highlight",
-                             color_discrete_map={"Leading": ATLAS_BLUE, "Other": NEUTRAL_BAR})
+                             color_discrete_map={"Leading": ATLAS_BLUE, "Other": NEUTRAL_BAR},
+                             title="Channel activity")
                 fig.update_yaxes(title="")
                 fig.update_traces(textposition="outside", cliponaxis=False, textfont=dict(size=11))
                 clean_value_axis(fig, "h")
@@ -1101,6 +1102,22 @@ def render_other_competitors():
     )
     st.caption("Logos shown only where a source image was available in the scraped data — no logo is shown "
                "rather than guessing.")
+
+    st.markdown("##### PR & news mentions")
+    pr_other = pr_news[pr_news["Competitor"].isin(OTHER_COMPETITORS)] if not pr_news.empty else pd.DataFrame()
+    if info_if_empty(pr_other, "PR, news, or event mentions for these competitors"):
+        pass
+    else:
+        st.dataframe(
+            pr_other[["Competitor", "Source channel", "Type", "Title", "Date", "URL", "Theme"]]
+            .sort_values("Date").reset_index(drop=True),
+            width="stretch", hide_index=True,
+            column_config={"URL": st.column_config.LinkColumn("URL")},
+        )
+        _covered_other = sorted(pr_other["Competitor"].unique().tolist())
+        _no_cov_other = [c for c in OTHER_COMPETITORS if c not in _covered_other]
+        if _no_cov_other:
+            st.caption("No PR, news, or event mentions found this period for: " + ", ".join(_no_cov_other) + ".")
 
 
 # ---------------------------------------------------------------------------
@@ -1310,6 +1327,48 @@ with tabs[0]:
                 unsafe_allow_html=True,
             )
     st.caption("Each top competitor's own tab has the full opportunity detail and evidence behind items related to them.")
+
+    # ---- Industry news pulse (Google News coverage, computed live) ---------
+    st.markdown("#### \U0001F4F0 Industry news pulse")
+    _news_all = pr_news[pr_news["Source channel"] == "News"] if not pr_news.empty else pd.DataFrame()
+    if info_if_empty(_news_all, "Google News coverage of the air-compressor category"):
+        pass
+    else:
+        _news_general = _news_all[_news_all["Competitor"] == "Unspecified / General"]
+        _news_ac = _news_all[_news_all["Competitor"] == "Atlas Copco"]
+        _news_comp = _news_all[~_news_all["Competitor"].isin(["Unspecified / General", "Atlas Copco"])]
+        _comp_counts = _news_comp["Competitor"].value_counts()
+        _type_counts = _news_all["Type"].value_counts()
+        _top_type = _type_counts.index[0] if not _type_counts.empty else "n/a"
+        _no_cov = [c for c in (TOP_COMPETITORS + OTHER_COMPETITORS) if c not in _comp_counts.index]
+
+        bits = [
+            f"<b>{len(_news_all)} Google News articles</b> matched the air-compressor category this period "
+            f"({settings.get('Baseline_Month', 'May 2026')}\u2013{settings.get('Report_Month', 'June 2026')}). "
+            f"<b>{len(_news_general)}</b> were general industry/market coverage with no single tracked brand named, "
+            f"<b>{len(_news_ac)}</b> mentioned Atlas Copco, and <b>{len(_news_comp)}</b> named a tracked competitor."
+        ]
+        if not _comp_counts.empty:
+            comp_phrase = "; ".join(f"{c} ({n})" for c, n in _comp_counts.items())
+            bits.append(f"Competitor-specific coverage this period: {comp_phrase}.")
+        if _no_cov:
+            bits.append(f"No confirmed news coverage found for: {', '.join(_no_cov)}.")
+        bits.append(
+            f"Most articles read as routine brand-visibility coverage "
+            f"({_pct(_type_counts.get(_top_type, 0), len(_news_all))} of all articles), rather than major "
+            f"product or market announcements."
+        )
+        insight(" ".join(bits))
+
+        with st.expander(f"See all {len(_news_all)} Google News articles tracked this period"):
+            st.dataframe(
+                _news_all[["Competitor", "Type", "Title", "Date", "URL"]].sort_values("Date").reset_index(drop=True),
+                width="stretch", hide_index=True,
+                column_config={"URL": st.column_config.LinkColumn("URL")},
+            )
+        st.caption("Some keyword-bucket matches (e.g. homonym/local-interest results for \"Gardner Denver\" and "
+                   "\"Quincy Compressor\" search terms) were manually reviewed and excluded as false positives. "
+                   "See the Settings sheet for full methodology notes.")
 
     st.markdown("---")
     st.caption(DISCLAIMER)
