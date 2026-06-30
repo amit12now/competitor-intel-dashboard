@@ -523,83 +523,79 @@ def _top_theme_for(name):
 
 
 def render_post_card(p):
-    sent = _safe(p.get("Sentiment"))
-    chan = _safe(p.get("Channel"))
-    theme = _safe(p.get("Theme"))
-    chips_html = ""
-    if chan:
-        chips_html += chip(chan, ATLAS_BLUE_DARK)
-    if theme:
-        chips_html += chip(theme, "#6B7280")
-    if sent:
-        chips_html += chip(sent, SENTIMENT_COLORS.get(sent, GRAY))
-    if chips_html:
-        st.markdown(chips_html, unsafe_allow_html=True)
+    """Compact, image-forward card for the post grid. Channel is implied by
+    the section it's grouped under, so we don't repeat it on the card itself -
+    keeps each card scannable at a glance instead of a paragraph of text."""
+    with st.container(border=True):
+        img_urls = IMAGE_MAP.get(_safe(p.get("URL")), [])
+        if img_urls:
+            try:
+                st.image(img_urls[0], width="stretch")
+            except Exception:
+                pass
 
-    title = _safe(p.get("Title")) or _safe(p.get("Summary"))[:80]
-    if title:
-        st.markdown(f"**{title[:120]}**")
-    summary = _safe(p.get("Summary"))
-    if summary and summary != title:
-        st.caption(summary[:160] + ("…" if len(summary) > 160 else ""))
-    meaning = _safe(p.get("Possible meaning"))
-    if meaning:
-        st.markdown(f"<span class='post-meaning'>\U0001F4A1 {meaning}</span>", unsafe_allow_html=True)
+        sent = _safe(p.get("Sentiment"))
+        theme = _safe(p.get("Theme"))
+        chips_html = ""
+        if theme:
+            chips_html += chip(theme, "#6B7280")
+        if sent:
+            chips_html += chip(sent, SENTIMENT_COLORS.get(sent, GRAY))
+        if chips_html:
+            st.markdown(chips_html, unsafe_allow_html=True)
 
-    dt = pd.to_datetime(p.get("Date"), errors="coerce")
-    date_str = dt.strftime("%b %d, %Y") if pd.notna(dt) else ""
-    eng = p.get("Engagement")
-    eng_str = f"{int(eng):,} engagement" if pd.notna(eng) else ""
-    meta_bits = [b for b in [date_str, eng_str] if b]
-    if meta_bits:
-        st.caption(" · ".join(meta_bits))
-    url = _safe(p.get("URL"))
-    if url:
-        st.markdown(f"[View source ↗]({url})")
+        title = _safe(p.get("Title")) or _safe(p.get("Summary"))[:80]
+        if title:
+            st.markdown(f"**{title[:90]}**")
+
+        dt = pd.to_datetime(p.get("Date"), errors="coerce")
+        date_str = dt.strftime("%b %d, %Y") if pd.notna(dt) else ""
+        eng = p.get("Engagement")
+        eng_str = f"{int(eng):,} engagement" if pd.notna(eng) else ""
+        meta_bits = [b for b in [date_str, eng_str] if b]
+        if meta_bits:
+            st.caption(" · ".join(meta_bits))
+        url = _safe(p.get("URL"))
+        if url:
+            st.markdown(f"[View source ↗]({url})")
 
 
 # Content the competitor itself published, broken out by channel - shown as
 # separate subsections rather than merged into one feed (explicit requirement).
+# Third tuple element is the icon used in the coverage strip and section headers.
 OWNED_CHANNEL_BUCKETS = [
-    ("LinkedIn", {"LinkedIn company posts", "LinkedIn posts from company employees"}),
-    ("Instagram", {"Instagram posts"}),
-    ("YouTube", {"YouTube videos"}),
-    ("Blog", {"Blog pages/articles"}),
+    ("LinkedIn", {"LinkedIn company posts", "LinkedIn posts from company employees"}, "\U0001F4BC"),
+    ("Instagram", {"Instagram posts"}, "\U0001F4F7"),
+    ("YouTube", {"YouTube videos"}, "▶️"),
+    ("Blog", {"Blog pages/articles"}, "\U0001F4DD"),
 ]
-OWNED_SOURCE_TYPES = {t for _, types in OWNED_CHANNEL_BUCKETS for t in types}
+OWNED_SOURCE_TYPES = {t for _, types, _ in OWNED_CHANNEL_BUCKETS for t in types}
 
 # Other people's posts/comments that merely mention the competitor's name,
 # also broken out by type rather than merged into one feed.
 MENTION_TYPE_BUCKETS = [
-    ("Posts mentioning their name", {"LinkedIn posts mentioning competitor names"}),
-    ("Market-reaction comments", {"LinkedIn comments (market reaction)"}),
-    ("Posts mentioning our brand", {"LinkedIn posts mentioning our brand"}),
-    ("Posts mentioning ‘air compressor’", {"LinkedIn posts mentioning 'air compressor'"}),
+    ("Posts mentioning their name", {"LinkedIn posts mentioning competitor names"}, "\U0001F5E3️"),
+    ("Market-reaction comments", {"LinkedIn comments (market reaction)"}, "\U0001F4AC"),
+    ("Posts mentioning our brand", {"LinkedIn posts mentioning our brand"}, "\U0001F3F7️"),
+    ("Posts mentioning ‘air compressor’", {"LinkedIn posts mentioning 'air compressor'"}, "\U0001F527"),
 ]
-MENTION_SOURCE_TYPES = {t for _, types in MENTION_TYPE_BUCKETS for t in types}
+MENTION_SOURCE_TYPES = {t for _, types, _ in MENTION_TYPE_BUCKETS for t in types}
 
 
-def render_post_section(posts_df, empty_message, limit=4):
-    """Render up to `limit` most recent posts from posts_df, with small embedded
-    images where we have one, and a plain text card otherwise."""
+def render_post_section(posts_df, limit=4, cols=2):
+    """Render up to `limit` most recent posts from posts_df as a card grid
+    (side by side, `cols` per row) instead of one full-width card per row -
+    keeps a handful of posts looking like a gallery, not a scrolling feed.
+    Callers should skip this entirely when posts_df is empty."""
     if posts_df.empty:
-        if empty_message:
-            st.caption(empty_message)
         return
     posts_df = posts_df.sort_values("_dt", ascending=False).head(limit)
-    for _, p in posts_df.iterrows():
-        img_urls = IMAGE_MAP.get(_safe(p.get("URL")), [])
-        with st.container(border=True):
-            if img_urls:
-                pc1, pc2 = st.columns([1, 5])
-                with pc1:
-                    try:
-                        st.image(img_urls[0], width=90)
-                    except Exception:
-                        pass
-                with pc2:
-                    render_post_card(p)
-            else:
+    rows = list(posts_df.iterrows())
+    for i in range(0, len(rows), cols):
+        row_slice = rows[i:i + cols]
+        columns = st.columns(cols)
+        for col, (_, p) in zip(columns, row_slice):
+            with col:
                 render_post_card(p)
 
 
@@ -731,27 +727,52 @@ def render_competitor_profile(name):
     else:
         all_posts["_dt"] = pd.to_datetime(all_posts["Date"], errors="coerce")
 
-        st.markdown(f"**Posted by {name} directly**")
-        st.caption("Their own channels - shown separately by platform, not merged into one feed.")
-        for chan_label, types in OWNED_CHANNEL_BUCKETS:
-            sub = all_posts[all_posts["Source type"].isin(types)]
-            st.markdown(f"_{chan_label}_")
-            render_post_section(sub, f"No {chan_label} posts published directly by {name} were found this period.")
-
+        # Coverage strip: one glance at what showed up where before opening anything -
+        # lit up in blue when there's content, muted gray when there's none.
+        strip_html = ""
+        for label, types, icon in OWNED_CHANNEL_BUCKETS + MENTION_TYPE_BUCKETS:
+            n = int(all_posts["Source type"].isin(types).sum())
+            strip_html += chip(f"{icon} {label} · {n}", ATLAS_BLUE if n else NEUTRAL_BAR, fg=WHITE if n else NAVY)
+        st.markdown(strip_html, unsafe_allow_html=True)
         st.write("")
-        st.markdown(f"**Mentions of {name} elsewhere**")
-        st.caption("Other people's posts and comments using their name - shown separately by type.")
-        for mention_label, types in MENTION_TYPE_BUCKETS:
-            sub = all_posts[all_posts["Source type"].isin(types)]
-            st.markdown(f"_{mention_label}_")
-            render_post_section(sub, f"No {mention_label.lower()} were found for {name} this period.")
+
+        owned_total = int(all_posts["Source type"].isin(OWNED_SOURCE_TYPES).sum())
+        with st.expander(f"\U0001F4E4 Posted by {name} directly — {owned_total} posts across their own channels",
+                          expanded=False):
+            st.caption("Their own channels - shown separately by platform, not merged into one feed.")
+            any_owned = False
+            for chan_label, types, icon in OWNED_CHANNEL_BUCKETS:
+                sub = all_posts[all_posts["Source type"].isin(types)]
+                if sub.empty:
+                    continue
+                any_owned = True
+                st.markdown(f"**{icon} {chan_label}**")
+                render_post_section(sub)
+                st.write("")
+            if not any_owned:
+                st.caption(f"No posts published directly by {name} were found this period.")
+
+        mention_total = int(all_posts["Source type"].isin(MENTION_SOURCE_TYPES).sum())
+        with st.expander(f"\U0001F4AC Mentions of {name} elsewhere — {mention_total} posts/comments",
+                          expanded=False):
+            st.caption("Other people's posts and comments using their name - shown separately by type.")
+            any_mention = False
+            for mention_label, types, icon in MENTION_TYPE_BUCKETS:
+                sub = all_posts[all_posts["Source type"].isin(types)]
+                if sub.empty:
+                    continue
+                any_mention = True
+                st.markdown(f"**{icon} {mention_label}**")
+                render_post_section(sub)
+                st.write("")
+            if not any_mention:
+                st.caption(f"No third-party mentions of {name} were found this period.")
 
         covered_types = OWNED_SOURCE_TYPES | MENTION_SOURCE_TYPES
         leftover = all_posts[~all_posts["Source type"].isin(covered_types)]
         if not leftover.empty:
-            st.write("")
-            st.markdown("**Other signals**")
-            render_post_section(leftover, "")
+            with st.expander(f"\U0001F9E9 Other signals — {len(leftover)}", expanded=False):
+                render_post_section(leftover)
 
 
 def render_other_competitors():
