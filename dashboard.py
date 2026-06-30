@@ -19,10 +19,11 @@ final business decisions. Every section uses soft, review-oriented language
 directives. Categories with zero confirmed signals are shown honestly as
 "No signals found this period" rather than estimated or invented.
 
-Layout: one Executive Summary tab, one profile tab per top-activity competitor
-(ranked live from the data each run, never hardcoded), one summary tab for the
-remaining competitors, and a Raw Data Explorer with filters. Logos and LinkedIn
-post images are loaded from small local lookup files (competitor_logos.json,
+Layout: one Executive Summary tab, one profile tab per top-activity competitor,
+one summary tab for the remaining competitors, and a Raw Data Explorer with
+filters. Ingersoll Rand is always pinned as the first competitor tab; the other
+top-tab slots are ranked live from the data each run. Logos and LinkedIn post
+images are loaded from small local lookup files (competitor_logos.json,
 post_images.json) built from the scraped source data - if a logo or image isn't
 available for a given competitor, a plain letter badge / text-only card is shown
 instead rather than inventing one.
@@ -214,10 +215,6 @@ div[data-testid="stMetricValue"] {{ color: {NAVY}; }}
     margin-bottom: 8px;
     font-size: 0.92rem;
     color: {NAVY};
-}}
-.team-tag {{
-    display:inline-block; background:{NAVY}; color:{WHITE};
-    border-radius: 10px; padding: 1px 10px; margin-right: 6px; font-size:0.74rem; font-weight:700;
 }}
 .chip {{
     display:inline-block; border-radius: 10px; padding: 2px 10px; margin: 0 4px 6px 0;
@@ -478,13 +475,22 @@ def exec_metric(label):
 
 # ---------------------------------------------------------------------------
 # Rank competitors live from the data - top 4 by activity get their own tab,
-# the rest are summarized in one comparison table. Never hardcoded, so this
-# adapts automatically as activity shifts month to month.
+# the rest are summarized in one comparison table. The one deliberate
+# exception: Ingersoll Rand is always pinned as tab #1 per explicit request,
+# regardless of its activity ranking that period. The remaining 3 top slots
+# are still chosen live by activity among everyone else.
 # ---------------------------------------------------------------------------
+PINNED_FIRST_COMPETITOR = "Ingersoll Rand"
+
 if not overview.empty:
     _ranked = overview.sort_values("Total activity", ascending=False).reset_index(drop=True)
-    TOP_COMPETITORS = _ranked["Competitor"].head(4).tolist()
-    OTHER_COMPETITORS = _ranked["Competitor"].iloc[4:].tolist()
+    if PINNED_FIRST_COMPETITOR in _ranked["Competitor"].values:
+        _rest_ranked = _ranked.loc[_ranked["Competitor"] != PINNED_FIRST_COMPETITOR, "Competitor"]
+        TOP_COMPETITORS = [PINNED_FIRST_COMPETITOR] + _rest_ranked.head(3).tolist()
+        OTHER_COMPETITORS = _rest_ranked.iloc[3:].tolist()
+    else:
+        TOP_COMPETITORS = _ranked["Competitor"].head(4).tolist()
+        OTHER_COMPETITORS = _ranked["Competitor"].iloc[4:].tolist()
 else:
     TOP_COMPETITORS, OTHER_COMPETITORS = [], []
 
@@ -515,6 +521,7 @@ def _top_theme_for(name):
     return tvals.idxmax()
 
 
+
 def render_post_card(p):
     sent = _safe(p.get("Sentiment"))
     chan = _safe(p.get("Channel"))
@@ -529,12 +536,12 @@ def render_post_card(p):
     if chips_html:
         st.markdown(chips_html, unsafe_allow_html=True)
 
-    title = _safe(p.get("Title")) or _safe(p.get("Summary"))[:90]
+    title = _safe(p.get("Title")) or _safe(p.get("Summary"))[:80]
     if title:
-        st.markdown(f"**{title[:160]}**")
+        st.markdown(f"**{title[:120]}**")
     summary = _safe(p.get("Summary"))
     if summary and summary != title:
-        st.caption(summary[:240] + ("…" if len(summary) > 240 else ""))
+        st.caption(summary[:160] + ("…" if len(summary) > 160 else ""))
     meaning = _safe(p.get("Possible meaning"))
     if meaning:
         st.markdown(f"<span class='post-meaning'>\U0001F4A1 {meaning}</span>", unsafe_allow_html=True)
@@ -551,40 +558,49 @@ def render_post_card(p):
         st.markdown(f"[View source ↗]({url})")
 
 
-# Source types that are content the competitor itself published (its own
-# LinkedIn/Instagram/YouTube/blog channels), vs. everything else - which is
-# other people's posts/comments that merely mention the competitor's name.
-OWNED_SOURCE_TYPES = {
-    "LinkedIn company posts", "Instagram posts", "YouTube videos",
-    "Blog pages/articles", "LinkedIn posts from company employees",
-}
+# Content the competitor itself published, broken out by channel - shown as
+# separate subsections rather than merged into one feed (explicit requirement).
+OWNED_CHANNEL_BUCKETS = [
+    ("LinkedIn", {"LinkedIn company posts", "LinkedIn posts from company employees"}),
+    ("Instagram", {"Instagram posts"}),
+    ("YouTube", {"YouTube videos"}),
+    ("Blog", {"Blog pages/articles"}),
+]
+OWNED_SOURCE_TYPES = {t for _, types in OWNED_CHANNEL_BUCKETS for t in types}
+
+# Other people's posts/comments that merely mention the competitor's name,
+# also broken out by type rather than merged into one feed.
+MENTION_TYPE_BUCKETS = [
+    ("Posts mentioning their name", {"LinkedIn posts mentioning competitor names"}),
+    ("Market-reaction comments", {"LinkedIn comments (market reaction)"}),
+    ("Posts mentioning our brand", {"LinkedIn posts mentioning our brand"}),
+    ("Posts mentioning ‘air compressor’", {"LinkedIn posts mentioning 'air compressor'"}),
+]
+MENTION_SOURCE_TYPES = {t for _, types in MENTION_TYPE_BUCKETS for t in types}
 
 
-def render_post_section(posts_df, empty_message):
-    """Render up to 8 most recent posts from posts_df, with embedded images
-    (kept small) where we have one, and a plain text card otherwise."""
+def render_post_section(posts_df, empty_message, limit=4):
+    """Render up to `limit` most recent posts from posts_df, with small embedded
+    images where we have one, and a plain text card otherwise."""
     if posts_df.empty:
-        st.caption(empty_message)
+        if empty_message:
+            st.caption(empty_message)
         return
-    posts_df = posts_df.sort_values("_dt", ascending=False).head(8)
-    n_with_images = 0
+    posts_df = posts_df.sort_values("_dt", ascending=False).head(limit)
     for _, p in posts_df.iterrows():
         img_urls = IMAGE_MAP.get(_safe(p.get("URL")), [])
         with st.container(border=True):
             if img_urls:
-                n_with_images += 1
-                pc1, pc2 = st.columns([1, 4])
+                pc1, pc2 = st.columns([1, 5])
                 with pc1:
                     try:
-                        st.image(img_urls[0], width=130)
+                        st.image(img_urls[0], width=90)
                     except Exception:
                         pass
                 with pc2:
                     render_post_card(p)
             else:
                 render_post_card(p)
-    if n_with_images == 0:
-        st.caption("No post images were available to embed for this selection in this period's scrape.")
 
 
 def render_competitor_profile(name):
@@ -714,15 +730,28 @@ def render_competitor_profile(name):
         st.info("No signals found this period.")
     else:
         all_posts["_dt"] = pd.to_datetime(all_posts["Date"], errors="coerce")
-        company_posts = all_posts[all_posts["Source type"].isin(OWNED_SOURCE_TYPES)]
-        mention_posts = all_posts[~all_posts["Source type"].isin(OWNED_SOURCE_TYPES)]
 
-        st.markdown(f"**Posted by {name} directly** — their own LinkedIn, Instagram, YouTube & blog content")
-        render_post_section(company_posts, f"No posts published directly by {name} were found this period.")
+        st.markdown(f"**Posted by {name} directly**")
+        st.caption("Their own channels - shown separately by platform, not merged into one feed.")
+        for chan_label, types in OWNED_CHANNEL_BUCKETS:
+            sub = all_posts[all_posts["Source type"].isin(types)]
+            st.markdown(f"_{chan_label}_")
+            render_post_section(sub, f"No {chan_label} posts published directly by {name} were found this period.")
 
         st.write("")
-        st.markdown(f"**Mentions of {name} elsewhere** — other LinkedIn posts and comments using their name")
-        render_post_section(mention_posts, f"No third-party mentions of {name} were found this period.")
+        st.markdown(f"**Mentions of {name} elsewhere**")
+        st.caption("Other people's posts and comments using their name - shown separately by type.")
+        for mention_label, types in MENTION_TYPE_BUCKETS:
+            sub = all_posts[all_posts["Source type"].isin(types)]
+            st.markdown(f"_{mention_label}_")
+            render_post_section(sub, f"No {mention_label.lower()} were found for {name} this period.")
+
+        covered_types = OWNED_SOURCE_TYPES | MENTION_SOURCE_TYPES
+        leftover = all_posts[~all_posts["Source type"].isin(covered_types)]
+        if not leftover.empty:
+            st.write("")
+            st.markdown("**Other signals**")
+            render_post_section(leftover, "")
 
 
 def render_other_competitors():
@@ -922,21 +951,26 @@ with tabs[0]:
                 unsafe_allow_html=True,
             )
 
-    # ---- What to do next: concrete, team-tagged action items ---------------
+    # ---- What to do next: numbered action cards -----------------------------
     st.markdown("#### ✅ What to do next")
     if not opportunities.empty:
         prio_rank = {"High": 0, "Medium": 1, "Low": 2}
         top_opps = opportunities.copy()
         top_opps["_r"] = top_opps["Priority"].map(prio_rank).fillna(3)
-        top_opps = top_opps.sort_values("_r").head(5)
-        for _, row in top_opps.iterrows():
-            teams = [t.strip() for t in str(row["Suggested team to review"]).split(";")]
-            tags = "".join(f"<span class='team-tag'>{t}</span>" for t in teams)
-            st.markdown(
-                f"<div class='next-step'>{tags} {row['Opportunity/Signal']} "
-                f"<span style='color:{GRAY};'>&mdash; {row['Why it may matter']}</span></div>",
-                unsafe_allow_html=True,
-            )
+        top_opps = top_opps.sort_values("_r").head(5).reset_index(drop=True)
+        for i, row in top_opps.iterrows():
+            teams = [t.strip() for t in str(row["Suggested team to review"]).split(";") if t.strip()]
+            team_chips = "".join(chip(t, NAVY) for t in teams)
+            p_icon = PRIORITY_ICONS.get(row["Priority"], "⭐")
+            with st.container(border=True):
+                ncol1, ncol2 = st.columns([1, 14])
+                with ncol1:
+                    st.markdown(f"##### {i + 1}.")
+                with ncol2:
+                    st.markdown(f"**{p_icon} {row['Opportunity/Signal']}**")
+                    st.caption(row["Why it may matter"])
+                    if team_chips:
+                        st.markdown(team_chips, unsafe_allow_html=True)
     st.caption("Each top competitor's own tab has the full opportunity detail and evidence behind items related to them.")
 
     st.markdown("---")
@@ -1020,8 +1054,3 @@ with tabs[2 + len(TOP_COMPETITORS)]:
             file_name="competitor_intelligence_filtered.csv",
             mime="text/csv",
         )
-
-st.markdown("---")
-st.caption(DISCLAIMER)
-st.caption("Source: ETL pipeline over LinkedIn, Instagram, YouTube, blog/PR/news scrapes, and LinkedIn workforce "
-           "analytics for May-June 2026. See the Settings sheet in the workbook for methodology notes.")
