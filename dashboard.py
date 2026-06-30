@@ -649,6 +649,99 @@ MENTION_TYPE_BUCKETS = [
 ]
 MENTION_SOURCE_TYPES = {t for _, types, _ in MENTION_TYPE_BUCKETS for t in types}
 
+# ---- Platform tabs: LinkedIn / Instagram / YouTube own-channel feeds, each
+# divided by content-type buckets built from the real Theme column. The 15
+# granular Theme values are mapped into 4 named buckets with explicit rules -
+# nothing invented. Anything that doesn't fit one of the 4 lands in "Other"
+# rather than being forced into a bucket it doesn't belong in.
+PLATFORM_SOURCE_TYPES = [
+    ("LinkedIn", {"LinkedIn company posts", "LinkedIn posts from company employees"}),
+    ("Instagram", {"Instagram posts"}),
+    ("YouTube", {"YouTube videos"}),
+]
+
+THEME_BUCKETS = [
+    ("Thought Leadership", {"Sustainability", "Industrial productivity", "Energy efficiency"}),
+    ("Product & Equipment", {"New product launch", "Oil-free compressors", "Rotary screw compressors"}),
+    ("Webinar", {"Training / webinar"}),
+    ("Services", {"Service / aftermarket", "Dealer / distributor"}),
+]
+THEME_BUCKET_ORDER = [b for b, _ in THEME_BUCKETS] + ["Other"]
+
+
+def theme_bucket(theme):
+    for label, themes in THEME_BUCKETS:
+        if theme in themes:
+            return label
+    return "Other"
+
+
+def post_format(url):
+    """Real, not fabricated: "Image" if we actually have a scraped image for
+    this URL (present in IMAGE_MAP), otherwise "Text". There's no native
+    format field in the data, so whether a real image asset was captured is
+    the closest honest signal available."""
+    return "Image" if IMAGE_MAP.get(_safe(url)) else "Text"
+
+
+def render_platform_post_card(p):
+    """Card for the LinkedIn / Instagram / YouTube platform tabs - image,
+    content-type bucket, format, date, and real total engagement. No
+    fabricated reaction-type or share/comment breakdown: the scraped data
+    only has one combined Engagement number per post."""
+    with st.container(border=True):
+        img_urls = IMAGE_MAP.get(_safe(p.get("URL")), [])
+        if img_urls:
+            try:
+                st.image(img_urls[0], width="stretch")
+            except Exception:
+                pass
+
+        bucket = theme_bucket(_safe(p.get("Theme")))
+        fmt = post_format(p.get("URL"))
+        st.markdown(chip(bucket, ATLAS_BLUE) + chip(fmt, "#6B7280"), unsafe_allow_html=True)
+
+        title = _safe(p.get("Title")) or _safe(p.get("Summary"))[:80]
+        if title:
+            st.markdown(f"**{title[:90]}**")
+
+        dt = pd.to_datetime(p.get("Date"), errors="coerce")
+        date_str = dt.strftime("%b %d, %Y") if pd.notna(dt) else ""
+        eng = p.get("Engagement")
+        eng_str = f"{int(eng):,} total engagement" if pd.notna(eng) else ""
+        meta_bits = [b for b in [date_str, eng_str] if b]
+        if meta_bits:
+            st.caption(" · ".join(meta_bits))
+        url = _safe(p.get("URL"))
+        if url:
+            st.markdown(f"[View source ↗]({url})")
+
+
+def render_platform_section(posts_df, key_prefix):
+    """Filter row (All + whichever content-type buckets actually have posts)
+    plus a 2-column card grid for one platform tab. Shows the soft empty
+    message instead of a dead filter row when there's nothing to show."""
+    if posts_df.empty:
+        st.info("No signals found this period.")
+        return
+    posts_df = posts_df.copy()
+    posts_df["_bucket"] = posts_df["Theme"].apply(theme_bucket)
+    present = [b for b in THEME_BUCKET_ORDER if (posts_df["_bucket"] == b).any()]
+    options = ["All"] + present
+    choice = st.radio(
+        "Filter by type", options, index=0, horizontal=True,
+        key=f"filter_{key_prefix}", label_visibility="collapsed",
+    )
+    shown = posts_df if choice == "All" else posts_df[posts_df["_bucket"] == choice]
+    shown = shown.sort_values("_dt", ascending=False)
+    rows = list(shown.iterrows())
+    for i in range(0, len(rows), 2):
+        row_slice = rows[i:i + 2]
+        cols = st.columns(2)
+        for col, (_, p) in zip(cols, row_slice):
+            with col:
+                render_platform_post_card(p)
+
 
 def render_post_section(posts_df, limit=4, cols=2):
     """Render up to `limit` most recent posts from posts_df as a card grid
@@ -910,7 +1003,7 @@ def render_competitor_profile(name):
                     st.write(r["Evidence"])
 
     st.markdown(
-        "##### Recent posts & signals"
+        "##### Social media activity"
         "<span class='section-hint'>· their own channels, plus third-party mentions</span>",
         unsafe_allow_html=True,
     )
@@ -930,26 +1023,24 @@ def render_competitor_profile(name):
         st.markdown(strip_html, unsafe_allow_html=True)
         st.write("")
 
-        owned_total = int(all_posts["Source type"].isin(OWNED_SOURCE_TYPES).sum())
-        with st.expander(f"\U0001F4E4 Posted by {name} directly — {owned_total} posts across their own channels",
-                          expanded=False):
-            st.caption("Their own channels - shown separately by platform, not merged into one feed.")
-            any_owned = False
-            for chan_label, types, icon in OWNED_CHANNEL_BUCKETS:
-                sub = all_posts[all_posts["Source type"].isin(types)]
-                if sub.empty:
-                    continue
-                any_owned = True
-                st.markdown(f"**{icon} {chan_label}**")
-                render_post_section(sub)
-                st.write("")
-            if not any_owned:
-                st.caption(f"No posts published directly by {name} were found this period.")
+        platform_tabs = st.tabs([
+            "\U0001F4BC LinkedIn", "\U0001F4F7 Instagram", "▶️ YouTube", "\U0001F9E9 Other & mentions",
+        ])
 
-        mention_total = int(all_posts["Source type"].isin(MENTION_SOURCE_TYPES).sum())
-        with st.expander(f"\U0001F4AC Mentions of {name} elsewhere — {mention_total} posts/comments",
-                          expanded=False):
-            st.caption("Other people's posts and comments using their name - shown separately by type.")
+        for (platform_label, types), tab in zip(PLATFORM_SOURCE_TYPES, platform_tabs[:3]):
+            with tab:
+                sub = all_posts[all_posts["Source type"].isin(types)]
+                render_platform_section(sub, key_prefix=f"{name}_{platform_label}")
+
+        with platform_tabs[3]:
+            blog_posts = all_posts[all_posts["Source type"].isin({"Blog pages/articles"})]
+            if not blog_posts.empty:
+                st.markdown("**\U0001F4DD Blog**")
+                render_post_section(blog_posts)
+                st.write("")
+
+            mention_total = int(all_posts["Source type"].isin(MENTION_SOURCE_TYPES).sum())
+            st.caption(f"Other people's posts and comments using {name}'s name - {mention_total} found this period.")
             any_mention = False
             for mention_label, types, icon in MENTION_TYPE_BUCKETS:
                 sub = all_posts[all_posts["Source type"].isin(types)]
@@ -959,13 +1050,13 @@ def render_competitor_profile(name):
                 st.markdown(f"**{icon} {mention_label}**")
                 render_post_section(sub)
                 st.write("")
-            if not any_mention:
-                st.caption(f"No third-party mentions of {name} were found this period.")
+            if not any_mention and blog_posts.empty:
+                st.caption(f"No blog posts or third-party mentions of {name} were found this period.")
 
-        covered_types = OWNED_SOURCE_TYPES | MENTION_SOURCE_TYPES
-        leftover = all_posts[~all_posts["Source type"].isin(covered_types)]
-        if not leftover.empty:
-            with st.expander(f"\U0001F9E9 Other signals — {len(leftover)}", expanded=False):
+            covered_types = OWNED_SOURCE_TYPES | MENTION_SOURCE_TYPES
+            leftover = all_posts[~all_posts["Source type"].isin(covered_types)]
+            if not leftover.empty:
+                st.markdown("**\U0001F9E9 Other signals**")
                 render_post_section(leftover)
 
 
