@@ -108,29 +108,24 @@ div[data-testid="stMetric"] {{
 }}
 div[data-testid="stMetricLabel"] {{ color: {GRAY}; font-size: 0.80rem; }}
 div[data-testid="stMetricValue"] {{ color: {NAVY}; }}
-.disclaimer-banner {{
-    background-color: {ATLAS_BLUE_LIGHT};
-    border-left: 5px solid {ATLAS_BLUE};
-    color: {NAVY};
-    padding: 10px 16px;
-    border-radius: 6px;
-    font-size: 0.88rem;
-    margin-bottom: 1rem;
-}}
 .theme-pill {{
     display:inline-block; background:{ATLAS_BLUE_LIGHT}; color:{ATLAS_BLUE_DARK};
     border-radius: 14px; padding: 3px 12px; margin: 2px; font-size:0.82rem; font-weight:600;
 }}
-.stTabs [data-baseweb="tab-list"] {{ gap: 22px; border-bottom: 2px solid #E2E8F0; }}
+.stTabs [data-baseweb="tab-list"] {{
+    gap: 6px; background-color: {WHITE}; padding: 6px; border-radius: 12px;
+    border: 1px solid #E2E8F0; flex-wrap: wrap;
+}}
 .stTabs [data-baseweb="tab"] {{
-    background-color: transparent; border-radius: 0; padding: 10px 2px;
-    color: {GRAY}; font-weight: 600;
+    background-color: {GRAY_LIGHT}; border-radius: 9px; padding: 10px 18px;
+    color: {NAVY}; font-weight: 600; border: none;
 }}
-.stTabs [data-baseweb="tab"]:hover {{ color: {ATLAS_BLUE_DARK}; background-color: transparent; }}
+.stTabs [data-baseweb="tab"]:hover {{ background-color: {ATLAS_BLUE_LIGHT}; color: {ATLAS_BLUE_DARK}; }}
 .stTabs [aria-selected="true"] {{
-    background-color: transparent !important; color: {ATLAS_BLUE_DARK} !important;
-    border-bottom: 3px solid {ATLAS_BLUE} !important; font-weight: 700;
+    background-color: {ATLAS_BLUE} !important; color: {WHITE} !important; font-weight: 700;
 }}
+.stTabs [data-baseweb="tab-highlight"] {{ background-color: transparent !important; }}
+.stTabs [data-baseweb="tab-border"] {{ display: none; }}
 .main-header {{
     display: flex; align-items: center; gap: 16px;
     background: linear-gradient(135deg, {ATLAS_BLUE} 0%, {ATLAS_BLUE_DARK} 100%);
@@ -228,8 +223,6 @@ div[data-testid="stMetricValue"] {{ color: {NAVY}; }}
     display:inline-block; border-radius: 10px; padding: 2px 10px; margin: 0 4px 6px 0;
     font-size: 0.74rem; font-weight: 700;
 }}
-.competitor-name {{ font-size: 1.4rem; font-weight: 800; color: {NAVY}; }}
-.competitor-sub {{ color: {GRAY}; font-size: 0.85rem; margin-top: 3px; }}
 .post-meaning {{ color: {GRAY}; font-size: 0.82rem; }}
 </style>
 """, unsafe_allow_html=True)
@@ -346,12 +339,8 @@ def mini_stat(col, label, value):
 def kpi_card(col, icon, label, value, sublabel=None):
     sub_html = f"<div class='kpi-sub'>{sublabel}</div>" if sublabel else ""
     col.markdown(
-        f"""<div class='kpi-card'>
-            <div class='kpi-icon'>{icon}</div>
-            <div class='kpi-label'>{label}</div>
-            <div class='kpi-value'>{value}</div>
-            {sub_html}
-        </div>""",
+        f"<div class='kpi-card'><div class='kpi-icon'>{icon}</div>"
+        f"<div class='kpi-label'>{label}</div><div class='kpi-value'>{value}</div>{sub_html}</div>",
         unsafe_allow_html=True,
     )
 
@@ -562,6 +551,42 @@ def render_post_card(p):
         st.markdown(f"[View source ↗]({url})")
 
 
+# Source types that are content the competitor itself published (its own
+# LinkedIn/Instagram/YouTube/blog channels), vs. everything else - which is
+# other people's posts/comments that merely mention the competitor's name.
+OWNED_SOURCE_TYPES = {
+    "LinkedIn company posts", "Instagram posts", "YouTube videos",
+    "Blog pages/articles", "LinkedIn posts from company employees",
+}
+
+
+def render_post_section(posts_df, empty_message):
+    """Render up to 8 most recent posts from posts_df, with embedded images
+    (kept small) where we have one, and a plain text card otherwise."""
+    if posts_df.empty:
+        st.caption(empty_message)
+        return
+    posts_df = posts_df.sort_values("_dt", ascending=False).head(8)
+    n_with_images = 0
+    for _, p in posts_df.iterrows():
+        img_urls = IMAGE_MAP.get(_safe(p.get("URL")), [])
+        with st.container(border=True):
+            if img_urls:
+                n_with_images += 1
+                pc1, pc2 = st.columns([1, 4])
+                with pc1:
+                    try:
+                        st.image(img_urls[0], width=130)
+                    except Exception:
+                        pass
+                with pc2:
+                    render_post_card(p)
+            else:
+                render_post_card(p)
+    if n_with_images == 0:
+        st.caption("No post images were available to embed for this selection in this period's scrape.")
+
+
 def render_competitor_profile(name):
     row = _competitor_row(name)
     if row is None:
@@ -575,11 +600,10 @@ def render_competitor_profile(name):
     with hcol1:
         st.markdown(logo_badge(name, LOGO_MAP, 72), unsafe_allow_html=True)
     with hcol2:
-        st.markdown(
-            f"<div class='competitor-name'>{name} {chip(level + ' activity', level_color)}</div>"
-            f"<div class='competitor-sub'>{int(row['Total activity'])} tracked signals this period across "
-            f"LinkedIn, Instagram, and YouTube.</div>",
-            unsafe_allow_html=True,
+        st.markdown(f"### {name}")
+        st.markdown(chip(level + " activity", level_color), unsafe_allow_html=True)
+        st.caption(
+            f"{int(row['Total activity'])} tracked signals this period across LinkedIn, Instagram, and YouTube."
         )
 
     st.write("")
@@ -625,32 +649,6 @@ def render_competitor_profile(name):
             else:
                 pills = "".join(f"<span class='theme-pill'>{t} · {int(c)}</span>" for t, c in tvals.items())
                 st.markdown(pills, unsafe_allow_html=True)
-
-    st.markdown("##### Recent posts & signals")
-    comp_posts = raw_data[raw_data["Competitor"] == name].copy() if not raw_data.empty else pd.DataFrame()
-    if comp_posts.empty:
-        st.info("No signals found this period.")
-    else:
-        comp_posts["_dt"] = pd.to_datetime(comp_posts["Date"], errors="coerce")
-        comp_posts = comp_posts.sort_values("_dt", ascending=False).head(8)
-        n_with_images = 0
-        for _, p in comp_posts.iterrows():
-            img_urls = IMAGE_MAP.get(_safe(p.get("URL")), [])
-            with st.container(border=True):
-                if img_urls:
-                    n_with_images += 1
-                    pc1, pc2 = st.columns([1, 3])
-                    with pc1:
-                        try:
-                            st.image(img_urls[0], width="stretch")
-                        except Exception:
-                            pass
-                    with pc2:
-                        render_post_card(p)
-                else:
-                    render_post_card(p)
-        if n_with_images == 0:
-            st.caption("No post images were available to embed for this competitor in this period's scrape.")
 
     st.markdown("##### Hiring & expansion signals")
     h = hiring[hiring["Competitor"] == name] if not hiring.empty else pd.DataFrame()
@@ -709,6 +707,23 @@ def render_competitor_profile(name):
                 with st.expander("Evidence"):
                     st.write(r["Evidence"])
 
+    st.markdown("##### Recent posts & signals")
+    all_posts = raw_data[raw_data["Competitor"] == name].copy() if not raw_data.empty else pd.DataFrame()
+    all_posts = all_posts[all_posts["Channel"] != "Jobs"] if not all_posts.empty else all_posts
+    if all_posts.empty:
+        st.info("No signals found this period.")
+    else:
+        all_posts["_dt"] = pd.to_datetime(all_posts["Date"], errors="coerce")
+        company_posts = all_posts[all_posts["Source type"].isin(OWNED_SOURCE_TYPES)]
+        mention_posts = all_posts[~all_posts["Source type"].isin(OWNED_SOURCE_TYPES)]
+
+        st.markdown(f"**Posted by {name} directly** — their own LinkedIn, Instagram, YouTube & blog content")
+        render_post_section(company_posts, f"No posts published directly by {name} were found this period.")
+
+        st.write("")
+        st.markdown(f"**Mentions of {name} elsewhere** — other LinkedIn posts and comments using their name")
+        render_post_section(mention_posts, f"No third-party mentions of {name} were found this period.")
+
 
 def render_other_competitors():
     st.subheader("Other Competitors")
@@ -757,16 +772,13 @@ def render_other_competitors():
 # Header + disclaimer
 # ---------------------------------------------------------------------------
 st.markdown(
-    f"""<div class='main-header'>
-        <div class='main-header-icon'>\U0001F9ED</div>
-        <div>
-            <div class='main-header-title'>Competitor Intelligence Dashboard</div>
-            <div class='main-header-sub'>Air Compressor Category &middot; {settings.get('Baseline_Month','May 2026')} vs {settings.get('Report_Month','June 2026')}</div>
-        </div>
-    </div>""",
+    f"<div class='main-header'><div class='main-header-icon'>\U0001F9ED</div>"
+    f"<div><div class='main-header-title'>Competitor Intelligence Dashboard</div>"
+    f"<div class='main-header-sub'>Air Compressor Category &middot; "
+    f"{settings.get('Baseline_Month','May 2026')} vs {settings.get('Report_Month','June 2026')}</div>"
+    f"</div></div>",
     unsafe_allow_html=True,
 )
-st.markdown(f"<div class='disclaimer-banner'>⚠️ {DISCLAIMER}</div>", unsafe_allow_html=True)
 
 _tab_labels = ["1. Executive Summary"]
 for _i, _name in enumerate(TOP_COMPETITORS):
